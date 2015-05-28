@@ -1,0 +1,86 @@
+﻿@using System.Web.Mvc.Html
+@using Asam.Ppc.Mvc.Infrastructure
+@using Asam.Ppc.Service.Messages.Attributes
+@using Asam.Ppc.Service.Messages.Core
+
+@{
+    if ( !ViewBag.PrintView )
+    {
+        Layout = "~/Views/Section/AssessmentLayout.cshtml";
+    }
+    else
+    {
+        Layout = "";
+    }
+
+    var legend = Html.GetAsamPpcResource(ViewContext.RouteData.Values["section"] + (ViewContext.RouteData.Values["subsection"] == null ? string.Empty : "_" + ViewContext.RouteData.Values["subsection"]));
+
+    var groupStack = new Stack<IQuestionGroup>();
+}
+<fieldset>
+    <legend class="sub-section-header">@legend</legend>
+    @Html.ExtendedValidationSummary(true, "Update failed. Please correct the following errors.")
+    <div id="sectionWrapper" class="@ViewContext.RouteData.Values["section"]">
+        <div id="subSectionWrapper" class="@ViewContext.RouteData.Values["subsection"]">
+            @foreach (var property in @Html.GetPropertiesToRender())
+            {
+                var groups = Html.GetQuestionGroups(property);
+                var closeGroupList = new List<IQuestionGroup>();
+                foreach (var group in groups)
+                {
+                    if (groupStack.Count > 0 && groupStack.Peek().QuestionResourceName == group.QuestionResourceName)
+                    {
+                        closeGroupList.Add(groupStack.Pop());
+                    }
+                    else
+                    {
+                        groupStack.Push(group);
+                        @Html.Partial("QuestionGroupTemplates/StartGroup", group.QuestionResourceName)
+                    }
+                }
+                foreach (var group in groupStack)
+                {
+                    var tempViewDictionary = new ViewDataDictionary();
+                    foreach (var viewData in group.AdditionalViewData)
+                    {
+                        tempViewDictionary.Add(viewData);
+                    }
+                    @Html.Partial("QuestionGroupTemplates/" + group.HeaderTemplateName, tempViewDictionary)
+                }
+                foreach (var group in closeGroupList)
+                {
+                    var tempViewDictionary = new ViewDataDictionary();
+                    foreach (var viewData in group.AdditionalViewData)
+                    {
+                        tempViewDictionary.Add(viewData);
+                    }
+                    @Html.Partial("QuestionGroupTemplates/" + group.HeaderTemplateName, tempViewDictionary)
+                }
+                var questionType = Html.GetQuestionType(property);
+                ViewData["CurrentProperty"] = property;
+                var questionClassName = string.Format("question-root {0} {1}", property.PropertyName, questionType);
+    
+                <div class="@questionClassName">
+                    @Html.Partial(questionType, ViewData)
+                    
+                    <div class="clear"></div>
+                </div>
+                    
+                foreach (var group2 in groupStack)
+                {
+                    @Html.Partial("QuestionGroupTemplates/" + group2.HeaderTemplateName + "End")
+                }
+                foreach (var group in closeGroupList)
+                {
+                    @Html.Partial("QuestionGroupTemplates/" + group.HeaderTemplateName + "End")
+                    @Html.Partial("QuestionGroupTemplates/EndGroup")
+                }
+            }
+        </div>
+    </div>
+    @{var patient = ViewData["patient"] as PatientDto;}
+    @Html.HiddenFor(m => patient.Gender.Code)
+    <input class="hidden" id="patientId" name="patientId" value="@patient.Key" />
+</fieldset>
+
+

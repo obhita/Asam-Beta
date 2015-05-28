@@ -1,0 +1,32 @@
+﻿@using Asam.Ppc.Mvc.Infrastructure
+
+@{
+    var property = ViewData["CurrentProperty"] as ModelMetadata;
+    var underlyingType = Nullable.GetUnderlyingType(property.ModelType);
+    var propertyTypeString = underlyingType == null ? property.ModelType.Name : underlyingType.Name;
+    var controlWrapperClass = "control-wrapper " + propertyTypeString;
+}
+<div class="base-question-wrapper">
+    <div class="five columns">
+        <div class="general-question-wrapper">
+            <p>
+                @Html.Label(property.PropertyName)
+            </p>
+        </div>
+    </div>
+    <div class="seven columns">
+        <div class="@controlWrapperClass">
+            @if (Html.IsLookupProperty(property))
+            {
+                var lookupCategory = Html.GetLookupCategory(property.PropertyName);
+                @Html.ReadOnlyEditor(property.PropertyName, new { LookupItems = Html.GetLookupOptionsForCategory(lookupCategory), LookupCategory = lookupCategory })
+            }
+            else
+            {
+                @Html.ReadOnlyEditor(property.PropertyName)
+            }
+            @Html.ExtendedValidationMessage(property.PropertyName)
+        </div>
+    </div>
+    <div style="clear: both"></div>
+</div>

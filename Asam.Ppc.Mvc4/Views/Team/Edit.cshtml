@@ -1,0 +1,393 @@
+﻿@using Pillar.Common.Utility
+@model Asam.Ppc.Service.Messages.Organization.TeamDto
+
+@{
+    Layout = "~/Views/Organization/Layout.cshtml";
+    var disable = !Html.CanAccess("Team", "Edit", "POST") ? "true" : "false";
+    ViewBag.Title = "Team Editor";
+}
+
+<div class="team-editor editor dashboard-wrapper">
+    <div class="editor-content container-fluid" data-disabled="@disable">
+        <div class="questions">
+            @using ( Html.BeginForm ( "Edit", "Team", new {id = Model.Key}, FormMethod.Post, new {id = "team-editor-form"} ) )
+            {
+                @Html.HiddenFor( m => m.Key, new {id = "current-team-key"} )
+                <div class="question-root @PropertyUtil.ExtractPropertyName( () => Model.Name )" data-ajax-container="true">
+                    <div class="question-answer-wrapper">
+                        @Html.TextBoxFor( m => m.Name, new {placeholder = Html.DisplayNameFor ( m => m.Name )} )
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            }
+            <div class="staff-list-editor">
+                <fieldset>
+                    <legend>@Html.DisplayNameFor(m => m.Staff)</legend>
+                    <div>
+                        <div class="available-list dataTable-wrapper">
+                            @Html.Label("Available", "All Staff")
+                            <table id="staffAvailableDataTable">
+                                <thead>
+                                    <tr>
+                                        <th width="40">First Name</th>
+                                        <th width="60">Last Name</th>
+                                        <th width="0"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="current-list dataTable-wrapper">
+                            @Html.Label("Current", "Current Team")
+                            <table id="staffCurrentDataTable">
+                                <thead>
+                                    <tr>
+                                        <th width="40">First Name</th>
+                                        <th width="60">Last Name</th>
+                                        <th width="0"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.Staff != null)
+                                    {
+                                        foreach (var staff in Model.Staff)
+                                        {
+                                            <tr>
+                                                <td>@staff.Name.FirstName</td>
+                                                <td>@staff.Name.LastName</td>
+                                                <td class="hide">@staff.Key</td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="buttons-row">
+                        <div>
+                            <a role="button" class="add btn btn-primary disabled"><span>Add To Team</span></a>
+                        </div>
+                        <div>
+                            <a role="button" class="remove btn btn-primary disabled"><span>Remove From Team</span></a>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="patient-list-editor">
+                <fieldset>
+                    <legend>@Html.DisplayNameFor(m => m.Patients)</legend>
+                    <div class="row-fluid">
+                        <div class="available-list dataTable-wrapper">
+                            @Html.Label("Available", "All Patients")
+                            <table id="patientAvailableDataTable">
+                                <thead>
+                                    <tr>
+                                        <th width="40">First Name</th>
+                                        <th width="60">Last Name</th>
+                                        <th width="0"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="current-list dataTable-wrapper">
+                            @Html.Label("Current", "Current Team")
+                            <table id="patientCurrentDataTable">
+                                <thead>
+                                    <tr>
+                                        <th width="40">First Name</th>
+                                        <th width="60">Last Name</th>
+                                        <th width="0"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.Patients != null)
+                                    {
+                                        foreach (var patient in Model.Patients)
+                                        {
+                                            <tr>
+                                                <td>@patient.Name.FirstName</td>
+                                                <td>@patient.Name.LastName</td>
+                                                <td class="hide">@patient.Key</td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="buttons-row">
+                        <div>
+                            <a role="button" class="add btn btn-primary disabled"><span>Add To Team</span></a>
+                        </div>
+                        <div>
+                            <a role="button" class="remove btn btn-primary disabled"><span>Remove From Team</span></a>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section footerBody
+{
+    <a id="team-submit" class="submit" href="#" type="button">Save</a>
+    @Html.ActionLink("Cancel", "Index", "Organization", null, new { @class = "cancel" })
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#team-submit').click(function (e) {
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                e.preventDefault();
+                $('#team-editor-form')[0].submit();
+            });
+            
+            var $teamEditor = $('.team-editor');
+            var $addStaffBtn = $teamEditor.find('.staff-list-editor a.add');
+            var $removeStaffBtn = $teamEditor.find('.staff-list-editor a.remove');
+            var $addPatientBtn = $teamEditor.find('.patient-list-editor a.add');
+            var $removePatientBtn = $teamEditor.find('.patient-list-editor a.remove');
+            var currentTeamKey = $teamEditor.find('#current-team-key').val();
+
+            var teamBaseUri = '@Url.Content("~/Team")';
+
+            $addStaffBtn.ajaxLink({
+                url: teamBaseUri + '/AddStaff/' + currentTeamKey,
+                getData: function() {
+                    var staffGuids = new Array();
+                    var selectedStaff = TableTools.fnGetInstance('staffAvailableDataTable').fnGetSelectedData();
+                    for (var index = 0; index < selectedStaff.length; index++) {
+                        staffGuids.push(selectedStaff[index].Key);
+                    }
+                    return { staffKeysToAdd: staffGuids };
+                },
+                success: function(data) {
+                    var table = TableTools.fnGetInstance('staffAvailableDataTable');
+                    table.fnSelectNone();
+                    var tableData = staffAvailableTable.fnGetData();
+                    var currentDataKeys = staffCurrentTable.fnGetData().map(function(d) { return d.Key; });
+                    for (var index = 0; index < tableData.length; index++) {
+                        if (data.indexOf(tableData[index].Key) !== -1 && currentDataKeys.indexOf(tableData[index].Key) === -1) {
+                            staffCurrentTable.fnAddData(tableData[index]);
+                        }
+                    }
+                    staffCurrentTable.fnDraw();
+                }
+            });
+
+            $removeStaffBtn.ajaxLink({
+                url: teamBaseUri + '/RemoveStaff/' + currentTeamKey,
+                getData: function() {
+                    var staffGuids = new Array();
+                    var selectedStaff = TableTools.fnGetInstance('staffCurrentDataTable').fnGetSelected();
+                    for (var index = 0; index < selectedStaff.length; index++) {
+                        staffGuids.push(selectedStaff[index].children[2].innerText);
+                    }
+                    return { staffKeysToRemove: staffGuids };
+                },
+                success: function(data) {
+                    var table = TableTools.fnGetInstance('staffCurrentDataTable');
+                    table.fnSelectNone();
+                    var tableData = staffCurrentTable.fnGetData();
+                    var indexCorrector = 0;
+                    for (var index = 0; index < tableData.length; index++) {
+                        if (data.indexOf(tableData[index].Key) !== -1) {
+                            staffCurrentTable.fnDeleteRow(index - indexCorrector);
+                            indexCorrector++;
+                        }
+                    }
+                }
+            });
+
+            $addPatientBtn.ajaxLink({
+                url: teamBaseUri + '/AddPatients/' + currentTeamKey,
+                getData: function() {
+                    var keys = new Array();
+                    var selected = TableTools.fnGetInstance('patientAvailableDataTable').fnGetSelectedData();
+                    for (var index = 0; index < selected.length; index++) {
+                        keys.push(selected[index].Key);
+                    }
+                    return { patientKeysToAdd: keys };
+                },
+                success: function(data) {
+                    var table = TableTools.fnGetInstance('patientAvailableDataTable');
+                    table.fnSelectNone();
+                    var tableData = patientAvailableTable.fnGetData();
+                    var currentDataKeys = patientCurrentTable.fnGetData().map(function(d) { return d.Key; });
+                    for (var index = 0; index < tableData.length; index++) {
+                        if (data.indexOf(tableData[index].Key) !== -1 && currentDataKeys.indexOf(tableData[index].Key) === -1) {
+                            patientCurrentTable.fnAddData(tableData[index]);
+                        }
+                    }
+                    patientCurrentTable.fnDraw();
+                }
+            });
+
+            $removePatientBtn.ajaxLink({
+                url: teamBaseUri + '/RemovePatients/' + currentTeamKey,
+                getData: function() {
+                    var keys = new Array();
+                    var selected = TableTools.fnGetInstance('patientCurrentDataTable').fnGetSelected();
+                    for (var index = 0; index < selected.length; index++) {
+                        keys.push(selected[index].children[2].innerText);
+                    }
+                    return { patientKeysToRemove: keys };
+                },
+                success: function(data) {
+                    var table = TableTools.fnGetInstance('patientCurrentDataTable');
+                    table.fnSelectNone();
+                    var tableData = patientCurrentTable.fnGetData();
+                    var indexCorrector = 0;
+                    for (var index = 0; index < tableData.length; index++) {
+                        if (data.indexOf(tableData[index].Key) !== -1) {
+                            patientCurrentTable.fnDeleteRow(index - indexCorrector);
+                            indexCorrector++;
+                        }
+                    }
+                }
+            });
+
+            var staffAvailableTable = $('#staffAvailableDataTable').dataTable({
+                "sDom": 'T<"clear">lfrtip',
+                "bProcessing": true,
+                "bServerSide": true,
+                "bLengthChange": false,
+                "bSort": false,
+                "oLanguage": { "sSearch": "" },
+                "oTableTools": {
+                    "sRowSelect": "multi",
+                    "aButtons": ["select_all", "select_none"],
+                    "fnRowSelected": function() {
+                        $addStaffBtn.removeClass('disabled');
+                    },
+                    "fnRowDeselected": function() {
+                        if (TableTools.fnGetInstance('staffAvailableDataTable').fnGetSelected().length == 0) {
+                            $addStaffBtn.addClass('disabled');
+                        }
+                    }
+                },
+                "sAjaxSource": '@Url.Content("~/api/StaffSearchDataTable")',
+                "aoColumns": [
+                    {
+                        "mData": "Name.FirstName",
+                    },
+                    {
+                        "mData": "Name.LastName",
+                        "sClass": "Sue",
+                    },
+                    { "mData": "Key", "bSortable": false, "bSearchable": true, "sClass": "hidden" }
+                ],
+                "fnDrawCallback": function(oSettings) {
+                    $(oSettings.aanFeatures.f[0]).find('input').attr('placeholder', "Search");
+                }
+            });
+
+            var staffCurrentTable = $('#staffCurrentDataTable').dataTable({
+                "sDom": 'T<"clear">lfrtip',
+                "bSort": false,
+                "bLengthChange": false,
+                "oLanguage": { "sSearch": "" },
+                "oTableTools": {
+                    "sRowSelect": "multi",
+                    "aButtons": ["select_all", "select_none"],
+                    "fnRowSelected": function() {
+                        $removeStaffBtn.removeClass('disabled');
+                    },
+                    "fnRowDeselected": function() {
+                        if (TableTools.fnGetInstance('staffAvailableDataTable').fnGetSelected().length == 0) {
+                            $removeStaffBtn.addClass('disabled');
+                        }
+                    }
+                },
+                "aoColumns": [
+                    {
+                        "mData": "Name.FirstName",
+                    },
+                    {
+                        "mData": "Name.LastName",
+                    },
+                    { "mData": "Key", "bSortable": false, "bSearchable": true, "sClass": "hidden" }
+                ],
+                "fnDrawCallback": function(oSettings) {
+                    $(oSettings.aanFeatures.f[0]).find('input').attr('placeholder', "Search");
+                }
+            });
+
+            var patientAvailableTable = $('#patientAvailableDataTable').dataTable({
+                "sDom": 'T<"clear">lfrtip',
+                "bProcessing": true,
+                "bServerSide": true,
+                "bLengthChange": false,
+                "bSort": false,
+                "oLanguage": { "sSearch": "" },
+                "oTableTools": {
+                    "sRowSelect": "multi",
+                    "aButtons": ["select_all", "select_none"],
+                    "fnRowSelected": function() {
+                        $addPatientBtn.removeClass('disabled');
+                    },
+                    "fnRowDeselected": function() {
+                        if (TableTools.fnGetInstance('patientAvailableDataTable').fnGetSelected().length == 0) {
+                            $addPatientBtn.addClass('disabled');
+                        }
+                    }
+                },
+                "sAjaxSource": '@Url.Content( "~/api/PatientSearchDataTable"  )',
+                "aoColumns": [
+                    {
+                        "mData": "Name.FirstName",
+                    },
+                    {
+                        "mData": "Name.LastName",
+                    },
+                    { "mData": "Key", "bSortable": false, "bSearchable": true, "sClass": "hidden" }
+                ],
+                "fnDrawCallback": function(oSettings) {
+                    $(oSettings.aanFeatures.f[0]).find('input').attr('placeholder', "Search");
+                }
+            });
+
+            var patientCurrentTable = $('#patientCurrentDataTable').dataTable({
+                "sDom": 'T<"clear">lfrtip',
+                "bSort": false,
+                "bLengthChange": false,
+                "oLanguage": { "sSearch": "" },
+                "oTableTools": {
+                    "sRowSelect": "multi",
+                    "aButtons": ["select_all", "select_none"],
+                    "fnRowSelected": function() {
+                        $removePatientBtn.removeClass('disabled');
+                    },
+                    "fnRowDeselected": function() {
+                        if (TableTools.fnGetInstance('staffAvailableDataTable').fnGetSelected().length == 0) {
+                            $removePatientBtn.addClass('disabled');
+                        }
+                    }
+                },
+                "aoColumns": [
+                    {
+                        "mData": "Name.FirstName",
+                    },
+                    {
+                        "mData": "Name.LastName",
+                    },
+                    { "mData": "Key", "bSortable": false, "bSearchable": true, "sClass": "hidden" }
+                ],
+                "fnDrawCallback": function(oSettings) {
+                    $(oSettings.aanFeatures.f[0]).find('input').attr('placeholder', "Search");
+                }
+            });
+        });
+    </script>
+}

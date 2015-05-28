@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Administrator">
+  <useCaseModelRootMoniker Id="f6852116-ff1c-485d-b442-664824c933e2" />
+  <nestedChildShapes>
+    <actorShape Id="6b60837d-34eb-4666-b1d9-bd5eba81d4f5" absoluteBounds="1.375, 3.25, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="31b93f09-d9d2-4e6b-ba53-6f56d5812c21" LastKnownName="Administrator" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseAssociationConnector edgePoints="[(1.625 : 3.5); (1.625 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="8c2398dc-7c45-4da6-96e0-690b2bfaf00d" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="6b60837d-34eb-4666-b1d9-bd5eba81d4f5" />
+        <actorShapeMoniker Id="6b60837d-34eb-4666-b1d9-bd5eba81d4f5" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseAssociationConnector edgePoints="[(1.625 : 3.5); (1.625 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="2887993c-d370-4255-b009-60d840a12371" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="6b60837d-34eb-4666-b1d9-bd5eba81d4f5" />
+        <actorShapeMoniker Id="6b60837d-34eb-4666-b1d9-bd5eba81d4f5" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <commentShape Id="6fb558a1-36dc-4940-84d6-8684f6f60a29" absoluteBounds="0.625, 4.5, 2.25, 0.75" customColor="251, 247, 200">
+      <commentMoniker Id="c60d19ca-4935-4527-aa32-5d16e607374f" />
+      <relativeChildShapes />
+    </commentShape>
+    <commentConnector edgePoints="[(1.625 : 4.5); (1.625 : 3.75)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+      <relativeChildShapes />
+      <nodes>
+        <commentShapeMoniker Id="6fb558a1-36dc-4940-84d6-8684f6f60a29" />
+        <actorShapeMoniker Id="6b60837d-34eb-4666-b1d9-bd5eba81d4f5" />
+      </nodes>
+    </commentConnector>
+    <useCaseShape Id="4ebcbe9a-5287-4c85-a15c-45e12596a08b" absoluteBounds="5.75, 4, 2.375, 0.75" customColor="Pink" heightOffset="0">
+      <useCaseMoniker Id="838cf9e6-83bf-4847-a803-7d7db6faa04b" LastKnownName="access an account management screen, to create, configure account information" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.875 : 3.54117647058824); (5.88460688218118 : 4.20158231000631)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="c170d2c8-f6b6-443d-9d5c-ea353d747a34" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="6b60837d-34eb-4666-b1d9-bd5eba81d4f5" />
+        <useCaseShapeMoniker Id="4ebcbe9a-5287-4c85-a15c-45e12596a08b" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <commentShape Id="ec507297-9553-4fb0-aeda-75f400d5410e" absoluteBounds="7.25, 1, 2.125, 0.5" customColor="PaleTurquoise">
+      <commentMoniker Id="8ffca8fc-aace-47d3-8754-80b5f4291a73" />
+      <relativeChildShapes />
+    </commentShape>
+    <commentShape Id="891790da-2377-4261-8dbc-5ac6ed786551" absoluteBounds="7.625, 5.875, 2.25, 0.5" customColor="Pink">
+      <commentMoniker Id="eeda72c2-6a99-4cf3-a5c3-9873384d3951" />
+      <relativeChildShapes />
+    </commentShape>
+    <useCaseShape Id="4373120f-445b-4161-98a3-e893d4e8d195" absoluteBounds="2.25, 0.75, 2.125, 0.75" customColor="PaleTurquoise" heightOffset="0">
+      <useCaseMoniker Id="ad8a6583-ba6b-49b6-a1a9-d4f3a7cfe8cb" LastKnownName="in the EHR, access the ASAM PPC registration screen" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.80263157894737 : 3.25); (3.05405521938244 : 1.48873709864694)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="3fc39733-d7d4-4201-8df8-19a4fc5b05d6" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="6b60837d-34eb-4666-b1d9-bd5eba81d4f5" />
+        <useCaseShapeMoniker Id="4373120f-445b-4161-98a3-e893d4e8d195" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="f9369daa-ea70-4ac5-8420-56437f38307e" absoluteBounds="3.875, 1.375, 2.625, 0.875" customColor="PaleTurquoise" heightOffset="0">
+      <useCaseMoniker Id="d6b6b8a0-2b82-4668-bc27-06e91d57f191" LastKnownName="activate the account by typing in account information such as a key or registration code." />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.875 : 3.38157894736842); (4.43216490439582 : 2.17029030844409)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="b3b7cb8f-d0e3-4e06-999e-fa5932408952" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="6b60837d-34eb-4666-b1d9-bd5eba81d4f5" />
+        <useCaseShapeMoniker Id="f9369daa-ea70-4ac5-8420-56437f38307e" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="45126a52-2ba1-4358-a90a-a2a785d0545f" absoluteBounds="5.75, 2.25, 2.25, 0.75" customColor="PaleTurquoise" heightOffset="0">
+      <useCaseMoniker Id="ecb8c581-10c2-4a7a-bbb2-c94a1a9d1ee2" LastKnownName="use and link a direct connect account to ASAM account for emailing ASAM information" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.875 : 3.45833333333333); (5.8687694101251 : 2.79270509831248)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="cd79a666-682e-4726-b83f-3bbfb591c893" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="6b60837d-34eb-4666-b1d9-bd5eba81d4f5" />
+        <useCaseShapeMoniker Id="45126a52-2ba1-4358-a90a-a2a785d0545f" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="8d69fb70-4ca7-48d2-980f-af6b5e816b65" absoluteBounds="3.625, 5.625, 2.125, 0.75" customColor="Pink" heightOffset="0">
+      <useCaseMoniker Id="0f3757af-0131-4617-a1db-27b1360155bd" LastKnownName="Manage personnel including creating new staff records" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.875 : 3.70408163265306); (4.26584721429194 : 5.65579364431995)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="e50d9ce6-f3e7-4656-9bb1-775e941fbe62" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="6b60837d-34eb-4666-b1d9-bd5eba81d4f5" />
+        <useCaseShapeMoniker Id="8d69fb70-4ca7-48d2-980f-af6b5e816b65" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="4877b48a-ba2b-4726-9ced-ea942a45c52b" absoluteBounds="5, 4.875, 2.125, 0.75" customColor="Pink" heightOffset="0">
+      <useCaseMoniker Id="1a056884-5ef9-46c6-b1f8-a09c6c07590b" LastKnownName="Manage patients records including, create, edit, delete" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.875 : 3.59859154929577); (5.35393322794522 : 4.97056521665445)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="4252b49f-2906-4d73-bd60-ec0459e26da5" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="6b60837d-34eb-4666-b1d9-bd5eba81d4f5" />
+        <useCaseShapeMoniker Id="4877b48a-ba2b-4726-9ced-ea942a45c52b" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="8ac67510-212e-48a9-8a12-45dbd9da75f1" absoluteBounds="1.75, 6.5, 2.375, 0.875" customColor="Pink" heightOffset="0">
+      <useCaseMoniker Id="e75c3ca7-2dfd-4b7e-ac3c-c50d59c8310b" LastKnownName="under the primary account, manage user accounts including: access, permissions and role" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.72045454545455 : 3.75); (2.77208316303653 : 6.50426542700044)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="6510aeff-1cf0-4156-83fe-d1c759f9b6d1" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="6b60837d-34eb-4666-b1d9-bd5eba81d4f5" />
+        <useCaseShapeMoniker Id="8ac67510-212e-48a9-8a12-45dbd9da75f1" />
+      </nodes>
+    </useCaseAssociationConnector>
+  </nestedChildShapes>
+</useCaseDiagram>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="872be4f2-f83a-4044-8fdf-a2a5ab396031" name="UMLUseCaseDiagram1" linkedPackageId="3db7be46-2540-4553-8170-9c9ad49d7448" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="79a4db45-a680-475d-9b66-ceb2f12829be">
+      <elementDefinition Id="9b817436-4032-4654-b3f2-27411af65ed6" />
+      <body>The administrator is responsible for set-up, configuration, and maintenance of the ASAM system</body>
+      <annotatedElements>
+        <actorMoniker Id="ce095a39-fc58-4166-8181-bf51ecf62c4d" LastKnownName="Administrator" />
+      </annotatedElements>
+    </comment>
+    <comment Id="9996d5f7-d2e4-46fb-a7b1-b136600ac6a4">
+      <elementDefinition Id="33528704-ebff-4ddf-b020-0aaebd4ff93d" />
+      <body>The Clinical Interviewer is responsible for administering the Asam PPC to the patient and determining the best treatment plan for the patient based on the Asam PPC recommmendations and results.</body>
+      <annotatedElements>
+        <actorMoniker Id="39afd2c6-45bc-4833-90f4-1b8253dc273e" LastKnownName="Clinical Interviewer" />
+      </annotatedElements>
+    </comment>
+    <comment Id="782f539a-6fde-4d60-aa3b-0c1cf3b1f404">
+      <elementDefinition Id="a6106f69-39f7-45a6-b519-332905523e4b" />
+      <body>The patient provides all the necessary information and feedback that the clinician needs to complete the ASAM.</body>
+      <annotatedElements>
+        <actorMoniker Id="bb6129a4-c0fc-4d2f-9938-1e7ff7db23d3" LastKnownName="Patient" />
+      </annotatedElements>
+    </comment>
+    <comment Id="28525942-918f-4abc-8f55-0e75ff662254">
+      <elementDefinition Id="04ac3612-75c6-411b-8aab-0659a27d881b" />
+      <body>The EHR system (like REM) will be integrated with ASAM PPC via web services. Linking patient demographics, staff records and assessessments.</body>
+      <annotatedElements>
+        <actorMoniker Id="864a180d-6807-4acf-bc6c-45d02a7ef610" LastKnownName="EHR" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="d9e7cfc8-bc73-4430-a9fe-a05029e82b6b" name="Asam-PPCR2" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <ownedCommentsInternal>
+          <comment Id="8c6c11b2-e90f-4715-a99a-a89aa1ee2381">
+            <elementDefinition Id="e5294347-0e26-4296-a2d1-c16dd98b350a" />
+            <body>The Asam-PPC R2 is a web based assessment used by clinical professionals to determine the the best treatment placement for a patient with Substance Abuse and Behavioural Health problems.
+
+The Asam PPC collects patient information across several domains and applies a complex set of business rules and algorythm to generate a summary of findings and recommended treatment.</body>
+          </comment>
+        </ownedCommentsInternal>
+        <referencesInternal>
+          <reference Id="3ee01d7a-b76a-497c-a29c-14ad1ba0f0b6" handle="%feiteam03\FEICollection02#594039a7-7f36-4826-b77f-8664c441e312$2216" tag="Work Item Reference">
+            <elementDefinition Id="67565cc9-1a6c-4ff1-8d7a-c7553347c403" />
+          </reference>
+        </referencesInternal>
+        <elementDefinition Id="ebb2e57f-d468-41ce-89d8-ca825ba409de" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="ce095a39-fc58-4166-8181-bf51ecf62c4d" name="Administrator" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="20ca0588-3562-414a-92b3-f08bb3eef1b2" />
+        <suppliersInternal>
+          <dependency Id="50396679-118b-48aa-b55b-7d24a5bc7a4b">
+            <subsystemMoniker Id="d9e7cfc8-bc73-4430-a9fe-a05029e82b6b" LastKnownName="Asam-PPCR2" />
+            <elementDefinition Id="69bafac7-9d28-436a-a221-e18b60f20654" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="39afd2c6-45bc-4833-90f4-1b8253dc273e" name="Clinical Interviewer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="34bf6d0b-09cc-4cc6-bca2-0b7b5b5a0890" />
+        <suppliersInternal>
+          <dependency Id="2e190ddc-3f54-4cdc-be21-facb2ea49c32">
+            <subsystemMoniker Id="d9e7cfc8-bc73-4430-a9fe-a05029e82b6b" LastKnownName="Asam-PPCR2" />
+            <elementDefinition Id="85c7480e-5919-42b5-865e-c7ae2c8740c1" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="bb6129a4-c0fc-4d2f-9938-1e7ff7db23d3" name="Patient" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9e934c87-331e-499e-8e2b-7f389d043e3b" />
+        <suppliersInternal>
+          <dependency Id="5272dc2a-37e3-4fca-82e0-e23ea2419130">
+            <subsystemMoniker Id="d9e7cfc8-bc73-4430-a9fe-a05029e82b6b" LastKnownName="Asam-PPCR2" />
+            <elementDefinition Id="c734068f-d7bb-40c0-b4d0-d18ece5d8e53" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="864a180d-6807-4acf-bc6c-45d02a7ef610" name="EHR" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fc6128fb-c633-4d80-ae39-367c3480b7f6" />
+        <suppliersInternal>
+          <dependency Id="0d660105-693e-42da-baf4-bceefe6b4ee1">
+            <subsystemMoniker Id="d9e7cfc8-bc73-4430-a9fe-a05029e82b6b" LastKnownName="Asam-PPCR2" />
+            <elementDefinition Id="ffbf291d-ec35-4f58-9848-a6e4d7efc729" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="3db7be46-2540-4553-8170-9c9ad49d7448" name="Asam.Ppc.Modeling">
+    <elementDefinition Id="da191d8f-e47e-4dd2-a73c-e14081f7b78d" />
+    <profileInstances>
+      <packageHasProfileInstances Id="54510b1a-5e1d-43e4-a072-e308cc2ec70e">
+        <profileInstance Id="91cb6054-3406-4c39-904f-f8e6b2994d8d" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="3ac3086e-31f5-4d57-aa64-3663dc7cce71">
+        <profileInstance Id="6d9992ee-67cf-4d81-a18e-9c776798a99f" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

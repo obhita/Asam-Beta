@@ -1,0 +1,35 @@
+﻿@using Asam.Ppc.Service.Messages.Security
+@{
+    ViewBag.Title = "Create Role";
+    Layout = "~/Views/Organization/Layout.cshtml";
+}
+
+<div id="role-creator" class="editor" tabindex="-1" aria-labelledby="roleModalLabel" aria-hidden="true">
+        @using (Html.BeginForm("Create", "Role", null, FormMethod.Post, new { id = "create-role-form" }))
+        {
+            <div>
+                @{
+                    var role = new RoleDto ();
+                }
+                @Html.EditorFor( m => role )
+            </div>
+        }
+    </div>
+
+@section footerBody
+{
+    <a id="create-role-submit" class="submit" href="#" type="button">Create</a>
+    @Html.ActionLink("Cancel", "Index", "Organization", null, new { @class = "cancel" })
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        $('#create-role-submit').click(function (e) {
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            e.preventDefault();
+            $('#create-role-form')[0].submit();
+        });
+    </script>
+}

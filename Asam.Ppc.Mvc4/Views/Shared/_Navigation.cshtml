@@ -1,0 +1,22 @@
+﻿<!-- Navigation -->
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <span id="assessmentLogo">
+                    </span>
+                </div>
+            </li>
+            
+            <li>
+                <div id="rootTabs">
+                    <div id="tabContent">
+                        @RenderSection("NavigationBody", false)
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</nav>

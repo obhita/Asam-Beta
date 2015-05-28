@@ -1,0 +1,11 @@
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Messages\bin\Test\Asam.Ppc.Service.Messages.dll.config
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Messages\bin\Test\Asam.Ppc.Service.Messages.dll
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Messages\bin\Test\Asam.Ppc.Service.Messages.pdb
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Messages\obj\Test\Asam.Ppc.Service.Messages.csprojResolveAssemblyReference.cache
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Messages\obj\Test\Asam.Ppc.Service.Messages.Assessment.AsamPpcResources.resources
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Messages\obj\Test\Asam.Ppc.Service.Messages.Assessment.AsamPpcScaleResources.resources
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Messages\obj\Test\Asam.Ppc.Service.Messages.Common.CommonResources.resources
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Messages\obj\Test\Asam.Ppc.Service.Messages.Organization.OrganizationResources.resources
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Messages\obj\Test\Asam.Ppc.Service.Messages.csproj.GenerateResource.Cache
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Messages\obj\Test\Asam.Ppc.Service.Messages.dll
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Messages\obj\Test\Asam.Ppc.Service.Messages.pdb

@@ -1,0 +1,14 @@
+@using Asam.Ppc.Mvc.Infrastructure
+@model Asam.Ppc.Primitives.PersonName
+
+@Html.TextBoxFor( m => m.Prefix, new { placeholder = ModelMetadata.FromLambdaExpression( m => m.Prefix, ViewData ).DisplayName,@class = ModelMetadata.FromLambdaExpression( m => m.Prefix, ViewData ).PropertyName }  )
+@Html.TextBoxFor( m => m.FirstName, new { placeholder = ModelMetadata.FromLambdaExpression( m => m.FirstName, ViewData ).DisplayName,@class = ModelMetadata.FromLambdaExpression( m => m.FirstName, ViewData ).PropertyName }  )
+@Html.TextBoxFor( m => m.MiddleName, new { placeholder = ModelMetadata.FromLambdaExpression( m => m.MiddleName, ViewData ).DisplayName,@class = ModelMetadata.FromLambdaExpression( m => m.MiddleName, ViewData ).PropertyName }  )
+@Html.TextBoxFor( m => m.LastName, new { placeholder = ModelMetadata.FromLambdaExpression( m => m.LastName, ViewData ).DisplayName,@class = ModelMetadata.FromLambdaExpression( m => m.LastName, ViewData ).PropertyName }  )
+@Html.TextBoxFor( m => m.Suffix, new { placeholder = ModelMetadata.FromLambdaExpression( m => m.Suffix, ViewData ).DisplayName,@class = ModelMetadata.FromLambdaExpression( m => m.Suffix, ViewData ).PropertyName }  )
+
+@Html.ExtendedValidationMessageFor( m => m.Prefix )
+@Html.ExtendedValidationMessageFor( m => m.FirstName )
+@Html.ExtendedValidationMessageFor( m => m.MiddleName )
+@Html.ExtendedValidationMessageFor( m => m.LastName )
+@Html.ExtendedValidationMessageFor( m => m.Suffix )

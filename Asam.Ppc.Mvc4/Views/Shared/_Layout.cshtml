@@ -1,0 +1,137 @@
+﻿@using Asam.Ppc.Infrastructure
+@using Asam.Ppc.Service.Messages.Assessment
+@using Asam.Ppc.Service.Messages.Core
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    @Styles.Render("~/Content/themes/base/css", "~/Content/css")
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none !important;
+    }
+  </style>
+<![endif]-->
+    <!--[if gte IE 6]>
+	<link href="~/Content/ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+<body class="container">
+    <div id="rootNavigation" class="one-third column">
+        <div id="assessmentLogo">
+        </div>
+        <div id="userContextwrapper">
+            @Html.Partial("UserContext")
+        </div>
+        <div id="rootTabs">
+            <div id="tabListWrapper">
+                <ul id="tabsList">
+                        @if (UserContext.IsSystemAdmin)
+                    {
+                        <li id="home-tab" class="active">@Html.ActionLink("Admin", "Index", "SystemAdmin") </li>
+                    }
+                    else if (ViewContext.RouteData.Values["controller"].ToString() == "Section")
+                    {
+                        if (ViewBag.CanAccessAllPatients)
+                        {
+                            <li id="home-tab">@Html.ActionLink("Home", "Index", "Home", new { assessmentId = ViewData["AssessmentId"] }, null)</li>
+                        }
+                        <li id="assessment-tab"><a href="#" class="active">Assessment</a></li>
+                            <li id="patient-tab">
+                                @Html.ActionLink("Patient", "Index", "Patient", new
+                                                 {
+                                                     id = (ViewData["Patient"] as PatientDto) == null ? string.Empty : (ViewData["Patient"] as PatientDto).Key.ToString(),
+                                                     assessmentId = ViewData["AssessmentId"]
+                                         }, null)
+                            </li>
+                    }
+                    else if (ViewContext.RouteData.Values["controller"].ToString() == "Patient")
+                    {
+                        if (ViewBag.CanAccessAllPatients)
+                        {
+                            <li id="home-tab">@Html.ActionLink("Home", "Index", "Home", new { assessmentId = ViewData["AssessmentId"] }, null)</li>
+                        }
+                        if (ViewData["AssessmentId"] != null)
+                        {
+                            <li id="assessment-tab">@Html.ActionLink("Assessment", "Edit", "Assessment", new { id = ViewData["AssessmentId"] }, null)</li>
+                        }
+                            <li id="patient-tab">
+                                @Html.ActionLink("Patient", "Index", "Patient", new
+                                                 {
+                                                     id = (ViewData["Patient"] as PatientDto) == null ? string.Empty : (ViewData["Patient"] as PatientDto).Key.ToString(),
+                                                     assessmentId = ViewData["AssessmentId"]
+                                         }, new { @class = "active" })
+                            </li>
+                    }
+                    else 
+                    {
+                        if (ViewBag.CanAccessAllPatients)
+                        {
+                            <li id="home-tab"><a href="#" class="active">Home</a></li>
+                        }
+                        if (ViewData["AssessmentId"] != null)
+                        {
+                            <li id="assessment-tab">@Html.ActionLink("Assessment", "Edit", "Assessment", new { id = ViewData["AssessmentId"] }, null)</li>
+                        }
+                            <li id="patient-tab">
+                                @Html.ActionLink("Patient", "Index", "Patient", new
+                                                 {
+                                                     id = (ViewData["Patient"] as PatientDto) == null ? string.Empty : (ViewData["Patient"] as PatientDto).Key.ToString(),
+                                                     assessmentId = ViewData["AssessmentId"]
+                                         }, null)
+                            </li>
+                    }
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div id="tabContent">
+                @RenderSection( "NavigationBody", required: false )
+            </div>
+        </div>
+    </div>
+    <div id="mainContent" class="two-thirds column shadow-left">
+        @RenderBody()
+        <div id="ajax-loader" style="display: none"></div>
+    </div>
+
+    @Html.Partial("_AsamFooter")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryajax")
+    @Scripts.Render("~/bundles/jquerydatatable")
+    @Scripts.Render("~/bundles/jqueryformatcurrency")
+    <script>
+    $(document).ready(function() {
+            var layoutSizeFix = {
+                fixSizes: function() {
+                    $('#rootTabs').height($(window).height() - $('#assessmentLogo').height() - $('#UserContext').height() - $('#asamFooter').height());
+                    $('#rootTabs #tabContent').height($('#rootTabs').height() - $('#rootTabs #tabsList').height() - 63 - $('#asamFooter').height());
+                }
+            };
+            
+            layoutSizeFix.fixSizes();            
+        $(window).resize(function() {
+                layoutSizeFix.fixSizes();
+            });
+
+            $('textarea').after('<div><span class="disclaimer">@AsamPpcResources.Disclaimer</span></div>');
+        });
+
+    $(document).ajaxError(function(e, jqxhr, settings, exceptions) {
+            e.stopPropagation();
+            if (jqxhr !== null) {
+                alert(jqxhr.responseText);
+            }
+        });
+    </script>
+    @Scripts.Render("~/bundles/jqueryasam")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

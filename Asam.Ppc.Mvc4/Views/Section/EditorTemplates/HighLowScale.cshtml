@@ -1,0 +1,25 @@
+﻿@using System.Linq;
+@using Asam.Ppc.Mvc.Infrastructure
+@using Asam.Ppc.Primitives
+@model Scale
+
+@{
+    var labels = Html.GetLegendLabelsForModel();
+    var minMaxTemp = Model ?? Activator.CreateInstance(ViewData.ModelMetadata.ModelType, (uint)0) as Scale;
+    var scaleMinMaxClass = string.Format("scale{0}-{1}",(int)minMaxTemp.Min, (int)minMaxTemp.Max);
+}
+
+<div class="high-low-scale">
+    <div>
+        @Html.DropDownListFor( m => m.Value, new SelectList( Enumerable.Range ( (int)minMaxTemp.Min, (int)minMaxTemp.Max + 1 ) ), string.Empty, new { @class = "scaleControl " + scaleMinMaxClass} )
+    </div>
+    <div style="clear: both"></div>
+    <div class="high-low-scale-legend">
+        <span class="low-scale-label">@labels.First()</span>
+        <span class="high-scale-label">@labels.Last()</span>
+    </div>
+    <div style="clear: both"></div>
+    <div>
+        @Html.ExtendedValidationMessageFor( m => m.Value )
+    </div>
+</div>

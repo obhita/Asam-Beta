@@ -1,0 +1,24 @@
+@using Asam.Ppc.Mvc.Infrastructure
+@using Asam.Ppc.Service.Messages.Common.Lookups
+@model LookupDto
+
+@{
+    var className = ((ViewData.ContainsKey("LookupCategory") ? ViewData["LookupCategory"].ToString() : string.Empty) == "LikertScale") ? "scaleControl-labels" : string.Empty;
+
+    if (Html.ViewData.ModelMetadata.IsRequired)
+    {
+        className += " required";
+    }
+    var lookups = ViewData["LookupItems"] as IEnumerable<LookupDto>;
+}
+@if ( lookups == null )
+{
+    var lookupsList = new List<LookupDto> ();
+    if ( Model != null )
+    {
+        lookupsList.Add ( Model );
+    }
+    lookups = lookupsList;
+}
+@Html.DropDownListFor( m => m.Code, new SelectList ( lookups, "Code", "Name" ), string.Empty, new {@class = className, id = ViewData.ModelMetadata.PropertyName} )
+@Html.ExtendedValidationMessageFor( m => m.Code  )

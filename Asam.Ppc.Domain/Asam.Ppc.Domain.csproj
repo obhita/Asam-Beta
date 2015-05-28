@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D350FCA3-0CD6-4DE8-9887-FAC1B1146176}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Asam.Ppc.Domain</RootNamespace>
+    <AssemblyName>Asam.Ppc.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Demo|AnyCPU'">
+    <OutputPath>bin\Demo\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod|AnyCPU'">
+    <OutputPath>bin\Prod\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Pillar.Common">
+      <HintPath>..\lib\Pillar\Pillar.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Pillar.Domain">
+      <HintPath>..\lib\Pillar\Pillar.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Pillar.Domain.FluentRuleEngine">
+      <HintPath>..\lib\Pillar\Pillar.Domain.FluentRuleEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Pillar.FluentRuleEngine">
+      <HintPath>..\lib\Pillar\Pillar.FluentRuleEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Pillar.FluentRuleEngine.NHibernate">
+      <HintPath>..\lib\Pillar\Pillar.FluentRuleEngine.NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Pillar.FluentRuleEngine.StructureMapRegistries">
+      <HintPath>..\lib\Pillar\Pillar.FluentRuleEngine.StructureMapRegistries.dll</HintPath>
+    </Reference>
+    <Reference Include="Pillar.Security">
+      <HintPath>..\lib\Pillar\Pillar.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AssessmentModule\AssessmentMetaData.cs" />
+    <Compile Include="AssessmentModule\AssessmentMetaDataFactory.cs" />
+    <Compile Include="AssessmentModule\IAssessmentMetaDataFactory.cs" />
+    <Compile Include="AssessmentModule\IAssessmentMetaDataRepository.cs" />
+    <Compile Include="AssessmentModule\Assessment.cs" />
+    <Compile Include="AssessmentModule\AssessmentFactory.cs" />
+    <Compile Include="AssessmentModule\AssessmentUsedSubstancesChangedAndVisitedEventHandler.cs" />
+    <Compile Include="AssessmentModule\Completion\CompletionSection.cs" />
+    <Compile Include="AssessmentModule\Completion\WithdrawalManagementCareResponseTiming.cs" />
+    <Compile Include="AssessmentModule\Completion\WouldRecommendProgramToFriend.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\InterviewerEvaluationUsedSubstancesChangedEventHandler.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\IPrescribedSubstance.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\ISubstanceUse.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\ExperiencedNauseaOrVomitedRecently.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\HeadAcheOrFullnessSeverity.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\GooseFleshObservation.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\LacriminationObservation.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\AbdominalPainStatus.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\AddictionTreatmentHistory.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\AdditionalAddictionAndTreatmentItems.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\AlcoholAndDrugInterviewerRating.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\BodyTemperatureStatus.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\AlcoholRouteOfIntake.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\AlcoholUse.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\BarbiturateUse.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\CannabisUse.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\CinaScale.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\CiwaScale.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\CocaineUse.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\ConcernsAboutPursuingTreatment.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\DrugAndAlcoholSection.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\DrugConsequences.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\HallucinogenUse.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\HelpfulnessOfTreatment.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\HeroinUse.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\IncreaseInAddictionSymptoms.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\InterviewerEvaluation.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\SubstanceCategory.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\MethadoneUse.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\MultipleSubstanceUsePerDay.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\MuscleAcheStatus.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\NasalCongestionObservation.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\NervousnessObservation.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\NicotineRouteOfIntake.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\NicotineUse.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\OpiatesInControlledEnvironment.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\OpioidDetoxificationProtocol.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\OpioidMaintenanceTherapy.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\OtherOpiateUse.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\OtherSedativeUse.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\OtherSubstanceUse.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\ProblemSubstance.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\RelapseCause.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\RelapsePreventionStrategies.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\SignsOfWithdrawal.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\RouteOfIntake.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\RestlessnessObservation.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\ScaleLegend\InterviewerScoreOfAttitudeScale.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\ScaleLegend\InterviewerScoreOfReadinessScale.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\UsedSubstances.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\SolventAndInhalantUse.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\StimulantUse.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\SubstanceTakenAsPrescribed.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\SubstanceTreatmentType.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\SubstanceUseOrRelapseLikelihood.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\YawningObservation.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\TremorObservation.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\SweatingObservation.cs" />
+    <Compile Include="AssessmentModule\DrugAndAlcohol\Lookups\TactileDisturbancesObservation.cs" />
+    <Compile Include="AssessmentModule\EmploymentAndSupport\EmploymentPattern.cs" />
+    <Compile Include="AssessmentModule\EmploymentAndSupport\EmploymentAndSupportSection.cs" />
+    <Compile Include="AssessmentModule\EmploymentAndSupport\WorkOrSchoolAffectOnRecovery.cs" />
+    <Compile Include="AssessmentModule\Events\AssessmentCompletedEvent.cs" />
+    <Compile Include="AssessmentModule\Events\SectionVisitedEvent.cs" />
+    <Compile Include="AssessmentModule\Events\UsedSubstancesChangedEvent.cs" />
+    <Compile Include="AssessmentModule\FamilyAndSocialHistory\Companionship.cs" />
+    <Compile Include="AssessmentModule\FamilyAndSocialHistory\ContactPerson.cs" />
+    <Compile Include="AssessmentModule\FamilyAndSocialHistory\FamilyAndSocialHistorySection.cs" />
+    <Compile Include="AssessmentModule\FamilyAndSocialHistory\FreeTimeAffectOnRecovery.cs" />
+    <Compile Include="AssessmentModule\FamilyAndSocialHistory\FriendsAffectOnRecovery.cs" />
+    <Compile Include="AssessmentModule\FamilyAndSocialHistory\LivingArrangement.cs" />
+    <Compile Include="AssessmentModule\FamilyAndSocialHistory\LivingArrangementAffectOnRecovery.cs" />
+    <Compile Include="AssessmentModule\FamilyAndSocialHistory\MaritalStatus.cs" />
+    <Compile Include="AssessmentModule\FamilyAndSocialHistory\NeedForStaffSupportToMaintainRecovery.cs" />
+    <Compile Include="AssessmentModule\FamilyAndSocialHistory\NeedsAndWillingnessToHelpTreatment.cs" />
+    <Compile Include="AssessmentModule\FamilyAndSocialHistory\StrategiesToDealWithProblemsFromFriendsThatRiskRelapse.cs" />
+    <Compile Include="AssessmentModule\FamilyAndSocialHistory\StrategiesToDealWithProblemsInFreeTimeThatRiskRelapse.cs" />
+    <Compile Include="AssessmentModule\GeneralInformation\AssessmentClass.cs" />
+    <Compile Include="AssessmentModule\GeneralInformation\ControlledEnvironment.cs" />
+    <Compile Include="AssessmentModule\GeneralInformation\GeneralInformationSection.cs" />
+    <Compile Include="AssessmentModule\GeneralInformation\InterviewCircumstances.cs" />
+    <Compile Include="AssessmentModule\GeneralInformation\InterviewMethod.cs" />
+    <Compile Include="AssessmentModule\IAssessmentFactory.cs" />
+    <Compile Include="AssessmentModule\IAssessmentRepository.cs" />
+    <Compile Include="AssessmentModule\Legal\DesireAndExternalFactorsDrivingTreatment.cs" />
+    <Compile Include="AssessmentModule\Legal\LegalCharge.cs" />
+    <Compile Include="AssessmentModule\Legal\LegalSection.cs" />
+    <Compile Include="AssessmentModule\Medical\AuditoryDisturbanceLevel.cs" />
+    <Compile Include="AssessmentModule\Medical\HighRiskPregnancyStatus.cs" />
+    <Compile Include="AssessmentModule\Medical\MedicalProblemCategory.cs" />
+    <Compile Include="AssessmentModule\Medical\MedicalSection.cs" />
+    <Compile Include="AssessmentModule\Medical\PhysicalHealthsEffectOnSubstanceProblems.cs" />
+    <Compile Include="AssessmentModule\Medical\SenseOfAwareness.cs" />
+    <Compile Include="AssessmentModule\Medical\TreatmentNeedLevel.cs" />
+    <Compile Include="AssessmentModule\Medical\TuberculosisInfectionStatus.cs" />
+    <Compile Include="AssessmentModule\Medical\VisualDisturbanceLevel.cs" />
+    <Compile Include="AssessmentModule\Psychological\DepressionEvaluation.cs" />
+    <Compile Include="AssessmentModule\Psychological\EmotionalProblemsCorrelationWithSubstanceUse.cs" />
+    <Compile Include="AssessmentModule\Psychological\EmotionalProblemsImpactRecoveryEffortsScale.cs" />
+    <Compile Include="AssessmentModule\Psychological\InterviewerRating.cs" />
+    <Compile Include="AssessmentModule\Psychological\PatientCarriesPsychiatricDiagnosis.cs" />
+    <Compile Include="AssessmentModule\Psychological\ProblemsForWorkHomeAndSocialInteractionScale.cs" />
+    <Compile Include="AssessmentModule\Psychological\PsychiatricDiagnosis.cs" />
+    <Compile Include="AssessmentModule\Psychological\PsychologicalEmotionalCounselingImportanceScale.cs" />
+    <Compile Include="AssessmentModule\Psychological\PsychologicalHistory.cs" />
+    <Compile Include="AssessmentModule\Psychological\PsychologicalOrEmotionalProblems.cs" />
+    <Compile Include="AssessmentModule\Psychological\PsychologicalSection.cs" />
+    <Compile Include="AssessmentModule\Psychological\RangeOfEnergy.cs" />
+    <Compile Include="AssessmentModule\Psychological\RangeOfGuilt.cs" />
+    <Compile Include="AssessmentModule\Psychological\RangeOfInterestInDoingThings.cs" />
+    <Compile Include="AssessmentModule\Psychological\RangeOfIrritability.cs" />
+    <Compile Include="AssessmentModule\Psychological\RangeOfMood.cs" />
+    <Compile Include="AssessmentModule\Psychological\RelationToSubstanceUse.cs" />
+    <Compile Include="AssessmentModule\Psychological\RetardationOfThoughtOrSpeech.cs" />
+    <Compile Include="AssessmentModule\Psychological\RiskOfHarmToSelfOrOthersIsHigherWithSubstanceUse.cs" />
+    <Compile Include="AssessmentModule\Psychological\ScaleLegend\PatientNeedForPsychiatricPsychologicalTreatmentScale.cs" />
+    <Compile Include="AssessmentModule\Psychological\SelfManageEmotionalProblemsScale.cs" />
+    <Compile Include="AssessmentModule\Review\AgreementRating.cs" />
+    <Compile Include="AssessmentModule\Review\DispositionLevel.cs" />
+    <Compile Include="AssessmentModule\Review\InterviewTimeRating.cs" />
+    <Compile Include="AssessmentModule\Review\LevelsOfDisparity.cs" />
+    <Compile Include="AssessmentModule\Review\QualityRating.cs" />
+    <Compile Include="AssessmentModule\Review\ReviewSection.cs" />
+    <Compile Include="AssessmentModule\Review\TreatmentRating.cs" />
+    <Compile Include="AssessmentModule\RevisionBase.cs" />
+    <Compile Include="BillingModule\BillingTransaction.cs" />
+    <Compile Include="BillingModule\BillingTransactionFactory.cs" />
+    <Compile Include="BillingModule\IBillingTransactionFactory.cs" />
+    <Compile Include="BillingModule\IBillingTransactionRepository.cs" />
+    <Compile Include="CommonModule\AggregateRootBase.cs" />
+    <Compile Include="CommonModule\CodedConceptLookupBase.cs" />
+    <Compile Include="CommonModule\IAuditable.cs" />
+    <Compile Include="CommonModule\IAssessmentMetaDataMember.cs" />
+    <Compile Include="CommonModule\IEhrMember.cs" />
+    <Compile Include="CommonModule\IOrganizationMember.cs" />
+    <Compile Include="CommonModule\IValueObject.cs" />
+    <Compile Include="CommonModule\Lookup.cs" />
+    <Compile Include="CommonModule\Lookups\CareLevel.cs" />
+    <Compile Include="CommonModule\Lookups\CareLevelSubCategory.cs" />
+    <Compile Include="CommonModule\Lookups\Gender.cs" />
+    <Compile Include="CommonModule\Lookups\LikertScale.cs" />
+    <Compile Include="CommonModule\Lookups\StateProvince.cs" />
+    <Compile Include="CommonModule\Lookups\YesNoIndifferent.cs" />
+    <Compile Include="CommonModule\Lookups\YesNoNotApplicable.cs" />
+    <Compile Include="CommonModule\Lookups\YesNoNotApplicableNotSure.cs" />
+    <Compile Include="CommonModule\Lookups\YesNoNotSure.cs" />
+    <Compile Include="CommonModule\Services\IIdentityProvider.cs" />
+    <Compile Include="CommonModule\ValueObjects\Address.cs" />
+    <Compile Include="CommonModule\ValueObjects\Currency.cs" />
+    <Compile Include="CommonModule\ValueObjects\Money.cs" />
+    <Compile Include="CommonModule\ValueObjects\Phone.cs" />
+    <Compile Include="EhrModule\Ehr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EhrModule\EhrFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EhrModule\IEhrFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EhrModule\IEhrRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Friends.cs" />
+    <Compile Include="ListExtensions.cs" />
+    <Compile Include="OrganizationModule\IOrganizationFactory.cs" />
+    <Compile Include="OrganizationModule\IOrganizationRepository.cs" />
+    <Compile Include="OrganizationModule\IStaffFactory.cs" />
+    <Compile Include="OrganizationModule\IStaffRepository.cs" />
+    <Compile Include="OrganizationModule\ITeamFactory.cs" />
+    <Compile Include="OrganizationModule\ITeamRepository.cs" />
+    <Compile Include="OrganizationModule\Organization.cs" />
+    <Compile Include="OrganizationModule\OrganizationApiKeyy.cs" />
+    <Compile Include="OrganizationModule\OrganizationAddress.cs" />
+    <Compile Include="OrganizationModule\OrganizationAddressType.cs" />
+    <Compile Include="OrganizationModule\OrganizationFactory.cs" />
+    <Compile Include="OrganizationModule\OrganizationPhone.cs" />
+    <Compile Include="OrganizationModule\OrganizationPhoneType.cs" />
+    <Compile Include="OrganizationModule\Staff.cs" />
+    <Compile Include="OrganizationModule\StaffFactory.cs" />
+    <Compile Include="OrganizationModule\Team.cs" />
+    <Compile Include="OrganizationModule\TeamFactory.cs" />
+    <Compile Include="PatientModule\AdministrativeGender.cs" />
+    <Compile Include="PatientModule\Ethnicity.cs" />
+    <Compile Include="PatientModule\Events\PatientChangedEvent.cs" />
+    <Compile Include="PatientModule\IPatientFactory.cs" />
+    <Compile Include="PatientModule\IPatientRepository.cs" />
+    <Compile Include="PatientModule\Patient.cs" />
+    <Compile Include="PatientModule\PatientFactory.cs" />
+    <Compile Include="PatientModule\Religion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecurityModule\IRoleFactory.cs" />
+    <Compile Include="SecurityModule\IRoleRepository.cs" />
+    <Compile Include="SecurityModule\ISystemAccountFactory.cs" />
+    <Compile Include="SecurityModule\IApiSystemAccountRepository.cs" />
+    <Compile Include="SecurityModule\ISystemAccountRepository.cs" />
+    <Compile Include="SecurityModule\Role.cs" />
+    <Compile Include="SecurityModule\RoleFactory.cs" />
+    <Compile Include="SecurityModule\RoleSystemPermission.cs" />
+    <Compile Include="SecurityModule\RoleType.cs" />
+    <Compile Include="SecurityModule\ApiSystemAccount.cs" />
+    <Compile Include="SecurityModule\SystemAccount.cs" />
+    <Compile Include="SecurityModule\SystemAccountFactory.cs" />
+    <Compile Include="SecurityModule\SystemAccountRole.cs" />
+    <Compile Include="SecurityModule\SystemPermission.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AssessmentModule\Completion\WithdrawalManagementCareResponseTiming.resx">
+      <DependentUpon>WithdrawalManagementCareResponseTiming.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Completion\WouldRecommendProgramToFriend.resx">
+      <DependentUpon>WouldRecommendProgramToFriend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\AbdominalPainStatus.resx">
+      <DependentUpon>AbdominalPainStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\AlcoholRouteOfIntake.resx">
+      <DependentUpon>AlcoholRouteOfIntake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\BodyTemperatureStatus.resx">
+      <DependentUpon>BodyTemperatureStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\ConcernsAboutPursuingTreatment.resx">
+      <DependentUpon>ConcernsAboutPursuingTreatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\ExperiencedNauseaOrVomitedRecently.resx">
+      <DependentUpon>ExperiencedNauseaOrVomitedRecently.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\GooseFleshObservation.resx">
+      <DependentUpon>GooseFleshObservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\HeadAcheOrFullnessSeverity.resx">
+      <DependentUpon>HeadAcheOrFullnessSeverity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\HelpfulnessOfTreatment.resx">
+      <DependentUpon>HelpfulnessOfTreatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\IncreaseInAddictionSymptoms.resx">
+      <DependentUpon>IncreaseInAddictionSymptoms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\LacriminationObservation.resx">
+      <DependentUpon>LacriminationObservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\MuscleAcheStatus.resx">
+      <DependentUpon>MuscleAcheStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\NasalCongestionObservation.resx">
+      <DependentUpon>NasalCongestionObservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\NervousnessObservation.resx">
+      <DependentUpon>NervousnessObservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\NicotineRouteOfIntake.resx">
+      <DependentUpon>NicotineRouteOfIntake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\OpioidDetoxificationProtocol.resx">
+      <DependentUpon>OpioidDetoxificationProtocol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\ProblemSubstance.resx">
+      <DependentUpon>ProblemSubstance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\RelapseCause.resx">
+      <DependentUpon>RelapseCause.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\RelapsePreventionStrategies.resx">
+      <DependentUpon>RelapsePreventionStrategies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\RestlessnessObservation.resx">
+      <DependentUpon>RestlessnessObservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\RouteOfIntake.resx">
+      <DependentUpon>RouteOfIntake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\SignsOfWithdrawal.resx">
+      <DependentUpon>SignsOfWithdrawal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\SubstanceTakenAsPrescribed.resx">
+      <DependentUpon>SubstanceTakenAsPrescribed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\SubstanceTreatmentType.resx">
+      <DependentUpon>SubstanceTreatmentType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\SubstanceUseOrRelapseLikelihood.resx">
+      <DependentUpon>SubstanceUseOrRelapseLikelihood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\SweatingObservation.resx">
+      <DependentUpon>SweatingObservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\TactileDisturbancesObservation.resx">
+      <DependentUpon>TactileDisturbancesObservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\TremorObservation.resx">
+      <DependentUpon>TremorObservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\Lookups\YawningObservation.resx">
+      <DependentUpon>YawningObservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\DrugAndAlcohol\SubstanceCategory.resx">
+      <DependentUpon>SubstanceCategory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\EmploymentAndSupport\EmploymentPattern.resx">
+      <DependentUpon>EmploymentPattern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\EmploymentAndSupport\WorkOrSchoolAffectOnRecovery.resx">
+      <DependentUpon>WorkOrSchoolAffectOnRecovery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\FamilyAndSocialHistory\Companionship.resx">
+      <DependentUpon>Companionship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\FamilyAndSocialHistory\ContactPerson.resx">
+      <DependentUpon>ContactPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\FamilyAndSocialHistory\FreeTimeAffectOnRecovery.resx">
+      <DependentUpon>FreeTimeAffectOnRecovery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\FamilyAndSocialHistory\FriendsAffectOnRecovery.resx">
+      <DependentUpon>FriendsAffectOnRecovery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\FamilyAndSocialHistory\LivingArrangement.resx">
+      <DependentUpon>LivingArrangement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\FamilyAndSocialHistory\LivingArrangementAffectOnRecovery.resx">
+      <DependentUpon>LivingArrangementAffectOnRecovery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\FamilyAndSocialHistory\MaritalStatus.resx">
+      <DependentUpon>MaritalStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\FamilyAndSocialHistory\NeedForStaffSupportToMaintainRecovery.resx">
+      <DependentUpon>NeedForStaffSupportToMaintainRecovery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\FamilyAndSocialHistory\NeedsAndWillingnessToHelpTreatment.resx">
+      <DependentUpon>NeedsAndWillingnessToHelpTreatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\FamilyAndSocialHistory\StrategiesToDealWithProblemsFromFriendsThatRiskRelapse.resx">
+      <DependentUpon>StrategiesToDealWithProblemsFromFriendsThatRiskRelapse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\FamilyAndSocialHistory\StrategiesToDealWithProblemsInFreeTimeThatRiskRelapse.resx">
+      <DependentUpon>StrategiesToDealWithProblemsInFreeTimeThatRiskRelapse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Legal\DesireAndExternalFactorsDrivingTreatment.resx">
+      <DependentUpon>DesireAndExternalFactorsDrivingTreatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Legal\LegalCharge.resx">
+      <DependentUpon>LegalCharge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Medical\AuditoryDisturbanceLevel.resx">
+      <DependentUpon>AuditoryDisturbanceLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Medical\HighRiskPregnancyStatus.resx">
+      <DependentUpon>HighRiskPregnancyStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Medical\MedicalProblemCategory.resx">
+      <DependentUpon>MedicalProblemCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Medical\PhysicalHealthsEffectOnSubstanceProblems.resx">
+      <DependentUpon>PhysicalHealthsEffectOnSubstanceProblems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Medical\SenseOfAwareness.resx">
+      <DependentUpon>SenseOfAwareness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Medical\TreatmentNeedLevel.resx">
+      <DependentUpon>TreatmentNeedLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Medical\TuberculosisInfectionStatus.resx">
+      <DependentUpon>TuberculosisInfectionStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Medical\VisualDisturbanceLevel.resx">
+      <DependentUpon>VisualDisturbanceLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\EmotionalProblemsCorrelationWithSubstanceUse.resx">
+      <DependentUpon>EmotionalProblemsCorrelationWithSubstanceUse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\EmotionalProblemsImpactRecoveryEffortsScale.resx">
+      <DependentUpon>EmotionalProblemsImpactRecoveryEffortsScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\PatientCarriesPsychiatricDiagnosis.resx">
+      <DependentUpon>PatientCarriesPsychiatricDiagnosis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\ProblemsForWorkHomeAndSocialInteractionScale.resx">
+      <DependentUpon>ProblemsForWorkHomeAndSocialInteractionScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\PsychiatricDiagnosis.resx">
+      <DependentUpon>PsychiatricDiagnosis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\PsychologicalEmotionalCounselingImportanceScale.resx">
+      <DependentUpon>PsychologicalEmotionalCounselingImportanceScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\PsychologicalOrEmotionalProblems.resx">
+      <DependentUpon>PsychologicalOrEmotionalProblems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\RangeOfEnergy.resx">
+      <DependentUpon>RangeOfEnergy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\RangeOfGuilt.resx">
+      <DependentUpon>RangeOfGuilt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\RangeOfInterestInDoingThings.resx">
+      <DependentUpon>RangeOfInterestInDoingThings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\RangeOfIrritability.resx">
+      <DependentUpon>RangeOfIrritability.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\RangeOfMood.resx">
+      <DependentUpon>RangeOfMood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\RelationToSubstanceUse.resx">
+      <DependentUpon>RelationToSubstanceUse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\RetardationOfThoughtOrSpeech.resx">
+      <DependentUpon>RetardationOfThoughtOrSpeech.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\RiskOfHarmToSelfOrOthersIsHigherWithSubstanceUse.resx">
+      <DependentUpon>RiskOfHarmToSelfOrOthersIsHigherWithSubstanceUse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Psychological\SelfManageEmotionalProblemsScale.resx">
+      <DependentUpon>SelfManageEmotionalProblemsScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\GeneralInformation\AssessmentClass.resx">
+      <DependentUpon>AssessmentClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\GeneralInformation\ControlledEnvironment.resx">
+      <DependentUpon>ControlledEnvironment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\GeneralInformation\InterviewCircumstances.resx">
+      <DependentUpon>InterviewCircumstances.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\GeneralInformation\InterviewMethod.resx">
+      <DependentUpon>InterviewMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Review\AgreementRating.resx">
+      <DependentUpon>AgreementRating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Review\DispositionLevel.resx">
+      <DependentUpon>DispositionLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Review\InterviewTimeRating.resx">
+      <DependentUpon>InterviewTimeRating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Review\LevelsOfDisparity.resx">
+      <DependentUpon>LevelsOfDisparity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Review\QualityRating.resx">
+      <DependentUpon>QualityRating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentModule\Review\TreatmentRating.resx">
+      <DependentUpon>TreatmentRating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonModule\Lookups\CareLevel.resx">
+      <DependentUpon>CareLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonModule\Lookups\CareLevelSubCategory.resx">
+      <DependentUpon>CareLevelSubCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonModule\Lookups\Gender.resx">
+      <DependentUpon>Gender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonModule\Lookups\LikertScale.resx">
+      <DependentUpon>LikertScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonModule\Lookups\StateProvince.resx">
+      <DependentUpon>StateProvince.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonModule\Lookups\YesNoIndifferent.resx">
+      <DependentUpon>YesNoIndifferent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonModule\Lookups\YesNoNotApplicable.resx">
+      <DependentUpon>YesNoNotApplicable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonModule\Lookups\YesNoNotApplicableNotSure.resx">
+      <DependentUpon>YesNoNotApplicableNotSure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonModule\Lookups\YesNoNotSure.resx">
+      <DependentUpon>YesNoNotSure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonModule\ValueObjects\Currency.resx">
+      <DependentUpon>Currency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrganizationModule\OrganizationAddressType.resx" />
+    <EmbeddedResource Include="OrganizationModule\OrganizationPhoneType.resx" />
+    <EmbeddedResource Include="PatientModule\Ethnicity.resx">
+      <DependentUpon>Ethnicity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientModule\Religion.resx">
+      <DependentUpon>Religion.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AssessmentModule\Assessment.cd" />
+    <None Include="AssessmentModule\GeneralInformation\GeneralInformationSection.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Asam.Ppc.Primitives\Asam.Ppc.Primitives.csproj">
+      <Project>{f9e8bfd4-3233-4926-aaa6-af07afcf11cc}</Project>
+      <Name>Asam.Ppc.Primitives</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Completeness\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

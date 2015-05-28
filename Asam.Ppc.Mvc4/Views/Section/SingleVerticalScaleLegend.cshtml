@@ -1,0 +1,44 @@
+﻿@using Asam.Ppc.Mvc.Infrastructure
+
+@{
+    var property = ViewData["CurrentProperty"] as ModelMetadata;
+    var labels = Html.GetLegendLabels(property).Reverse();
+    var lastLabel = labels.Last();
+    var underlyingType = Nullable.GetUnderlyingType(property.ModelType);
+    var propertyTypeString = underlyingType == null ? property.ModelType.Name : underlyingType.Name;
+    var controlWrapperClass = "two columns control-wrapper " + propertyTypeString;
+}
+
+<div class="base-question-wrapper">
+    <div class="twelve columns">
+        <div class="general-question-wrapper" data-role="sharedheightitem">
+            @Html.Label(property.PropertyName)
+        </div>
+        <div class="border-wrapper six columns omega">
+            <div class="ten columns alpha omega legend">
+                <div data-role="sharedheightitem"></div>
+                @foreach (var label in labels)
+                {
+                    <div class="legend-label"><span>@label</span></div>
+                    if (!string.IsNullOrEmpty(label) && label != lastLabel)
+                    {
+                    <div class="legend-line"></div>
+                    }
+                }
+            </div>
+            <div class="@controlWrapperClass">
+                @if (Html.IsLookupProperty(property))
+                {
+                    var lookupCategory = Html.GetLookupCategory(property.PropertyName);
+                    @Html.Editor(property.PropertyName, new { LookupItems = Html.GetLookupOptionsForCategory(lookupCategory), LookupCategory = lookupCategory })
+                }
+                else
+                {
+                    @Html.Editor(property.PropertyName)
+                }
+                @Html.ExtendedValidationMessage(property.PropertyName)
+            </div>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+</div>

@@ -1,0 +1,28 @@
+﻿select {
+    background: white;
+    padding-right: 5px;
+    min-width: 180px;
+}
+
+select:disabled {
+    background-color: #EBEBE4;
+    background-image:none;
+    }
+
+  input.text-box.single-line#DateOfBirth:disabled { 
+     width: 80px;
+     background-color: #EBEBE4;
+     
+    }
+
+
+input
+{
+    border: lightgrey solid 2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 4px;
+    padding: 5px;
+   scrollbar-arrow-color: red;
+    
+}

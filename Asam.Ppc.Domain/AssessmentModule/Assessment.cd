@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Asam.Ppc.Domain.AssessmentModule.Assessment">
+    <Position X="0.5" Y="0.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AFAABAAAAQAgAAAAAAAAAAAAAEAAIAAEAAAAASAAgBA=</HashCode>
+      <FileName>AssessmentModule\Assessment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Asam.Ppc.Domain.AssessmentModule.GeneralInformation.GeneralInformationSection">
+    <Position X="4.75" Y="0.5" Width="3.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BAIAAQIAAACACAgAABAAAAIEAAAAAABIYgAAQBEAAAA=</HashCode>
+      <FileName>AssessmentModule\GeneralInformation\GeneralInformationSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Asam.Ppc.Domain.AssessmentModule.Scoring.AssessmentScores">
+    <Position X="4.75" Y="4.25" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAAAEAAAAAEAAAAAAABAABAAAAAAAAQAAAgQAIAAA=</HashCode>
+      <FileName>AssessmentModule\Scoring\AssessmentScores.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Asam.Ppc.Domain.AssessmentModule.Completion.CompletionSection">
+    <Position X="9.25" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AABAAAQFAABAAAAUAMAAgAAAAgAAABABpCABAAAAgAQ=</HashCode>
+      <FileName>AssessmentModule\Completion\CompletionSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Asam.Ppc.Domain.AssessmentModule.DrugAndAlcohol.DrugAndAlcoholSection">
+    <Position X="9.25" Y="6" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>gAAQAAAAAgwAAAIAASgCACABkAAAAABAgEBAAgAAAAQ=</HashCode>
+      <FileName>AssessmentModule\DrugAndAlcohol\DrugAndAlcoholSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Asam.Ppc.Domain.AssessmentModule.EmploymentAndSupport.EmploymentAndSupportSection">
+    <Position X="4.75" Y="7.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>EAQEAAABgUIAQQEAQBAAAQgoEQAAARBACAAAQAAAAAA=</HashCode>
+      <FileName>AssessmentModule\EmploymentAndSupport\EmploymentAndSupportSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Asam.Ppc.Domain.AssessmentModule.FamilyAndSocialHistory.FamilyAndSocialHistorySection">
+    <Position X="9.25" Y="12" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>BREECASABBJACAEIBAJQQllFGAAAiWQkQATKgFCIFAI=</HashCode>
+      <FileName>AssessmentModule\FamilyAndSocialHistory\FamilyAndSocialHistorySection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Asam.Ppc.Domain.AssessmentModule.Legal.LegalSection">
+    <Position X="4.75" Y="14.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAgEHAgAAAAAAAEGAAIIBAjoIAAkFAAAAACQQAEQwQI=</HashCode>
+      <FileName>AssessmentModule\Legal\LegalSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Asam.Ppc.Domain.AssessmentModule.Medical.MedicalSection">
+    <Position X="0.5" Y="4.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>DBCFABBEFJUALAEAABISAwgggAgACQQAEGQBQQgNAAE=</HashCode>
+      <FileName>AssessmentModule\Medical\MedicalSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Asam.Ppc.Domain.AssessmentModule.Psychological.PsychologicalSection">
+    <Position X="0.75" Y="15.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AssessmentModule\Psychological\PsychologicalSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

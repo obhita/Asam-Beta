@@ -1,0 +1,186 @@
+﻿@using Pillar.Common.Utility
+@using Asam.Ppc.Service.Messages.Organization
+@model OrganizationDto
+
+@{
+    const string apiKeyCreated = "API Key created and emailed";
+    var disable = !Html.CanAccess("Organization", "Edit", "POST") ? "true" : "false"; 
+    ViewBag.Title = "Edit Organization";
+}
+
+<div class="organization-editor" data-disabled="@disable">
+    <div class="validation-summary-errors" id="form_errors"></div>
+
+    @using (Html.BeginForm("Edit", "Organization"))
+    {
+        @Html.Hidden("Id", Model.Key)
+        <div>
+            @Html.LabelFor(m => m.Name)
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Name, new { placeholder = Html.DisplayNameFor(m => m.Name) })
+            <div class="clear"></div>
+        </div>
+        <input type="submit" value="Save" />
+    }
+    @{
+        var addressesPropertyName = PropertyUtil.ExtractPropertyName(() => Model.OrganizationAddresses);
+        var organizationAddressDto = new OrganizationAddressDto();
+    }
+    <div class="list @addressesPropertyName">
+        <div class="header">
+            <h5>Addresses</h5>
+        </div>
+        <div class="clear"></div>
+        <hr/>
+        <ul>
+            @foreach (var subModel in Model.OrganizationAddresses)
+            {
+                <li>
+                    <div>
+                        @using (Html.BeginForm("Edit", "Organization"))
+                        {
+                            @Html.Hidden("Id", Model.Key)
+                            @Html.EditorFor(m => subModel, null, "organizationAddressDto")
+                            <div class="clear"></div>
+                            <input type="submit" value="Save" />
+                        }
+                    </div>
+                </li>
+            }
+        </ul>
+        <input id="add-address-btn" type="button" value="Add Address" />
+        <div class="add-address-wrapper">
+            <hr />
+            <h5>Add New</h5>
+            @using (Html.BeginForm("AddAddress", "Organization", new { key = Model.Key }))
+            {
+                @Html.Hidden("Id", Model.Key)
+                @Html.EditorFor(m => organizationAddressDto)
+                <div class="clear"></div>
+                <input type="submit" value="Create" />
+            }
+            <hr />
+        </div>
+        <div class="clear"></div>
+    </div>
+    @{
+        var phonesPropertyName = PropertyUtil.ExtractPropertyName(() => Model.OrganizationPhones);
+        var organizationPhoneDto = new OrganizationPhoneDto();
+    }
+    <div class="list @phonesPropertyName">
+        <div class="header">
+            <h5>Phones</h5>
+        </div>
+        <div class="clear"></div>
+        <hr/>
+        <ul>
+            @foreach (var subModel in Model.OrganizationPhones)
+            {
+                <li>
+                    <div>
+                        @using (Html.BeginForm("Edit", "Organization"))
+                        {
+                            @Html.Hidden("Id", Model.Key)
+                            @Html.EditorFor(m => subModel, null, "organizationPhoneDto")
+                            <div class="clear"></div>
+                            <input type="submit" value="Save" />
+                        }
+                    </div>
+                </li>
+            }
+        </ul>
+        <input id="add-phone-btn" type="button" value="Add Phone" />
+        <div class="add-phone-wrapper">
+            <hr />
+            <h5>Add New</h5>
+            @using (Html.BeginForm("AddPhone", "Organization", new { key = Model.Key }))
+            {
+                @Html.Hidden("Id", Model.Key)
+                @Html.EditorFor(m => organizationPhoneDto)
+                <div class="clear"></div>
+                <input type="submit" value="Create" />
+            }
+            <hr />
+        </div>
+        
+        <div>
+            <div class="header">
+                <h5>API Key</h5>
+            </div>
+            <div class="clear"></div>
+            <hr />
+            @if (Model.HasApiKey)
+            {
+                <div id="add-api">@apiKeyCreated</div>
+            }
+            else
+            {
+                <input id="add-api-key-btn" type="button" value="Add API Key" />
+                <div id="add-api-label">@apiKeyCreated</div>            
+            }
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            var formDirty = false;
+            $("#add-api-label").hide();
+            $('.organization-editor input[type=submit]').hide();
+            $('.organization-editor .add-address-wrapper').hide();
+            $('.organization-editor .add-phone-wrapper').hide();
+
+            $('.organization-editor').on('change keypress', ':input', function() {
+                if (!formDirty) {
+                    formDirty = true;
+                    $(this).closest('form').find('input[type=submit]').show();
+                }
+            });
+
+            $("form").on('click', ':submit', function() {
+                formDirty = false;
+            });
+
+            $(window).bind('beforeunload', function() {
+                if (formDirty) {
+                    return "You will lose all pending changes...";
+                }
+                return undefined;
+            });
+
+            $("#add-api-key-btn").ajaxLink({
+                // create an API key and update the UI using an AJAX call
+                url: '@Url.Content("~/Organization/AddApiKey/")',
+                success: function(data) {
+                    if (data == null) return;
+                    if (data.errors != null) {
+                        var br = "";
+                        var msg = "";
+                        for (var err = 0; err < data.errors.length; err++) {
+                            msg = br + data.errors[err].Message;
+                            br = "</br>";
+                        }
+                        $("#form_errors").text(msg);
+                        return;
+                    } else {
+                        $("#add-api-key-btn").hide();
+                        $("#add-api-label").show();
+                    }
+                },
+            });
+
+            $('#add-address-btn').click(function() {
+                $('.organization-editor .add-address-wrapper').toggle();
+            });
+
+            $('#add-phone-btn').click(function() {
+                $('.organization-editor .add-phone-wrapper').toggle();
+            });
+        });
+    </script>
+    <noscript>This site contains certain features and services that require javascript in order to function properly. Please enable javascript in your browser and try again.</noscript>
+}

@@ -1,0 +1,11 @@
+﻿@using Asam.Ppc.Mvc.Infrastructure
+@using Asam.Ppc.Primitives
+@model Scale
+
+@{
+    var minMaxTemp = Model ?? Activator.CreateInstance(ViewData.ModelMetadata.ModelType, (uint)0) as Scale;
+    var scaleMinMaxClass = string.Format("scale{0}-{1}", (int)minMaxTemp.Min, (int)minMaxTemp.Max);
+}
+
+@Html.DropDownListFor( m => m.Value, new SelectList( Enumerable.Range ( (int)minMaxTemp.Min, (int)minMaxTemp.Max + 1 ) ), string.Empty, new { @class = "scaleControl-vertical " + scaleMinMaxClass} )
+@Html.ExtendedValidationMessageFor( m => m.Value )

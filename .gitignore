@@ -1,0 +1,18 @@
+lib
+bin
+packages
+logs
+Tools
+*.class
+*.log
+# Package Files #
+*.jar
+*.war
+*.ear
+# Others #
+*.roo
+*.tmp
+*.zip
+*.gz
+*.DS_Store
+.README.md.html

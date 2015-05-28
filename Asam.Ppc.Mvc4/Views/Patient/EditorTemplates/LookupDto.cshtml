@@ -1,0 +1,14 @@
+@using Asam.Ppc.Mvc.Infrastructure
+@using Asam.Ppc.Service.Messages.Common.Lookups
+@model LookupDto
+
+@{
+    var className = ((ViewData.ContainsKey("LookupCategory") ? ViewData["LookupCategory"].ToString() : string.Empty) == "LikertScale") ? "scaleControl-labels" : string.Empty;
+
+    if (Html.ViewData.ModelMetadata.IsRequired)
+    {
+        className += " required";
+    }
+}
+
+@Html.DropDownListFor(m => m.Code, new SelectList(ViewData["LookupItems"] as IEnumerable<LookupDto>,"Code","Name"), string.Empty, new {@class = className, id = ViewData.ModelMetadata.PropertyName,data_val=true,data_val_required=string.Format ( "The {0} field is required.", Html.DisplayNameForModel ())})

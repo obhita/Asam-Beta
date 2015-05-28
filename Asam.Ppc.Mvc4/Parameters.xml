@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameters >
+
+  <parameter name="DatabaseCatalogName" description="Provides the name of the database." defaultValue="Asam.Ppc.Database" tags="">
+    <parameterEntry kind="XmlFile" scope="\\web.config$" match="//configuration/appSettings/add[@key='NHibernateDatabaseCatalogName']/@value" />
+  </parameter>
+  <parameter name="DatabaseServerName" description="Provides the name of the database server." defaultValue="localhost" tags="">
+    <parameterEntry kind="XmlFile" scope="\\web.config$" match="//configuration/appSettings/add[@key='NHibernateDatabaseServerName']/@value" />
+  </parameter>
+  <parameter name="SqlServerDialect" description="Provides the sql server dialect." defaultValue="SqlServer2008" tags="">
+    <parameterEntry kind="XmlFile" scope="\\web.config$" match="//configuration/appSettings/add[@key='NHibernateSqlServerDialect']/@value" />
+  </parameter>
+
+  <parameter name="AgathaEndpointAddress" description="Provides endpoint address for the agatha service." defaultValue="http://localhost:9091/WcfRequestProcessor.svc" tags="">
+    <parameterEntry kind="XmlFile" scope="\\web.config$" match="//configuration/system.serviceModel/client/endpoint[@name='Agatha_IWcfRequestProcessor']/@address" />
+  </parameter>
+
+  <!--These parameters are for StandAlone(WIF) installs only they will be ignored if deploying as Integrated.-->
+  <parameter name="ApplicationRealm" description="Provides the realm and audience URI for the application." defaultValue="https://localhost:44300/" tags="">
+    <parameterEntry kind="XmlFile" scope="\\web.config$" match="//configuration/system.identityModel/identityConfiguration/audienceUris/add[1]/@value" />
+    <parameterEntry kind="XmlFile" scope="\\web.config$" match="//configuration/system.identityModel.services/federationConfiguration/wsFederation/@realm" />
+  </parameter>
+
+  <parameter name="Issuer" description="Provides issuer(Identity Provider) URI." defaultValue="https://localhost:44301/" tags="">
+    <parameterEntry kind="XmlFile" scope="\\web.config$" match="//configuration/system.identityModel.services/federationConfiguration/wsFederation/@issuer" />
+    <parameterEntry kind="XmlFile" scope="\\web.config$" match="//configuration/system.identityModel/identityConfiguration/issuerNameRegistry/trustedIssuers/add[1]/@name" />
+  </parameter>
+
+  <parameter name="IssuerThumbprint" description="Provides issuer's(Identity Provider) signing certificate thumbprint." defaultValue="40A1D2622BFBDAC80A38858AD8001E094547369B" tags="">
+    <parameterEntry kind="XmlFile" scope="\\web.config$" match="//configuration/system.identityModel/identityConfiguration/issuerNameRegistry/trustedIssuers/add[1]/@thumbprint" />
+  </parameter>
+
+  <!--These parameters are for Integrated installs only they will be ignored if deploying as Stand Alone(WIF).-->
+  <parameter name="SigningCertificate" description="Provides certificate name for the certificate to use fo verifying messages." defaultValue="IdentityTKStsCert" tags="">
+    <parameterEntry kind="XmlFile" scope="\\web.config$" match="//configuration/appSettings/add[@key='SigningCertName']/@value" />
+  </parameter>
+</parameters>

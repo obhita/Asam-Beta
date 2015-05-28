@@ -1,0 +1,22 @@
+﻿@using Asam.Ppc.Mvc.Infrastructure
+@model Asam.Ppc.Primitives.TimeMeasure
+
+<div class="timemeasure">
+    @Html.TextBoxFor( m => m.Value)
+    @{
+        var selectList = new SelectList(Enum.GetValues(ModelMetadata.FromLambdaExpression(m => m.UnitOfTime, ViewData).ModelType));
+
+        var pluralSelectList = from l in selectList
+                               select new SelectListItem()
+                                   {
+                                       Value = l.Text,
+                                       Text = l.Text.TrimEnd('s') + "(s)",
+                                       Selected = l.Selected
+                                   };
+    }
+
+    @Html.DropDownListFor( m => m.UnitOfTime, pluralSelectList)
+    @Html.LabelFor( m => m.UnitOfTime )
+    @Html.ExtendedValidationMessageFor( m => m.Value )
+    @Html.ExtendedValidationMessageFor( m => m.UnitOfTime )
+</div>

@@ -1,0 +1,113 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="systemAdminHeader" class="page-header">
+    <h2>@ViewBag.Title</h2>
+</div>
+
+<div id="systemAdminContent">
+    @RenderBody()
+    <div class="clear"></div>
+</div>
+
+<div id="systemAdminFooter" class="page-footer">
+</div>
+
+@section NavigationBody
+{
+    <div class="system-admin-nav">
+        <div class="section-wrapper">
+            <h3>Organization</h3>
+            <span class="tools">
+                @Html.ActionLink( "Add", "CreateOrganization", "SystemAdmin" )
+            </span>
+            <div id="organization-table" class="dataTable_wrapper">
+                <table id="organizationSearchDataTable">
+                    <thead>
+                        <tr>
+                            <th width="100">Name</th>
+                            <th width="0"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="section-wrapper">
+            <h3>System Admin</h3>
+            <span class="tools">
+                @Html.ActionLink( "Add", "CreateSystemAdminAccount", "SystemAdmin" )
+            </span>
+            <div id="system-admin-table" class="dataTable_wrapper">
+                <table id="systemAdminSearchDataTable">
+                    <thead>
+                        <tr>
+                            <th width="100">Identifier</th>
+                            <th width="0"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+}
+
+@section scripts
+{
+    <script>
+        function fixHomeSizes() {
+            $('#systemAdminContent').height($(window).height() - $('#systemAdminHeader').height() - $('#systemAdminFooter').height() - $('#asamFooter').height());
+        }
+
+        fixHomeSizes();
+        $(window).resize(function () {
+            fixHomeSizes();
+        });
+        $(document).ready(function () {
+            var organizationSearchTable = $('#organizationSearchDataTable').dataTable({
+                "bSort": false,
+                "bLengthChange": false,
+                "bProcessing": true,
+                "bServerSide": true,
+                "bJQueryUI": true,
+                "oLanguage": { "sInfo": "_START_ to _END_ of _TOTAL_" },
+                "sAjaxSource": '@Url.Content("~/api/SystemAdmin/OrganizationDataTableSearch")',
+                "aoColumns": [
+                    {
+                        "mData": "Name",
+                    },
+                    { "mData": "Key", "bSortable": false, "bSearchable": true, "sClass": "hidden" }
+                ]
+            });
+
+            $("#organizationSearchDataTable tbody").click(function (event) {
+                var key = organizationSearchTable.fnGetData(event.target.parentNode).Key;
+                window.location = '@Url.Content("~/SystemAdmin")' + '/EditOrganization/' + key;
+            });
+
+            var systemAdminSearchDataTable = $('#systemAdminSearchDataTable').dataTable({
+                "bSort": false,
+                "bLengthChange": false,
+                "bProcessing": true,
+                "bServerSide": true,
+                "bJQueryUI": true,
+                "oLanguage": { "sInfo": "_START_ to _END_ of _TOTAL_" },
+                "sAjaxSource": '@Url.Content("~/api/SystemAdmin/SystemAdministratorsDataTableSearch")',
+                "aoColumns": [
+                    {
+                        "mData": "Identifier",
+                    },
+                    { "mData": "Key", "bSortable": false, "bSearchable": true, "sClass": "hidden" }
+                ]
+            });
+        });
+    </script>
+    @RenderSection( "scripts", false )
+}

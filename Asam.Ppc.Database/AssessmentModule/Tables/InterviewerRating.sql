@@ -1,0 +1,138 @@
+﻿CREATE TABLE [AssessmentModule].[InterviewerRating] (
+    [InterviewerRatingKey]                                               BIGINT          NOT NULL,
+    [Version]                                                            INT             NOT NULL,
+    [GlobalAssessmentOfFunctioningScore]                                 BIGINT          NULL,
+    [InterviewerComments]                                                NVARCHAR (2000) NULL,
+    [PatientAbleToSafelyAccessNeededResources]                           BIT             NULL,
+    [IsVisited]                                                          BIT             NOT NULL,
+    [AddictionOnlyTreatmentAccessibleToPatientCode]                      NVARCHAR (200)  NULL,
+    [AddictionOnlyTreatmentAccessibleToPatientName]                      NVARCHAR (200)  NULL,
+    [AddictionOnlyTreatmentAccessibleToPatientValue]                     INT             NULL,
+    [AddictionOnlyTreatmentAccessibleToPatientIsDefault]                 BIT             NULL,
+    [AddictionOnlyTreatmentAccessibleToPatientSortOrder]                 INT             NULL,
+    [AppearanceOfAnxietyNervousnessValue]                                BIGINT          NULL,
+    [AppearanceOfAnxietyNervousnessMin]                                  BIGINT          NULL,
+    [AppearanceOfAnxietyNervousnessMax]                                  BIGINT          NULL,
+    [AppearanceOfDepressionWithdrawalValue]                              BIGINT          NULL,
+    [AppearanceOfDepressionWithdrawalMin]                                BIGINT          NULL,
+    [AppearanceOfDepressionWithdrawalMax]                                BIGINT          NULL,
+    [AppearanceOfFluctuatingOrientationInLast24HoursValue]               BIGINT          NULL,
+    [AppearanceOfFluctuatingOrientationInLast24HoursMin]                 BIGINT          NULL,
+    [AppearanceOfFluctuatingOrientationInLast24HoursMax]                 BIGINT          NULL,
+    [AppearanceOfHostilityValue]                                         BIGINT          NULL,
+    [AppearanceOfHostilityMin]                                           BIGINT          NULL,
+    [AppearanceOfHostilityMax]                                           BIGINT          NULL,
+    [AppearanceOfLethargyValue]                                          BIGINT          NULL,
+    [AppearanceOfLethargyMin]                                            BIGINT          NULL,
+    [AppearanceOfLethargyMax]                                            BIGINT          NULL,
+    [AppearanceOfParanoiaOrImpairedThinkingValue]                        BIGINT          NULL,
+    [AppearanceOfParanoiaOrImpairedThinkingMin]                          BIGINT          NULL,
+    [AppearanceOfParanoiaOrImpairedThinkingMax]                          BIGINT          NULL,
+    [AppearanceOfSpeechImpairmentBadPostureValue]                        BIGINT          NULL,
+    [AppearanceOfSpeechImpairmentBadPostureMin]                          BIGINT          NULL,
+    [AppearanceOfSpeechImpairmentBadPostureMax]                          BIGINT          NULL,
+    [AppearanceOfTroubleConcentratingOrRememberingValue]                 BIGINT          NULL,
+    [AppearanceOfTroubleConcentratingOrRememberingMin]                   BIGINT          NULL,
+    [AppearanceOfTroubleConcentratingOrRememberingMax]                   BIGINT          NULL,
+    [AppearanceofAgitationValue]                                         BIGINT          NULL,
+    [AppearanceofAgitationMin]                                           BIGINT          NULL,
+    [AppearanceofAgitationMax]                                           BIGINT          NULL,
+    [CurrentBehaviorInconsistentWithSelfCareCode]                        NVARCHAR (200)  NULL,
+    [CurrentBehaviorInconsistentWithSelfCareName]                        NVARCHAR (200)  NULL,
+    [CurrentBehaviorInconsistentWithSelfCareValue]                       INT             NULL,
+    [CurrentBehaviorInconsistentWithSelfCareIsDefault]                   BIT             NULL,
+    [CurrentBehaviorInconsistentWithSelfCareSortOrder]                   INT             NULL,
+    [CurrentProblemBehaviorsRequireContinuousInterventionsCode]          NVARCHAR (200)  NULL,
+    [CurrentProblemBehaviorsRequireContinuousInterventionsName]          NVARCHAR (200)  NULL,
+    [CurrentProblemBehaviorsRequireContinuousInterventionsValue]         INT             NULL,
+    [CurrentProblemBehaviorsRequireContinuousInterventionsIsDefault]     BIT             NULL,
+    [CurrentProblemBehaviorsRequireContinuousInterventionsSortOrder]     INT             NULL,
+    [DemonstratingDangerToSelfOrOthersValue]                             BIGINT          NULL,
+    [DemonstratingDangerToSelfOrOthersMin]                               BIGINT          NULL,
+    [DemonstratingDangerToSelfOrOthersMax]                               BIGINT          NULL,
+    [DoesPatientCarryPsychiatricDiagnosisCode]                           NVARCHAR (200)  NULL,
+    [DoesPatientCarryPsychiatricDiagnosisName]                           NVARCHAR (200)  NULL,
+    [DoesPatientCarryPsychiatricDiagnosisValue]                          INT             NULL,
+    [DoesPatientCarryPsychiatricDiagnosisIsDefault]                      BIT             NULL,
+    [DoesPatientCarryPsychiatricDiagnosisSortOrder]                      INT             NULL,
+    [EvidenceOfChronicOrganicMentalDisabilityCode]                       NVARCHAR (200)  NULL,
+    [EvidenceOfChronicOrganicMentalDisabilityName]                       NVARCHAR (200)  NULL,
+    [EvidenceOfChronicOrganicMentalDisabilityValue]                      INT             NULL,
+    [EvidenceOfChronicOrganicMentalDisabilityIsDefault]                  BIT             NULL,
+    [EvidenceOfChronicOrganicMentalDisabilitySortOrder]                  INT             NULL,
+    [HasSuicidalThoughtsValue]                                           BIGINT          NULL,
+    [HasSuicidalThoughtsMin]                                             BIGINT          NULL,
+    [HasSuicidalThoughtsMax]                                             BIGINT          NULL,
+    [IndicatingRiskOfHarmToOthersValue]                                  BIGINT          NULL,
+    [IndicatingRiskOfHarmToOthersMin]                                    BIGINT          NULL,
+    [IndicatingRiskOfHarmToOthersMax]                                    BIGINT          NULL,
+    [IndicatingRiskOfHarmToSelfOrVictimizationByOthersValue]             BIGINT          NULL,
+    [IndicatingRiskOfHarmToSelfOrVictimizationByOthersMin]               BIGINT          NULL,
+    [IndicatingRiskOfHarmToSelfOrVictimizationByOthersMax]               BIGINT          NULL,
+    [IntensiveCaseManagementAccessibleToPatientCode]                     NVARCHAR (200)  NULL,
+    [IntensiveCaseManagementAccessibleToPatientName]                     NVARCHAR (200)  NULL,
+    [IntensiveCaseManagementAccessibleToPatientValue]                    INT             NULL,
+    [IntensiveCaseManagementAccessibleToPatientIsDefault]                BIT             NULL,
+    [IntensiveCaseManagementAccessibleToPatientSortOrder]                INT             NULL,
+    [IsPatientMisrepresentingInformationCode]                            NVARCHAR (200)  NULL,
+    [IsPatientMisrepresentingInformationName]                            NVARCHAR (200)  NULL,
+    [IsPatientMisrepresentingInformationValue]                           INT             NULL,
+    [IsPatientMisrepresentingInformationIsDefault]                       BIT             NULL,
+    [IsPatientMisrepresentingInformationSortOrder]                       INT             NULL,
+    [IsPatientUnableToUnderstandCode]                                    NVARCHAR (200)  NULL,
+    [IsPatientUnableToUnderstandName]                                    NVARCHAR (200)  NULL,
+    [IsPatientUnableToUnderstandValue]                                   INT             NULL,
+    [IsPatientUnableToUnderstandIsDefault]                               BIT             NULL,
+    [IsPatientUnableToUnderstandSortOrder]                               INT             NULL,
+    [LevelOfSupervisionNeededForProtectionFromSelfHarmValue]             BIGINT          NULL,
+    [LevelOfSupervisionNeededForProtectionFromSelfHarmMin]               BIGINT          NULL,
+    [LevelOfSupervisionNeededForProtectionFromSelfHarmMax]               BIGINT          NULL,
+    [LikelihoodOfRecurrenceOfPsychiatricDecompensationValue]             BIGINT          NULL,
+    [LikelihoodOfRecurrenceOfPsychiatricDecompensationMin]               BIGINT          NULL,
+    [LikelihoodOfRecurrenceOfPsychiatricDecompensationMax]               BIGINT          NULL,
+    [LimitedInAbilityToContractForSafetyIfRiskOfHarmToSelfOrOthersValue] BIGINT          NULL,
+    [LimitedInAbilityToContractForSafetyIfRiskOfHarmToSelfOrOthersMin]   BIGINT          NULL,
+    [LimitedInAbilityToContractForSafetyIfRiskOfHarmToSelfOrOthersMax]   BIGINT          NULL,
+    [PatientNeedForPsychiatricPsychologicalTreatmentRatingValue]         BIGINT          NULL,
+    [PatientNeedForPsychiatricPsychologicalTreatmentRatingMin]           BIGINT          NULL,
+    [PatientNeedForPsychiatricPsychologicalTreatmentRatingMax]           BIGINT          NULL,
+    [PatientRequires24HourControlledSupervisedEnvironmentCode]           NVARCHAR (200)  NULL,
+    [PatientRequires24HourControlledSupervisedEnvironmentName]           NVARCHAR (200)  NULL,
+    [PatientRequires24HourControlledSupervisedEnvironmentValue]          INT             NULL,
+    [PatientRequires24HourControlledSupervisedEnvironmentIsDefault]      BIT             NULL,
+    [PatientRequires24HourControlledSupervisedEnvironmentSortOrder]      INT             NULL,
+    [PsychiatricEvaluationAndServicesAccessibleToPatientCode]            NVARCHAR (200)  NULL,
+    [PsychiatricEvaluationAndServicesAccessibleToPatientName]            NVARCHAR (200)  NULL,
+    [PsychiatricEvaluationAndServicesAccessibleToPatientValue]           INT             NULL,
+    [PsychiatricEvaluationAndServicesAccessibleToPatientIsDefault]       BIT             NULL,
+    [PsychiatricEvaluationAndServicesAccessibleToPatientSortOrder]       INT             NULL,
+    [RiskOfHarmToSelfOrOthersIsHigherWithSubstanceUseCode]               NVARCHAR (200)  NULL,
+    [RiskOfHarmToSelfOrOthersIsHigherWithSubstanceUseName]               NVARCHAR (200)  NULL,
+    [RiskOfHarmToSelfOrOthersIsHigherWithSubstanceUseValue]              INT             NULL,
+    [RiskOfHarmToSelfOrOthersIsHigherWithSubstanceUseIsDefault]          BIT             NULL,
+    [RiskOfHarmToSelfOrOthersIsHigherWithSubstanceUseSortOrder]          INT             NULL,
+    PRIMARY KEY CLUSTERED ([InterviewerRatingKey] ASC)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GO
+
+

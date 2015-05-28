@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestSettings name="Local" id="5bfb936c-bb90-4656-805b-c458249c576f" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Description>These are default test settings for a local test run.</Description>
+  <Deployment>
+    <DeploymentItem filename="Asam.Ppc.Domain.Tests\AssessmentModule\Scoring\Dimension6LivingEnvironment\Dimension6ScoringStrategyTestData.xlsx" />
+    <DeploymentItem filename="Asam.Ppc.Domain.Tests\AssessmentModule\Reporting\ReportingStrategyTestData.xlsx" />
+    <DeploymentItem filename="Asam.Ppc.Domain.Tests\AssessmentModule\Scoring\Dimension1Withdrawal\Dimension1ScoringStrategyTestData.xlsx" />
+    <DeploymentItem filename="Asam.Ppc.Domain.Tests\AssessmentModule\Scoring\Dimension2Biomedical\Dimension2ScoringStrategyTestData.xlsx" />
+    <DeploymentItem filename="Asam.Ppc.Domain.Scoring\ReportModule\AsamDocumentTemplate.docx" />
+    <DeploymentItem filename="Asam.Ppc.Domain.Tests\AssessmentModule\Scoring\Diagnosis\DiagnosisScoringStrategyTestData.xlsx" />
+    <DeploymentItem filename="Asam.Ppc.Domain.Tests\AssessmentModule\Scoring\Dimension3EmotionalBehavioral\Dimension3ScoringStrategyTestData.xlsx" />
+    <DeploymentItem filename="Asam.Ppc.Domain.Tests\AssessmentModule\Scoring\Dimension5RelapsePotential\Dimension5ScoringStrategyTestData.xlsx" />
+    <DeploymentItem filename="Asam.Ppc.Domain.Tests\AssessmentModule\Scoring\Dimension4ReadinessToChange\Dimension4ScoringStrategyTestData.xlsx" />
+    <DeploymentItem filename="Asam.Ppc.Domain.Tests\AssessmentModule\Scoring\DimensionalAdmissionCriteria\DimensionalAdmissionCriteriaTestData.xlsx" />
+  </Deployment>
+  <Execution>
+    <TestTypeSpecific>
+      <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+        <AssemblyResolution>
+          <TestDirectory useLoadContext="true" />
+        </AssemblyResolution>
+      </UnitTestRunConfig>
+    </TestTypeSpecific>
+    <AgentRule name="LocalMachineDefaultRole">
+    </AgentRule>
+  </Execution>
+</TestSettings>

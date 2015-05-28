@@ -1,0 +1,15 @@
+﻿@using Asam.Ppc.Mvc.Infrastructure
+@using Asam.Ppc.Primitives;
+@model BloodPressure
+
+<div class="primitive">
+    @Html.LabelFor(m => m.Systolic) 
+    @Html.EditorFor(m => m.Systolic)
+    @Html.ExtendedValidationMessageFor( m => m.Systolic  )
+</div>
+<div class="primitive">
+    @Html.LabelFor(m => m.Diastolic) 
+    @Html.EditorFor(m => m.Diastolic)
+    @Html.ExtendedValidationMessageFor( m => m.Diastolic  )
+</div>
+<div class="clear"></div>

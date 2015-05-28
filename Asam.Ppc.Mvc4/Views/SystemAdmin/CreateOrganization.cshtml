@@ -1,0 +1,20 @@
+﻿@using Asam.Ppc.Service.Messages.Organization
+
+@{
+    Layout = "~/Views/SystemAdmin/Layout.cshtml";
+    ViewBag.Title = "Create Organization";
+    var organization = new OrganizationSummaryDto ();
+}
+
+<div>
+@using ( Html.BeginForm ( "CreateOrganization", "SystemAdmin" ) )
+{
+    <div>
+        @Html.LabelFor(m => organization.Name)
+    </div>
+    <div>
+        @Html.EditorFor(m => organization.Name,null, "Name")
+    </div>
+    <input type="submit" value="Create" />
+}
+</div>

@@ -1,0 +1,13 @@
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Common\bin\Test\Asam.Ppc.Common.dll
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Common\bin\Test\Asam.Ppc.Common.pdb
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Common\bin\Test\NLog.dll
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Common\bin\Test\Pillar.Common.dll
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Common\bin\Test\Pillar.Security.dll
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Common\bin\Test\NLog.xml
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Common\bin\Test\Pillar.Common.pdb
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Common\bin\Test\Pillar.Common.xml
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Common\bin\Test\Pillar.Security.pdb
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Common\bin\Test\Pillar.Security.xml
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Common\obj\Test\Asam.Ppc.Common.dll
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Common\obj\Test\Asam.Ppc.Common.pdb
+C:\Projects\Asam.Ppc\Development\Asam.Ppc.Common\obj\Test\Asam.Ppc.Common.csprojResolveAssemblyReference.cache

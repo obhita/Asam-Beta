@@ -1,0 +1,1084 @@
+﻿/*SMACSS 
+----------------------------------------------------------
+This file is using the Scalable and Modular Architecture for 
+CSS (SMACSS), which facilitates implemention of best practices 
+for organizing and developing CSS rules. 
+
+Developed by Jonathan Snook 2012
+----------------------------------------------------------*/
+
+
+/* BASE RULES
+----------------------------------------------------------
+Base Rules are all default elements that use element 
+selectors, a descendent selector, or child selector, along 
+with pseudo-classes. Base Rules define the default styling 
+for how a base element should look in all occurrences on 
+the page. Do not use class or ID selectors with Base Rules.  
+----------------------------------------------------------*/
+
+a {color: #333; outline: none; padding-left: 3px; padding-right: 3px;text-decoration: underline;}
+
+a:link, a:visited, a:active, a:hover {color: #333;}
+
+h1, h2, h3, h4, h5, h6 {color: #000; margin-bottom: 0; padding-bottom: 0;}
+
+h1 {font-size: 2em;}
+
+h2 {font-size: 1.5em;}
+
+h3 {font-size: 1.2em;}
+
+h4 {font-size: 1.1em;}
+
+h5, h6 {font-size: 1em;}
+
+p {margin: 1em 1em 1em 1em ;}
+
+mark {background-color: #a6dbed; padding-left: 5px; padding-right: 5px;}
+
+select { max-width: 100%; }
+
+
+/* LAYOUT RULES   
+----------------------------------------------------------
+Layout Rules are elements within a page that define the
+sections. Usually, Layout elements are like containers that 
+hold other page components. Layout Rules are major components
+of a page which use ID Selectors when the component is only
+used once per page or a Class Name, when the component is 
+used more than once per page.
+----------------------------------------------------------*/
+
+html {background-color: black; margin: 0; padding: 0; height: 100%;}
+
+header, footer, hgroup, nav, section {display: block;}
+
+body {background-color: #fff; color: #333; font-size: .85em; font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif; margin: 0; padding: 0; height: 100%;overflow: hidden;min-width: 960px; }
+
+footer {clear: both; background-color: #e2e2e2; font-size: .8em;}
+
+#rootNavigation { float: left; height: 100%; background-color:#223D52;  overflow: hidden}
+
+
+
+
+/* MODULE RULES   
+----------------------------------------------------------
+Module are more descrete components that make up the page 
+such as navigation bars, carousels, and widgets etc. Usually 
+these modules live within major layout components of the page
+such as headers or footers. Modules should use class selectors
+since they may be used more than once.
+
+ADDITIONAL MODULES CAN BE FOUND ON THE "asam-controls.css" FILE.
+----------------------------------------------------------*/
+
+/*Patient Record Info*/
+#bigname {font-family:"Lato", Verdana, Segoe UI, Sans-Serif; font-size: 1.3em; font-weight:600; color: #336d93;  text-shadow:1px 1px 1.25px rgba(255, 255, 255, .8);}
+
+#birthdate {font-family:"Lato", Verdana, Segoe UI, Sans-Serif; font-size: 1em; font-weight:400; color:#424242 ; text-shadow:1px 1px 1.25px rgba(255, 255, 255, .8)}
+
+/* Patient Content */
+
+#patientContent {overflow-y: auto; z-index: -1;}
+
+/* Assessment Content */
+
+#assessmentLogo {font-family:'Gill Sans', sans-serif; font-weight:700; font-style:italic; font-size:2em; color: #ffffff; text-align:center ; margin: 5px auto 0px auto; }
+
+#assessmentContent {overflow-y: auto; z-index: -1;}
+
+#mainContent { height: 100%;overflow: hidden; }
+
+#mainContent form { height: 100%;}
+
+
+
+.page-header { height: auto;min-height: 70px; display: inline-block; width: 100%; background-color: #d7dee2; border-bottom:1px solid #c8c9c0; z-index: 2;
+
+background: #f2f5f6; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIyNCUiIHN0b3AtY29sb3I9IiNlNWU1ZTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI4MiUiIHN0b3AtY29sb3I9IiNjOWM5YzkiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYmFiYWJhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+background: -moz-linear-gradient(top,  #e5e5e5 24%, #b5b5b5 82%, #b5b5b5 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(24%,#b5b5b5), color-stop(82%,#b5b5b5), color-stop(100%,#bababa)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #e5e5e5 24%,#b5b5b5 82%,#b5b5b5 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #e5e5e5 24%,#b5b5b5 82%,#b5b5b5 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #e5e5e5 24%,#b5b5b5 82%,#b5b5b5 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #e5e5e5 24%,#b5b5b5 82%,#b5b5b5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#b5b5b5',GradientType=0 ); /* IE6-8 */
+
+-moz-box-shadow: 1px 4px 12px 0px rgba(0, 0, 0, .4); -webkit-box-shadow:  1px 4px 12px 0px rgba(0, 0, 0, .4); box-shadow:  1px 4px 12px 0px rgba(0, 0, 0, .4); }
+
+.bar-above-page-footer { height:50px; display: inline-block; width: 100%; background-color: #d7dee2; border-bottom:1px solid #c8c9c0;}
+.bar-above-page-footer div {margin: 10px 30px 10px 10px;}
+
+.page-footer {height: 55px;display: inline-block; width:100%; background-color: #d7dee2; border-top:1px solid #a6a8ab;
+
+background: #e5e5e5; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIyNCUiIHN0b3AtY29sb3I9IiNlNWU1ZTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI4MiUiIHN0b3AtY29sb3I9IiNjOWM5YzkiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYmFiYWJhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+background: -moz-linear-gradient(top,  #e5e5e5 24%, #b5b5b5 82%, #b5b5b5 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(24%,#b5b5b5), color-stop(82%,#b5b5b5), color-stop(100%,#bababa)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #e5e5e5 24%,#b5b5b5 82%,#b5b5b5 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #e5e5e5 24%,#b5b5b5 82%,#b5b5b5 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #e5e5e5 24%,#b5b5b5 82%,#b5b5b5 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #e5e5e5 24%,#b5b5b5 82%,#b5b5b5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#b5b5b5',GradientType=0 ); /* IE6-8 */
+
+-moz-box-shadow: 0px -4px 7px 0px rgba(0, 0, 0, .3); -webkit-box-shadow:  0px -4px 7px 0px rgba(0, 0, 0, .3); box-shadow:  0px -4px 7px 0px rgba(0, 0, 0, .3);
+}
+
+.page-footer div {margin: 10px 30px 10px 10px;}
+
+/* Assessment Navigation Control */
+#assessmentNavigation {
+    overflow-y: auto;
+    width: 100%;
+}
+
+#assessmentNavigation .ui-accordion-content {
+    min-height: 40px;
+}
+
+#assessmentNavigation .ui-state-focus { background-color: transparent; }
+
+#assessmentNavigation .navigationSectionHeader { margin: 10px 15px 0 15px; padding: 5px 2%; background-color: #346B94; border-color: white; border-style: solid; border-width: 0 0 1px 0; font-size: .89em; font-weight: bolder; }
+
+#assessmentNavigation ul { margin: 0 15px 10px 0; padding: 0; font-size: .85em; }
+
+#assessmentNavigation ul li { list-style-type: none; border-color: white; border-style: solid; border-width: 0 0 1px 0; padding: 5px; }
+
+#assessmentNavigation ul li{ color: lightgrey; font-weight: normal;}
+
+#assessmentNavigation ul li:hover,
+#assessmentNavigation ul li.active{ color: white; font-weight: bold; }
+
+#navigationSectionHeaderComplete { text-align: right;}
+
+.navigationSectionHeader span { vertical-align: bottom; }
+
+.ui-widget-content { border-color: transparent;}
+
+.ui-state-focus { background-color: #c2dcf0; border: none; border-radius: 5px; margin: 0px 0px 0px 0px; padding-bottom: 0px;}
+
+
+textarea {min-width: 500px; margin-bottom: 8px;}
+
+
+
+.shadow-right-inset {
+	-moz-box-shadow: inset -5px 0px 10px 0px rgba(0, 0, 0, .2);
+	-webkit-box-shadow: inset -5px 0px 10px 0px rgba(0, 0, 0, .2);
+    box-shadow: inset -5px 0px 10px 0px rgba(0, 0, 0, .2);
+}
+
+.shadow-bottom-inset {
+	-moz-box-shadow: inset 0px -10px 10px 0px rgba(0, 0, 0, .2);
+	-webkit-box-shadow: inset 0px -10px 10px 0px rgba(0, 0, 0, .2);
+    box-shadow: inset 0px -10px 10px 0px rgba(0, 0, 0, .2);
+	/* For IE 8 */
+	/*-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";*/
+	/* For IE 5.5 - 7 */
+	/*filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');*/
+}
+
+.shadow-left {
+    -moz-box-shadow:  -8px 0px 10px 0px rgba(0, 0, 0, .3);
+    -webkit-box-shadow:  -8px 0px 10px 0px rgba(0, 0, 0, .2);
+    box-shadow:  -8px 0px 10px 0px rgba(0, 0, 0, .2);
+}
+
+
+#assessmentNavigation ul li:hover .sub-section-indicator,
+#assessmentNavigation ul li.active .sub-section-indicator{ display: initial; float: left; width: 0; height: 0; margin-top: 3px; margin-left: -7px; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left:5px solid white; font-family:"Lato", Verdana, Segoe UI, Sans-Serif; font-size:100% ; font-weight:300 }
+
+
+.completeness-icon {
+    background: url(../Images/incomplete-icon2.png) center no-repeat;
+    background-image: -webkit-linear-gradient(transparent, transparent), url(../Images/incomplete-icon2.svg);
+    background-image: -moz-linear-gradient(transparent, transparent), url(../Images/incomplete-icon2.svg);
+    background-image: linear-gradient(transparent, transparent), url(../Images/incomplete-icon2.svg);
+    height: 18px;
+    width: 18px;
+}
+
+#assessmentLogo {
+    background: url(../Images/continuum-logo-white.svg) center no-repeat;
+    background-image: -webkit-linear-gradient(transparent, transparent), url(../Images/continuum-logo-white.svg);
+    background-image: -moz-linear-gradient(transparent, transparent), url(../Images/continuum-logo-white.svg);
+    background-image: linear-gradient(transparent, transparent), url(../Images/continuum-logo-white.svg);
+    color: white;
+    height: 80px;
+    padding-top: 30px;
+}
+
+
+/* Accordion */
+.accordion { height: 101%;}
+
+.navigation-button { cursor: pointer; font-size: 1em; text-decoration: none; margin-left: 15px;}
+
+.navigation-button a {outline: none; padding: 5px 0px 5px 3px;  text-decoration: none; background-color:transparent; color: white;}
+
+.ui-accordion .ui-accordion-content { background-color: #1A4D74 /*#465666*/; margin: 0; top: 0; bottom: 0; padding: 0;
+    -moz-box-shadow: inset 0px 6px 10px 0px rgba(0, 0, 0, .3),inset -2px -6px 10px 0px rgba(0, 0 , 0, .3);
+    -webkit-box-shadow: inset 0px 6px 10px 0px rgba(0, 0, 0, .3),inset -2px -6px 10px 0px rgba(0, 0, 0, .3);
+    box-shadow: inset 0px 6px 10px 0px rgba(0, 0, 0, .3),inset -2px -6px 10px 0px rgba(0, 0, 0, .3);
+}
+
+.ui-accordion .ui-accordion-header { border-width: 0 0 1px 0; border-color: rgba(211,211,211,.5); border-style: solid; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; background-color: transparent;z-index: 2; vertical-align: central; }
+
+.ui-accordion .ui-accordion-header a{ margin: 0 0 0 35px; padding-top: 15px; font-family:"Lato", Verdana, Segoe UI, Sans-Serif; font-size:100% ; font-weight:400}
+
+.ui-accordion .ui-accordion-header.ui-state-active { 
+    -moz-box-shadow: inset 0px -15px 20px 0px rgba(250, 250, 250, .20); 
+	-webkit-box-shadow: inset 0px -15px 20px 0px rgba(250, 250, 250, .20);
+    box-shadow: inset 0px -15px 20px 0px rgba(250, 250, 250, .20);
+}
+
+.ui-accordion .ui-accordion-header .ui-icon {
+     background-image: url('../Images/document-sidenav-icon.png'); 
+     background-image: -webkit-linear-gradient(transparent, transparent), url('../Images/document-sidenav-icon.svg'); 
+     background-image: -moz-linear-gradient(transparent, transparent), url(../Images/document-sidenav-icon.svg);
+     background-image: linear-gradient(transparent, transparent), url(../Images/document-sidenav-icon.svg);
+     background-position: center; 
+     height: 30px; 
+     width: 20px; 
+     margin-top: -15px; 
+     margin-left: 10px;
+}
+
+.selector-arrow { display: none; }
+
+.ui-accordion .ui-accordion-header.ui-state-active .selector-arrow { display: run-in; float: right; margin-top: -40px; margin-left: -20px; width: 0; height: 0; border-right: 20px solid white; border-top: 25px solid transparent; border-bottom: 25px solid transparent; }
+
+.sub-section-indicator { display: none; }
+
+/* Home Screen*/
+#homeScreenContent {
+    display: block;
+    overflow-y: auto;
+    width: 100%
+}
+
+/*.navigation-button a:link   {color: #feffba; background-color:none;}*/
+.navigation-button a:visited  {color: white;}
+
+/* Patient Details */
+.patient-details img { float: left;}
+
+.patient-details { height: 100%; margin: 10px 20px 10px 20px; padding:0 0 0 0; font-weight:bold; }
+
+.patient-details span { margin-left: 5px }
+
+#personiconlarge {border: 1px solid black; height: 50px; width:50px; margin: auto 10px auto 20px;}
+
+#personiconsmall {
+    background: url('../Images/interviewer-patient-01-white.png') center center no-repeat;
+     background-image: -webkit-linear-gradient(transparent, transparent), url('../Images/interviewer-patient-01-white.svg'); 
+     background-image: -moz-linear-gradient(transparent, transparent), url(../Images/interviewer-patient-01-white.svg);
+     background-image: linear-gradient(transparent, transparent), url(../Images/interviewer-patient-01-white.svg);
+    height: 19px;
+    width: 19px;
+    float:left; 
+    color:white; 
+    margin: 0 0 0 -25px; 
+    padding-top: 8px;
+}
+
+
+/* Tabs */
+#tabsList {list-style:none; margin: 10px auto 0 auto;padding: 0; width: 262px; z-index: 2; font-family:"Lato", Verdana, Segoe UI, Sans-Serif; font-weight:600 /*font-size: 1em; */}
+
+#tabsList li {float:left; background:transparent;}
+
+#tabsList a {display:block; color:#3f739a; text-decoration:none; font-weight:bold; margin:0 2px; padding: 28px 10px 2px 10px; border-width: 1px 1px 0 1px; border-style: solid; border-color: #58585B; border-bottom: 1px #7AAFD6 solid; border-radius:8px 8px 0px 0px;
+-moz-box-shadow: inset 0px -2px 3px 0px rgba(0, 0, 0, .4);
+-webkit-box-shadow: inset 0px -2px 3px 0px rgba(0, 0, 0, .4);
+box-shadow: inset 0px -2px 3px 0px rgba(0, 0, 0, .4);}
+
+
+
+#tabsList a.active {color: white; border-bottom: 1px solid transparent;
+-moz-box-shadow: inset 0px 4px 5px 0px rgba(250, 250, 250, .2);
+-webkit-box-shadow: inset 0px 4px 5px 0px rgba(250, 250, 250, .2);
+box-shadow: inset 0px 4px 5px 0px rgba(250, 250, 250, .2);}
+
+#tabsList a:hover {color: white;
+-moz-box-shadow: inset 0px 4px 5px 0px rgba(250, 250, 250, .2);
+-webkit-box-shadow: inset 0px 4px 5px 0px rgba(250, 250, 250, .2);
+box-shadow: inset 0px 4px 5px 0px rgba(250, 250, 250, .2);}
+
+#tabsList a.active:link, #tabsList a.active:visited {position:relative; z-index:102;}
+
+#tabContent {
+     border-style: none; 
+     background-color: #3f739a; 
+     padding: 0; 
+     border-top: 1px #7AAFD6 solid; 
+     margin-top: 0;
+}
+
+#tabContent .btn {
+    text-decoration: none;
+    font-size: 120%;
+    color: white;
+    padding: 0 70px;
+    padding-bottom: 10px;
+    margin-left: 15px;
+}
+
+#tabContent .btn:hover {
+    background-color: white;
+    color: #3f739a;
+}
+
+.scroll {
+     overflow-y: auto;
+     width: 100%;
+    height: 100%;
+}
+
+#tabListWrapper {
+    margin-bottom: -1px;
+}
+
+#home-tab a{
+     background: #D7E1E4 url(../Images/home-tab-icon.png) center 5px no-repeat;
+     background-image: -webkit-linear-gradient(transparent, transparent), url('../Images/home-tab-icon.svg'); 
+     background-image: -moz-linear-gradient(transparent, transparent), url(../Images/home-tab-icon.svg);
+     background-image: linear-gradient(transparent, transparent), url(../Images/home-tab-icon.svg);
+}
+
+#home-tab a:hover, #home-tab a.active{
+     background: #3F739A url(../Images/selected-home-tab-icon.png) center 5px no-repeat;
+     background-image: -webkit-linear-gradient(transparent, transparent), url('../Images/selected-home-tab-icon.svg'); 
+     background-image: -moz-linear-gradient(transparent, transparent), url(../Images/selected-home-tab-icon.svg);
+     background-image: linear-gradient(transparent, transparent), url(../Images/selected-home-tab-icon.svg);
+}
+
+#assessment-tab a {
+    background: #D7E1E4 url(../Images/document-tab-icon.png) center 5px no-repeat;
+     background-image: -webkit-linear-gradient(transparent, transparent), url('../Images/document-tab-icon.svg'); 
+     background-image: -moz-linear-gradient(transparent, transparent), url(../Images/document-tab-icon.svg);
+     background-image: linear-gradient(transparent, transparent), url(../Images/document-tab-icon.svg);
+}
+
+#assessment-tab a:hover, #assessment-tab a.active {
+    background: #3F739A url(../Images/selected-document-tab-icon2.png) 30px 7px no-repeat;
+     background-image: -webkit-linear-gradient(transparent, transparent), url('../Images/selected-document-tab-icon2.svg'); 
+     background-image: -moz-linear-gradient(transparent, transparent), url(../Images/selected-document-tab-icon2.svg);
+     background-image: linear-gradient(transparent, transparent), url(../Images/selected-document-tab-icon2.svg);
+}
+
+#patient-tab a {
+    background: #D7E1E4 url(../Images/patient-tab-icon.png) center 5px no-repeat;
+     background-image: -webkit-linear-gradient(transparent, transparent), url('../Images/patient-tab-icon.svg'); 
+     background-image: -moz-linear-gradient(transparent, transparent), url(../Images/patient-tab-icon.svg);
+     background-image: linear-gradient(transparent, transparent), url(../Images/patient-tab-icon.svg);
+}
+
+#patient-tab a:hover, #patient-tab a.active {
+    background: #3F739A url(../Images/selected-patient-tab-icon.png) center 5px no-repeat;
+     background-image: -webkit-linear-gradient(transparent, transparent), url('../Images/selected-patient-tab-icon.svg'); 
+     background-image: -moz-linear-gradient(transparent, transparent), url(../Images/selected-patient-tab-icon.svg);
+     background-image: linear-gradient(transparent, transparent), url(../Images/selected-patient-tab-icon.svg);
+}
+
+#UserContext {font-family:"Lato", Verdana, Helvetica, Sans-Serif; font-size: 100%; font-weight:300 ; padding:0px 0px 0px 40px}
+
+#UserContext h5 {color:#333; font-size: 1.25em; padding: 2px 0 0 0;margin: 0;}
+
+#UserContext a, #UserContext a:visited { color: white }
+
+.changePassword {
+    margin: 20px;
+}
+
+.changePassword input {
+    margin-bottom: 10px;
+}
+
+.changePassword .btn {
+    text-decoration: none;
+    border-radius: 3px;
+    border: 2px solid lightgrey;
+    background-color: ButtonFace;
+    line-height: normal;
+    padding: 5px;
+    font-size: 100%;
+    font-family: sans-serif;
+    color: #222;
+}
+
+/* Form Fields */
+fieldset {clear:both;  top:40px; border: none; margin: 6px 12px 0px 10px; }
+    
+fieldset ol {padding: 0; list-style: none;}
+
+fieldset ol li {padding-bottom: 5px;}
+
+fieldset label {display: block; font-family: "Lato", Verdana, Segoe UI, Sans-Serif; font-size: 120%; font-weight:400;}
+    div.multiselect-wrapper label {padding: 0 5px; border-radius: 3px;}
+    
+#patientSearchDataTable_wrapper label {display: block; font-family: "Lato", Verdana, Segoe UI, Sans-Serif; font-size: 100%; font-weight:400;}    
+#patientAssessmentsDataTable_length label {display: block; font-family: "Lato", Verdana, Segoe UI, Sans-Serif; font-size: 120%; font-weight:400;}    
+
+
+fieldset label.checkbox {display: inline;}
+
+#patientSearchDataTable_wrapper input,
+fieldset.HomeField input[type="text"], fieldset input[type="password"] {color: #3f739a; font-size: 1.0em; margin: 0 2px; padding: 5px; background-color: whitesmoke;}
+
+#patientSearchDataTable_wrapper input:hover,
+fieldset.HomeField input[type="text"]:hover, fieldset input[type="password"]:hover {background-color: lightyellow;}
+
+fieldset input[type="text"], fieldset input[type="password"] {color: #333; font-size: 1.2em; margin: 5px 0 6px 0; padding: 5px;}
+
+fieldset input[type="text"]:focus,
+
+fieldset input[type="password"]:focus {border: 1px solid #7ac0da;}
+
+fieldset input[type="submit"] {background-color: #d3dce0; border: 1px solid #787878; cursor: pointer; font-size: 1.2em; font-weight: 600; padding: 5px;}
+
+div fieldset legend { left:5px;  font-family: "Cabin Condensed", Verdana, Helvetica, Sans-Serif; font-weight:400; font-size: 150%; line-height:1.3; margin-bottom:8px;} 
+
+.fieldset-legend-wrapper { border: solid; border-width:thin; border-color:gray; border-radius:5px; margin: 10px 0px 20px 0px}
+
+
+/* Questions */
+
+.question-root
+{
+    position: relative;
+}
+
+.DrugAndAlcoholSection .fieldset-legend-wrapper .question-root, .LegalSection .fieldset-legend-wrapper .question-root { margin: 0px 10px}
+.PsychologicalHistory .fieldset-legend-wrapper .question-root { margin: 0px 5px}
+
+.six.columns.alpha.omega.groupdiv .question-root {margin: 0 10px;}
+.question-root.InterviewerObservationOfPatientAgitationLevel .base-question-wrapper {padding: 0 0 10px 10px;}
+.question-root.InterviewerRatingOfPatientNeedForMedicalTreatment .base-question-wrapper {padding: 0 0 10px 10px;}
+.FamilyAndSocialHistorySection .fieldset-legend-wrapper .question-root { margin: 5px 5px}
+
+.question-root:hover { background-color: #e5f2fd; border-radius: 5px;}
+
+.base-question-wrapper {height:auto; margin: 5px 0px 5px 5px; padding:0px 0px 0px 10px; }
+
+.general-question-wrapper {height:auto; width:auto; margin: 5px 0px 5px 0px; padding: 0px 0px 0px 0px;}
+
+.scripted-question-wrapper {
+    height:auto; 
+    width:auto; 
+    margin: 5px 0px 5px 0px; 
+}
+
+.scripted-question-wrapper label {
+    font-style: italic;
+}
+
+.scripted-question-wrapper label:before {
+    content: open-quote;
+}
+.scripted-question-wrapper label:after {
+    content: close-quote;
+}
+ 
+.question-icon-wrapper1 {position:absolute; top:15px; left:0px;}
+.question-icon-wrapper {position:absolute; top:20px; left:0px;}
+
+.control-wrapper {height:auto; width:auto; margin: 10px 0px 0px 0px; vertical-align:top;}
+
+.control-wrapper.TimeSpanPicker {margin: 5px 0 0 0;}
+.control-wrapper.BloodPressure {height:auto; width:auto; margin: 5px 0px 8px 0px; vertical-align:top;}
+.control-wrapper.HeartRate {height:auto; width:auto; margin: 5px 0px 8px 0px; vertical-align:top;}
+
+.editor-label {font-family: "Helvetica", Verdana, Segoe UI, Sans-Serif; font-size: .75em;}
+
+
+/* Sub-Section */
+div fieldset legend.sub-section-header { border-bottom:solid; border-width:2px; margin: 0 0 5px 0px; font-family:"Cabin Condensed", sans-serif; color:#336D93;  font-weight:500; font-size: 190%; width: 100% }
+fieldset.HomeField legend.sub-section-header { border-bottom:solid; border-width:2px; margin: 0 0 5px 0; font-family:"Cabin Condensed", sans-serif; color:#336D93;  font-weight:500; font-size: 190%; width: 100% }
+
+div.noPatienttext
+{
+    font-style: italic;
+}
+
+/* Patient Editor*/
+.patient-editor { margin: 20px}
+
+.patient-editor .question-root { margin: 3px 0 3px 1%; padding: 5px 1% 12px;}
+
+.patient-editor label {display: block; font-family: "Lato", Verdana, Segoe UI, Sans-Serif; font-size: 120%; font-weight:400;}
+
+.patient-editor .Gender,
+.patient-editor .Ethnicity,
+.patient-editor .Religion,
+.patient-editor .DateOfBirth { width: 45%;float: left;}
+
+.patient-editor .DateOfBirth input.text-box.single-line#DateOfBirth { width: 155px;}
+
+.patient-editor select,
+.patient-editor input {margin: 0 5px 0 5px;}
+
+.patient-editor .Name .Suffix,
+.patient-editor .Name .Prefix { width: 35px;}
+.patient-editor .Name .input-container input { float: left;}
+
+/*Organization*/
+.organization-nav {
+    margin: 5px;
+    color: white;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.organization-nav h3 {
+    display: inline-block;
+}
+
+.organization-nav .tools a {
+    float: right;
+    margin-top: 13px;
+    padding: 2px 10px;
+    background-color: lightgray;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.organization-nav .tools a:hover {
+    background-color: darkgray;
+}
+
+.organization-nav .dataTable_wrapper {
+    border-top: darkgray solid 1px;
+}
+
+.organization-nav .dataTable_wrapper .dataTable tr {
+    border-bottom: darkgray solid 1px;
+    cursor: pointer;
+}
+
+.organization-nav .dataTable_wrapper .dataTables_filter {
+    width: 100%;
+    float: none;
+    text-align: left;
+}
+
+#organizationHeader h2{
+    font-size: 200%;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: #336d93;
+    text-shadow: 1px 1px 1.25px rgba(255, 255, 255, .8);
+}
+
+/*Organization Editors*/
+.organization-editor .list ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.organization-editor .list ul li {
+    border-bottom: lightgray solid 1px;
+    padding-bottom: 10px;
+}
+
+.organization-editor .list .sub-question {
+    float: left;
+    padding-right: 15px;
+}
+
+#organizationContent .editor { margin: 20px}
+
+#organizationContent .editor .question-root { margin: 3px 0 3px 1%; padding: 5px 1% 12px;}
+
+#organizationContent .editor label {display: block; font-family: "Lato", Verdana, Segoe UI, Sans-Serif; font-size: 120%; font-weight:400;}
+#organizationContent .editor .Name .Suffix,
+#organizationContent .editor .Name .Prefix { width: 40px;}
+
+#organizationContent .editor select,
+#organizationContent .editor input {margin: 0 5px 0 5px;}
+
+#organizationContent .current-teams {
+    list-style: none;
+    border: black solid 1px;
+    padding: 15px;
+    margin: 20px;
+    max-width: 500px;
+}
+
+#organizationContent .current-teams li {
+    width: 100%;
+}
+
+#organizationContent .current-teams li a {
+    float: right;
+    cursor: pointer;
+}
+
+.admin-wrapper {
+    margin-top: 30px;
+}
+
+.team-editor .available-list,
+.team-editor .current-list,
+.team-editor .buttons-row div {
+    width: 47%;
+    display: inline-block;
+    margin: 0;
+}
+
+.team-editor .buttons-row div:first-child {
+    text-align: right;
+}
+
+.team-editor .buttons-row div {
+    margin: 5px;
+}
+
+.team-editor .buttons-row a
+{
+    text-decoration: none;
+    background-color: #3F739A;
+    border-radius: 7px;
+    padding: 2px 10px;
+    margin: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.team-editor .buttons-row a:hover {
+    background-color: darkgray;
+}
+
+.team-editor .buttons-row a.disabled {
+    opacity: .5;
+}
+
+.team-editor .buttons-row a.disabled:hover {
+    background-color: #3F739A;
+}
+
+/*SystemAdmin*/
+#systemAdminHeader h2 { 
+    font-size: 200%;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: #336d93;
+    text-shadow: 1px 1px 1.25px rgba(255, 255, 255, .8);
+}
+
+.system-admin-nav {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.system-admin-nav h3 {
+    background: lightgray;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.system-admin-nav .section-wrapper a {
+    float: right;
+    background: darkgray;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: -20px;
+    margin-right: 10px;
+}
+
+.system-admin-nav .section-wrapper a:hover {
+    background: #58585b;
+}
+
+.system-admin-nav .dataTables_filter {
+    width: 90%;
+}
+
+.system-admin-nav .section-wrapper td {
+    color: white;
+}
+
+.system-admin-nav .section-wrapper td:hover {
+    color: black;
+    cursor: pointer;
+}
+
+#systemAdminContent {
+    overflow-y: auto;
+}
+
+#systemAdminContent > div {
+    margin: 20px;
+}
+
+#systemAdminContent .question-root { margin: 3px 0 3px 1%; padding: 5px 1% 12px;}
+
+#systemAdminContent label {display: block; font-family: "Lato", Verdana, Segoe UI, Sans-Serif; font-size: 120%; font-weight:400;}
+
+#systemAdminContent select,
+#systemAdminContent input {margin: 0 5px 0 5px;}
+
+#systemAdminContent input[type='submit'] { margin-top: 15px; }
+
+/* STATE RULES 
+----------------------------------------------------------
+State rules describe how a module or layout will look when 
+in a particular state (for example, selected, focus, hidden
+ etc.) or in a particular part of the screen or system. States
+should be made to stand alone and are usually built of a single
+class selector. 
+----------------------------------------------------------*/
+
+/* Information and Display Helpers */
+.hidden { display: none }
+
+.message-info {border: 1px solid; clear: both; padding: 10px 20px;}
+
+.message-error {clear: both; color: #e80c4d; font-size: 1.1em; font-weight: bold; margin: 20px 0 10px 0;}
+
+.message-success {color: #7ac0da; font-size: 1.3em; font-weight: bold; margin: 20px 0 10px 0;}
+
+.error {color: #e80c4d;}
+
+/* Validation Errors */
+.field-validation-error {color: #e80c4d;font-weight: bold; margin: 0 0 0 5px;}
+
+.field-validation-valid {display: none;}
+
+input[type="text"].input-validation-error,
+
+input[type="password"].input-validation-error {border: 1px solid #e80c4d;}
+
+.validation-summary-errors {color: #e80c4d; font-weight: bold; font-size: 1.1em;}
+
+.validation-summary-valid {display: none;}
+
+.validation-summary-warnings {color:goldenrod; font-weight: bold; font-size: 1.1em;}
+
+.interviewericon {
+    background: url('../Images/interviewer-patient-01.png') center center no-repeat;
+    background-image: -webkit-linear-gradient(transparent, transparent), url('../Images/interviewer-patient-01.svg'); 
+    background-image: -moz-linear-gradient(transparent, transparent), url('../Images/interviewer-patient-01.svg');
+    background-image: linear-gradient(transparent, transparent), url('../Images/interviewer-patient-01.svg');
+    height: 19px;
+    width: 19px;
+}
+
+.scriptedicon {
+    background: url('../Images/interviewer-patient-02.png') center center no-repeat;
+    background-image: -webkit-linear-gradient(transparent, transparent), url('../Images/interviewer-patient-02.svg'); 
+    background-image: -moz-linear-gradient(transparent, transparent), url('../Images/interviewer-patient-02.svg');
+    background-image: linear-gradient(transparent, transparent), url('../Images/interviewer-patient-02.svg');
+    height: 19px;
+    width: 19px;
+}
+
+/* CHANGING STATE RULES 
+----------------------------------------------------------
+State Changes can be implmented in three different ways:
+Class Name - when a class changes with JavaScript
+Pseudo-Class - a change is applied using a number of Pseudo-Classes
+Media Query - defines how things should be styles under defined criteria
+----------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------ POTENTIALLY JUNK CODE ------------
+The code below may have been generated by Razor, and should be removed permanantely if it 
+is found that it does not impact the existing solution.*/
+
+/* Content 
+.main-content,
+
+.featured + .main-content {background-position: 10px 0;}
+
+.content-wrapper {padding-right: 10px; padding-left: 10px;}
+
+.featured .content-wrapper {padding: 10px;}
+
+article, aside {float: none; width: 100%;}
+    */
+
+/* List
+ol.round {list-style-type: none; padding-left: 0;}
+
+ol.round li {padding-left: 10px; margin: 25px 0;}
+
+ol.round li.zero, ol.round li.one, ol.round li.two, ol.round li.three, ol.round li.four, ol.round li.five, ol.round li.six, ol.round li.seven, ol.round li.eight,
+
+ol.round li.nine {background: none;}
+
+section.feature {float: none; padding: 10px; width: auto;}
+
+section.feature img {color: #999; content: attr(alt); font-size: 1.5em; font-weight: 600;} 
+    */
+
+/* Fieldset
+fieldset input[type="text"],
+    
+fieldset input[type="password"] {width: 90%;} 
+    */
+
+/* Login
+#loginForm {border-right: none; float: none; width: auto;}
+
+#loginForm .validation-error {display: block; margin-left: 15px;}
+
+#socialLoginForm {margin-left: 0; float: none; width: auto;}
+    */
+
+/*List
+ol.round {list-style-type: none; padding-left: 0;}
+
+ol.round li {margin: 25px 0; padding-left: 45px;}
+
+ol.round li.zero {background: url("../Images/orderedList0.png") no-repeat;}
+
+ol.round li.one {background: url("../Images/orderedList1.png") no-repeat;}
+
+ol.round li.two {background: url("../Images/orderedList2.png") no-repeat;}
+
+ol.round li.three {background: url("../Images/orderedList3.png") no-repeat;}
+
+ol.round li.four {background: url("../Images/orderedList4.png") no-repeat;}
+
+ol.round li.five {background: url("../Images/orderedList5.png") no-repeat;}
+
+ol.round li.six {background: url("../Images/orderedList6.png") no-repeat;}
+
+ol.round li.seven {background: url("../Images/orderedList7.png") no-repeat;}
+
+ol.round li.eight {background: url("../Images/orderedList8.png") no-repeat;}
+
+ol.round li.nine {background: url("../Images/orderedList9.png") no-repeat;} 
+    */
+
+/* Footer
+footer .float-left, footer .float-right {float: none;}
+
+footer {text-align: center; height: auto; padding: 10px 0;}
+
+footer p {margin: 0;}
+    */
+
+
+/* Social Media
+ul#social {padding: 0; margin: 0;}
+
+a.facebook, a.twitter {background: none; display: inline; float: none; padding-left: 0; text-indent: 0;} 
+    */
+
+/* Header
+
+header .float-left, header .float-right {float: none;}
+
+header .site-title {margin: 10px; text-align: center;}
+    */
+
+/* Login
+#login {font-size: .85em; margin: 0 0 12px; text-align: center;}
+
+#login ul {margin: 5px 0; padding: 0;}
+
+#login li {display: inline; list-style: none; margin: 0; padding: 0;}
+
+#login a {background: none; color: #999; font-weight: 600; margin: 2px; padding: 0;}
+
+#login a:hover {color: #333;} 
+    */
+ 
+/* Navigation
+nav {margin-bottom: 5px;}
+
+ul#menu {margin: 0; padding: 0; text-align: center;}
+
+ul#menu li {margin: 0; padding: 0;} }
+*/
+
+    
+
+/* Page Titles
+hgroup.title {margin-bottom: 10px;}
+
+hgroup.title h1, hgroup.title h2 {display: inline;}
+
+hgroup.title h2 {font-weight: normal; margin-left: 3px;}
+
+features 
+section.feature {width: 300px; float: left; padding: 10px;} 
+    */
+    
+    
+/* Login
+#login {display: block; font-size: .85em; margin: 20px 0 12px; text-align: right;}
+
+#login a {background-color: #d3dce0; margin-left: 10px; margin-right: 3px; padding: 2px 3px; text-decoration: none;}
+
+#login a.username {background: none; margin-left: 0px;text-decoration: underline;}
+
+#login ul {margin: 0;}
+
+#login li {display: inline; list-style: none;} 
+    */
+
+
+/* Menu
+ul#menu {font-size: 1.3em; font-weight: 600; margin: 0; text-align: right;}
+
+ul#menu li {display: inline; list-style: none; padding-left: 15px;}
+
+ul#menu li a {background: none; color: #999; text-decoration: none;}
+
+ul#menu li a:hover {color: #333; text-decoration: none;} 
+    */
+
+
+/* Content
+.content-wrapper {margin: 0 auto; max-width: 960px;}
+
+.main-content {background: url("../Images/accent.png") no-repeat; padding-left: 10px; padding-top: 30px;}
+
+.featured + .main-content {background: url("../Images/heroAccent.png") no-repeat;}
+
+article {float: left; width: 70%;}
+
+aside {float: right; width: 25%;}
+
+aside ul {list-style: none; padding: 0;}
+            
+aside ul li {background: url("../Images/bullet.png") no-repeat 0 50%; padding: 2px 0 2px 20px;}
+
+.label {font-weight: 700;} 
+    */
+
+/* Tables
+table {border-collapse: collapse; border-spacing: 0; margin-top: 0.75em; border: 0 none;}
+
+th {font-size: 1.2em; text-align: left; border: none 0px; padding-left: 0;}
+
+th a {display: block; position: relative;}
+
+th a:link, th a:visited, th a:active, th a:hover {color: #333; font-weight: 600; text-decoration: none; padding: 0;}
+
+th a:hover {color: #000;}
+
+th.asc a, th.desc a {margin-right: .75em;}
+    
+th.asc a:after, th.desc a:after {display: block; position: absolute; right: 0em; top: 0; font-size: 0.75em;}
+
+th.asc a:after {content: '▲';}
+
+th.desc a:after {content: '▼';}
+
+td {padding: 0.25em 2em 0.25em 0em;border: 0 none;}
+
+tr.pager td {padding: 0 0.25em 0 0;} 
+    */
+
+/* Site Title 
+.site-title {color: #c8c8c8; font-family: Rockwell, Consolas, "Courier New", Courier, monospace; font-size: 2.3em; margin: 20px 0;}
+
+.site-title a, .site-title a:hover, .site-title a:active {background: none; color: #c8c8c8; outline: none; text-decoration: none;}
+    */
+
+/* Float 
+.float-left {float: left;}
+
+.float-right {float: right;}
+
+.clear-fix:after {content: "."; clear: both; display: block; height: 0; visibility: hidden;}
+
+.cf:before, .cf:after { content: ""; display: table; }
+
+.cf:after { clear: both; }
+
+.cf { zoom: 1; }
+    */
+
+/* featured 
+.featured {background-color: #fff;}
+
+.featured .content-wrapper {background-color: #7ac0da; background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%); background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%); background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6)); background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%); background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%); color: #3e5667; padding: 20px 40px 30px 40px;}
+
+.featured hgroup.title h1, .featured hgroup.title h2 {color: #fff;}
+
+.featured p {font-size: 1.1em;}
+    */
+
+
+/* login page 
+#loginForm {border-right: solid 2px #c8c8c8; float: left; width: 45%;}
+
+#loginForm .validation-error {display: block; margin-left: 15px;}
+
+#socialLoginForm {margin-left: 40px; float: left; width: 50%;}
+    */
+
+
+/* contact 
+.contact h3 {font-size: 1.2em;}
+
+.contact p {margin: 5px 0 0 10px;}
+
+.contact iframe {border: 1px solid #333; margin: 5px 0 0 10px;}
+    */
+
+/* ajax login/registration dialog 
+.ui-dialog {font-family: inherit; font-size: 1.0em; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; border: 0 none;}
+
+.ui-dialog input {font-family: inherit; font-size: 1.25em;}
+
+.ui-dialog-titlebar {color: inherit; font-weight: inherit; border: 0 none; background: none; float: right;}
+
+.ui-dialog-titlebar-close {-moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;}
+
+.ui-widget-header {border: 0 none; background: none;}
+
+.modal-popup {}
+
+.modal-popup input[type="text"],
+
+.modal-popup input[type="password"] {width: 90%;}
+    */
+
+/*#body {background-color: #efeeef; clear: both; padding-bottom: 35px;}
+    */
+
+/*
+a:link {color:#FF0000;}      unvisited link 
+a:visited {color:#00FF00;}  visited link
+a:hover {color:#FF00FF;}   mouse over link 
+a:active {color:#0000FF;}   selected link 
+/*
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:underline;}
+
+a:link {background-color:#B2FF99;}
+a:visited {background-color:#FFFF85;}
+a:hover {background-color:#FF704D;}
+a:active {background-color:#FF704D;}
+*/
+
+/* a:hover {background-color: #c7d1d6;} */

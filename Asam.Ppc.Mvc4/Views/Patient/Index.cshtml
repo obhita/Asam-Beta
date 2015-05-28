@@ -1,0 +1,94 @@
+﻿@using Asam.Ppc.Service.Messages.Core
+@model PatientDto
+
+@{
+    Layout = "~/Views/Patient/PatientLayout.cshtml";
+    var patientId = Model == null ? string.Empty : Model.Key.ToString();
+}
+
+@if (Model != null)
+{
+   <fieldset class="HomeField">
+     <legend class="sub-section-header">Patient's Assessment List</legend>
+    
+     <div class="dataTable-wrapper">
+        <table id="patientAssessmentsDataTable">
+            <thead>
+                <tr>
+                    <th width="21%">Date Started</th>
+                    @*<th class="fred" width="40%">% Complete</th>*@
+                    <th class="fred" width="40%"></th>
+                    <th width="22%"></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+   </fieldset>
+
+    <div class="clear"></div>
+    <div class="Bob">
+        @Html.ActionLink( "Create Assessment", "CreateForPatientId", "Assessment", new { id = patientId }, new {@class="ui-button"} )
+    </div>
+}
+else
+{
+    <div id="noPatientContent"></div>
+    <fieldset class="HomeField">
+     <legend class="sub-section-header">Patient's Assessment List</legend>
+        <div class="noPatienttext"> Please select Patient from Patient List.</div>
+    </fieldset>
+}
+
+@if(!string.IsNullOrEmpty ( patientId ))
+{
+    patientId = "/" + patientId;
+}
+
+@section scripts 
+{
+    @if (Model != null)
+    {
+        <script>
+            $(document).ready(function () {
+                $('#patientAssessmentsDataTable').dataTable({
+                    "bSort": false,
+                    "bFilter": false,
+                    "bProcessing": true,
+                    "bServerSide": true,
+                    "bJQueryUI": true,
+                    "sAjaxSource": '@Url.Content( "~/api/PatientAssessmentsDataTable/Get"  )' + '@patientId',
+                "aoColumns": [
+                    {
+                        "mData": "CreatedTimestampString",
+                        "sClass": "FirstColumn",
+                    },
+                    {
+                        "mData": "PercentComplete",
+                        "sClass" : "Sue",
+                        "fnRender": function (oObj) {
+                            return "";//oObj.aData.PercentComplete + " %";
+                        }
+                    },
+                    {
+                        "mData": "Key",
+                        "sClass": "LastColumn",
+                        "bSortable": false,
+                        "bSearchable": false,
+                        "fnRender": function (oObj) {
+                            if (oObj.aData.IsCompleted) {
+                                return "<div><a href=" + '@Url.Action("Edit", "Assessment")' + '/' + oObj.aData.Key + ">Edit Assessment</a>"
+                                 + "<a href=" + '@Url.Content( "~/api/Assessment/Report/" )' + oObj.aData.Key + ">View Report</a></div>";
+                            } else {
+                                return "<a href=" + '@Url.Action("Edit", "Assessment")' + '/' + oObj.aData.Key + ">Edit Assessment</a>";
+                             }
+                        }
+                    }
+                ]
+            });
+        });
+        </script>
+    }
+}

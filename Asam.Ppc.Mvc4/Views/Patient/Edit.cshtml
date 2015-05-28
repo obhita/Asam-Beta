@@ -1,0 +1,77 @@
+﻿@using Asam.Ppc.Mvc.Infrastructure
+@using Asam.Ppc.Service.Messages.Core
+@model PatientDto
+
+@{
+    Layout = "~/Views/Patient/PatientLayout.cshtml";
+}
+
+<div class="patient-editor">
+    @Html.ExtendedValidationSummary(true, "Update failed. Please correct the following errors.")
+    <div class="question-root">
+        <div class="root-label">
+            <label for="Key">Identifier</label>
+        </div>
+        <div class="input-container">
+            <h4>@Model.Key</h4>
+            <div class="clear"></div>
+        </div>
+    </div>
+        @*<div class="question-root Ethnicity">
+            <div class="root-label">
+                @Html.LabelFor( m => m.Ethnicity )
+            </div>
+            <div class="input-container">
+                 @{ var ethnicityLookupCategory = Html.GetLookupCategory ( "Ethnicity" ); }
+                    @Html.EditorFor(m => m.Ethnicity, new { LookupItems = Html.GetLookupOptionsForCategory(ethnicityLookupCategory), LookupCategory = ethnicityLookupCategory })
+                    @Html.ExtendedValidationMessage("Ethnicity.Code")
+                    @Html.ExtendedValidationMessage("Ethnicity")
+                <div class="clear"></div>
+            </div>
+        </div>
+       <div class="question-root Religion">
+            <div class="root-label">
+                @Html.LabelFor( m => m.Religion )
+            </div>
+            <div class="input-container">
+                 @{ var religionLookupCategory = Html.GetLookupCategory("Religion"); }
+                    @Html.EditorFor(m => m.Religion, new { LookupItems = Html.GetLookupOptionsForCategory(religionLookupCategory), LookupCategory = religionLookupCategory })
+                    @Html.ExtendedValidationMessage("Religion.Code")
+                    @Html.ExtendedValidationMessage("Religion")
+                <div class="clear"></div>
+            </div>
+        </div>*@
+    @foreach (var property in @Html.GetPropertiesToRender())
+    {
+        <div class="question-root @property.PropertyName">
+            <div class="root-label">
+                @Html.Label(property.PropertyName)
+            </div>
+            <div class="input-container">
+                @if (Html.IsLookupProperty(property))
+                {
+                    var lookupCategory = Html.GetLookupCategory(property.PropertyName);
+                    @Html.Editor(property.PropertyName, new { LookupItems = Html.GetLookupOptionsForCategory(lookupCategory), LookupCategory = lookupCategory })
+                    @Html.ExtendedValidationMessage(property.PropertyName + ".Code")
+                    @Html.ExtendedValidationMessage(property.PropertyName)
+                }
+                else
+                {
+                    @Html.Editor(property.PropertyName)
+                @Html.ExtendedValidationMessage(property.PropertyName)
+                }
+                <div class="clear"></div>
+            </div>
+        </div>
+    }
+    <input class="hidden" id="assessmentId" name="assessmentId" value="@ViewData["AssessmentId"]" />
+</div>
+
+@section footerBody
+    {
+    <div>
+        <input type="submit" class="hidden save" value="Save" />
+        @Html.ActionLink("Cancel", "Cancel", "Patient", new { id = Model.Key, assessmentId = ViewData["AssessmentId"] }, new { @class = "cancel" })
+    </div>
+    <div class="clear"></div>
+}

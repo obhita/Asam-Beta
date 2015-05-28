@@ -1,0 +1,25 @@
+﻿@using Asam.Ppc.Service.Messages.Security
+@{
+    Layout = "~/Views/SystemAdmin/Layout.cshtml";
+    ViewBag.Title = "Create System Administrator";
+    var systemAdmin = new SystemAccountDto();
+}
+
+<div>
+    @using ( Html.BeginForm ( "CreateSystemAdminAccount", "SystemAdmin" ) )
+    {
+        <div>
+            @Html.Label("username",Html.DisplayNameFor( m => systemAdmin.Username ).ToString ())
+        </div>
+        <div>
+            @Html.Editor("username")
+        </div>
+        <div>
+            @Html.Label("email",Html.DisplayNameFor(m => systemAdmin.Email).ToString ())
+        </div>
+        <div>
+            @Html.TextBox( "email", null, new { type = "email" } )
+        </div>
+        <input type="submit" value="Create" />
+    }
+</div>

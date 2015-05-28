@@ -1,0 +1,67 @@
+﻿CREATE TABLE [ScoringModule].[Dimension5RelapsePotentialScores] (
+    [Dimension5RelapsePotentialScoresKey]                                                                              BIGINT NOT NULL,
+    [Version]                                                                                                          INT    NOT NULL,
+    [HasImminentSevereConsequences]                                                                                    BIT    NULL,
+    [CareLevel_0_5_EarlyInterventionScoreDoesNotUnderstandNeedToAlterCurrentDrugUsePattern]                            BIT    NULL,
+    [CareLevel_0_5_EarlyInterventionScoreNeedsToAcquireSkillsToChangeCurrentDrugUsePattern]                            BIT    NULL,
+    [CareLevel_0_5_EarlyInterventionScoreIsMet]                                                                        BIT    NULL,
+    [CareLevel_I_OutpatientScoreIsAbleToAchieveRecoveryGoalsOrAwarenessOfDrugProblem]                                  BIT    NULL,
+    [CareLevel_I_OutpatientScoreIsAbleToAchieveMentalHealthGoalsOnlyWithTherapeuticContact]                            BIT    NULL,
+    [CareLevel_I_OutpatientScoreIsDualDiagnosisEnhanced]                                                               BIT    NULL,
+    [CareLevel_I_OutpatientScoreIsMet]                                                                                 BIT    NULL,
+    [CareLevelOpioidMaintenanceTherapyScoreRequiresStructuredTherapyForRecoveryDueToOpiateCravings]                    BIT    NULL,
+    [CareLevelOpioidMaintenanceTherapyScoreExperiencingIntensifiedAddictionSymptomsWithDeterioratingFunctions]         BIT    NULL,
+    [CareLevelOpioidMaintenanceTherapyScoreHasHighRiskOfRelapseWithoutOpioidMaintenanceTherapy]                        BIT    NULL,
+    [CareLevelOpioidMaintenanceTherapyScoreIsMet]                                                                      BIT    NULL,
+    [CareLevel_II_1_IntensiveOutpatientScoreIsDualDiagnosisEnhanced]                                                   BIT    NULL,
+    [CareLevel_II_1_IntensiveOutpatientScoreActiveParticipantWithIntensifiedSymptomsAndDeterioratingFunctions]         BIT    NULL,
+    [CareLevel_II_1_IntensiveOutpatientScoreHasImpairedRecognitionAndModerateRiskOfRelapse]                            BIT    NULL,
+    [CareLevel_II_1_IntensiveOutpatientScoreIsMet]                                                                     BIT    NULL,
+    [CareLevel_II_5_PartialHospitalizationScoreIsDualDiagnosisEnhanced]                                                BIT    NULL,
+    [CareLevel_II_5_PartialHospitalizationScoreActiveParticipantWithIntensifiedSymptomsDespiteModifiedTreatmentPlan]   BIT    NULL,
+    [CareLevel_II_5_PartialHospitalizationScoreHasHighLikelihoodForContinueUseOrRelapseNeedsCloseOutpatientMonitoring] BIT    NULL,
+    [CareLevel_II_5_PartialHospitalizationScoreHasPsychiatricSymptomsHighRiskOfAlcoholDrugMentalDisorderRelapse]       BIT    NULL,
+    [CareLevel_II_5_PartialHospitalizationScoreIsMet]                                                                  BIT    NULL,
+    [CareLevel_III_1_IsDualDiagnosisEnhanced]                                                                          BIT    NULL,
+    [CareLevel_III_1_IsDualDiagnosisCapable]                                                                           BIT    NULL,
+    [CareLevel_III_1_HasLimitedSkillsImminentDangerOfRelapseWithDangerousConsequences]                                 BIT    NULL,
+    [CareLevel_III_1_UnderstandsPsychiatricAndSubstanceAbuseRiskOfRelapseAtLowerLevelOfCare]                           BIT    NULL,
+    [CareLevel_III_1_RequiresStaffSupportInRecoveryEffortAndTransitionToCommunityLife]                                 BIT    NULL,
+    [CareLevel_III_1_HighRiskOfPsychiatricAndSubstanceAbuseWithDangerousConsequencesNeeds24HourCare]                   BIT    NULL,
+    [CareLevel_III_1_HasModerateRiskOfPsychiatricProblemsAndSubstanceAbuseRelapseNeeds24HourCare]                      BIT    NULL,
+    [CareLevel_III_1_IsMetDimFivePartialHospitalization]                                                               BIT    NULL,
+    [CareLevel_III_1_IsMet]                                                                                            BIT    NULL,
+    [CareLevel_III_3_IsDualDiagnosisEnhanced]                                                                          BIT    NULL,
+    [CareLevel_III_3_NoRelapseRecognitionImminentDangerPsychiatricProblemsAndSubstanceAbuse]                           BIT    NULL,
+    [CareLevel_III_3_ExperiencingIntensifiedAddictionSymptomsOrPsychiatricProblemsDespiteAmendedTreatmentPlan]         BIT    NULL,
+    [CareLevel_III_3_RequiresRelapsePreventionDeliveredAtSlowerPaceIn24HourCare]                                       BIT    NULL,
+    [CareLevel_III_3_ActiveParticipantLowerLevelCareContinuedUseOrPsychiatricProblemsNeeds24HourCare]                  BIT    NULL,
+    [CareLevel_III_3_HasPsychiatricSymptomsModerateRiskOrPsychiatricProblemsSubstanceUseNeeds24HourCare]               BIT    NULL,
+    [CareLevel_III_3_IsMet]                                                                                            BIT    NULL,
+    [CareLevel_III_5_IsDualDiagnosisCapable]                                                                           BIT    NULL,
+    [CareLevel_III_5_IsDualDiagnosisEnhanced]                                                                          BIT    NULL,
+    [CareLevel_III_5_NoRecognitionOfRelapseHarmToSelfNeeds2HourCare]                                                   BIT    NULL,
+    [CareLevel_III_5_IsStabilizingUnableToStopUseOrPsychiatricProblemsNeeds24HourCare]                                 BIT    NULL,
+    [CareLevel_III_5_ExperiencingPsychiatricOrAddictionSymptomsHarmToSelfNeeds24HourCare]                              BIT    NULL,
+    [CareLevel_III_5_CrisisSituationWithImminentDangerOfRelapseAndConsequences]                                        BIT    NULL,
+    [CareLevel_III_5_ActiveParticipantLowerLevelCareContinuedUseOrPsychiatricProblemsInAbsenceOf24HourCare]            BIT    NULL,
+    [CareLevel_III_5_PsychiatricSymptomsModerateToHighRiskOfRelapseOrMentalDisorderNeeds24HourCare]                    BIT    NULL,
+    [CareLevel_III_5_IsMet]                                                                                            BIT    NULL,
+    [CareLevel_III_7_IsDualDiagnosisEnhanced]                                                                          BIT    NULL,
+    [CareLevel_III_7_ExperiencingAcutePsychiatricOrSubstanceCrisisWithIntensifiedSymptomsNeeds24HourCare]              BIT    NULL,
+    [CareLevel_III_7_ExperiencingEscalationOfRelapseOrAcuteSymptomsImminentDangerNeeds24HourCare]                      BIT    NULL,
+    [CareLevel_III_7_TreatmentMethodsRequireIntensiveLevelMedicallyManagedProgram]                                     BIT    NULL,
+    [CareLevel_III_7_PsychiatricSymptomsModerateToHighRiskOfRelapseOrMentalDisordersAllLowerLevelsNotFeasible]         BIT    NULL,
+    [CareLevel_III_7_IsMet]                                                                                            BIT    NULL,
+    [CareLevel_IV_IsMet]                                                                                               BIT    NULL,
+    PRIMARY KEY CLUSTERED ([Dimension5RelapsePotentialScoresKey] ASC)
+);
+
+
+
+
+
+
+GO
+
+

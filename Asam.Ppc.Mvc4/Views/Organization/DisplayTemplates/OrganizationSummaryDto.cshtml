@@ -1,0 +1,23 @@
+﻿@model Asam.Ppc.Service.Messages.Organization.OrganizationSummaryDto
+
+<div class="organization-summary">
+    <div class="left">
+        <h4>@Model.Name</h4>
+        @if ( Model.PrimaryPhone != null )
+        {
+            <span class="phone">@Html.Raw( string.Format ( "{0:(###) ###-####}", long.Parse ( Model.PrimaryPhone ) ) )</span>
+        }
+    </div>
+    <div class="left">
+        @Html.DisplayFor(m => m.PrimaryAddress)
+    </div>
+    <div class="left">
+        @{
+            var canEdit = Html.CanAccess ( "Organization", "Edit", "POST" );
+            var text = canEdit ? "Edit" : "View";
+            var icon = canEdit ? "\ue005" : "\ue07f";
+        }
+        @Html.SecureActionLink(text, "Edit", "Organization", new {key = Model.Key}, new {@class = "btn btn-mini", data_icon = icon})
+    </div>
+</div>
+

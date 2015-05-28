@@ -1,0 +1,27 @@
+@model Asam.Ppc.Service.Messages.Core.PatientDto
+
+@{
+    var dateOfBirth = Model.DateOfBirth == null ? string.Empty : Model.DateOfBirth.Value.ToString ( "MM/dd/yyyy" );
+}
+
+<div class="patient-details">
+    
+    <div>
+        <img id="personiconlarge" src="@Href( "~/Images/defaultperson.png" )"/>
+        <h2 id="bigname">@Model.Key</h2>
+        <h2 id="bigname">@Model.Name.FirstName @Model.Name.LastName</h2>
+        <div id="birthdate">
+            <span>Birth Date: @dateOfBirth</span>
+            <span>Gender: @Model.Gender</span>
+            <span>Religion: @Model.Religion</span>
+            <span>Ethnicity: @Model.Ethnicity</span>
+        </div>
+        @if (!Html.IsApiMode())
+        {
+            if (!(ViewContext.RouteData.Values["action"] == "Edit" && ViewContext.RouteData.Values["controller"] == "Patient"))
+            {
+                @Html.ActionLink("Edit", "Edit", "Patient", new { id = Model.Key, assessmentId = ViewData["AssessmentId"] }, null);
+            }
+        }
+    </div>
+</div>

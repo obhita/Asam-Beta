@@ -1,0 +1,15 @@
+﻿
+@{
+    var modalId = ViewData["ModalId"].ToString();
+    var addId = @modalId + "-add-btn";
+    var loadingId = modalId + "-loading";
+}
+
+<div id="@modalId" aria-hidden="true">
+    <div>
+        @Html.EditorForModel()
+    </div>
+    <div>
+        <input type="submit" value="Add" />
+    </div>
+</div>

@@ -1,0 +1,139 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section NavigationBody
+{
+    @if(ViewBag.CanAccessAllPatients)
+    {
+        <div class="scroll">
+        <div class="dataTable-wrapper Patient">
+            <table id="patientSearchDataTable">
+                <thead>
+                    <tr>
+                        <th width="25%">First Name</th>
+                        <th width="40%">Last Name</th>
+                        <th width="20%">Gender</th>
+                        <th width="100%">Identifier</th>
+                        <th width="0%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="clear"></div>
+        @if (!Html.IsApiMode())
+        {
+            <div class="Jerry">
+                @Html.ActionLink("Create Patient", "Create", "Patient", new { assessmentId = ViewData["assessmentId"] }, new { @class = "ui-button" })
+            </div>
+        }
+        </div>
+    }
+}
+
+@if (!Html.IsApiMode())
+{
+    using (Html.BeginForm("Edit", "Patient", null, FormMethod.Post, new { id = "patientForm" }))
+    {
+        <div id="patientHeader" class="page-header">
+            @Html.DisplayFor(m => ViewData["Patient"])
+        </div>
+        <br class="clear" />
+        <div id="patientContent">
+            @RenderBody()
+        </div>
+        <div id="patientFooter" class="page-footer">
+            @RenderSection("footerBody", required: false)
+        </div>
+    }
+}
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#DateOfBirth').datepicker();
+
+            $('.question-root').focusContainer();
+            
+            $('#patientSearchDataTable').dataTable({                
+                "bProcessing": true,
+                "bServerSide": true,
+                "bSort": false,
+                "bJQueryUI": true,
+                "sAjaxSource": '@Url.Content( "~/api/PatientSearchDataTable" )',
+                "aoColumns": [
+                    { "mData": "Key" },
+                    //{
+                    //    "mData": "Name.FirstName",
+                    //    "sClass": "FirstColumn",
+                    //},
+                    //{
+                    //    "mData": "Name.LastName",
+                    //    "sClass": "Sue",
+                    //},
+                    //{
+                    //    "mData": "Gender.Name",
+                    //    "sClass": "LastColumn",
+                    //},
+                    { "mData": "Key", "bSortable": false, "bSearchable": true, "sClass": "hidden" }
+                ]
+            });
+            $("#patientSearchDataTable tbody").click(function (event) {
+                if (!event) event = window.event;
+                var target = event.target || event.scrElement;
+                var id = $("td", target.parentNode)[1].innerHTML;
+                var assessmentId = '@ViewData["AssessmentId"]';
+                var additionalQueryParams = "";
+                if (assessmentId != "") {
+                    additionalQueryParams = "?assessmentId=" + assessmentId;
+                }
+                window.location = '@Url.Content("~/Patient")' + '/Index/' + id + additionalQueryParams;
+            });
+            
+            function fixPatientSizes() {
+                $('#patientContent').height($(window).height() - $('#patientHeader').height() - $('#patientFooter').height() - $('#asamFooter').height());
+            }
+            
+            fixPatientSizes();
+            $(window).resize(function () {
+                fixPatientSizes();
+            });
+
+            window.patientFormDirty = false;
+
+            $('#patientForm :submit').click(function () {
+                window.patientFormDirty = false;
+            });
+
+            $('#patientForm a:contains("Cancel")').click(function () {
+                window.patientFormDirty = false;
+            });
+
+            $('#patientForm :input').change(function () {
+                window.patientFormDirty = true;
+                $('#patientForm .save').removeClass("hidden");
+            });
+
+            $(window).bind('beforeunload', function () {
+                if (window.patientFormDirty) {
+                    return "You will lose all pending changes...";
+                }
+                return undefined;
+            });
+
+            $('#patientForm').on('keydown', function (e) {
+                if (e.which == 13 && e.target.nodeName != 'TEXTAREA') {
+                    e.preventDefault();
+                }
+            });
+            
+            
+            $.fn.placeholder();
+        });
+    </script>
+    
+    @RenderSection( "scripts", false )
+}

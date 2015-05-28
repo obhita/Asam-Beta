@@ -1,0 +1,48 @@
+﻿@using Asam.Ppc.Service.Messages.Common.Lookups
+@using Asam.Ppc.Mvc.Infrastructure
+@model System.Collections.IEnumerable
+
+@{
+    Type genericType = null;
+    var modelType = Model.GetType();
+    if (modelType.IsGenericType)
+    {
+        genericType = modelType.GetGenericArguments()[0];
+    }
+}
+
+@if (genericType == typeof (LookupDto))
+{
+    var items = ViewData["LookupItems"] as IList<LookupDto>;
+    if ( items != null )
+    {
+        var codeNoneItem = items.FirstOrDefault ( i => i.Code == "None" );
+        if ( codeNoneItem != null )
+        {
+            items.Remove ( codeNoneItem );
+        }
+    }
+    else
+    {
+        var itemsList = new List<LookupDto> ();
+        if ( Model != null && Model.OfType<LookupDto> ().Any () )
+        {
+            itemsList.AddRange(Model.OfType<LookupDto>());
+        }
+        items = itemsList;
+    }
+    var wrapperClass = "multiselect-wrapper";
+    if (Html.HasCheckAllAttribute())
+    {
+        wrapperClass += " checkall";
+    }
+    @Html.CheckBoxListForModel(items, "Code", "Name", new {@class = wrapperClass})
+}
+else
+{
+    foreach (var item in Model)
+    {
+        @Html.EditorFor(m => item)
+        @Html.ExtendedValidationMessageFor(m => item)
+    }
+}

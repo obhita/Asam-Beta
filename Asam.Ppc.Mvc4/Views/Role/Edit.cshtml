@@ -1,0 +1,170 @@
+﻿@using Pillar.Common.Utility
+@using Asam.Ppc.Mvc4.Resources;
+@model Asam.Ppc.Service.Messages.Security.RoleDto
+
+@{
+    Layout = "~/Views/Organization/Layout.cshtml";
+    var disable = !Html.CanAccess("Role", "Edit", "POST") ? "true" : "false";
+    ViewBag.Title = "Role Editor";
+    var availablePermissions = new List<SelectListItem> ();
+    if ( ViewData.ContainsKey ( "AvailablePermissions" ) )
+    {
+        availablePermissions = (List<SelectListItem>) ViewData["AvailablePermissions"];
+    }
+}
+
+<div class="role-editor editor dashboard-wrapper">
+    <div class="editor-content container-fluid" data-disabled="@disable">
+        <div class="questions">
+            @using ( Html.BeginForm ( "Edit", "Role", new {id = Model.Key}, FormMethod.Post, new {id = "role-editor-form"} ) )
+            {
+                @Html.HiddenFor( m => m.Key, new {id = "current-role-key"} )
+                <div class="question-root @PropertyUtil.ExtractPropertyName( () => Model.Name )" data-ajax-container="true">
+                    <div>
+                        @Html.LabelFor( m => m.Name )
+                    </div>
+                    <div class="question-answer-wrapper">
+                        @Html.TextBoxFor( m => m.Name, new {placeholder = Html.DisplayNameFor ( m => m.Name )} )
+                        @Html.ValidationMessageFor( m => m.Name )
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            }
+            <div id="permissions-container" class="question-root @PropertyUtil.ExtractPropertyName(() => Model.Permissions)" data-ajax-container="true" data-ajaxform-ignore="true">
+                <div>
+                    @Html.Label("Permissions")
+                </div>
+                @if (Model.Permissions != null)
+                {
+                    <div class="question-answer-wrapper">
+                        <div class="add-remove-permissions">
+                            <div class="available-items-section permissions">
+                                @Html.Label("AvailablePermissions", "Available Permissions")
+                                @Html.ListBox("AvailablePermissions", availablePermissions, new { id = "available-permissions" })
+                                <div class="clear"></div>
+                            </div>
+                            <div class="add-remove-items-btn-section permissions">
+                                <div>
+                                    @if (@Html.CanAccess("Role", "AddPermissions", "POST"))
+                                    {
+                                        @Html.SecureActionLink("Add >", "AddPermissions", "Role", new { id = Model.Key }, new { @class = "btn btn-primary disabled", id = "add-permissions-btn" })
+                                    }
+                                </div>
+                                <div>
+                                    @if (@Html.CanAccess("Role", "RemovePermissions", "POST"))
+                                    {
+                                        @Html.SecureActionLink("< Remove", "RemovePermissions", "Role", new { id = Model.Key }, new { @class = "btn btn-primary disabled", id = "remove-permissions-btn" })
+                                    }
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="current-items-section permissions">
+                                @Html.Label("CurrentPermissions", "Current Permissions")
+                                @{
+                    var currentPermissions = Model.Permissions.Select(r => new SelectListItem { Selected = false, Text = Permissions.ResourceManager.GetString(r.Replace('/', '_')), Value = r }).ToList();
+                                }
+                                @Html.ListBox("CurrentPermissions", currentPermissions, new { id = "current-permissions" })
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section footerBody
+{
+    <a id="role-submit" class="submit" href="#" type="button">Save</a>
+    @Html.ActionLink("Cancel", "Index", "Organization", null, new { @class = "cancel" })
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#role-submit').click(function (e) {
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                e.preventDefault();
+                $('#role-editor-form')[0].submit();
+            });
+            var roleKey = $('#current-role-key').val();
+            var roleBaseUri = '@Url.Content("~/Role")';
+            
+            $('#available-permissions').change(function () {
+                if ($("#available-permissions :selected").length > 0) {
+                    $("#add-permissions-btn").removeClass("disabled");
+                } else {
+                    $("#add-permissions-btn").addClass("disabled");
+                }
+            });
+
+            $('#current-permissions').change(function () {
+                if ($("#current-permissions :selected").length > 0) {
+                    $("#remove-permissions-btn").removeClass("disabled");
+                } else {
+                    $("#remove-permissions-btn").addClass("disabled");
+                }
+            });
+
+            var $container = $('#permissions-container');
+            $("#add-permissions-btn").ajaxLink({
+                url: roleBaseUri + '/AddPermissions/' + roleKey,
+                success: function () {
+                    $container.attr("data-ajax-status", "success");
+                    $("#available-permissions > option:selected").each(function () {
+                        $(this).remove().appendTo("#current-permissions");
+                    });
+                    $("#available-permissions").change();
+                    $("#current-permissions").change();
+                },
+                getData: function () {
+                    $container.attr("data-ajax-status", "loading");
+                    var data = {};
+                    data["permissions"] = new Array();
+                    $('#available-permissions option:selected').each(function () {
+                        data["permissions"].push(this.value);
+                    });
+                    return data;
+                },
+                error: function () {
+                    $container.attr("data-ajax-status", "fail");
+                },
+                complete: function () {
+                    setTimeout(function () { $container.removeAttr("data-ajax-status"); }, 8000);
+                }
+            });
+
+            $("#remove-permissions-btn").ajaxLink({
+                url: roleBaseUri + '/RemovePermissions/' + roleKey,
+                success: function () {
+                    $container.attr("data-ajax-status", "success");
+                    $("#current-permissions > option:selected").each(function () {
+                        $(this).remove().appendTo("#available-permissions");
+                    });
+                    $("#available-permissions").change();
+                    $("#current-permissions").change();
+                },
+                getData: function () {
+                    $container.attr("data-ajax-status", "loading");
+                    var data = {};
+                    data["permissions"] = new Array();
+                    $('#current-permissions option:selected').each(function () {
+                        data["permissions"].push(this.value);
+                    });
+                    return data;
+                },
+                error: function () {
+                    $container.attr("data-ajax-status", "fail");
+                },
+                complete: function () {
+                    setTimeout(function () { $container.removeAttr("data-ajax-status"); }, 8000);
+                }
+            });
+        });
+    </script>
+    <noscript>This site contains certain features and services that require javascript in order to function properly. Please enable javascript in your browser and try again.</noscript>
+}

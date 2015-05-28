@@ -1,0 +1,57 @@
+﻿@using Asam.Ppc.Mvc.Infrastructure
+
+@{
+    var property = ViewData["CurrentProperty"] as ModelMetadata;
+    var labels = Html.GetLegendLabels(property).Reverse();
+    var lastLabel = labels.Last();
+    var underlyingType = Nullable.GetUnderlyingType(property.ModelType);
+    var propertyTypeString = underlyingType == null ? property.ModelType.Name : underlyingType.Name;
+    var controlWrapperClass = "control-wrapper " + propertyTypeString;
+}
+
+<div class="seven columns alpha omega legend">
+    <div data-role="sharedheightitem"></div>
+    @foreach (var label in labels)
+    {
+        <div class="legend-label"><span>@label</span></div>
+        if (!string.IsNullOrEmpty(label) && label != lastLabel)
+        {
+        <div class="legend-line"></div>
+        }
+    }
+</div>
+
+<div class="base-question-wrapper">
+    <div class="five columns alpha omega">
+        <div class="general-question-wrapper" data-role="sharedheightitem">
+            <div class="center-outerwrap">
+                <div class="center-wrap">
+                    <div class="center">
+                        <p>
+                            @Html.Label(property.PropertyName)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="@controlWrapperClass">
+            <div class="center-outerwrap">
+                <div class="center-wrap">
+                    <div class="center">
+                        @if (Html.IsLookupProperty(property))
+                        {
+                            var lookupCategory = Html.GetLookupCategory(property.PropertyName);
+                            @Html.Editor(property.PropertyName, new { LookupItems = Html.GetLookupOptionsForCategory(lookupCategory), LookupCategory = lookupCategory })
+                        }
+                        else
+                        {
+                            @Html.Editor(property.PropertyName)
+                        }
+                        @Html.ExtendedValidationMessage(property.PropertyName)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+</div>

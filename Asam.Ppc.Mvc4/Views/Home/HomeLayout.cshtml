@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="homeScreenHeader" class="page-header">
+</div>
+<br class="clear" />
+
+<div id="homeScreenContent">
+    @RenderBody()
+    <div class="clear"></div>
+</div>
+
+<div id="homeScreenFooter" class="page-footer">
+</div>
+
+@section NavigationBody
+{
+    @if ( Html.CanAccess ( "Organization", "Index" ) )
+    {
+        <div class="admin-wrapper">
+            @Html.ActionLink( "Administration", "Index", "Organization", null, new {@class = "btn"} )
+        </div>
+    }
+}
+
+@section scripts
+{
+    @RenderSection( "scripts", false )
+}

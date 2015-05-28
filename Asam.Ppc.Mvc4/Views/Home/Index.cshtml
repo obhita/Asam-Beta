@@ -1,0 +1,106 @@
+﻿
+@{
+    Layout = "~/Views/Home/HomeLayout.cshtml";
+}
+
+<fieldset class="HomeField">
+    <legend class="sub-section-header">Assessment List</legend>
+    <div class="dataTable-wrapper">
+
+        <table id="allAssessmentsDataTable">
+            <thead>
+                <tr>
+                    @*<th width="20%">First Name</th>
+                    <th width="30%">Last name</th>*@
+                    <th width="50%">Identifier</th>
+                    <th width="20%">Date Started</th>
+                    <th width="23%"></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</fieldset>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#allAssessmentsDataTable').dataTable({
+                "bProcessing": true,
+                "bJQueryUI": true,
+                "bServerSide": true,
+                "bSort": false,
+                "sAjaxSource": '@Url.Content( "~/api/AllAssessmentsDataTable" )',
+                "aoColumns": [
+                    {
+                    "mData": "PatientId",
+                    "sClass": "FirstColumn",
+                    "fnRender": function (oObj) {
+                        var assessmentId = '@ViewData["AssessmentId"]';
+                            var additionalQueryParams = "";
+                            if (assessmentId != "") {
+                                additionalQueryParams = "?assessmentId=" + assessmentId;
+                            }
+                            return "<a href='@Url.Action("Index","Patient")/Index/" + oObj.aData.PatientId + additionalQueryParams + "'>" + oObj.aData.PatientId + "</a>";
+                        }
+                },
+                    @*{
+                        "mData": "PatientFirstName",
+                        "sClass": "FirstColumn",
+                        "fnRender": function (oObj) {
+                            var assessmentId = '@ViewData["AssessmentId"]';
+                            var additionalQueryParams = "";
+                            if (assessmentId != "") {
+                                additionalQueryParams = "?assessmentId=" + assessmentId;
+                            }
+                            return "<a href='@Url.Action("Index","Patient")/Index/" + oObj.aData.PatientId + additionalQueryParams + "'>" + oObj.aData.PatientFirstName + "</a>";
+                        }
+                    },
+                    {
+                        "mData": "PatientLastName",
+                        "sClass": "Sue",
+                        "fnRender": function (oObj) {
+                            var assessmentId = '@ViewData["AssessmentId"]';
+                            var additionalQueryParams = "";
+                            if (assessmentId != "") {
+                                additionalQueryParams = "?assessmentId=" + assessmentId;
+                            }
+                            return "<a href='@Url.Action("Index","Patient")/Index/" + oObj.aData.PatientId + additionalQueryParams + "'>" + oObj.aData.PatientLastName + "</a>";
+                        }
+                    },*@
+                    {
+                        "mData": "CreatedTimestampString",
+                        "sClass": "Sue"
+                    },
+                    {
+                        "mData": "Key",
+                        "sClass": "LastColumn",
+                        "bSortable": false,
+                        "bSearchable": false,
+                        "fnRender": function (oObj) {
+                            if (oObj.aData.IsSubmitted) {
+                                return "<div><a href=" + '@Url.Action("Edit", "Assessment")' + '/' + oObj.aData.Key + ">Review Assessment</a>"
+                                + "<a href=" + '@Url.Content( "~/api/Assessment/Report/" )' + oObj.aData.Key + ">View Report</a></div>";
+                            } else {
+                                return "<div><a href=" + '@Url.Action("Edit", "Assessment")' + '/' + oObj.aData.Key + ">Edit Assessment</a></div>";
+                            }
+                        }
+                    }
+                ]
+            });
+
+
+            function fixHomeSizes() {
+                $('#homeScreenContent').height($(window).height() - $('#homeScreenHeader').height() - $('#homeScreenFooter').height() - $('#asamFooter').height());
+            }
+
+            fixHomeSizes();
+            $(window).resize(function () {
+                fixHomeSizes();
+            });
+
+        });
+    </script>
+}

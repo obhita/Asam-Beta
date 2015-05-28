@@ -1,0 +1,1480 @@
+﻿/* MODULE RULES   
+----------------------------------------------------------
+Module are more descrete components that make up the page 
+such as navigation bars, carousels, and widgets etc. Usually 
+these modules live within major layout components of the page
+such as headers or footers. Modules should use class selectors
+since they may be used more than once.
+
+ADDITIONAL MODULE RULES CAN BE FOUND IN THE "Site/css" FILE.
+----------------------------------------------------------*/
+
+
+/* JQuery Control Styles*/
+.ui-scale-option
+{
+    border-color: transparent;
+    border-style: solid;
+    border-width: 2px;
+    cursor: pointer;
+}
+
+    .ui-scale-option div
+    {
+        background-color: lightgray;
+        text-align: center;
+        text-overflow: ellipsis;
+        width: 100%;
+        display: inline-block;
+        font-weight: 600;
+        color: white;
+    }
+    /*.ui-scale-option div { background-color: lightgray; text-align: center; text-overflow: ellipsis; overflow: hidden; width: 100%; display: inline-block; font-weight: 600; color: white; }*/
+
+
+    .ui-scale-option-label.vertical,
+    .ui-scale-option.vertical div
+    {
+        height: 40px;
+        line-height: 40px;
+    }
+
+.ui-scale-option-label
+{
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    padding: 2px;
+}
+
+.ui-scale-option
+{
+    padding: 0;
+}
+
+    .ui-scale-option.vertical,
+    .ui-scale-option-label.vertical
+    {
+        min-width: 20px;
+    }
+
+.ui-scale-active div
+{
+    background-color: darkgray !important;
+    color: black;
+}
+
+
+/*Hover State for Vertical and Horizontal Scales*/
+
+.ui-scale-hover
+{
+    border-color: red;
+    border-width: 2px 0px;
+    padding: 0 4px 0 0;
+}
+
+.ui-scale-hover-last
+{
+    border-color: red;
+    border-width: 2px 2px 2px 0;
+    padding: 0;
+}
+
+.scale0-7 .ui-scale-hover-last[data-value='7']
+{
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.scale0-8 .ui-scale-hover-last[data-value='8']
+{
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.scale0-9 .ui-scale-hover-last[data-value='9']
+{
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.ui-scale-hover-first[data-value='0']
+{
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+}
+
+.ui-scale-hover-first[data-value='NotAtAll']
+{
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+}
+
+.ui-scale-hover-last[data-value='Extremely']
+{
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.ui-scale-hover-first
+{
+    border-color: red;
+    border-width: 2px 0 2px 2px;
+    padding: 0 4px 0 0;
+}
+
+    .ui-scale-hover-first.ui-scale-hover-last
+    {
+        border-color: red;
+        border-width: 2px;
+        padding: 0;
+    }
+
+.ui-scale-hover.vertical
+{
+    border-color: red;
+    border-width: 0px 2px;
+    padding: 4px 0 0 0;
+}
+
+.ui-scale-hover-last.vertical
+{
+    border-color: red;
+    border-width: 2px 2px 0 2px;
+    padding: 0;
+}
+
+.ui-scale-hover-first.vertical
+{
+    border-color: red;
+    border-width: 0 2px 2px 2px;
+    padding: 4px 0 0 0;
+    border-radius: 0 0 12px 12px;
+}
+
+.scale0-7 .ui-scale-hover-last.vertical[data-value='7']
+{
+    border-radius: 12px 12px 0 0;
+}
+
+.scale0-8 .ui-scale-hover-last.vertical[data-value='8']
+{
+    border-radius: 12px 12px 0 0;
+}
+
+.scale0-9 .ui-scale-hover-last.vertical[data-value='9']
+{
+    border-radius: 12px 12px 0 0;
+}
+
+.ui-scale-hover-first.ui-scale-hover-last.vertical
+{
+    border-color: red;
+    border-width: 2px;
+    padding: 0;
+}
+
+/* Bi-Polar Scale Styles*/
+/*.legend-scale, .high-low-scale { padding: 10px; border-style: solid; border-width: 1px; border-color: lightgray; -moz-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px; }*/
+.legend-scale, .high-low-scale
+{
+    padding: 10px 10px 10px 0;
+}
+
+.high-low-scale-legend .low-scale-label
+{
+    float: left;
+    margin-left: 5px;
+    max-width: 225px;
+}
+
+.high-low-scale-legend .high-scale-label
+{
+    float: right;
+    margin-right: 5px;
+    max-width: 225px;
+}
+
+/* Severity Scales */
+.ui-scale-active[data-value='0'] div
+{
+    font-weight: 600;
+    background-color: #0a8642 !important;
+}
+
+.ui-scale-active[data-value='1'] div
+{
+    font-weight: 600;
+    background-color: #5d9840 !important;
+}
+
+.ui-scale-active[data-value='2'] div
+{
+    font-weight: 600;
+    background-color: #8dae3c !important;
+}
+
+.ui-scale-active[data-value='3'] div
+{
+    font-weight: 600;
+    background-color: #bdc832 !important;
+}
+
+.ui-scale-active[data-value='4'] div
+{
+    font-weight: 600;
+    background-color: #f2ea17 !important;
+}
+
+.ui-scale-active[data-value='5'] div
+{
+    font-weight: 600;
+    background-color: #eebf2c !important;
+}
+
+.ui-scale-active[data-value='6'] div
+{
+    font-weight: 600;
+    background-color: #ea9534 !important;
+}
+
+.ui-scale-active[data-value='7'] div
+{
+    font-weight: 600;
+    background-color: #e76b35 !important;
+}
+
+.scale0-7 .ui-scale-active[data-value='7'] div
+{
+    font-weight: 600;
+    background-color: #E41A1A !important;
+}
+
+.ui-scale-active[data-value='8'] div
+{
+    background-color: #E41A1A !important;
+}
+
+.ui-scale-active[data-value='9'] div
+{
+    background-color: #E41A1A !important;
+}
+
+/*Curved Scale Buttons - Vertical*/
+.scale0-7 .ui-scale-option.vertical[data-value='7'] div
+{
+    border-radius: 10px 10px 0 0;
+}
+
+    .scale0-7 .ui-scale-option.vertical[data-value='7'] div:focus
+    {
+        outline: none;
+    }
+
+.scale0-8 .ui-scale-option.vertical[data-value='8'] div
+{
+    border-radius: 10px 10px 0 0;
+}
+
+    .scale0-8 .ui-scale-option.vertical[data-value='8'] div:focus
+    {
+        outline: none;
+    }
+
+.scale0-9 .ui-scale-option.vertical[data-value='9'] div
+{
+    border-radius: 10px 10px 0 0;
+}
+
+    .scale0-9 .ui-scale-option.vertical[data-value='9'] div:focus
+    {
+        outline: none;
+    }
+
+.ui-scale-option.vertical[data-value='0'] div
+{
+    border-radius: 0 0 10px 10px;
+}
+
+    .ui-scale-option.vertical[data-value='0'] div:focus
+    {
+        outline: none;
+    }
+
+/*Curved Scale Buttons - Horizontal*/
+.ui-scale-option[data-value='0'] div
+{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.scale0-7 .ui-scale-option[data-value='7'] div
+{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.scale0-8 .ui-scale-option[data-value='8'] div
+{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.scale0-9 .ui-scale-option[data-value='9'] div
+{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.ui-scale-option[data-value='0'] div:focus
+{
+    outline: none;
+}
+
+.scale0-7 .ui-scale-option[data-value='7'] div:focus
+{
+    outline: none;
+}
+
+.scale0-8 .ui-scale-option[data-value='8'] div:focus
+{
+    outline: none;
+}
+
+.scale0-9 .ui-scale-option[data-value='9'] div:focus
+{
+    outline: none;
+}
+
+/* Likerts */
+.ui-scale-active[data-value='NotAtAll'] div
+{
+    background-color: #0a8642 !important;
+    border-radius: 8px 0 0 8px;
+}
+
+.ui-scale-active[data-value='Slightly'] div
+{
+    background-color: #8dae3c !important;
+}
+
+.ui-scale-active[data-value='Moderately'] div
+{
+    background-color: #f2ea17 !important;
+}
+
+.ui-scale-active[data-value='Considerably'] div
+{
+    background-color: #ea9534 !important;
+}
+
+.ui-scale-active[data-value='Extremely'] div
+{
+    background-color: #E41A1A !important;
+}
+
+/*Curved Likert Buttons - Horizontal*/
+.ui-scale-option[data-value='NotAtAll'] div
+{
+    border-radius: 8px 0 0 8px;
+}
+
+    .ui-scale-option[data-value='NotAtAll'] div:focus
+    {
+        outline: none;
+    }
+
+.ui-scale-option[data-value='Extremely'] div
+{
+    border-radius: 0px 8px 8px 0px;
+}
+
+    .ui-scale-option[data-value='Extremely'] div:focus
+    {
+        outline: none;
+    }
+
+/* Yes/No Radio Buttons */
+.yesno-radiobuttons
+{
+    margin: 4px 4px 4px 0;
+    overflow: hidden;
+    display: inline-block;
+}
+
+    .yesno-radiobuttons label
+    {
+        float: left;
+        margin: 3px 7px 3px 0;
+        position: relative;
+    }
+
+        .yesno-radiobuttons label span
+        {
+            text-align: center;
+            padding: 3px 8px;
+            background-color: #EFEFEF;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            border: 1px solid #D0D0D0;
+            display: block;
+            color: #a6a6a6;
+        }
+
+        .yesno-radiobuttons label input
+        {
+            position: absolute;
+            display: none;
+        }
+
+    .yesno-radiobuttons span:hover
+    {
+        background-color: #035d99;
+        color: #F7F7F7;
+    }
+
+    .yesno-radiobuttons input:checked + span
+    {
+        background-color: #27aae1;
+        color: #F7F7F7;
+    }
+
+.center
+{
+    float: left;
+    position: relative;
+    left: -50%;
+}
+
+.center-outerwrap
+{
+    position: relative;
+    overflow: hidden;
+}
+
+.center-wrap
+{
+    float: left;
+    position: relative;
+    left: 50%;
+}
+
+
+
+/* Psychological Rating Control */
+
+.PsychologicalSection .InterviewerRating_AppearanceOfHeader .fieldset-legend-wrapper
+{
+    border-style: none;
+}
+
+.PsychologicalSection .InterviewerRating_AppearanceOfHeader
+{
+    min-width: 750px;
+}
+
+    .PsychologicalSection .InterviewerRating_AppearanceOfHeader .groupdiv
+    {
+        border-width: 2px;
+        border-color: lightgrey;
+        border-style: solid;
+        -moz-border-radius: 9px;
+        -webkit-border-radius: 9px;
+        border-radius: 9px;
+        margin: 0.7% !important;
+    }
+
+    .PsychologicalSection .InterviewerRating_AppearanceOfHeader .fieldset-legend-wrapper .three:first-child
+    {
+        width: 48% !important;
+        border-style: none !important;
+    }
+
+        .PsychologicalSection .InterviewerRating_AppearanceOfHeader .fieldset-legend-wrapper .three:first-child .base-question-wrapper
+        {
+            border-width: 2px;
+            border-color: lightgrey;
+            border-style: solid;
+            -moz-border-radius: 9px;
+            -webkit-border-radius: 9px;
+            border-radius: 9px;
+            margin: 0 0 0 2.7% !important;
+        }
+
+        .PsychologicalSection .InterviewerRating_AppearanceOfHeader .fieldset-legend-wrapper .question-root.ui-state-focus,
+        .PsychologicalSection .InterviewerRating_AppearanceOfHeader .fieldset-legend-wrapper .three:first-child .ui-state-focus .base-question-wrapper
+        {
+            background-color: rgba(207,231,250,.5);
+        }
+
+        .PsychologicalSection .InterviewerRating_AppearanceOfHeader .fieldset-legend-wrapper .question-root,
+        .PsychologicalSection .InterviewerRating_AppearanceOfHeader .fieldset-legend-wrapper .three:first-child .base-question-wrapper
+        {
+            background-color: rgba(250,250,212,.4);
+        }
+
+
+        .PsychologicalSection .InterviewerRating_AppearanceOfHeader .fieldset-legend-wrapper .three:first-child .question-root
+        {
+            background-color: transparent;
+        }
+
+
+.PsychologicalSection .InterviewerRating .base-question-wrapper
+{
+    padding: 0 5px 10px 10px;
+}
+
+.PsychologicalSection .InterviewerRating .question-root.GlobalAssessmentOfFunctioningScore .base-question-wrapper
+{
+    margin: 0 0 0 5px;
+}
+
+
+
+.PsychologicalSection .InterviewerRating_AppearanceOfHeader .general-question-wrapper
+{
+    padding: 0px;
+    text-align: center;
+}
+
+.PsychologicalSection .InterviewerRating_AppearanceOfHeader .legend
+{
+    padding-top: 20px;
+}
+
+    .PsychologicalSection .InterviewerRating_AppearanceOfHeader .legend .legend-line
+    {
+        margin-right: -255%;
+        margin-left: 30px;
+    }
+
+.PsychologicalSection .InterviewerRating_AppearanceOfHeader .IndicatingRiskOfHarmToSelfOrVictimizationByOthers .legend .legend-line
+{
+    margin-right: -160%;
+    margin-left: 30px;
+}
+
+.PsychologicalSection .InterviewerRating_AppearanceOfHeader .base-question-wrapper
+{
+    margin: 0;
+    padding: 0 0 5px 10px;
+}
+
+/* Rating Legend */
+.legend .legend-line
+{
+    height: 1px;
+    margin-bottom: -2px;
+    background-color: lightgrey;
+    margin-right: -20%;
+    margin-left: 20px;
+}
+
+.legend .legend-label
+{
+    height: 40px;
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+    .legend .legend-label span
+    {
+        margin: 0;
+        padding: 0 20px 5px 50px;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        line-height: 14px;
+    }
+
+
+/* Rating Select */
+select
+{
+    border: lightgrey solid 2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+    padding: 5px 5px 5px 10px;
+    background: white;
+    -webkit-appearance: none;
+    text-wrap: normal;
+    width: auto;
+}
+
+.dataTable-wrapper #patientSearchDataTable_length select,
+.dataTable-wrapper #patientAssessmentsDataTable_length select,
+.HomeField .dataTable-wrapper select
+{
+    padding: 5px 15px 5px 3px;
+    margin: 0 2px;
+    background-color: whitesmoke;
+}
+
+    .dataTable-wrapper #patientSearchDataTable_length select:hover,
+    .dataTable-wrapper #patientAssessmentsDataTable_length select:hover,
+    .HomeField .dataTable-wrapper select:hover
+    {
+        background-color: lightyellow;
+    }
+
+.dataTable-wrapper select
+{
+    border: lightgrey solid 2px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 5px 0px 5px 7px;
+    background: white;
+    background-position: 91% 50%;
+    -webkit-appearance: none;
+    text-wrap: normal;
+    width: auto;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+/* Chrome only hack!!! */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+    .dataTable-wrapper select
+    {
+        background: white url(../Images/d_arrow.svg) no-repeat 98% 50%;
+        background-image: -webkit-linear-gradient(transparent, transparent), url('../Images/d_arrow.svg');
+        background-image: -moz-linear-gradient(transparent, transparent), url(../Images/d_arrow.svg);
+        background-image: linear-gradient(transparent, transparent), url(../Images/d_arrow.svg);
+        padding: 5px 15px 5px 10px;
+    }
+
+    select
+    {
+        background: white url(../Images/d_arrow.svg) no-repeat 98% 50%;
+        background-image: -webkit-linear-gradient(transparent, transparent), url('../Images/d_arrow.svg');
+        background-image: -moz-linear-gradient(transparent, transparent), url(../Images/d_arrow.svg);
+        background-image: linear-gradient(transparent, transparent), url(../Images/d_arrow.svg);
+        padding: 5px 30px 5px 10px;
+    }
+}
+
+
+select:disabled
+{
+    background-color: #EBEBE4;
+    background-image: none;
+}
+
+.border-wrapper
+{
+    border: lightgrey solid 2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: #f5f4e7;
+    display: inline-block;
+}
+
+
+/* Input Control */
+input
+{
+    border: lightgrey solid 2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+    input.input-validation-error
+    {
+        border-color: red;
+    }
+
+select.input-validation-error
+{
+    border-color: red;
+}
+
+input.text-box.single-line
+{
+    width: 60px;
+}
+
+    input.text-box.single-line#DateOfBirth
+    {
+        width: 80px;
+    }
+
+input[type=checkbox]
+{
+    padding: 0;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+
+/* Assessment Control */
+.page-footer input[type=submit]
+{
+    cursor: pointer;
+    background-color: #336D93;
+    color: white;
+}
+
+    .page-footer input[type=submit]:hover
+    {
+        background-color: darkgray;
+    }
+
+.page-footer .save
+{
+    padding: 5px 20px;
+    font-weight: bold;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    width: auto;
+}
+
+.page-footer .submit,
+.page-footer .cancel
+{
+    padding: 5px 20px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: lightgrey solid 2px;
+    margin-top: 2px;
+    background-color: gray;
+    text-decoration: none;
+    font: -webkit-small-control;
+    color: white;
+}
+
+.page-footer .submit
+{
+    font-weight: bold;
+    background-color: green;
+    float: right;
+}
+
+
+    .page-footer .submit:hover,
+    .page-footer .cancel:hover
+    {
+        background-color: darkgray;
+    }
+
+.CompletionSection .submit.hidden
+{
+    display: inline-block;
+}
+
+#assessmentFooter .previous
+{
+    font-size: 1em;
+    font-weight: bold;
+    -moz-border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
+}
+
+#assessmentFooter .next
+{
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+    -moz-border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+
+/* Multi Select Control */
+.multiselect-wrapper
+{
+    border: lightgrey solid 2px;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+    display: inline-block;
+    padding: 10px;
+    float: left;
+    margin: 5px 0 10px 0;
+    background-color: white;
+}
+
+    .multiselect-wrapper label:hover
+    {
+        background-color: lightskyblue;
+    }
+
+.UsedSubstances_SubstanceHasEverUsed .base-question-wrapper .five.columns
+{
+    display: none;
+}
+
+.UsedSubstances_SubstanceHasEverUsed .base-question-wrapper .seven.columns
+{
+    width: 90%;
+}
+
+.UsedSubstances_SubstanceHasEverUsed .fieldset-legend-wrapper
+{
+    border: none;
+}
+
+.UsedSubstances_SubstanceHasEverUsed .multiselect-wrapper label
+{
+    float: left;
+    width: 47%;
+    padding: 0 15px 0 5px;
+    margin: 0 0 0 10px;
+    border-radius: 3px;
+}
+
+fieldset .EmploymentAndSupportSection_MoneyHeader input
+{
+    width: 100px;
+}
+
+.primitive
+{
+    float: left;
+    margin-right: 15px;
+}
+
+    .primitive input
+    {
+        max-width: 50px;
+    }
+
+    .primitive label
+    {
+        font-size: small;
+        font-weight: 500;
+        font-style: oblique;
+    }
+
+
+/*Alcohol Use - Special Control - Input, Select, and Label*/
+
+.TimeMeasure *
+{
+    float: left;
+}
+
+.TimeMeasure select
+{
+    float: left;
+    margin: 5px 0 6px 10px;
+}
+
+.TimeMeasure label
+{
+    padding: 10px 0 0 10px;
+    vertical-align: central;
+}
+
+#patientAssessmentsDataTable tbody tr,
+#patientSearchDataTable tbody tr
+{
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+#patientSearchDataTable.dataTable tbody tr:hover
+{
+    background-color: #1A4D74;
+    margin: 0px -10px 0px -10px;
+    padding-bottom: 0px;
+    color: white;
+}
+
+.dataTable tbody tr:hover
+{
+    background-color: #e5f2fd;
+    margin: 0px 0px 0px 0px;
+    padding-bottom: 0px;
+    color: #21324d;
+}
+
+#patientSearchDataTable.dataTable td:hover
+{
+    color: #fff1bb;
+}
+
+#patientAssessmentsDataTable tbody td:hover,
+#allAssessmentsDataTable tbody td:hover
+{
+    color: #21324d;
+}
+
+#patientAssessmentsDataTable tbody tr:hover,
+#allAssessmentsDataTable tbody tr:hover
+{
+    color: #3f739a;
+}
+
+#patientAssessmentsDataTable tbody td a,
+#allAssessmentsDataTable tbody td a
+{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+a.ui-button
+{
+    text-decoration: none;
+    margin: 5px;
+    padding: 5px;
+    background: darkgray;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+    a.ui-button:hover
+    {
+        background: lightgrey;
+        color: white;
+    }
+
+    a.ui-button.ui-state-disabled:hover
+    {
+        background-image: none;
+        background: none !important;
+    }
+
+
+#patientContent .Bob a.ui-button
+{
+    font-weight: bold;
+    border: #BBC6CE solid 2px;
+    text-decoration: none;
+    margin: 5px 0 12px 15px;
+    padding: 5px 10px;
+    background: #1A4D74;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: #eeeeee;
+}
+
+    #patientContent .Bob a.ui-button:hover
+    {
+        background-color: lightgray;
+        color: #21324d;
+    }
+
+#organizationContent
+{
+    overflow-y: auto;
+}
+
+#organizationFooter
+{
+    padding: 15px;
+}
+
+    #organizationFooter .submit
+    {
+        float: none;
+    }
+
+#tabContent a.ui-button
+{
+    font-weight: bold;
+    border: #BBC6CE solid 2px;
+    text-decoration: none;
+    margin: 5px 0 10px 10px;
+    padding: 5px 10px;
+    background: darkgray;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: #eeeeee;
+}
+
+    #tabContent a.ui-button:hover
+    {
+        background-color: lightgray;
+        color: white;
+    }
+
+#tabContent .Jerry a.ui-button
+{
+    font-weight: bold;
+    border: #BBC6CE solid 2px;
+    text-decoration: none;
+    margin: 5px 0 12px 15px;
+    padding: 5px 10px;
+    background: #1A4D74;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: #eeeeee;
+}
+
+    #tabContent .Jerry a.ui-button:hover
+    {
+        background-color: lightgray;
+        color: #21324d;
+    }
+
+.dataTable-wrapper.Patient
+{
+    margin: 0px;
+    color: lightgray;
+    border: none !important;
+}
+
+.dataTable-wrapper
+{
+    margin: 10px;
+    color: darkgray;
+    font-weight: 600;
+    border: white solid 1px;
+    border-radius: 7px;
+}
+
+#assessment-toolbar a
+{
+    float: right;
+    margin: 5px;
+    color: white;
+}
+
+.validation-message
+{
+    float: left;
+}
+
+.field-validation-error
+{
+    float: right;
+}
+
+.scaleControl-labels + .ui-scale,
+.scaleControl + .ui-scale
+{
+    height: 23px;
+}
+
+input:-ms-input-placeholder
+{
+    color: #aaa;
+}
+
+.placeholder
+{
+    color: #aaa;
+}
+
+.EmploymentAndSupportSection_MoneyHeader legend
+{
+    padding: 10px;
+    margin: 5px 0 5px 20px;
+    background-color: #F5F4E7;
+    border: solid;
+    border-width: thin;
+    border-color: white;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-bottom: 2px solid #DFDFDF;
+    border-right: 2px solid #DFDFDF;
+}
+
+    .EmploymentAndSupportSection_MoneyHeader legend:before
+    {
+        content: " ";
+        display: inline-block;
+        width: 19px;
+        margin-left: -39px;
+        margin-right: 10px;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid #F5F4E7;
+        background: url('../Images/interviewer-patient-02.png') center center no-repeat;
+        background-image: -webkit-linear-gradient(transparent, transparent), url('../Images/interviewer-patient-02.svg');
+        background-image: -moz-linear-gradient(transparent, transparent), url('../Images/interviewer-patient-02.svg');
+        background-image: linear-gradient(transparent, transparent), url('../Images/interviewer-patient-02.svg');
+    }
+
+#submit-main
+{
+    width: 55%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 2px 5px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 2px 2px 5px rgba(50, 50, 50, 0.75);
+    box-shadow: 2px 2px 5px rgba(50, 50, 50, 0.75);
+    background-color: ivory;
+}
+
+    #submit-main span
+    {
+        margin-left: 15px;
+    }
+
+    #submit-main .ui-button
+    {
+        margin: 10px;
+        float: right;
+        background-color: green;
+    }
+
+        #submit-main .ui-button:hover
+        {
+            background-color: darkgray;
+        }
+
+    #submit-main #assessmentFooter
+    {
+        position: fixed;
+        bottom: 0;
+    }
+
+.yesno-radiobuttons[data-val-completeness-report]:before
+{
+    padding: 1px 3px 1px 3px;
+    border-radius: 3px 0 0 3px;
+    font-size: .75em;
+    margin-top: 2px;
+}
+
+.multiselect-wrapper[data-val-completeness-report] + span:before
+{
+    padding-right: 10px;
+    margin-top: 5px;
+}
+
+.scaleControl[data-val-completeness-report] + div:before,
+.scaleControl-vertical[data-val-completeness-report] + div:before,
+.scaleControl-labels[data-val-completeness-report] + div:before,
+.scaleControl-vertical-labels[data-val-completeness-report] + div:before,
+.yesno-radiobuttons[data-val-completeness-report]:before,
+[data-val-completeness-report] + span:before
+{
+    content: ' ';
+    background: rgb(190, 190, 0);
+    opacity: .15;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.yesno-radiobuttons[data-val-completeness-report] + span:before,
+.yesno-radiobuttons[data-val-completeness-report] [data-val-completeness-report]:before {
+    content: none;
+    position: static;
+}
+
+.field-validation-valid
+{
+    display: inline !important;
+}
+
+.yesno-radiobuttons
+{
+    overflow: inherit;
+}
+
+.scaleControl[data-val-completeness-report] + div > div,
+.scaleControl-vertical[data-val-completeness-report] + div > div,
+.scaleControl-labels[data-val-completeness-report] + div > div,
+.scaleControl-vertical-labels[data-val-completeness-report] + div > div,
+input, select, textarea, .multiselect-wrapper
+{
+    position: relative;
+    z-index: 5;
+}
+
+.assessment-complete:after
+{
+    content: '';
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background: transparent url(../Images/checkmark.png);
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+
+.page-header .tools
+{
+    float: right;
+    padding-right: 20px;
+    display: inline;
+    margin-top: -30px;
+}
+
+    .page-header .tools a
+    {
+        padding: 2px 10px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        border: lightgrey solid 2px;
+        text-decoration: none;
+        color: white;
+        background: #336D93;
+        font: -webkit-small-control;
+        font-weight: bold;
+        font-size: small;
+    }
+
+        .page-header .tools a:hover
+        {
+            background-color: darkgrey;
+        }
+
+/* Finders */
+.finder-wrapper
+{
+    position: relative;
+    display: inline-block;
+    margin-bottom: -2px;
+}
+
+.finder-wrapper.open .finder-popover
+{
+    display: inline-block;
+}
+
+.finder-wrapper input
+{
+    border-radius: 4px 0 0 4px;
+    margin-top: 0;
+}
+
+.finder-wrapper .finder-all-button
+{
+    float: right;
+    background-color: transparent;
+    padding: 1px 5px 2px 5px;
+    border-radius: 0 4px 4px 0;
+    color: black;
+}
+
+.finder-wrapper .finder-all-button:before
+{
+    content: '\e0b7';
+    font-family: 'icomoon';
+    -webkit-font-smoothing: antialiased;
+    font-size: 150%;
+}
+
+.finder-wrapper .finder-loading-indicator
+{
+    border-top: darkgray solid 1px;
+    padding: 5px 15px;
+}
+
+.finder-wrapper [data-finder-ajax='loading'] .finder-loading-indicator:after
+{
+    content: 'Loading...';
+}
+
+.finder-wrapper .finder-popover
+{
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 10;
+    width: 208px;
+    padding: 15px 5px 0 5px;
+    background: white;
+    border: darkgray solid 1px;
+}
+
+.finder-wrapper .finder-list
+{
+    max-height: 200px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.finder-wrapper .finder-list .finder-item
+{
+    margin: 0;
+    border: none;
+    padding: 5px;
+    float: none;
+}
+
+.finder-wrapper .finder-list .finder-item a
+{
+    padding: 0;
+    color: black;
+}
+
+.finder-wrapper .finder-list .finder-item a:hover
+{
+    color: white;
+    opacity: 1;
+}
+
+.finder-wrapper .finder-list .finder-item:hover
+{
+    background-color: #3693cf;
+}
+
+.finder-wrapper .finder-value
+{
+    text-decoration: none;
+    display: block;
+}
+
+.finder-wrapper .finder-value:visited
+{
+    color: inherit;
+}
+
+.DTTT_selectable .active,
+.DTTT_selectable .active:hover {
+    background-color: #3F739A;
+    color: white;
+}
+
+.ajax-loading-indicator{
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(144,144,144,.5) url(../Images/loading.gif) center center no-repeat;
+    z-index: 10;
+}
+
+.add-remove-roles > div,
+.add-remove-permissions > div {
+    display: inline-block;
+}
+
+.patient-editor .Key {
+    display: none;
+}
+
+#assessmentHeader .tools .dev {
+    display: none;
+}
+
+.disclaimer {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.system-account-reset-password {
+    float: right;
+}
+
+.print-view{
+    height: auto;
+    background: white;
+    overflow-y: auto;
+    line-height: .9;
+}
+
+.print-view h1 {
+    float: left;
+    margin-left: 15px;
+}
+.print-view h3 {
+    float: right;
+    margin-right: 15px;
+}
+
+.print-view .multiselect-wrapper.checkall label:first-child {
+    display: none;
+}
+
+.print-view .SingleVerticalScaleLegend,
+.print-view .VerticalScaleLegend,
+.print-view .VerticalQuestion {
+    page-break-inside: avoid;
+}
+
+.print-view .yesno-radiobuttons input:not(:checked) + span {
+    display: none;
+}
+
+.print-view input,
+.print-view textarea,
+.print-view select{
+    word-wrap: break-word;
+    background: transparent;
+    border: none;
+}
+
+.print-view p,
+.print-view legend,
+.print-view .base-question-wrapper {
+    margin: 0;
+    padding: 0;
+}
+
+.print-view .base-question-wrapper .five.columns {
+    padding: 0;
+    margin: 5px 0 0 0;
+    max-width: 60%;
+    width: auto;
+}
+
+.print-view .base-question-wrapper .seven.columns {
+    padding: 0;
+    margin: 0;
+    width: 40%;
+}
+
+.print-view .base-question-wrapper .control-wrapper {
+    margin: 0 0 0 15px;
+}
+
+.print-view .scriptedicon,
+.print-view .interviewericon {
+    display: none;
+}
+
+.print-view .multiselect-wrapper{
+    margin: 0;
+    border: none;
+}
+
+.print-view .question-root {
+    border-bottom: 1px solid lightgray;
+}
+
+.print-view .ui-scale-option-label {
+    overflow: visible;
+}
+
+.print-view .three.columns .five.columns {
+    width: 43%;
+}

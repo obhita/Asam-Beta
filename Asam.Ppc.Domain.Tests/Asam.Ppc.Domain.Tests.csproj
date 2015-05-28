@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE877130-08CE-4C51-9B40-2BCA4D275609}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Asam.Ppc.Domain.Tests</RootNamespace>
+    <AssemblyName>Asam.Ppc.Domain.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>True</IsCodedUITest>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Demo|AnyCPU'">
+    <OutputPath>bin\Demo\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod|AnyCPU'">
+    <OutputPath>bin\Prod\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\lib\WordDocumentGenerator\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq, Version=4.1.1309.1617, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Moq.4.1.1309.1617\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Pillar.Common">
+      <HintPath>..\lib\Pillar\Pillar.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Pillar.Common.Tests">
+      <HintPath>..\lib\Pillar\Pillar.Common.Tests.dll</HintPath>
+    </Reference>
+    <Reference Include="Pillar.Domain">
+      <HintPath>..\lib\Pillar\Pillar.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssessmentModule\BaseMockAssessmentWithServiceLocatorTest.cs" />
+    <Compile Include="AssessmentModule\Event\AssessmentCompletedEventHandlerTest.cs" />
+    <Compile Include="AssessmentModule\BaseMockAssessmentTest.cs" />
+    <Compile Include="AssessmentModule\BaseMockAssessmentAndMockAssessmentScoreTest.cs" />
+    <Compile Include="AssessmentModule\Reporting\ReportingStrategyTests.cs" />
+    <Compile Include="AssessmentModule\Reporting\ReportingEngineTestData.cs" />
+    <Compile Include="AssessmentModule\Reporting\ReportingEngineTests.cs" />
+    <Compile Include="AssessmentModule\AssessmentNullPropertyIntitializerTests.cs" />
+    <Compile Include="AssessmentModule\Scoring\Diagnosis\DiagnosisScoringStrategyTests.cs" />
+    <Compile Include="AssessmentModule\Scoring\Dimension1Withdrawal\Dimension1ScoringStrategyTests.cs" />
+    <Compile Include="AssessmentModule\Scoring\Dimension2Biomedical\Dimension2ScoringStrategyTests.cs" />
+    <Compile Include="AssessmentModule\Scoring\Dimension3EmotionalBehavioral\Dimension3ScoringStrategyTests.cs" />
+    <Compile Include="AssessmentModule\Scoring\Dimension4ReadinessToChange\Dimension4ScoringStrategyTests.cs" />
+    <Compile Include="AssessmentModule\Scoring\Dimension5RelapsePotential\Dimension5ScoringStrategyTests.cs" />
+    <Compile Include="AssessmentModule\Scoring\Dimension6LivingEnvironment\Dimension6ScoringStrategyTests.cs" />
+    <Compile Include="AssessmentModule\Scoring\DimensionalAdmissionCriteria\DimensionalAdmissionCriteriaTests.cs" />
+    <Compile Include="AssessmentModule\ObjectExtensionTests.cs" />
+    <Compile Include="Common\LookupTests.cs" />
+    <Compile Include="Extensions\TestContextExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Asam.Ppc.Domain.Scoring\Asam.Ppc.Domain.Scoring.csproj">
+      <Project>{8f7afe5c-eaf8-41b3-bacc-ae6b950caffa}</Project>
+      <Name>Asam.Ppc.Domain.Scoring</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Asam.Ppc.Domain\Asam.Ppc.Domain.csproj">
+      <Project>{D350FCA3-0CD6-4DE8-9887-FAC1B1146176}</Project>
+      <Name>Asam.Ppc.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Asam.Ppc.Primitives\Asam.Ppc.Primitives.csproj">
+      <Project>{f9e8bfd4-3233-4926-aaa6-af07afcf11cc}</Project>
+      <Name>Asam.Ppc.Primitives</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Word Document Generator\WordDocumentGenerator.Library\WordDocumentGenerator.Library.csproj">
+      <Project>{c041c8c6-ac4e-4f74-a827-7f3d790e1ace}</Project>
+      <Name>WordDocumentGenerator.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AssessmentModule\Reporting\ReportingStrategyTestData.xlsx" />
+    <None Include="AssessmentModule\Scoring\Diagnosis\DiagnosisScoringStrategyTestData.xlsx" />
+    <None Include="AssessmentModule\Scoring\Dimension1Withdrawal\Dimension1ScoringStrategyTestData.xlsx" />
+    <None Include="AssessmentModule\Scoring\Dimension2Biomedical\Dimension2ScoringStrategyTestData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="AssessmentModule\Scoring\Dimension3EmotionalBehavioral\Dimension3ScoringStrategyTestData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="AssessmentModule\Scoring\Dimension4ReadinessToChange\Dimension4ScoringStrategyTestData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="AssessmentModule\Scoring\Dimension5RelapsePotential\Dimension5ScoringStrategyTestData.xlsx" />
+    <None Include="AssessmentModule\Scoring\Dimension6LivingEnvironment\Dimension6ScoringStrategyTestData.xlsx" />
+    <None Include="AssessmentModule\Scoring\DimensionalAdmissionCriteria\DimensionalAdmissionCriteriaTestData.xlsx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

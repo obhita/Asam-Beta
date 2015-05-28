@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ad46ec8a-822a-4173-9466-0b8ac3a22535" name="clinical-interviewer" linkedPackageId="f2e8476e-839b-4b7c-a2b1-5e3ad6162e09" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="3198a1e2-0be7-4284-b599-c3d54d3fa1a0">
+      <elementDefinition Id="79053728-f480-46fe-9daf-bd463677c26c" />
+      <body>The Clinical Interviewer is responsible for administering the Asam PPC to the patient and determining the best treatment plan for the patient based on the Asam PPC recommmendations and results.</body>
+      <annotatedElements>
+        <actorMoniker Id="f1215a13-f8b2-43dc-ba24-141e400b09d9" LastKnownName="Clinical Interviewer" />
+      </annotatedElements>
+    </comment>
+    <comment Id="ee5479ca-1793-44d8-8cbe-e8117103e611">
+      <elementDefinition Id="4ead075a-e098-453a-b12c-2cce5e8e92f5" />
+      <body>Tasks performed within the EHR system.</body>
+    </comment>
+    <comment Id="c6b5a9f6-b8c2-44de-9d32-44e87b9f3ef4">
+      <elementDefinition Id="0bb8af5d-c8bc-4c6d-8f30-01f8e993289a" />
+      <body>Tasks performend  within the ASAM PPC</body>
+    </comment>
+    <comment Id="5225c28d-1dea-4a7a-b06c-c51f2d0aa1e1">
+      <elementDefinition Id="c1316b47-d889-48d5-a6b3-0e2e7d52229f" />
+      <body>EHR will register a patient with ASAM PPC using web services
+
+EHR will creat PPC</body>
+      <annotatedElements>
+        <useCaseMoniker Id="5c7636b5-90b6-417a-8cab-d1c6ff11e696" LastKnownName="Schedule ASAM Assessment for s selected patient" />
+      </annotatedElements>
+    </comment>
+    <comment Id="a30e35a0-0a66-4b3c-b062-51d89f69a900">
+      <elementDefinition Id="0e04172d-03aa-43f3-9034-a33c8cb50176" />
+      <body>the EHR will be able to issue a pull request for ASAM report and stor it in Patient External History.</body>
+      <annotatedElements>
+        <useCaseMoniker Id="05362f62-0a40-4016-bb00-43c9f0652613" LastKnownName="In the EHR, select and view the ASAM report in Patient External History" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="f1215a13-f8b2-43dc-ba24-141e400b09d9" name="Clinical Interviewer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c2703f04-d994-4bcd-bea0-60d300ecd186" />
+        <targetEnds>
+          <association Id="df6b15be-92f4-45e2-8974-50267eac8d9f" isDerived="false" sourceEndRoleName="Clinical Interviewer" targetEndRoleName="Search for a  Patient Record including selecting a record and making it the active patient" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="13c918c4-17a0-434a-81af-40a51caaf6cb" LastKnownName="Search for a  Patient Record including selecting a record and making it the active patient" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8a73c566-c34c-4857-9d62-b09bec3dbf5c" name="Clinical Interviewer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="eca3403f-6c82-4a55-ac71-19594fa28488" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eb290165-dfd5-4998-b69f-dec6367021e2" name="Search for a  Patient Record including selecting a record and making it the active patient" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7a8dadf5-a38b-4377-aa3b-bb30ae738159" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c44bbaba-fcd3-41ca-b18a-d17418eaf07f" />
+          </association>
+          <association Id="070593d0-4836-4ed8-a2aa-38fa0c1ef935" isDerived="false" sourceEndRoleName="Clinical Interviewer" targetEndRoleName="Create Patient record including: Edit and Delete" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="39766b3a-743a-42a1-8635-fa82349a2fb7" LastKnownName="Create Patient record including: Edit and Delete" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eba63c89-86cf-46da-8d60-2f370f423c67" name="Clinical Interviewer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6d767120-47ef-455e-98bc-802d53b4ca71" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5a195963-9f21-40eb-9db6-2fba924f4240" name="Create Patient record including: Edit and Delete" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7e8cf4e4-0220-469b-8f91-e606ba2a673c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4c6daba7-3eb4-40fb-a241-331d632adc5c" />
+          </association>
+          <association Id="4c4744ad-c6a5-4ff3-a00e-9c0937161234" isDerived="false" sourceEndRoleName="Clinical Interviewer" targetEndRoleName="Admit and Discharge Patient" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6c107162-56c1-43ec-aca6-c2749b7e8f1f" LastKnownName="Admit and Discharge Patient" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="127bd736-e2cc-4a6e-9107-2da0e34a5702" name="Clinical Interviewer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="144285ad-8d37-4775-91a8-acea5850060d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1b2e8c77-59e5-4c2d-85e9-bac0ae4d8aa7" name="Admit and Discharge Patient" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8a364641-4d14-440f-bc35-7a838bdc92b4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fa2f84cd-8fe5-4cf3-bf28-d7eb17ab2623" />
+          </association>
+          <association Id="3db9eaf1-1821-444a-b830-e4e1063d4e1f" isDerived="false" sourceEndRoleName="Clinical Interviewer" targetEndRoleName="Administer ASAM Assessements" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b9012750-ac87-40fc-8b50-fbaae421641f" LastKnownName="Administer ASAM Assessements" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7cbb80bf-fd67-49be-8114-b5eef18860f2" name="Clinical Interviewer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d35af5d0-1080-4958-9b7e-5adb26171db1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a7280dc3-e6a2-4721-a823-a00947b859ea" name="Administer ASAM Assessements" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2df0f296-e582-42c0-8c01-4a3ca3394035" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5851906e-7e3e-4965-b092-b1db45bbedff" />
+          </association>
+          <association Id="0a3fd3c6-b3b8-4d11-b485-bb74b26aaf23" isDerived="false" sourceEndRoleName="Clinical Interviewer" targetEndRoleName="Generate ASAM Report" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="573a6c98-8019-4de7-866f-39c65868b776" LastKnownName="Generate ASAM Report" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bebc0eea-f650-40f0-859b-6e3755c3904c" name="Clinical Interviewer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="98191568-71d1-461b-b830-801532285ebd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="40b4bc19-df36-47e7-9cd9-4d007586ece3" name="Generate ASAM Report" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="692472ee-3063-4544-a356-c3d765e75996" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1ea89944-f017-4d3d-9baf-657530449961" />
+          </association>
+          <association Id="501a017b-b8f2-4c6d-ac7e-c40619bf5b06" isDerived="false" sourceEndRoleName="Clinical Interviewer" targetEndRoleName="Provide Treatment Recommendation" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6ea6b65c-ed7e-42ea-ba8b-a93b466df813" LastKnownName="Provide Treatment Recommendation" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3695c5da-b811-406c-a283-f98ea818cf3a" name="Clinical Interviewer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cfc5ae74-f0da-4e62-8881-826e55705dd3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="835b750d-4a15-4c75-8d80-5fd62190f3c3" name="Provide Treatment Recommendation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="324b7888-659a-4ce6-807a-5da320c32add" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4aa42d7f-2b5c-4b2f-ab0d-b18af634b63d" />
+          </association>
+          <association Id="7a1f97a4-233c-44fa-806d-c61430eea343" isDerived="false" sourceEndRoleName="Clinical Interviewer" targetEndRoleName="Select ASAM Activity" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9eab97cd-80ac-4076-9301-3fc7b1aed92c" LastKnownName="Select ASAM Activity" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="81ecca9f-7df7-4980-a6ce-8d5c626b85a3" name="Clinical Interviewer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a3a5cae8-807e-4179-b845-67da5319f3a7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="58deada3-e912-413a-ae12-64ce3977b91d" name="Select ASAM Activity" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fb701528-fd70-48c7-8a7a-180f44d76bff" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b75b57b5-cef3-46c0-8354-49f33588d56b" />
+          </association>
+          <association Id="00145ee9-423b-4c6d-8b3e-3a8a36fbd335" isDerived="false" sourceEndRoleName="Clinical Interviewer" targetEndRoleName="Schedule ASAM Assessment for s selected patient" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5c7636b5-90b6-417a-8cab-d1c6ff11e696" LastKnownName="Schedule ASAM Assessment for s selected patient" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f9ed6b5f-f764-4651-b68f-f84f9d35fac9" name="Clinical Interviewer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="37ee149d-1ded-4087-92a6-a0b9d3ade882" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a8f2fe68-45c9-41c5-aea9-a2d580a78b81" name="Schedule ASAM Assessment for s selected patient" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="58a68ffd-62a8-46a7-83c8-54079f53e538" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9410a20a-2546-46f9-8459-9ce558b0c0b9" />
+          </association>
+          <association Id="62355f70-389c-4574-8ebd-6c31d8d8475f" isDerived="false" sourceEndRoleName="Clinical Interviewer" targetEndRoleName="View ASAM report for a selected patient" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="05362f62-0a40-4016-bb00-43c9f0652613" LastKnownName="In the EHR, select and view the ASAM report in Patient External History" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="622a157f-e3bf-46ab-a029-fdd35085253f" name="Clinical Interviewer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="80f64531-fad1-4499-8ebe-a37e2f9f0dc6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3d014fdb-8d46-4458-af5f-c5376477143c" name="View ASAM report for a selected patient" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b74b5880-9d9e-4bab-8b3a-e974f8c56188" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a7d342e7-30eb-4ca8-b2ef-b8d1e07a7fa1" />
+          </association>
+          <association Id="df83741b-dfad-4430-9bf4-a4beb47b9989" isDerived="false" sourceEndRoleName="Clinical Interviewer" targetEndRoleName="Manage patients records including, create, edit, delete" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="66b7c7c2-86cc-4711-81e7-ba8f9828674f" LastKnownName="Manage patients records including, create, edit, delete" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b2f7e5c5-0511-4a0a-b23f-3fed5e382bb1" name="Clinical Interviewer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="af700bdb-4ff9-4cde-8806-4e4b0181efcd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1f3a2c20-9193-432e-9169-664b324489e8" name="Manage patients records including, create, edit, delete" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bf2420d2-f56c-4164-ac92-610553f87a03" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2cf6f1c0-7d73-463c-b3d5-601b2e783878" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="39766b3a-743a-42a1-8635-fa82349a2fb7" name="Create Patient record including: Edit and Delete" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ee00e647-27b7-4410-a5b8-f2b25c9c0e4b" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b9012750-ac87-40fc-8b50-fbaae421641f" name="Administer ASAM Assessements" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6b108b6a-59c1-4c82-bfe9-55451d1317fd" />
+        <additions>
+          <include Id="9f9810ee-04ef-438c-b5ad-72dad07d4a3a">
+            <useCaseMoniker Id="7c14a245-c038-4e72-aeaa-e6f3a95b305f" LastKnownName="Save, Edit or Delete selected assessment" />
+            <elementDefinition Id="fb1eb4e9-a29c-4691-bd28-b7afdadd3cc4" />
+          </include>
+          <include Id="774c640c-237a-46e9-8e79-d2abbc309873">
+            <useCaseMoniker Id="b79c9113-9ce9-49a7-b3bb-a2b6da6f97c0" LastKnownName="Mark Assessment as Complete" />
+            <elementDefinition Id="b2b73cf4-287a-48f1-87aa-9f56bc3be738" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="573a6c98-8019-4de7-866f-39c65868b776" name="Generate ASAM Report" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e345173e-c45f-45a0-860d-c87134691557" />
+        <additions>
+          <include Id="6ffea5db-c884-44ae-8b67-2a464d4a05ab">
+            <useCaseMoniker Id="3311756f-d05e-42a1-94bc-45d650b721a0" LastKnownName="Print Report" />
+            <elementDefinition Id="0876582a-f9ef-4909-a267-2f677cab176f" />
+          </include>
+          <include Id="60d96de9-d29e-4f1a-93db-0b71352e4646">
+            <useCaseMoniker Id="f42e9a58-07aa-4f49-93d1-f482e42a51ae" LastKnownName="Submit Report to ASAM Repository" />
+            <elementDefinition Id="357b3616-239d-4a24-9bf0-415e15a44fdb" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6ea6b65c-ed7e-42ea-ba8b-a93b466df813" name="Provide Treatment Recommendation" isAbstract="true" isLeaf="false">
+        <elementDefinition Id="1741d4c9-1fdd-4026-8695-5ee8461f5499" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="13c918c4-17a0-434a-81af-40a51caaf6cb" name="Search for a  Patient Record including selecting a record and making it the active patient" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8cf13340-6e12-4c51-873c-1372f7aa6e95" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6c107162-56c1-43ec-aca6-c2749b7e8f1f" name="Admit and Discharge Patient" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1a0c4328-a4e6-41a0-8789-acbab35d6edf" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3311756f-d05e-42a1-94bc-45d650b721a0" name="Print Report" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="dde5001f-e4db-49e5-ab85-8e4dbe328c47" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f42e9a58-07aa-4f49-93d1-f482e42a51ae" name="Submit Report to ASAM Repository" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="80164e0c-91c7-4df1-84be-53b08f7e04d9" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b79c9113-9ce9-49a7-b3bb-a2b6da6f97c0" name="Mark Assessment as Complete" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8354ce26-3648-4d05-a287-c4bc941e80e3" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7c14a245-c038-4e72-aeaa-e6f3a95b305f" name="Save, Edit or Delete selected assessment" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8a85889c-5c47-4ab9-9b67-f439596ed73c" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9eab97cd-80ac-4076-9301-3fc7b1aed92c" name="Select ASAM Activity" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a4928747-17c3-4b90-9a7b-b15da0328774" />
+        <suppliersInternal>
+          <dependency Id="3ca02ce4-7690-4b00-ae1d-cc7394afa699">
+            <useCaseMoniker Id="a56ca637-0610-4950-9113-7d165f127f95" LastKnownName="Patient shows up for assessment" />
+            <elementDefinition Id="ed330288-2925-4aac-918b-e12321b46826" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5c7636b5-90b6-417a-8cab-d1c6ff11e696" name="Schedule ASAM Assessment for s selected patient" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="eb82d1a7-4630-4f0f-a924-c298ac84abd9" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="c83593cd-e122-4318-a7e8-f59b8a1a4516" name="Patient" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e59d104a-5513-43e0-b444-ff3738e3830f" />
+        <targetEnds>
+          <association Id="6bf41bf0-b942-450e-9041-50c33032cfc5" isDerived="false" sourceEndRoleName="Patient" targetEndRoleName="Patient shows up for assessment" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="a56ca637-0610-4950-9113-7d165f127f95" LastKnownName="Patient shows up for assessment" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="665b1263-469b-4fb8-a002-7fa8a0db8bb2" name="Patient" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1a18afad-f3e3-4749-8473-cabe6af37b8f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3430446d-a6d6-48b3-8065-dd9ab045a17d" name="Patient shows up for assessment" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9b7bbf8f-062a-4f4c-95ec-162e84bd3ae0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f247ba67-d213-4b9c-b0de-52af301100f4" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a56ca637-0610-4950-9113-7d165f127f95" name="Patient shows up for assessment" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="876bda1c-10ea-4ce4-a530-2fe044930be6" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="05362f62-0a40-4016-bb00-43c9f0652613" name="In the EHR, select and view the ASAM report in Patient External History" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4d419424-c707-4ae3-ae35-845192ec2ec1" />
+        <suppliersInternal>
+          <dependency Id="34e38ba8-3604-4532-a615-328016a23ec7">
+            <useCaseMoniker Id="573a6c98-8019-4de7-866f-39c65868b776" LastKnownName="Generate ASAM Report" />
+            <elementDefinition Id="db4813c2-8607-4d0b-bfb9-d389d77dd0ab" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="66b7c7c2-86cc-4711-81e7-ba8f9828674f" name="Manage patients records including, create, edit, delete" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="da8e32e3-e74b-4835-aefa-9e6e20bbd670" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="f2e8476e-839b-4b7c-a2b1-5e3ad6162e09" name="Asam.Ppc.Modeling">
+    <elementDefinition Id="da191d8f-e47e-4dd2-a73c-e14081f7b78d" />
+    <profileInstances>
+      <packageHasProfileInstances Id="346d5ab1-0f61-46de-8a2a-f49a3e28537f">
+        <profileInstance Id="c7e682c5-4e84-4645-a603-5b05efaae718" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="5c0841f1-ba13-4bcd-aa3e-c01c35ed035a">
+        <profileInstance Id="0217969b-061a-41a5-b09a-58a590860c8a" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

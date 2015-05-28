@@ -1,0 +1,39 @@
+﻿@using Asam.Ppc.Primitives
+
+@{
+    ViewBag.Title = "Create Staff";
+    Layout = "~/Views/Organization/Layout.cshtml";
+}
+
+<div class="staff-editor editor" tabindex="-1" aria-labelledby="staffModalLabel" aria-hidden="true">
+    @using (Html.BeginForm("Create", "Staff", null, FormMethod.Post, new { id = "create-staff-form"}))
+    {
+        <div class="Name">
+            <div>
+                <label>Name</label>
+            </div>
+            @{
+                var name = new PersonName ();
+            }
+            @Html.EditorFor( m => name )
+        </div>
+    }
+</div>
+
+@section footerBody
+{
+    <a id="create-staff-submit" class="submit" href="#" type="button">Create</a>
+    @Html.ActionLink("Cancel", "Index", "Organization", null, new { @class = "cancel" })
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        $('#create-staff-submit').click(function (e) {
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            e.preventDefault();
+            $('#create-staff-form')[0].submit();
+        });
+    </script>
+}

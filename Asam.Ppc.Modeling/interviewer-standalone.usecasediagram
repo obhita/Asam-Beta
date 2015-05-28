@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="6d0943fd-607f-4130-ad05-512cc2104733" name="UMLUseCaseDiagram1" linkedPackageId="32d3d53a-8504-47f2-a219-c36724275a56" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="cd5ddcd7-7b19-45ec-bf8e-24335d7d000c">
+      <elementDefinition Id="f15c02fb-c732-4e21-b4be-72b6791418d4" />
+      <body>Tasks performend  within the ASAM PPC</body>
+    </comment>
+    <comment Id="73cbb832-eaa7-4012-925a-2a8ba3c6c419">
+      <elementDefinition Id="e11b0d92-0878-4c0a-898c-4a8da43f6955" />
+      <body>The Clinical Interviewer is responsible for administering the Asam PPC assessment to the patient and determining the best treatment plan for the patient based on the Asam PPC recommmendations and results.</body>
+      <annotatedElements>
+        <actorMoniker Id="1a544c03-14ac-4512-9f0b-296c2b73b683" LastKnownName="Clinical Interviewer1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="e29e801f-6fcc-4228-bf75-96826a4969f0">
+      <elementDefinition Id="3793d576-2ac4-4134-9643-d57b2ed75cc0" />
+      <body>The registration process will ask the user to select the type of plan they would like to setup. Potentially, each plan would have its own feature set and associated costs.</body>
+      <annotatedElements>
+        <useCaseMoniker Id="6e1dc6a5-5412-4bad-a79e-fad66aee6a8e" LastKnownName="if the user is non-registered, the ASAM homepage will ask the user to register and select an account type." />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <useCase Id="37d6a05e-365a-4006-a9d0-a745ca801edd" name="Administer ASAM Assessements" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7af469d3-4340-422b-9eb1-1dc6909aad13" />
+        <additions>
+          <include Id="29d7edcf-033b-4788-9c93-17f398edf593">
+            <useCaseMoniker Id="43ffa15f-d33b-4d5c-8dd3-7cc1c5f35854" LastKnownName="Save, Edit or Delete selected assessment" />
+            <elementDefinition Id="1dc2b65c-e56c-4e60-8603-72e614c275cb" />
+          </include>
+          <include Id="30c8d944-2ecd-4d0b-b391-5d2d313f5871">
+            <useCaseMoniker Id="45e345e7-382f-4ff2-8fce-2b5b8d4859ce" LastKnownName="Mark Assessment as Complete" />
+            <elementDefinition Id="ae7ffc79-c159-4cf9-bfd6-a8cc8dfc3e77" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5f417fd8-7481-4c83-bf78-4f430e29bcb8" name="Generate ASAM Report" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2b9c9e5b-28aa-4e13-ba95-52adc3cff8bc" />
+        <additions>
+          <include Id="0581139f-4d2c-4baf-83cb-69d41fc6417b">
+            <useCaseMoniker Id="311ed6b5-ab5b-40a2-a8aa-d285a70cda5e" LastKnownName="Print Report" />
+            <elementDefinition Id="ec772aeb-8c88-4a5a-b3fa-c4ef198e5870" />
+          </include>
+          <include Id="a0126fc1-a19c-48fd-b3cd-19f1e231e6a4">
+            <useCaseMoniker Id="3d0f9e88-ba75-4699-be07-0a30fc6e28a2" LastKnownName="Submit Report to ASAM Repository" />
+            <elementDefinition Id="7e5b8e92-aacd-4294-92af-af1c3661f2fd" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3d0f9e88-ba75-4699-be07-0a30fc6e28a2" name="Submit Report to ASAM Repository" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8bcc5be0-afd7-49d9-af28-71476258e72e" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="311ed6b5-ab5b-40a2-a8aa-d285a70cda5e" name="Print Report" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="89626da7-c741-42d2-853b-b6a7936360a6" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="45e345e7-382f-4ff2-8fce-2b5b8d4859ce" name="Mark Assessment as Complete" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7eb7bc79-a55a-49ba-acec-6c48535514f9" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="43ffa15f-d33b-4d5c-8dd3-7cc1c5f35854" name="Save, Edit or Delete selected assessment" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8164de43-acfe-4628-aba3-858d546da9ce" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="1a544c03-14ac-4512-9f0b-296c2b73b683" name="Clinical Interviewer1" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="77eb795c-ee02-4879-904c-88ea0b38e5c4" />
+        <targetEnds>
+          <association Id="9224cd1c-90f1-43e4-b58a-d9f41532457f" isDerived="false" sourceEndRoleName="Clinical Interviewer" targetEndRoleName="Administer ASAM Assessements" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="37d6a05e-365a-4006-a9d0-a745ca801edd" LastKnownName="Administer ASAM Assessements" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8b77787c-4e2f-4e5a-9def-9079e38692ca" name="Clinical Interviewer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a21f2619-40d4-4667-a243-cb23fa34ee12" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0c15eced-12f3-406a-816f-6f0eadb96daa" name="Administer ASAM Assessements" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c9defc30-f14c-43a9-96a5-8c2137146da7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5c052a1a-653f-45a1-bf0a-bf77f7e5b952" />
+          </association>
+          <association Id="8bed04d9-9904-4c3e-aaea-24e11be0f18c" isDerived="false" sourceEndRoleName="Clinical Interviewer" targetEndRoleName="Generate ASAM Report" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5f417fd8-7481-4c83-bf78-4f430e29bcb8" LastKnownName="Generate ASAM Report" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="552a44ca-8467-40dd-88c7-7e824cefe1db" name="Clinical Interviewer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8b3317c2-1ec8-49f3-9be9-59bd11fbb9a8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="592d51fe-4adb-46f8-8a55-b680f1ae49d9" name="Generate ASAM Report" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3eaaad11-f7b2-4e14-9901-2cdcb5195352" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1e2f5d04-17ab-4e46-afaa-61f830b76a71" />
+          </association>
+          <association Id="73c57fb5-8189-4b93-a6d7-e8411ea4261b" isDerived="false" sourceEndRoleName="Clinical Interviewer1" targetEndRoleName="if the user is non-registered, the ASAM homepage will ask the user to register and select an account type." isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6e1dc6a5-5412-4bad-a79e-fad66aee6a8e" LastKnownName="if the user is non-registered, the ASAM homepage will ask the user to register and select an account type." />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0193d92d-af04-4b0a-baa6-416cf2fa14a2" name="Clinical Interviewer1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="18e5cee3-f795-43f5-8a49-2e1c16d464b4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a45955fc-36d5-48d9-a433-765a8d916ab2" name="if the user is non-registered, the ASAM homepage will ask the user to register and select an account type." isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="17e49358-0c79-40d3-9491-d95b7e12ffdd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0ed8cf35-5674-49df-a085-c474b3f54968" />
+          </association>
+          <association Id="63c8e2c4-f323-468b-b3de-660b719c4e21" isDerived="false" sourceEndRoleName="Clinical Interviewer1" targetEndRoleName="Once the user is registered, they will have access to their dashboard" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="830859ae-e587-40ef-9a22-8ec5213f2e23" LastKnownName="Once the user is registered, they will have access to their dashboard" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d18ed927-7edf-41e6-b111-655b8a4de0da" name="Clinical Interviewer1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0647cadf-b34d-42f0-b1fc-997968f77d1e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2f58955b-efe5-4e0f-ac07-be8f8431c2cb" name="Once the user is registered, they will have access to their dashboard" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6264cdc4-98c6-40ea-a91d-3abaa8248fe7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6e8d9809-37b1-46bf-a57c-729a239c92e1" />
+          </association>
+          <association Id="7cbadcf2-d390-4934-821a-2d9c28ddf4b9" isDerived="false" sourceEndRoleName="Clinical Interviewer1" targetEndRoleName="access an account management screen, to create, configure account information1" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="255bd487-3e7c-4527-a09a-4f669d4b8254" LastKnownName="access an account management screen, to create, configure account information" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d87e4384-150e-4120-bd03-276fbc4e3fb7" name="Clinical Interviewer1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2d5c996c-4cbb-4316-acc6-bc8338bdb5de" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="de00090f-7038-4371-9f06-3038482eb83f" name="access an account management screen, to create, configure account information1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1dcf1ea1-9e11-40a9-a674-7aa1fd47a4ae" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="09895af1-b81a-4daa-9ce8-f200b8609daf" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6e1dc6a5-5412-4bad-a79e-fad66aee6a8e" name="if the user is non-registered, the ASAM homepage will ask the user to register and select an account type." isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2eb6bc42-7bc5-468e-9906-a95cebaf7c33" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="830859ae-e587-40ef-9a22-8ec5213f2e23" name="Once the user is registered, they will have access to their dashboard" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="58c362fb-cf47-4535-8f44-f1b2079cc4a1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="255bd487-3e7c-4527-a09a-4f669d4b8254" name="access an account management screen, to create, configure account information" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="08094402-046d-47a9-820a-c18325b7c006" />
+        <extendedCases>
+          <extend Id="db686ebc-6ab0-4142-b2ee-3bd4ec1a9d6f">
+            <useCaseMoniker Id="22050169-6ed9-4265-9555-fb77d22bfe4e" LastKnownName="Manage patients records including, create, edit, delete" />
+            <elementDefinition Id="608cb905-2960-4005-b999-af3cd0d34111" />
+          </extend>
+          <extend Id="369ad2b3-dc76-4112-b676-c68b322dbb37">
+            <useCaseMoniker Id="7f850221-2f95-4264-958f-1adc8e8df551" LastKnownName="under the primary account, manage user accounts including: access, permissions and role" />
+            <elementDefinition Id="2427d3e8-3ac6-4795-8540-c81f0cb53c52" />
+          </extend>
+          <extend Id="69f33eab-72f2-460f-8821-1538dd92c232">
+            <useCaseMoniker Id="e4ee211f-750f-4eae-90ed-a1eac5aecc6c" LastKnownName="Manage personnel including creating new staff records" />
+            <elementDefinition Id="3b25a8b2-da33-4ea4-83ba-6f407888d993" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="22050169-6ed9-4265-9555-fb77d22bfe4e" name="Manage patients records including, create, edit, delete" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4b5d44b9-2a48-43be-8353-632e880918b8" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e4ee211f-750f-4eae-90ed-a1eac5aecc6c" name="Manage personnel including creating new staff records" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bbe99b3c-ecd8-432d-be9e-38c17ffa6ea3" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7f850221-2f95-4264-958f-1adc8e8df551" name="under the primary account, manage user accounts including: access, permissions and role" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5d8f51b4-12fb-4fd8-86d1-6024d4895da6" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="32d3d53a-8504-47f2-a219-c36724275a56" name="Asam.Ppc.Modeling">
+    <elementDefinition Id="da191d8f-e47e-4dd2-a73c-e14081f7b78d" />
+    <profileInstances>
+      <packageHasProfileInstances Id="7e283d5b-126a-458d-8bf9-ea0735d3e8ca">
+        <profileInstance Id="efe9c0d8-b145-484a-8815-70f40418ea91" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="d5768995-cc98-4bda-a9db-2e87332b8034">
+        <profileInstance Id="c675e34b-a1bf-4798-93f1-01eb8eba76b7" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

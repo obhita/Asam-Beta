@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\joey.fox\Documents\ASAM\testEhrDeploy</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Agatha.Common.dll">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/Agatha.Common.pdb">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/Agatha.ServiceLayer.dll">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/Agatha.ServiceLayer.pdb">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>11/18/2014 17:07:29</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>11/18/2014 17:07:29</publishTime>
+    </File>
+    <File Include="bin/Asam.Ppc.Domain.dll">
+      <publishTime>11/18/2014 17:06:47</publishTime>
+    </File>
+    <File Include="bin/Asam.Ppc.Domain.pdb">
+      <publishTime>11/18/2014 17:06:47</publishTime>
+    </File>
+    <File Include="bin/Asam.Ppc.Domain.Scoring.dll">
+      <publishTime>11/18/2014 17:06:47</publishTime>
+    </File>
+    <File Include="bin/Asam.Ppc.Domain.Scoring.pdb">
+      <publishTime>11/18/2014 17:06:47</publishTime>
+    </File>
+    <File Include="bin/Asam.Ppc.Infrastructure.dll">
+      <publishTime>11/18/2014 17:06:49</publishTime>
+    </File>
+    <File Include="bin/Asam.Ppc.Infrastructure.pdb">
+      <publishTime>11/18/2014 17:06:49</publishTime>
+    </File>
+    <File Include="bin/Asam.Ppc.Primitives.dll">
+      <publishTime>11/18/2014 17:06:46</publishTime>
+    </File>
+    <File Include="bin/Asam.Ppc.Primitives.pdb">
+      <publishTime>11/18/2014 17:06:46</publishTime>
+    </File>
+    <File Include="bin/Asam.Ppc.Service.Messages.dll">
+      <publishTime>11/18/2014 17:06:50</publishTime>
+    </File>
+    <File Include="bin/Asam.Ppc.Service.Messages.pdb">
+      <publishTime>11/18/2014 17:06:50</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.dll">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.pdb">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/FluentNHibernate.dll">
+      <publishTime>10/27/2014 13:12:08</publishTime>
+    </File>
+    <File Include="bin/FluentNHibernate.pdb">
+      <publishTime>10/27/2014 13:12:08</publishTime>
+    </File>
+    <File Include="bin/HibernatingRhinos.Profiler.Appender.dll">
+      <publishTime>10/27/2014 13:12:15</publishTime>
+    </File>
+    <File Include="bin/Iesi.Collections.dll">
+      <publishTime>10/27/2014 13:12:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>10/27/2014 13:12:13</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/27/2014 13:12:14</publishTime>
+    </File>
+    <File Include="bin/NHibernate.dll">
+      <publishTime>10/27/2014 13:12:15</publishTime>
+    </File>
+    <File Include="bin/NLog.dll">
+      <publishTime>09/23/2014 10:11:04</publishTime>
+    </File>
+    <File Include="bin/Pillar.Agatha.dll">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/Pillar.Agatha.pdb">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/Pillar.Common.dll">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/Pillar.Common.pdb">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/Pillar.Domain.dll">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/Pillar.Domain.pdb">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/Pillar.FluentRuleEngine.dll">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/Pillar.FluentRuleEngine.pdb">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/Pillar.Security.dll">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/Pillar.Security.pdb">
+      <publishTime>10/27/2014 13:12:07</publishTime>
+    </File>
+    <File Include="bin/System.IdentityModel.Tokens.Jwt.dll">
+      <publishTime>10/27/2014 13:12:20</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Extensions.dll">
+      <publishTime>10/27/2014 13:12:13</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>10/27/2014 13:12:12</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Primitives.dll">
+      <publishTime>10/27/2014 13:12:13</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>10/27/2014 13:12:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>10/27/2014 13:12:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>10/27/2014 13:12:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>10/27/2014 13:12:11</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>10/27/2014 13:12:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>10/27/2014 13:12:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>10/27/2014 13:12:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>10/27/2014 13:12:12</publishTime>
+    </File>
+    <File Include="bin/TestEHR.dll">
+      <publishTime>11/18/2014 17:07:25</publishTime>
+    </File>
+    <File Include="bin/TestEHR.pdb">
+      <publishTime>11/18/2014 17:07:25</publishTime>
+    </File>
+    <File Include="bin/Thinktecture.IdentityModel.dll">
+      <publishTime>10/27/2014 13:12:20</publishTime>
+    </File>
+    <File Include="bin/Thinktecture.IdentityModel.pdb">
+      <publishTime>10/27/2014 13:12:21</publishTime>
+    </File>
+    <File Include="bin/WordDocumentGenerator.Library.dll">
+      <publishTime>11/18/2014 17:06:46</publishTime>
+    </File>
+    <File Include="bin/WordDocumentGenerator.Library.pdb">
+      <publishTime>11/18/2014 17:06:46</publishTime>
+    </File>
+    <File Include="NLog.config">
+      <publishTime>11/18/2014 14:54:09</publishTime>
+    </File>
+    <File Include="NLog.Debug.config">
+      <publishTime>11/18/2014 14:51:44</publishTime>
+    </File>
+    <File Include="NLog.Demo.config">
+      <publishTime>11/18/2014 14:51:44</publishTime>
+    </File>
+    <File Include="NLog.Local.config">
+      <publishTime>11/18/2014 14:51:44</publishTime>
+    </File>
+    <File Include="NLog.Release.config">
+      <publishTime>11/18/2014 14:51:44</publishTime>
+    </File>
+    <File Include="NLog.SSOPackage.config">
+      <publishTime>11/18/2014 14:51:44</publishTime>
+    </File>
+    <File Include="NLog.Test.config">
+      <publishTime>11/18/2014 14:51:44</publishTime>
+    </File>
+    <File Include="NLog.WIFPackage.config">
+      <publishTime>11/18/2014 14:51:44</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/27/2014 13:12:21</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>11/18/2014 17:07:27</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>11/18/2014 11:47:41</publishTime>
+    </File>
+    <File Include="Views/Patient/Index.cshtml">
+      <publishTime>11/18/2014 17:06:40</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>10/27/2014 13:12:21</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/18/2014 17:07:26</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

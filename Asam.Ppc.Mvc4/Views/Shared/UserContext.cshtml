@@ -1,0 +1,24 @@
+﻿@using Asam.Ppc.Infrastructure
+<div id="UserContext" style="color:white">
+    <div id="personiconsmall"></div>
+    @if ( UserContext.IsSystemAdmin )
+    {
+        <h5 style="color: white">@UserContext.Email</h5>
+        <div>
+            @Html.ActionLink( "Change Password", "ChangPassword", "Account" )
+            @Html.ActionLink( "Log Out", "Logout", "Account" )
+        </div>
+    }
+    else
+    {
+        <h5 style="color: white">@UserContext.UserName</h5>
+        <div>
+            @Html.ActionLink( "Change Password", "ChangPassword", "Account" )
+            @Html.ActionLink( "Log Out", "Logout", "Account" )
+        </div>
+        @UserContext.OrganizationName
+        var canEdit = Html.CanAccess( "Organization", "Edit", "POST" );
+        var text = canEdit ? "Edit" : "View";
+        @Html.SecureActionLink(text, "Edit", "Organization", new {key = UserContext.OrganizationKey}, null)
+    }
+</div>

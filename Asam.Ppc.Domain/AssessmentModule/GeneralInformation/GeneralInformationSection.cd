@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Asam.Ppc.Domain.AssessmentModule.GeneralInformation.GeneralInformationSection">
+    <Position X="0.5" Y="0.5" Width="3.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BAIAAQIAAACACAgAABAAAAIEAAAAAABIYgAAQBEAAAA=</HashCode>
+      <FileName>AssessmentModule\GeneralInformation\GeneralInformationSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Asam.Ppc.Domain.AssessmentModule.GeneralInformation.AssessmentClass" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AssessmentModule\GeneralInformation\AssessmentClass.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Asam.Ppc.Domain.AssessmentModule.GeneralInformation.ControlledEnvironment" Collapsed="true">
+    <Position X="4.5" Y="1.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAABAQAAAAAAAAAAAAAAAAAAAAAAEAgIA=</HashCode>
+      <FileName>AssessmentModule\GeneralInformation\ControlledEnvironment.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Asam.Ppc.Domain.AssessmentModule.GeneralInformation.InterviewCircumstances" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAEAAAAAAAAAAAAAABAAAAAEAAAA=</HashCode>
+      <FileName>AssessmentModule\GeneralInformation\InterviewCircumstances.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Asam.Ppc.Domain.AssessmentModule.GeneralInformation.InterviewMethod" Collapsed="true">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAACAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AssessmentModule\GeneralInformation\InterviewMethod.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Asam.Ppc.Domain.AssessmentModule.GeneralInformation.Religion" Collapsed="true">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAIAAAgAAAAAIAAAAAAAAAAAAAAAQAAAAEAAAA=</HashCode>
+      <FileName>AssessmentModule\GeneralInformation\Religion.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

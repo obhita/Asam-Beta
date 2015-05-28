@@ -1,0 +1,28 @@
+﻿INSERT [SecurityModule].[SystemAccount] VALUES ( 1001, 1, 'system.admin@feisystems.com', 1, null, GETDATE(), null, GETDATE(), null, null, null, 'system.admin@feisystems.com', null)
+
+INSERT [SecurityModule].[Role] VALUES ( 1001, 1, 'System Admin', 'Internal', GETDATE(), null, GETDATE(), null, null)
+
+INSERT [SecurityModule].[SystemAccountRole] VALUES( 1001, 1, 1001, 1001)
+
+INSERT [SecurityModule].[SystemPermission] VALUES ( 1, 1,  'infrastructuremodule/accessuserinterface')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 2, 1,  'assessmentmodule/assessmentedit')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 3, 1,  'assessmentmodule/assessmentview')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 4, 1,  'organizationmodule/organizationedit')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 5, 1,  'organizationmodule/organizationview')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 6, 1,  'patientmodule/patientedit')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 7, 1,  'patientmodule/patientview')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 8, 1,  'securitynmodule/roleview')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 9, 1,  'securitynmodule/roleedit')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 10, 1, 'securitynmodule/roleaddpermission')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 11, 1, 'securitynmodule/roleremovepermission')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 12, 1, 'organizationmodule/staffview')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 13, 1, 'organizationmodule/staffedit')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 14, 1, 'organizationmodule/staffcreateaccount')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 16, 1, 'organizationmodule/staffaddrole')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 17, 1, 'organizationmodule/staffremoverole')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 18, 1, 'securitymodule/systemadminpermission')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 19, 1, 'organizationmodule/resetpassword')
+INSERT [SecurityModule].[SystemPermission] VALUES ( 20, 1, 'singlesignonmodule/singlesignonview')
+
+INSERT [SecurityModule].[RoleSystemPermission] VALUES ( 1001 , 1, 1001, 1 )
+INSERT [SecurityModule].[RoleSystemPermission] VALUES ( 1002 , 1, 1001, 18 )

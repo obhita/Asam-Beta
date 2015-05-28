@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{059A3BE7-2E3A-4D7E-940A-FE85404D7091}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Asam.Ppc.Service.Messages</RootNamespace>
+    <AssemblyName>Asam.Ppc.Service.Messages</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Demo|AnyCPU'">
+    <OutputPath>bin\Demo\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod|AnyCPU'">
+    <OutputPath>bin\Prod\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Agatha.Common, Version=1.3.1.0, Culture=neutral, PublicKeyToken=6f21cf452a4ffa13, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Agatha-Common-StructureMap.1.3.1\lib\net40\Agatha.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Agatha.StructureMap, Version=1.3.1.0, Culture=neutral, PublicKeyToken=6f21cf452a4ffa13, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Agatha-Common-StructureMap.1.3.1\lib\net40\Agatha.StructureMap.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Pillar.Agatha">
+      <HintPath>..\lib\Pillar\Pillar.Agatha.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Pillar.Common">
+      <HintPath>..\lib\Pillar\Pillar.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Pillar.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Pillar\Pillar.Domain.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AssessmentReport\ExportToExcelRequest.cs" />
+    <Compile Include="AssessmentReport\ViewReportRequest.cs" />
+    <Compile Include="AssessmentReport\FileStreamResponse.cs" />
+    <Compile Include="Assessment\AsamPpcResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AsamPpcResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\AsamPpcScaleResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AsamPpcScaleResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment\AssessmentScoreDto.cs" />
+    <Compile Include="Assessment\AssessmentDto.cs" />
+    <Compile Include="Assessment\AssessmentSummaryDto.cs" />
+    <Compile Include="Assessment\Completion\CompletionSectionDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\DrugAndAlcoholSectionDto.cs" />
+    <Compile Include="Assessment\AssessmentMetaDataDto.cs" />
+    <Compile Include="Assessment\GetAssessmentScoreResponse.cs" />
+    <Compile Include="Assessment\GetAssessmentScoreByAssessmentKeyRequest.cs" />
+    <Compile Include="Assessment\GetAssessmentByKeyRequest.cs" />
+    <Compile Include="Assessment\GetAssessmentResponse.cs" />
+    <Compile Include="Assessment\CreateAssessmentRequest.cs" />
+    <Compile Include="Assessment\CreateAssessmentResponse.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\AddictionTreatmentHistoryDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\AdditionalAddictionAndTreatmentItemsDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\AlcoholAndDrugInterviewerRatingDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\AlcoholUseDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\BarbiturateUseDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\CannabisUseDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\CinaScaleDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\CiwaScaleDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\CocaineUseDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\UsedSubstancesDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\DrugConsequencesDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\HallucinogenUseDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\HeroinUseDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\InterviewerEvaluationDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\MethadoneUseDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\MultipleSubstanceUsePerDayDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\NicotineUseDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\OpiatesInControlledEnvironmentDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\OpioidMaintenanceTherapyDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\OtherOpiateUseDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\OtherSedativeUseDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\OtherSubstanceUseDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\SolventAndInhalantUseDto.cs" />
+    <Compile Include="Assessment\DrugAndAlcohol\StimulantUseDto.cs" />
+    <Compile Include="Assessment\EmploymentAndSupport\EmploymentAndSupportSectionDto.cs" />
+    <Compile Include="Assessment\FamilyAndSocialHistory\FamilyAndSocialHistorySectionDto.cs" />
+    <Compile Include="Assessment\GeneralInformation\GeneralInformationSectionDto.cs" />
+    <Compile Include="Assessment\GetAllAssessmentsByKeywordResponse.cs" />
+    <Compile Include="Assessment\GetAllAssessmentsByKeywordRequest.cs" />
+    <Compile Include="Assessment\IAssessmentDto.cs" />
+    <Compile Include="Assessment\Legal\LegalSectionDto.cs" />
+    <Compile Include="Assessment\Medical\MedicalSectionDto.cs" />
+    <Compile Include="Assessment\Psychological\DepressionEvaluationDto.cs" />
+    <Compile Include="Assessment\Psychological\InterviewerRatingDto.cs" />
+    <Compile Include="Assessment\Psychological\PsychologicalHistoryDto.cs" />
+    <Compile Include="Assessment\Psychological\PsychologicalSectionDto.cs" />
+    <Compile Include="Assessment\Review\ReviewSectionDto.cs" />
+    <Compile Include="Assessment\SectionDtoBase.cs" />
+    <Compile Include="Assessment\SubmitAssessmentRequest.cs" />
+    <Compile Include="Assessment\SubmitAssessmentResponse.cs" />
+    <Compile Include="Attributes\IQuestionGroup.cs" />
+    <Compile Include="Attributes\LookupCategoryAttribute.cs" />
+    <Compile Include="Attributes\QuestionAttribute.cs" />
+    <Compile Include="Attributes\QuestionGroupAttribute.cs" />
+    <Compile Include="Common\AddDtoRequest.cs" />
+    <Compile Include="Common\AddDtoResponse.cs" />
+    <Compile Include="Common\AddressDto.cs" />
+    <Compile Include="Common\CommonResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DataErrorInfo.cs" />
+    <Compile Include="Common\DataErrorInfoType.cs" />
+    <Compile Include="Common\DtoResponse.cs" />
+    <Compile Include="Common\ErrorLevel.cs" />
+    <Compile Include="Common\GetDtoByKeyRequest.cs" />
+    <Compile Include="Common\GetDtoByKeyResponse.cs" />
+    <Compile Include="Common\GetSectionDtoByKeyRequest.cs" />
+    <Compile Include="Common\GetSectionDtoByKeyResponse.cs" />
+    <Compile Include="Common\IDataTransferObject.cs" />
+    <Compile Include="Common\IHaveDataTransferObject.cs" />
+    <Compile Include="Common\IKeyedDataTransferObject.cs" />
+    <Compile Include="Common\IValidatedObject.cs" />
+    <Compile Include="Common\KeyedDataTransferObject.cs" />
+    <Compile Include="Common\Lookups\GetLookupsByCategoryRequest.cs" />
+    <Compile Include="Common\Lookups\GetLookupsByCategoryResponse.cs" />
+    <Compile Include="Common\Lookups\LookupCacheOptions.cs" />
+    <Compile Include="Common\Lookups\LookupDto.cs" />
+    <Compile Include="Common\MoneyDto.cs" />
+    <Compile Include="Common\PagedSearchRequest.cs" />
+    <Compile Include="Common\PagedSearchResponse.cs" />
+    <Compile Include="Common\PhoneDto.cs" />
+    <Compile Include="Common\QuestionType.cs" />
+    <Compile Include="Common\SaveDtoRequest.cs" />
+    <Compile Include="Common\SaveDtoResponse.cs" />
+    <Compile Include="Common\SaveSectionDtoRequest.cs" />
+    <Compile Include="Common\TimeSpanPicker.cs" />
+    <Compile Include="Core\CreatePatientRequest.cs" />
+    <Compile Include="Core\GetPatientAssessmentsRequest.cs" />
+    <Compile Include="Core\GetPatientAssessmentsResponse.cs" />
+    <Compile Include="Core\GetPatientDtoByKeyRequest.cs" />
+    <Compile Include="Core\GetPatientDtoByAssessmentKeyRequest.cs" />
+    <Compile Include="Core\GetPatientDtoResponse.cs" />
+    <Compile Include="Core\PatientDto.cs" />
+    <Compile Include="Core\PatientSearchByKeywordRequest.cs" />
+    <Compile Include="Core\PatientSearchResponse.cs" />
+    <Compile Include="Ehr\EhrDto.cs" />
+    <Compile Include="Organization\CreateOrganizationAdminRequest.cs" />
+    <Compile Include="Organization\CreateOrganizationAdminResponse.cs" />
+    <Compile Include="Organization\CreateOrganizationApiKeyRequest.cs" />
+    <Compile Include="Organization\CreateOrganizationRequest.cs" />
+    <Compile Include="Organization\CreateStaffRequest.cs" />
+    <Compile Include="Organization\CreateTeamRequest.cs" />
+    <Compile Include="Organization\DtoCollectionResponse.cs" />
+    <Compile Include="Organization\GetStaffDtoByKeyRequest.cs" />
+    <Compile Include="Organization\GetStaffDtoResponse.cs" />
+    <Compile Include="Organization\GetTeamsByPatientKeyRequest.cs" />
+    <Compile Include="Organization\GetTeamsByStaffKeyRequest.cs" />
+    <Compile Include="Organization\OrganizationAddressDto.cs" />
+    <Compile Include="Organization\OrganizationApiKeyDto.cs" />
+    <Compile Include="Organization\OrganizationDto.cs" />
+    <Compile Include="Organization\OrganizationPhoneDto.cs" />
+    <Compile Include="Organization\OrganizationResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrganizationResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Organization\OrganizationSummaryDto.cs" />
+    <Compile Include="Organization\RemovePatientFromTeamRequest.cs" />
+    <Compile Include="Organization\RemoveStaffFromTeamRequest.cs" />
+    <Compile Include="Organization\StaffDto.cs" />
+    <Compile Include="Organization\TeamDto.cs" />
+    <Compile Include="Organization\TeamPatientDto.cs" />
+    <Compile Include="Organization\TeamStaffDto.cs" />
+    <Compile Include="Organization\TeamSummaryDto.cs" />
+    <Compile Include="Organization\UpdateSystemAccountRequest.cs" />
+    <Compile Include="Organization\UpdateOrganizationNameRequest.cs" />
+    <Compile Include="Organization\UpdateStaffRequest.cs" />
+    <Compile Include="Organization\UpdateTeamNameRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\AssignAccountRequest.cs" />
+    <Compile Include="Security\AssignAccountResponse.cs" />
+    <Compile Include="Security\AssignPermissionRequest.cs" />
+    <Compile Include="Security\AssignPermissionResponse.cs" />
+    <Compile Include="Security\AssignRolesRequest.cs" />
+    <Compile Include="Security\AssignRolesResponse.cs" />
+    <Compile Include="Security\ChangePasswordRequest.cs" />
+    <Compile Include="Security\ChangePasswordResponse.cs" />
+    <Compile Include="Security\CreateRoleRequest.cs" />
+    <Compile Include="Security\CreateRoleResponse.cs" />
+    <Compile Include="Security\CreateSystemAdminRequest.cs" />
+    <Compile Include="Security\GetAvailablePermissionsRequest.cs" />
+    <Compile Include="Security\GetAvailablePermissionsResponse.cs" />
+    <Compile Include="Security\GetAvailableRolesRequest.cs" />
+    <Compile Include="Security\GetAvailableRolesResponse.cs" />
+    <Compile Include="Security\GetRoleDtoByKeyRequest.cs" />
+    <Compile Include="Security\MembershipUserDto.cs" />
+    <Compile Include="Security\ResetPasswordRequest.cs" />
+    <Compile Include="Security\ResetPasswordResponse.cs" />
+    <Compile Include="Security\ResetPasswordResponseCode.cs" />
+    <Compile Include="Security\RoleDto.cs" />
+    <Compile Include="Security\ApiSystemAccountDto.cs" />
+    <Compile Include="Security\SystemAccountDto.cs" />
+    <Compile Include="Security\UpdateRoleRequest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Asam.Ppc.Domain.Scoring\Asam.Ppc.Domain.Scoring.csproj">
+      <Project>{8F7AFE5C-EAF8-41B3-BACC-AE6B950CAFFA}</Project>
+      <Name>Asam.Ppc.Domain.Scoring</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Asam.Ppc.Domain\Asam.Ppc.Domain.csproj">
+      <Project>{d350fca3-0cd6-4de8-9887-fac1b1146176}</Project>
+      <Name>Asam.Ppc.Domain</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Asam.Ppc.Infrastructure\Asam.Ppc.Infrastructure.csproj">
+      <Project>{40AA5339-5ADC-4C29-B87F-8FA030A855A2}</Project>
+      <Name>Asam.Ppc.Infrastructure</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Asam.Ppc.Primitives\Asam.Ppc.Primitives.csproj">
+      <Project>{f9e8bfd4-3233-4926-aaa6-af07afcf11cc}</Project>
+      <Name>Asam.Ppc.Primitives</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assessment\AsamPpcResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AsamPpcResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assessment\AsamPpcScaleResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AsamPpcScaleResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\CommonResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organization\OrganizationResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrganizationResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,21 @@
+﻿@model long
+
+@{
+    Layout = "~/Views/Section/AssessmentLayout.cshtml";
+}
+
+
+<div id="submit-main">
+    <div>
+        <h2>The assessment has been successfully scored!</h2>
+        <span>Click view report to review.</span>
+    </div>
+    <div>
+        <a href='@Url.Content( "~/api/Assessment/Report/" + Model )' class="ui-button">View Report</a>
+    </div>
+    @Html.Hidden( "id", Model )
+    
+    <div class="clear"></div>
+</div>
+
+

@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13, 9.75" name="clinical-interviewer">
+  <useCaseModelRootMoniker Id="ad46ec8a-822a-4173-9466-0b8ac3a22535" />
+  <nestedChildShapes>
+    <actorShape Id="48dcfdda-d2f8-4f04-954a-46571bcbb8b3" absoluteBounds="1.25, 2.5, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="f1215a13-f8b2-43dc-ba24-141e400b09d9" LastKnownName="Clinical Interviewer" />
+      <relativeChildShapes />
+    </actorShape>
+    <commentShape Id="a96c8172-6a66-4dfb-9110-fe68dbfdaf15" absoluteBounds="0.5, 4, 2.25, 1" customColor="Cornsilk">
+      <commentMoniker Id="3198a1e2-0be7-4284-b599-c3d54d3fa1a0" />
+      <relativeChildShapes />
+    </commentShape>
+    <commentConnector edgePoints="[(1.5 : 4); (1.5 : 3)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+      <relativeChildShapes />
+      <nodes>
+        <commentShapeMoniker Id="a96c8172-6a66-4dfb-9110-fe68dbfdaf15" />
+        <actorShapeMoniker Id="48dcfdda-d2f8-4f04-954a-46571bcbb8b3" />
+      </nodes>
+    </commentConnector>
+    <useCaseShape Id="e9ff2d5c-8c30-4779-b19d-307caae2d5f3" absoluteBounds="0.75, 0.75, 1.875, 0.625" customColor="PaleTurquoise" heightOffset="0">
+      <useCaseMoniker Id="39766b3a-743a-42a1-8635-fa82349a2fb7" LastKnownName="Create Patient record including: Edit and Delete" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.52777777777778 : 2.5); (1.65280156827199 : 1.37478588555211)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="070593d0-4836-4ed8-a2aa-38fa0c1ef935" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="48dcfdda-d2f8-4f04-954a-46571bcbb8b3" />
+        <useCaseShapeMoniker Id="e9ff2d5c-8c30-4779-b19d-307caae2d5f3" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="4af9f3e8-d1bf-495b-ab3e-ca149769adcc" absoluteBounds="7.875, 5.5, 2.125, 0.625" customColor="Pink" heightOffset="0">
+      <useCaseMoniker Id="b9012750-ac87-40fc-8b50-fbaae421641f" LastKnownName="Administer ASAM Assessements" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.75 : 2.85294117647059); (8.31993441917346 : 5.5582082902479)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="3db9eaf1-1821-444a-b830-e4e1063d4e1f" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="48dcfdda-d2f8-4f04-954a-46571bcbb8b3" />
+        <useCaseShapeMoniker Id="4af9f3e8-d1bf-495b-ab3e-ca149769adcc" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="814ff34c-1602-4d0f-a96e-7600246e829e" absoluteBounds="6.875, 6.5, 1.875, 0.625" customColor="Pink" heightOffset="0">
+      <useCaseMoniker Id="573a6c98-8019-4de7-866f-39c65868b776" LastKnownName="Generate ASAM Report" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.75 : 2.93513518347361); (6.89633730076068 : 6.74620758504715)]" fixedFrom="Algorithm" fixedTo="Caller" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="0a3fd3c6-b3b8-4d11-b485-bb74b26aaf23" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="48dcfdda-d2f8-4f04-954a-46571bcbb8b3" />
+        <useCaseShapeMoniker Id="814ff34c-1602-4d0f-a96e-7600246e829e" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="60163fd3-552f-4496-ab79-4d47b0c551b7" absoluteBounds="0.5, 5.875, 2, 0.625" customColor="Cornsilk" heightOffset="0">
+      <useCaseMoniker Id="6ea6b65c-ed7e-42ea-ba8b-a93b466df813" LastKnownName="Provide Treatment Recommendation" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.5 : 3); (1.5 : 5.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="501a017b-b8f2-4c6d-ac7e-c40619bf5b06" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="48dcfdda-d2f8-4f04-954a-46571bcbb8b3" />
+        <useCaseShapeMoniker Id="60163fd3-552f-4496-ab79-4d47b0c551b7" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="c754df98-c577-4a9e-9d75-203f09a873b9" absoluteBounds="2.125, 1.25, 2.25, 0.875" customColor="PaleTurquoise" heightOffset="0">
+      <useCaseMoniker Id="13c918c4-17a0-434a-81af-40a51caaf6cb" LastKnownName="Search for a  Patient Record including selecting a record and making it the active patient" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.75 : 2.59821428571429); (2.64321323131159 : 2.05590625241796)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="df6b15be-92f4-45e2-8974-50267eac8d9f" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="48dcfdda-d2f8-4f04-954a-46571bcbb8b3" />
+        <useCaseShapeMoniker Id="c754df98-c577-4a9e-9d75-203f09a873b9" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="905fddcc-d5a7-46b1-8591-0c7f84b650a8" absoluteBounds="3.875, 2.125, 2, 0.625" customColor="PaleTurquoise" heightOffset="0">
+      <useCaseMoniker Id="6c107162-56c1-43ec-aca6-c2749b7e8f1f" LastKnownName="Admit and Discharge Patient" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.75 : 2.72685185185185); (3.91620188729161 : 2.52627760302855)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="4c4744ad-c6a5-4ff3-a00e-9c0937161234" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="48dcfdda-d2f8-4f04-954a-46571bcbb8b3" />
+        <useCaseShapeMoniker Id="905fddcc-d5a7-46b1-8591-0c7f84b650a8" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="a857a481-0b7a-4b11-adc1-30ebde0209e8" absoluteBounds="10.25, 7, 1.5, 0.5" customColor="Pink" heightOffset="0">
+      <useCaseMoniker Id="3311756f-d05e-42a1-94bc-45d650b721a0" LastKnownName="Print Report" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(8.67938571732005 : 6.93148431414197); (10.306491426144 : 7.15481254868643)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="6ffea5db-c884-44ae-8b67-2a464d4a05ab" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="814ff34c-1602-4d0f-a96e-7600246e829e" />
+        <useCaseShapeMoniker Id="a857a481-0b7a-4b11-adc1-30ebde0209e8" />
+      </nodes>
+    </includeConnector>
+    <useCaseShape Id="544bb3e7-1c11-4d41-ad01-9e1c521dfbe7" absoluteBounds="8.75, 7.75, 1.75, 0.625" customColor="Pink" heightOffset="0">
+      <useCaseMoniker Id="f42e9a58-07aa-4f49-93d1-f482e42a51ae" LastKnownName="Submit Report to ASAM Repository" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(8.22047061925651 : 7.09385904776311); (9.22262753329623 : 7.78500174710085)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="60d96de9-d29e-4f1a-93db-0b71352e4646" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="814ff34c-1602-4d0f-a96e-7600246e829e" />
+        <useCaseShapeMoniker Id="544bb3e7-1c11-4d41-ad01-9e1c521dfbe7" />
+      </nodes>
+    </includeConnector>
+    <commentShape Id="6ced5dcb-de1f-4cd3-a1b5-3f9cd5440a73" absoluteBounds="8.125, 0.75, 2.125, 0.5" customColor="PaleTurquoise">
+      <commentMoniker Id="ee5479ca-1793-44d8-8cbe-e8117103e611" />
+      <relativeChildShapes />
+    </commentShape>
+    <useCaseShape Id="d8020d17-2713-487a-ad28-f76df869d8d9" absoluteBounds="11, 6, 1.625, 0.625" customColor="Pink" heightOffset="0">
+      <useCaseMoniker Id="b79c9113-9ce9-49a7-b3bb-a2b6da6f97c0" LastKnownName="Mark Assessment as Complete" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(9.85207607101416 : 5.97155670800246); (11.0721672632318 : 6.18374648056206)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="774c640c-237a-46e9-8e79-d2abbc309873" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="4af9f3e8-d1bf-495b-ab3e-ca149769adcc" />
+        <useCaseShapeMoniker Id="d8020d17-2713-487a-ad28-f76df869d8d9" />
+      </nodes>
+    </includeConnector>
+    <useCaseShape Id="6e414ae6-af0a-4b51-a7d3-ff6bbae35ffc" absoluteBounds="10.875, 4.625, 1.875, 0.75" customColor="Pink" heightOffset="0">
+      <useCaseMoniker Id="7c14a245-c038-4e72-aeaa-e6f3a95b305f" LastKnownName="Save, Edit or Delete selected assessment" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(9.7036411227062 : 5.59598185662651); (11.0468233465445 : 5.21638688032437)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="9f9810ee-04ef-438c-b5ad-72dad07d4a3a" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="4af9f3e8-d1bf-495b-ab3e-ca149769adcc" />
+        <useCaseShapeMoniker Id="6e414ae6-af0a-4b51-a7d3-ff6bbae35ffc" />
+      </nodes>
+    </includeConnector>
+    <commentShape Id="ca3e930c-0a7d-40d0-a036-3f7044855308" absoluteBounds="8.125, 9, 2.25, 0.5" customColor="Pink">
+      <commentMoniker Id="c6b5a9f6-b8c2-44de-9d32-44e87b9f3ef4" />
+      <relativeChildShapes />
+    </commentShape>
+    <useCaseShape Id="f0e84ca7-3000-4c1b-adc7-2b5a18a664f9" absoluteBounds="7.875, 3.625, 1.875, 0.625" customColor="PaleTurquoise" heightOffset="0">
+      <useCaseMoniker Id="9eab97cd-80ac-4076-9301-3fc7b1aed92c" LastKnownName="Select ASAM Activity" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.75 : 2.79059829059829); (7.96969699796506 : 3.80063455522509)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="7a1f97a4-233c-44fa-806d-c61430eea343" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="48dcfdda-d2f8-4f04-954a-46571bcbb8b3" />
+        <useCaseShapeMoniker Id="f0e84ca7-3000-4c1b-adc7-2b5a18a664f9" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="97588261-49c0-47d8-8924-aef787217ab8" absoluteBounds="5.75, 2.75, 2.25, 0.625" customColor="PaleTurquoise" heightOffset="0">
+      <useCaseMoniker Id="5c7636b5-90b6-417a-8cab-d1c6ff11e696" LastKnownName="Schedule ASAM Assessment for s selected patient" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.75 : 2.76453488372093); (5.77386054659052 : 2.99848026433666)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="00145ee9-423b-4c6d-8b3e-3a8a36fbd335" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="48dcfdda-d2f8-4f04-954a-46571bcbb8b3" />
+        <useCaseShapeMoniker Id="97588261-49c0-47d8-8924-aef787217ab8" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <commentShape Id="abb3f977-abe5-46b1-978b-852659330af1" absoluteBounds="8.125, 1.875, 1.75, 0.75" customColor="251, 247, 200">
+      <commentMoniker Id="5225c28d-1dea-4a7a-b06c-c51f2d0aa1e1" />
+      <relativeChildShapes />
+    </commentShape>
+    <commentConnector edgePoints="[(8.125 : 2.625); (7.84553665971524 : 2.90446334028476)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+      <relativeChildShapes />
+      <nodes>
+        <commentShapeMoniker Id="abb3f977-abe5-46b1-978b-852659330af1" />
+        <useCaseShapeMoniker Id="97588261-49c0-47d8-8924-aef787217ab8" />
+      </nodes>
+    </commentConnector>
+    <actorShape Id="4ef227d9-2b78-4bb9-815a-39c7108a3e76" absoluteBounds="11.5, 1.5, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="c83593cd-e122-4318-a7e8-f59b8a1a4516" LastKnownName="Patient" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseShape Id="db478944-b0cd-455c-a456-b2e1d80e8a1e" absoluteBounds="10.75, 2.5, 2, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="a56ca637-0610-4950-9113-7d165f127f95" LastKnownName="Patient shows up for assessment" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(11.75 : 2); (11.75 : 2.5)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="6bf41bf0-b942-450e-9041-50c33032cfc5" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="4ef227d9-2b78-4bb9-815a-39c7108a3e76" />
+        <useCaseShapeMoniker Id="db478944-b0cd-455c-a456-b2e1d80e8a1e" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseDependencyConnector edgePoints="[(9.44782595236496 : 3.70770125127225); (11.0302468046841 : 3.13533626213554)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
+      <dependencyMoniker Id="3ca02ce4-7690-4b00-ae1d-cc7394afa699" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="f0e84ca7-3000-4c1b-adc7-2b5a18a664f9" />
+        <useCaseShapeMoniker Id="db478944-b0cd-455c-a456-b2e1d80e8a1e" />
+      </nodes>
+    </useCaseDependencyConnector>
+    <useCaseShape Id="e15388b8-5bb7-4bf8-a4c9-0e7995184b95" absoluteBounds="5.5, 3.875, 1.875, 0.625" customColor="PaleTurquoise" heightOffset="0">
+      <useCaseMoniker Id="05362f62-0a40-4016-bb00-43c9f0652613" LastKnownName="In the EHR, select and view the ASAM report in Patient External History" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.75 : 2.83452415067286); (5.52790614846394 : 4.1118213847556)]" fixedFrom="Algorithm" fixedTo="Caller" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="62355f70-389c-4574-8ebd-6c31d8d8475f" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="48dcfdda-d2f8-4f04-954a-46571bcbb8b3" />
+        <useCaseShapeMoniker Id="e15388b8-5bb7-4bf8-a4c9-0e7995184b95" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseDependencyConnector edgePoints="[(6.60789129209946 : 4.49479519965457); (7.7205867124846 : 6.5015055024463)]" fixedFrom="Algorithm" fixedTo="Caller" customColor="Black">
+      <dependencyMoniker Id="34e38ba8-3604-4532-a615-328016a23ec7" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="e15388b8-5bb7-4bf8-a4c9-0e7995184b95" />
+        <useCaseShapeMoniker Id="814ff34c-1602-4d0f-a96e-7600246e829e" />
+      </nodes>
+    </useCaseDependencyConnector>
+    <commentShape Id="4c852683-f841-4827-b36a-0f6495688500" absoluteBounds="4.625, 4.75, 1.875, 0.625" customColor="251, 247, 200">
+      <commentMoniker Id="a30e35a0-0a66-4b3c-b062-51d89f69a900" />
+      <relativeChildShapes />
+    </commentShape>
+    <commentConnector edgePoints="[(5.54166666666667 : 4.75); (5.63912430110306 : 4.35130967730565)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="5.2713468819030505, 4.4470412830548822, 0.125, 0.1341145783662796" shapeFieldName="Stereotype" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <commentShapeMoniker Id="4c852683-f841-4827-b36a-0f6495688500" />
+        <useCaseShapeMoniker Id="e15388b8-5bb7-4bf8-a4c9-0e7995184b95" />
+      </nodes>
+    </commentConnector>
+    <useCaseShape Id="568db05f-b753-449c-b41f-2162195318fa" absoluteBounds="4.625, 7.25, 2.125, 0.75" customColor="Pink" heightOffset="0">
+      <useCaseMoniker Id="66b7c7c2-86cc-4711-81e7-ba8f9828674f" LastKnownName="Manage patients records including, create, edit, delete" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.71474358974359 : 3); (5.37923944954775 : 7.26612950842873)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="df83741b-dfad-4430-9bf4-a4beb47b9989" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="48dcfdda-d2f8-4f04-954a-46571bcbb8b3" />
+        <useCaseShapeMoniker Id="568db05f-b753-449c-b41f-2162195318fa" />
+      </nodes>
+    </useCaseAssociationConnector>
+  </nestedChildShapes>
+</useCaseDiagram>

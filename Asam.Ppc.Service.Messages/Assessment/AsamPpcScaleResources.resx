@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlcoholAndDrugInterviewerRating_InterviewerScoreOfAlcoholTreatmentNeed" xml:space="preserve">
+    <value>No treatment necessary|Treatment needed to intervene in life threatening situation</value>
+  </data>
+  <data name="AlcoholAndDrugInterviewerRating_InterviewerScoreOfAttitude" xml:space="preserve">
+    <value>Shows appropriate concern w/insight and acceptance of an addiction problem||Is ambivalent, somewhat less concerned than circumstances warrant||Rationalizes addiction problems as mostly due to other causes||Shows no evidence of concern at all||Openly rejects evidence of apparent addiction problems|</value>
+  </data>
+  <data name="AlcoholAndDrugInterviewerRating_InterviewerScoreOfDrugTreatmentNeed" xml:space="preserve">
+    <value>No treatment necessary|Treatment needed to intervene in life threatening situation</value>
+  </data>
+  <data name="AlcoholAndDrugInterviewerRating_InterviewerScoreOfReadiness" xml:space="preserve">
+    <value>Has completed treatment and fully engaged in periodic maintenance efforts|Is actively participating in, or completing treatment with maintenance plans|Is spontaneously seeking treatment||Is open to treatment with prompting||Is ambivalent or unclear of plans||Wants to drop treatment|Refuses any treatment</value>
+  </data>
+  <data name="CinaScale_ExperiencedNauseaOrVomitedRecently" xml:space="preserve">
+    <value>no nausea and no vomiting|Mild nausea with no vomiting|Constant dry heaves but no vomiting|||Constant nausea, frequent dry heaves and vomiting|| ||</value>
+  </data>
+  <data name="EmploymentAndSupportSection_InterviewerRatingPatientNeedForEmploymentCounseling" xml:space="preserve">
+    <value>No treatment necessary|Treatment needed to intervene in life threatening situation</value>
+  </data>
+  <data name="FamilyAndSocialHistorySection_InterviewerRatingPatientNeedForFamilySocialCounseling" xml:space="preserve">
+    <value>No treatment necessary|Treatment needed to intervene in life threatening situation</value>
+  </data>
+  <data name="InterviewerRating_AppearanceofAgitation" xml:space="preserve">
+    <value>Not at All|Slightly symptomatic (patient reports symptoms, no impairment of behavior or function)||Moderately (observable symptoms, no impairment)||Considerably (overt or persistent symptoms suggesting risk of impairment)||Extremely (persistent symptoms with evidence of or report of impairment)|</value>
+  </data>
+  <data name="InterviewerRating_AppearanceOfAnxietyNervousness" xml:space="preserve">
+    <value>Not at All|Slightly symptomatic (patient reports symptoms, no impairment of behavior or function)||Moderately (observable symptoms, no impairment)||Considerably (overt or persistent symptoms suggesting risk of impairment)||Extremely (persistent symptoms with evidence of or report of impairment)|</value>
+  </data>
+  <data name="InterviewerRating_AppearanceOfDepressionWithdrawal" xml:space="preserve">
+    <value>Not at All|Slightly symptomatic (patient reports symptoms, no impairment of behavior or function)||Moderately (observable symptoms, no impairment)||Considerably (overt or persistent symptoms suggesting risk of impairment)||Extremely (persistent symptoms with evidence of or report of impairment)|</value>
+  </data>
+  <data name="InterviewerRating_AppearanceOfFluctuatingOrientationInLast24Hours" xml:space="preserve">
+    <value>Not at All|Slightly symptomatic (patient reports symptoms, no impairment of behavior or function)||Moderately (observable symptoms, no impairment)||Considerably (overt or persistent symptoms suggesting risk of impairment)||Extremely (persistent symptoms with evidence of or report of impairment)|</value>
+  </data>
+  <data name="InterviewerRating_AppearanceOfHostility" xml:space="preserve">
+    <value>Not at All|Slightly symptomatic (patient reports symptoms, no impairment of behavior or function)||Moderately (observable symptoms, no impairment)||Considerably (overt or persistent symptoms suggesting risk of impairment)||Extremely (persistent symptoms with evidence of or report of impairment)|</value>
+  </data>
+  <data name="InterviewerRating_AppearanceOfLethargy" xml:space="preserve">
+    <value>Not at All|Slightly symptomatic (patient reports symptoms, no impairment of behavior or function)||Moderately (observable symptoms, no impairment)||Considerably (overt or persistent symptoms suggesting risk of impairment)||Extremely (persistent symptoms with evidence of or report of impairment)|</value>
+  </data>
+  <data name="InterviewerRating_AppearanceOfParanoiaOrImpairedThinking" xml:space="preserve">
+    <value>Not at All|Slightly symptomatic (patient reports symptoms, no impairment of behavior or function)||Moderately (observable symptoms, no impairment)||Considerably (overt or persistent symptoms suggesting risk of impairment)||Extremely (persistent symptoms with evidence of or report of impairment)|</value>
+  </data>
+  <data name="InterviewerRating_AppearanceOfSpeechImpairmentBadPosture" xml:space="preserve">
+    <value>Not at All|Slightly symptomatic (patient reports symptoms, no impairment of behavior or function)||Moderately (observable symptoms, no impairment)||Considerably (overt or persistent symptoms suggesting risk of impairment)||Extremely (persistent symptoms with evidence of or report of impairment)|</value>
+  </data>
+  <data name="InterviewerRating_AppearanceOfTroubleConcentratingOrRemembering" xml:space="preserve">
+    <value>Not at All|Slightly symptomatic (patient reports symptoms, no impairment of behavior or function)||Moderately (observable symptoms, no impairment)||Considerably (overt or persistent symptoms suggesting risk of impairment)||Extremely (persistent symptoms with evidence of or report of impairment)|</value>
+  </data>
+  <data name="InterviewerRating_DemonstratingDangerToSelfOrOthers" xml:space="preserve">
+    <value>Not at All|Slightly symptomatic (patient reports symptoms, no impairment of behavior or function)||Moderately (observable symptoms, no impairment)||Considerably (overt or persistent symptoms suggesting risk of impairment)||Extremely (persistent symptoms with evidence of or report of impairment)|</value>
+  </data>
+  <data name="InterviewerRating_HasSuicidalThoughts" xml:space="preserve">
+    <value>Not at All|Slightly symptomatic (patient reports symptoms, no impairment of behavior or function)||Moderately (observable symptoms, no impairment)||Considerably (overt or persistent symptoms suggesting risk of impairment)||Extremely (persistent symptoms with evidence of or report of impairment)|</value>
+  </data>
+  <data name="InterviewerRating_IndicatingRiskOfHarmToOthers" xml:space="preserve">
+    <value>Not at All|Slightly symptomatic (patient reports symptoms, no impairment of behavior or function)||Moderately (observable symptoms, no impairment)||Considerably (overt or persistent symptoms suggesting risk of impairment)||Extremely (persistent symptoms with evidence of or report of impairment)|</value>
+  </data>
+  <data name="InterviewerRating_IndicatingRiskOfHarmToSelfOrVictimizationByOthers" xml:space="preserve">
+    <value>Not at All|Slightly symptomatic (patient reports symptoms, no impairment of behavior or function)||Moderately (observable symptoms, no impairment)||Considerably (overt or persistent symptoms suggesting risk of impairment)||Extremely (persistent symptoms with evidence of or report of impairment)|</value>
+  </data>
+  <data name="InterviewerRating_LevelOfSupervisionNeededForProtectionFromSelfHarm" xml:space="preserve">
+    <value>None at All| A little (1-2 visits/week)||Some (&lt;=9 hours/week)||Much (approximately 6 hours/day)||Extreme (24 hours/day)|</value>
+  </data>
+  <data name="InterviewerRating_LikelihoodOfRecurrenceOfPsychiatricDecompensation" xml:space="preserve">
+    <value>Not at All|Slightly (positive history but not under current conditions)||Moderately (positive history and current conditions are simlar to past, but patient has better support system or less stress)||Considerably (history and conditions predict high risk)||Extremely (symptoms evident now)|</value>
+  </data>
+  <data name="InterviewerRating_LimitedInAbilityToContractForSafetyIfRiskOfHarmToSelfOrOthers" xml:space="preserve">
+    <value>Not at All|Slightly symptomatic (patient reports symptoms, no impairment of behavior or function)||Moderately (observable symptoms, no impairment)||Considerably (overt or persistent symptoms suggesting risk of impairment)||Extremely (persistent symptoms with evidence of or report of impairment)|</value>
+  </data>
+  <data name="InterviewerRating_PatientNeedForPsychiatricPsychologicalTreatmentRating" xml:space="preserve">
+    <value>No psychological (i.e. non-substance) problems|Minimal psychological issues (i.e. tolerable grief or depressed mood)||Moderate problems require close outpatient follow-up (e.g. suicidal thoughts)||Considerable problems and risk, especially if uses substances (e.g. history of implusive suicidality, moderate dementia)|| Severe psychological problems (e.g. acutley suicidal, manic, or psychotic)|</value>
+  </data>
+  <data name="LegalSection_InterviewerRatingPatientNeedForLegalServiceCounseling" xml:space="preserve">
+    <value>0 = No treatment necessary|9 = Treatment needed to intervene on a life threatening situation</value>
+  </data>
+  <data name="MedicalSection_InterviewerObservationOfPatientAgitationLevel" xml:space="preserve">
+    <value>Normal Activity|Somewhat more than normal activity|Moderately fidgety and restless|||Paces back and forth during most of the interview, or constantly thrashes about||</value>
+  </data>
+  <data name="MedicalSection_InterviewerRatingOfPatientNeedForMedicalTreatment" xml:space="preserve">
+    <value>No medical (i.e. non-substance) problems|Minimal health issues (e.g. backache, dental disease)||Moderate problems require close outpatient follow-up (e.g. diabetes)||Considerable problems and may need nursing care during day, evening and nights (e.g. chronic pancreatitis)||Severe health problems and may require physician's change in medical plan at any time (e.g. jaundice, vomiting blood, active seizure)|</value>
+  </data>
+</root>

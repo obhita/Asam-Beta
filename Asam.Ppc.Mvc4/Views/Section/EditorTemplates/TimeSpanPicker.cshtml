@@ -1,0 +1,15 @@
+﻿@using Asam.Ppc.Mvc.Infrastructure
+@using Asam.Ppc.Service.Messages.Common;
+@model TimeSpanPicker
+
+<div class="primitive">
+    @Html.LabelFor(m => m.Year, "Years") 
+    @Html.TextBoxFor(m => m.Year)
+    @Html.ExtendedValidationMessageFor( m => m.Year )
+</div>
+<div class="primitive">
+    @Html.LabelFor(m => m.Month, "Months")
+    @Html.TextBoxFor(m => m.Month)
+    @Html.ExtendedValidationMessageFor( m => m.Month )
+</div>
+<div class="clear"></div>

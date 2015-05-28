@@ -1,0 +1,143 @@
+﻿@using Asam.Ppc.Mvc.Infrastructure
+@using Asam.Ppc.Mvc.Infrastructure.Service
+@using Asam.Ppc.Mvc4.Models
+@using Asam.Ppc.Service.Messages.Core
+
+@{
+    Layout = Request.IsAjaxRequest () ? "" : "~/Views/Shared/_Layout.cshtml";
+
+    if (Layout != string.Empty && Html.IsApiMode())
+    {
+        Layout = "~/Views/Shared/_LayoutApi.cshtml";
+    }
+    
+    var assessmentViewModel = ViewData["AssessmentViewModel"] as AssessmentViewModel;
+
+    var assessmentKey = Model is long ? Model : Model.Key;
+
+    var activeIndex = 0;
+    var sectionCount = 0;
+
+    var patient = ViewData["Patient"] as PatientDto;
+
+    var routesection = (string)ViewContext.RouteData.Values["section"];
+    var routesubsection = (string)ViewContext.RouteData.Values["subsection"];
+    if ( routesubsection == "Submit" )
+    {
+        routesubsection = string.Empty;
+    }
+    var sectionUrlFormat = Request.Url.AbsolutePath.Replace(routesection, "{section}");
+    sectionUrlFormat = routesubsection != null
+                           ? sectionUrlFormat.Replace ( routesubsection, "{subsection}" )
+                           : sectionUrlFormat.Replace ( "{section}", "{section}/{subsection}" );
+}
+
+
+@section NavigationBody
+{
+    <div id="assessmentNavigation" class="accordion">
+        @foreach (var route in assessmentViewModel.OrderRoutes.GroupBy(r => r.Section))
+        {
+            <h3><a href="#">@Html.GetAsamPpcResource(route.First().Section)</a><span class="selector-arrow"></span></h3>
+            if (route.Contains(assessmentViewModel.CurrentRoute))
+            {
+                activeIndex = sectionCount;
+            }
+            <div>
+                <div class="navigationSectionHeader">
+                    <div class="seven columns alpha omega"><span>Section</span></div>
+                    <div id="navigationSectionHeaderComplete" class="five columns alpha omega"><span>% Complete</span></div>
+                    <div id="navigationSectionHeaderComplete" class="five columns alpha omega"><span></span></div>
+                    <div class="clear"></div>
+                </div>
+                <ul>
+                    @foreach (var subsection in route)
+                    {
+                        var linkClass = (assessmentViewModel.CurrentRoute.SubSection ?? assessmentViewModel.CurrentRoute.Section) == (subsection.SubSection ?? subsection.Section) ? "active" : string.Empty;
+                        var routeInfo = new RouteInfo(subsection.Section, subsection.SubSection);
+                        var resourceName = routeInfo.Section + (routeInfo.SubSection == null ? string.Empty : "_" + routeInfo.SubSection);
+                        var completenessKey = subsection.SubSection ?? subsection.Section;
+                        var percent = "0%";
+                        if (assessmentViewModel.Completeness.CompletenessResultsPerRuleSet.ContainsKey(completenessKey))
+                        {
+                            percent = ( assessmentViewModel.Completeness.CompletenessResultsPerRuleSet[completenessKey].PercentComplete ).ToString("0.#%");
+                        }
+                        if ( percent == "NaN" )
+                        {
+                            percent = string.Empty;
+                        }
+                        var completeClass = percent == "100%" || percent == string.Empty ? string.Empty : "not-complete";
+                        <li class="navigation-button @linkClass @completeClass" data-route-info="@routeInfo">
+                            <div class="nine columns alpha omega">
+                                <span class="sub-section-indicator"></span><a href="#">@Html.GetAsamPpcResource(resourceName)</a>
+                            </div>
+                            <div class="three columns alpha omega">
+                                <div>@percent</div>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                    }
+                </ul>
+            </div>
+                    sectionCount++;
+        }
+    </div>
+    <div id="navigationActiveIndex" class="hidden" data-active-index="@activeIndex"></div>
+}
+
+@using ( Html.BeginForm ( "Edit", "Section", FormMethod.Post, new {id = "assessmentForm"} ) )
+{
+    <div id="assessmentHeader" class="page-header">
+        @Html.DisplayFor( m => patient )
+        <div class="tools">
+            @*<a target="_blank" class="export-btn" href="@Url.Content( "~/Assessment/GetPrintView/" + assessmentKey )">Print</a>
+            <a target="_blank" class="export-btn dev" href="@Url.Content( "~/api/Assessment/CsvFile/" + assessmentKey )">Export to CSV</a>
+            <a target="_blank" class="export-btn dev" href="@Url.Content( "~/api/Assessment/GetAssessmentExcelFile/" + assessmentKey )">Export to Excel</a>
+            <a target="_blank" class="export-btn dev" href="@Url.Content( "~/api/Assessment/GetAssessmentScoreExcelFile/" + assessmentKey )">Export Score to Excel</a>*@
+        </div>
+    </div>
+    <br class="clear" />
+    <div id="assessmentContent">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+    <div id="errorSummary" class="hidden bar-above-page-footer">
+        <div>
+            <span id="summary" class="validation-summary-errors"></span>
+            <input type="button" id="previousError" value="Back" />
+            <input type="button" id="nextError" value="Forward" />
+        </div>
+    </div>
+    <div id="assessmentFooter" class="page-footer">
+        <div>
+
+            @Html.Hidden( "nextRoute", "" )
+            <input type="submit" name="command" class="previous" value="< Prev" data-route-info="@assessmentViewModel.PreviousRoute" />
+            <input type="submit" name="command" class="hidden save" value="Save" data-route-info="@assessmentViewModel.CurrentRoute" />
+            <input type="submit" name="command" class="next" value="Next >" data-route-info="@(assessmentViewModel.NextRoute)^@(assessmentViewModel.CurrentRoute)^@(assessmentKey)" />
+            @Html.ActionLink( "Cancel", "Edit", "Section", new {id = assessmentKey}, new {@class = "hidden cancel"} )
+            @if ( assessmentViewModel.IsComplete )
+            {
+                @Html.ActionLink( "Submit", "Submit", "Section", new {id = assessmentKey, patientId = patient.Key}, new {@class = "submit", id = "submitButton"} )
+            }
+        </div>
+        <div class="clear"></div>
+    </div>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/assessmentrules")
+    <script>
+        $(document).ready(function () {
+            $('#assessmentNavigation h3').each(function() {
+                if ($(this).next().find('.not-complete').length === 0) {
+                    $(this).addClass('assessment-complete');
+                }
+            });
+
+            $.initializing(@activeIndex,'@sectionUrlFormat');
+        });
+    </script>
+}

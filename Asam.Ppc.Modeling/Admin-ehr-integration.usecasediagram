@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="f6852116-ff1c-485d-b442-664824c933e2" name="Administrator" linkedPackageId="e0bfc9e3-8b39-4831-938d-11371bd096b4" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="c60d19ca-4935-4527-aa32-5d16e607374f">
+      <elementDefinition Id="7e203406-b083-4734-add5-75d4d9a8d625" />
+      <body>Account Creation - the administrator is creates, configures, and maintains the ASAM account.</body>
+      <annotatedElements>
+        <actorMoniker Id="31b93f09-d9d2-4e6b-ba53-6f56d5812c21" LastKnownName="Administrator" />
+      </annotatedElements>
+    </comment>
+    <comment Id="8ffca8fc-aace-47d3-8754-80b5f4291a73">
+      <elementDefinition Id="ca741c7b-3cb8-4319-99d5-edd4594a82fd" />
+      <body>Tasks performed within the EHR system.</body>
+    </comment>
+    <comment Id="eeda72c2-6a99-4cf3-a5c3-9873384d3951">
+      <elementDefinition Id="0870de81-ce45-4a1b-a4ff-d3d714cbca0e" />
+      <body>Tasks performend within ASAM PPC</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="31b93f09-d9d2-4e6b-ba53-6f56d5812c21" name="Administrator" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="10c3d9e5-2a07-4c90-a39e-20fa36977f14" />
+        <targetEnds>
+          <association Id="c170d2c8-f6b6-443d-9d5c-ea353d747a34" isDerived="false" sourceEndRoleName="Administrator" targetEndRoleName="Manage staff records including creating new staff record." isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="838cf9e6-83bf-4847-a803-7d7db6faa04b" LastKnownName="access an account management screen, to create, configure account information" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f20a7ab7-b2de-4254-8e15-0a089d18e62c" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e4e742b8-2163-4a6c-9060-a309a8a6dec5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="28943fe0-b10f-4198-93f6-512a5f9ec0f8" name="Manage staff records including creating new staff record." isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="675e5b5a-fc23-43c6-88a6-dde87dc4e043" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d6e0bf88-686b-402b-974b-f71a135a0627" />
+          </association>
+          <association Id="8c2398dc-7c45-4da6-96e0-690b2bfaf00d" isDerived="false" sourceEndRoleName="Administrator" targetEndRoleName="Administrator" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="31b93f09-d9d2-4e6b-ba53-6f56d5812c21" LastKnownName="Administrator" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fe7cf240-3b58-45d2-beff-6cd4a535f38b" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="832227f0-0d20-46da-9251-8b002e561500" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9556efd4-aff1-49e6-b7a3-16c322344f42" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6613ee8a-5c06-409a-8d6d-c8ee3b6c1248" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d71a4c87-a5fb-4138-887d-f34bd7de5b48" />
+          </association>
+          <association Id="2887993c-d370-4255-b009-60d840a12371" isDerived="false" sourceEndRoleName="Administrator" targetEndRoleName="Administrator" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="31b93f09-d9d2-4e6b-ba53-6f56d5812c21" LastKnownName="Administrator" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4d9cc9e2-e1ee-4199-9093-077ab7fe1206" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3fbf45e1-7a41-433a-8d0c-0bee98b8d556" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="43bb50fb-88de-45ca-a67b-dad9945407ad" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="23c282dc-bd88-45ca-a647-97dffefb00ed" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="75ef838a-476c-494d-b4ac-ac7643fb6745" />
+          </association>
+          <association Id="3fc39733-d7d4-4201-8df8-19a4fc5b05d6" isDerived="false" sourceEndRoleName="Administrator" targetEndRoleName="Create, Setup and Maintain ASAM PPC Account" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ad8a6583-ba6b-49b6-a1a9-d4f3a7cfe8cb" LastKnownName="in the EHR, access the ASAM PPC registration screen" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="860e5a2b-311a-4242-b7a2-c24a6c070528" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c1cf9835-1992-42fa-a4ee-2e03a4cc9143" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="787750e7-1ac7-488e-b8d0-f053b99c745c" name="Create, Setup and Maintain ASAM PPC Account" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8fb92227-0ef6-46e5-ab45-a7a558c952b4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fb7efb70-ab7f-41d8-aef2-065aa10d5a6e" />
+          </association>
+          <association Id="b3b7cb8f-d0e3-4e06-999e-fa5932408952" isDerived="false" sourceEndRoleName="Administrator" targetEndRoleName="activate the account by typing in account information such as a key or registration code." isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d6b6b8a0-2b82-4668-bc27-06e91d57f191" LastKnownName="activate the account by typing in account information such as a key or registration code." />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6b8072ad-fdc8-482a-ac25-196be406fc46" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="14e0f718-04d9-4c5e-bace-81e97564c6a6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="095e4ace-fff5-427a-9a25-a5995c0a3fcc" name="activate the account by typing in account information such as a key or registration code." isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="71ff0a33-474b-4bea-9625-96abbca08806" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c1196edc-78ce-4b89-9080-4b1399949856" />
+          </association>
+          <association Id="cd79a666-682e-4726-b83f-3bbfb591c893" isDerived="false" sourceEndRoleName="Administrator" targetEndRoleName="use a direct connect account to email ASAM information to" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ecb8c581-10c2-4a7a-bbb2-c94a1a9d1ee2" LastKnownName="use and link a direct connect account to ASAM account for emailing ASAM information" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="09bc562f-78c9-4732-8c64-21b14ad7836c" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="af350efc-4b3f-4cb3-8709-2d957bbedcbb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fe4c6270-b8cf-4689-84fa-45f58ef62c4f" name="use a direct connect account to email ASAM information to" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="587cbf5c-87ff-4c2c-9d19-d7e7a9ba4714" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c62cd259-e19d-4990-a1ff-5b2301887a96" />
+          </association>
+          <association Id="4252b49f-2906-4d73-bd60-ec0459e26da5" isDerived="false" sourceEndRoleName="Administrator" targetEndRoleName="Manage patients records including, create, edit, delete" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1a056884-5ef9-46c6-b1f8-a09c6c07590b" LastKnownName="Manage patients records including, create, edit, delete" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="897162e1-4b19-41fe-ab1e-016f5ad06b06" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="333d20c8-4a5d-48bf-a66c-36779ac0a064" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e2b08e31-1f7d-4872-9a0b-fd32c9252df1" name="Manage patients records including, create, edit, delete" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9fc5f028-33c5-44a0-9d0c-bfd68ddd6846" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5efb1940-8375-4afb-ad53-e4436f4c1adc" />
+          </association>
+          <association Id="e50d9ce6-f3e7-4656-9bb1-775e941fbe62" isDerived="false" sourceEndRoleName="Administrator" targetEndRoleName="Manage personnel including creating new staff records1" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="0f3757af-0131-4617-a1db-27b1360155bd" LastKnownName="Manage personnel including creating new staff records" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="40b11e72-2036-4b08-8628-5d22349b1ac0" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a1239205-a793-4832-8737-bff876e53504" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="10d7bc03-acc8-4687-b5fe-bd8c7dc433d4" name="Manage personnel including creating new staff records1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="103421fc-dc04-4197-b7a9-1bdd3acad7a6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b5a44176-05f6-4bba-acde-7d2819e703b0" />
+          </association>
+          <association Id="6510aeff-1cf0-4156-83fe-d1c759f9b6d1" isDerived="false" sourceEndRoleName="Administrator" targetEndRoleName="under the primary account, manage user accounts including: access, permissions and role" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e75c3ca7-2dfd-4b7e-ac3c-c50d59c8310b" LastKnownName="under the primary account, manage user accounts including: access, permissions and role" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f1870170-73a9-4c24-abd1-3b0dfc5b7c8a" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c37dfe4c-b744-43f8-bc5e-93d1100d3471" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="91fd70d1-768a-4952-8913-ca5551e37f24" name="under the primary account, manage user accounts including: access, permissions and role" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="422630b1-6aee-410b-9c21-527448dea428" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d9435baf-0c38-4545-97b1-695c44983b0d" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="838cf9e6-83bf-4847-a803-7d7db6faa04b" name="access an account management screen, to create, configure account information" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7a065b22-8a29-436e-a8f6-16869b4a8ecb" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ad8a6583-ba6b-49b6-a1a9-d4f3a7cfe8cb" name="in the EHR, access the ASAM PPC registration screen" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5796a9ed-e981-4532-8198-8693c886f0c9" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d6b6b8a0-2b82-4668-bc27-06e91d57f191" name="activate the account by typing in account information such as a key or registration code." isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6d723aba-1b26-4d72-ae82-dcfc7be98027" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ecb8c581-10c2-4a7a-bbb2-c94a1a9d1ee2" name="use and link a direct connect account to ASAM account for emailing ASAM information" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9aecbadf-4a93-457e-8ee5-92b1ff966e2d" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0f3757af-0131-4617-a1db-27b1360155bd" name="Manage personnel including creating new staff records" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c002bf52-02ce-4961-b51c-78402180f90c" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1a056884-5ef9-46c6-b1f8-a09c6c07590b" name="Manage patients records including, create, edit, delete" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2a8ecd18-ae61-487c-bf0c-01ebead04867" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e75c3ca7-2dfd-4b7e-ac3c-c50d59c8310b" name="under the primary account, manage user accounts including: access, permissions and role" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1c34cf3c-d7f5-41ef-bebe-21ff16f4ca5f" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="e0bfc9e3-8b39-4831-938d-11371bd096b4" name="Asam.Ppc.Modeling">
+    <elementDefinition Id="da191d8f-e47e-4dd2-a73c-e14081f7b78d" />
+    <profileInstances>
+      <packageHasProfileInstances Id="cc51f481-5b4d-4756-843f-517f6923e912">
+        <profileInstance Id="8df55302-96e7-4297-8ab0-4fe1b5c797ef" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4d76dfaf-b7c9-4aac-9339-2cb566b3219e">
+        <profileInstance Id="1a04f33a-e26d-457a-b862-d6f220cef736" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

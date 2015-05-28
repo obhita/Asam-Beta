@@ -1,0 +1,14 @@
+﻿@using Asam.Ppc.Mvc.Infrastructure
+@using Asam.Ppc.Primitives;
+@model HeartRate
+
+@{
+    var className = string.Empty;
+  }
+
+<div class="primitive">
+    @Html.LabelFor(m => m.BeatsPerMinute) 
+    @Html.TextBoxFor(m => m.BeatsPerMinute, new {@class = className } )
+    @Html.ExtendedValidationMessageFor( m => m.BeatsPerMinute )
+</div>
+<div class="clear"></div>

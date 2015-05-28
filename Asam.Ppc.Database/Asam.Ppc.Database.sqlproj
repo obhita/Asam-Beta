@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Asam.Ppc.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{bd36072a-e83c-436d-bfb1-1ddba33f63bb}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Asam.Ppc.Database</RootNamespace>
+    <AssemblyName>Asam.Ppc.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Demo|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Prod|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Schema Comparisons" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="ScoringModule\" />
+    <Folder Include="ScoringModule\Tables\" />
+    <Folder Include="PatientModule\" />
+    <Folder Include="PatientModule\Tables\" />
+    <Folder Include="AssessmentModule\" />
+    <Folder Include="AssessmentModule\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="Scripts" />
+    <Folder Include="SecurityModule\" />
+    <Folder Include="SecurityModule\Tables\" />
+    <Folder Include="OrganizationModule\" />
+    <Folder Include="OrganizationModule\Tables\" />
+    <Folder Include="EhrModule" />
+    <Folder Include="EhrModule\Tables" />
+    <Folder Include="BillingModule\" />
+    <Folder Include="BillingModule\Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Schema Comparisons\CompareToAsamPpcGenDatabase.scmp" />
+    <None Include="Asam.Ppc.Database.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\LoadAssessments.sql" />
+    <None Include="Scripts\HiValue.sql" />
+    <None Include="Scripts\Users.sql" />
+    <None Include="AsamDemo.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Organization.sql" />
+    <None Include="Scripts\Patient.sql" />
+    <None Include="Scripts\SystemAdmin.sql" />
+    <None Include="AsamTest.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="AsamProd.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\HiValue.sql" />
+    <Build Include="ScoringModule\Tables\DimensionalAdmissionCriteriaResults.sql" />
+    <Build Include="ScoringModule\Tables\Dimension6LivingEnvironmentScores.sql" />
+    <Build Include="ScoringModule\Tables\Dimension5RelapsePotentialScores.sql" />
+    <Build Include="ScoringModule\Tables\Dimension4ReadinessToChangeScores.sql" />
+    <Build Include="ScoringModule\Tables\Dimension3EmotionalBehavioralScores.sql" />
+    <Build Include="ScoringModule\Tables\Dimension2BiomedicalScores.sql" />
+    <Build Include="ScoringModule\Tables\Dimension1WithdrawalScores.sql" />
+    <Build Include="ScoringModule\Tables\DiagnosisResults.sql" />
+    <Build Include="ScoringModule\Tables\AssessmentScore.sql" />
+    <Build Include="ScoringModule\Tables\AsiScoreEntity.sql" />
+    <Build Include="PatientModule\Tables\Patient.sql" />
+    <Build Include="AssessmentModule\Tables\InterviewerEvaluation.sql" />
+    <Build Include="AssessmentModule\Tables\SubstanceCategoryEntity.sql" />
+    <Build Include="AssessmentModule\Tables\HeroinUse.sql" />
+    <Build Include="AssessmentModule\Tables\HallucinogenUse.sql" />
+    <Build Include="AssessmentModule\Tables\DrugConsequences.sql" />
+    <Build Include="AssessmentModule\Tables\DrugAndAlcoholSection.sql" />
+    <Build Include="AssessmentModule\Tables\CocaineUse.sql" />
+    <Build Include="AssessmentModule\Tables\CiwaScale.sql" />
+    <Build Include="AssessmentModule\Tables\CinaScale.sql" />
+    <Build Include="AssessmentModule\Tables\CannabisUse.sql" />
+    <Build Include="AssessmentModule\Tables\BarbiturateUse.sql" />
+    <Build Include="AssessmentModule\Tables\AlcoholUse.sql" />
+    <Build Include="AssessmentModule\Tables\AlcoholAndDrugInterviewerRating.sql" />
+    <Build Include="AssessmentModule\Tables\AdditionalAddictionAndTreatmentItems.sql" />
+    <Build Include="AssessmentModule\Tables\AddictionTreatmentHistory.sql" />
+    <Build Include="AssessmentModule\Tables\PsychologicalSection.sql" />
+    <Build Include="AssessmentModule\Tables\CompletionSection.sql" />
+    <Build Include="AssessmentModule\Tables\PsychologicalHistory.sql" />
+    <Build Include="AssessmentModule\Tables\InterviewerRating.sql" />
+    <Build Include="AssessmentModule\Tables\DepressionEvaluation.sql" />
+    <Build Include="AssessmentModule\Tables\MedicalSection.sql" />
+    <Build Include="AssessmentModule\Tables\LegalSection.sql" />
+    <Build Include="AssessmentModule\Tables\GeneralInformationSection.sql" />
+    <Build Include="AssessmentModule\Tables\FamilyAndSocialHistorySection.sql" />
+    <Build Include="AssessmentModule\Tables\EmploymentAndSupportSection.sql" />
+    <Build Include="AssessmentModule\Tables\UsedSubstances.sql" />
+    <Build Include="AssessmentModule\Tables\StimulantUse.sql" />
+    <Build Include="AssessmentModule\Tables\SolventAndInhalantUse.sql" />
+    <Build Include="AssessmentModule\Tables\UnAvailableCareLevelEntity.sql" />
+    <Build Include="AssessmentModule\Tables\OtherSubstanceUse.sql" />
+    <Build Include="AssessmentModule\Tables\UnAcceptableCareLevelEntity.sql" />
+    <Build Include="AssessmentModule\Tables\OtherSedativeUse.sql" />
+    <Build Include="AssessmentModule\Tables\RecommendedCareLevelsEntity.sql" />
+    <Build Include="AssessmentModule\Tables\OtherOpiateUse.sql" />
+    <Build Include="AssessmentModule\Tables\AcceptedCareLevelEntity.sql" />
+    <Build Include="AssessmentModule\Tables\OpioidMaintenanceTherapy.sql" />
+    <Build Include="AssessmentModule\Tables\Assessment.sql" />
+    <Build Include="AssessmentModule\Tables\OpiatesInControlledEnvironment.sql" />
+    <Build Include="AssessmentModule\Tables\NicotineUse.sql" />
+    <Build Include="AssessmentModule\Tables\PsychologicalOrEmotionalProblemsEntity.sql" />
+    <Build Include="AssessmentModule\Tables\MultipleSubstanceUsePerDay.sql" />
+    <Build Include="AssessmentModule\Tables\PsychiatricDiagnosisEntity.sql" />
+    <Build Include="AssessmentModule\Tables\MethadoneUse.sql" />
+    <Build Include="AssessmentModule\Tables\MedicalProblemCategoryEntity.sql" />
+    <Build Include="Security\ScoringModule.sql" />
+    <Build Include="Security\ReportModule.sql" />
+    <Build Include="Security\PatientModule.sql" />
+    <Build Include="Security\CommonModule.sql" />
+    <Build Include="Security\AssessmentModule.sql" />
+    <Build Include="ScoringModule\Tables\DiagnosticStatisticalManualOfMentalDisorders_IV_Scores.sql" />
+    <Build Include="ScoringModule\Tables\CommonScores.sql" />
+    <Build Include="ScoringModule\Tables\CommonScoresAddictionSeverityIndexCompositeScores.sql" />
+    <Build Include="AssessmentModule\Tables\UsedSubstancesSubstanceHasEverUsed.sql" />
+    <Build Include="AssessmentModule\Tables\PsychologicalHistoryPastPsychologicalOrEmotionalProblems.sql" />
+    <Build Include="AssessmentModule\Tables\MedicalSectionMedicalProblems.sql" />
+    <Build Include="AssessmentModule\Tables\InterviewerRatingActivePsychiatricDiagnosesOtherThanSubstanceAbuse.sql" />
+    <Build Include="AssessmentModule\Tables\CompletionSectionUnavailableCareLevels.sql" />
+    <Build Include="AssessmentModule\Tables\CompletionSectionUnacceptableCareLevels.sql" />
+    <Build Include="AssessmentModule\Tables\CompletionSectionRecommendedCareLevels.sql" />
+    <Build Include="AssessmentModule\Tables\CompletionSectionAcceptableLevelsOfCare.sql" />
+    <Build Include="AssessmentModule\Tables\ReviewSection.sql" />
+    <Build Include="SecurityModule\Tables\SystemAccount.sql" />
+    <Build Include="SecurityModule\Tables\Role.sql" />
+    <Build Include="SecurityModule\Tables\SystemPermission.sql" />
+    <Build Include="OrganizationModule\Tables\Team.sql" />
+    <Build Include="OrganizationModule\Tables\Staff.sql" />
+    <Build Include="OrganizationModule\Tables\Organization.sql" />
+    <Build Include="OrganizationModule\Tables\OrganizationPhone.sql" />
+    <Build Include="OrganizationModule\Tables\OrganizationAddress.sql" />
+    <Build Include="Security\SecurityModule.sql" />
+    <Build Include="Security\OrganizationModule.sql" />
+    <Build Include="SecurityModule\Tables\RoleSystemPermission.sql" />
+    <Build Include="SecurityModule\Tables\SystemAccountRole.sql" />
+    <Build Include="ScoringModule\Tables\DiagnosticStatisticalManualOfMentalDisorders_V_Scores.sql" />
+    <Build Include="EhrModule\Tables\Ehr.sql" />
+    <Build Include="EhrModule\Tables\EhrAddress.sql" />
+    <Build Include="EhrModule.sql" />
+    <None Include="Scripts\Ehr.sql" />
+    <Build Include="OrganizationModule\Tables\OrganizationApiKey.sql" />
+    <Build Include="AssessmentModule\Tables\AssessmentMetaData.sql" />
+    <None Include="Scripts\Api.sql" />
+    <Build Include="BillingModule\Tables\BillingTransaction.sql" />
+    <Build Include="Security\BillingModule.sql" />
+    <Build Include="SecurityModule\Tables\ApiSystemAccount.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="UserLogin">
+      <DefaultValue>IIS APPPOOL\DefaultAppPool</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Asam.Ppc.Database.refactorlog" />
+  </ItemGroup>
+</Project>

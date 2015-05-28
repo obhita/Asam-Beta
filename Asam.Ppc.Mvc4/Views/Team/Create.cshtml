@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Create Team";
+    Layout = "~/Views/Organization/Layout.cshtml";
+}
+
+<div id="team-creator" class="editor" tabindex="-1" aria-labelledby="teamModalLabel" aria-hidden="true">
+    <div class="header">
+        <h3 id="teamModalLabel">Create Team</h3>
+    </div>
+    @using (Html.BeginForm("Create", "Team", null, FormMethod.Post, new { id = "create-team-form" }))
+    {
+        <div>
+            <div>
+                <label>Name</label>
+            </div>
+            <input name="name" data-val="true" data-val-required="The Name field is required." />
+            <span class="field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true"></span>
+        </div>
+    }
+</div>
+
+@section footerBody
+{
+    <a id="create-team-submit" class="submit" href="#" type="button">Create</a>
+    @Html.ActionLink("Cancel", "Index", "Organization", null, new { @class = "cancel" })
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        $('#create-team-submit').click(function (e) {
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            e.preventDefault();
+            $('#create-team-form')[0].submit();
+        });
+    </script>
+}
