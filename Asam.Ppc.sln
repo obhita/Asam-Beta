@@ -36,8 +36,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asam.Ppc.Service.Messages.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asam.Ppc.Mvc.Infrastructure.Tests", "Asam.Ppc.Mvc.Infrastructure.Tests\Asam.Ppc.Mvc.Infrastructure.Tests.csproj", "{C486CFE9-14AE-4888-A736-88F5AEC57F98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4", "Tools\T4\T4.csproj", "{5C4244D8-83FB-4EF2-9634-95541270463C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordDocumentGenerator.Library", "Tools\Word Document Generator\WordDocumentGenerator.Library\WordDocumentGenerator.Library.csproj", "{C041C8C6-AC4E-4F74-A827-7F3D790E1ACE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsamPpcDocumentGenerator", "Tools\Word Document Generator\AsamPpcDocumentGenerator\AsamPpcDocumentGenerator.csproj", "{195E7CE4-4DB5-483A-80D6-8A5070A21F37}"
@@ -47,8 +45,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asam.Ppc.LocalSTS", "Asam.Ppc.LocalSTS\Asam.Ppc.LocalSTS.csproj", "{675B0F31-ECBF-45AE-81E1-EBE6CA3BCB14}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity Server", "Identity Server", "{5AFD0F2D-C87E-443C-A495-95459B13B0F6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsamDatabaseGenerator", "Tools\AsamDatabaseGenerator\AsamDatabaseGenerator.csproj", "{844D7398-7D2C-4F63-A3EB-A2FAB7598CAE}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Asam.Ppc.Database", "Asam.Ppc.Database\Asam.Ppc.Database.sqlproj", "{BD36072A-E83C-436D-BFB1-1DDBA33F63BB}"
 EndProject
@@ -65,92 +61,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.IdentityServer.Protocols", "Identity Server\src\Libraries\Thinktecture.IdentityServer.Protocols\Thinktecture.IdentityServer.Protocols.csproj", "{05A56D09-1773-403F-BDC4-36C595A157A7}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 25
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.feisystems.com/tfs/feicollection02
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Asam.Ppc.Domain\\Asam.Ppc.Domain.csproj
-		SccProjectName1 = Asam.Ppc.Domain
-		SccLocalPath1 = Asam.Ppc.Domain
-		SccProjectUniqueName2 = Asam.Ppc.Infrastructure\\Asam.Ppc.Infrastructure.csproj
-		SccProjectName2 = Asam.Ppc.Infrastructure
-		SccLocalPath2 = Asam.Ppc.Infrastructure
-		SccProjectUniqueName3 = Asam.Ppc.Service.Handlers\\Asam.Ppc.Service.Handlers.csproj
-		SccProjectName3 = Asam.Ppc.Service.Handlers
-		SccLocalPath3 = Asam.Ppc.Service.Handlers
-		SccProjectUniqueName4 = Asam.Ppc.Service.Messages\\Asam.Ppc.Service.Messages.csproj
-		SccProjectName4 = Asam.Ppc.Service.Messages
-		SccLocalPath4 = Asam.Ppc.Service.Messages
-		SccProjectUniqueName5 = Asam.Ppc.Mvc.Infrastructure\\Asam.Ppc.Mvc.Infrastructure.csproj
-		SccProjectName5 = Asam.Ppc.Mvc.Infrastructure
-		SccLocalPath5 = Asam.Ppc.Mvc.Infrastructure
-		SccProjectUniqueName6 = Asam.Ppc.Modeling\\Asam.Ppc.Modeling.modelproj
-		SccProjectName6 = Asam.Ppc.Modeling
-		SccLocalPath6 = Asam.Ppc.Modeling
-		SccProjectUniqueName7 = Asam.Ppc.Domain.Tests\\Asam.Ppc.Domain.Tests.csproj
-		SccProjectName7 = Asam.Ppc.Domain.Tests
-		SccLocalPath7 = Asam.Ppc.Domain.Tests
-		SccProjectUniqueName8 = Asam.Ppc.Mvc4\\Asam.Ppc.Mvc4.csproj
-		SccProjectName8 = Asam.Ppc.Mvc4
-		SccLocalPath8 = Asam.Ppc.Mvc4
-		SccProjectUniqueName9 = Asam.Ppc.Mvc4.Tests\\Asam.Ppc.Mvc4.Tests.csproj
-		SccProjectName9 = Asam.Ppc.Mvc4.Tests
-		SccLocalPath9 = Asam.Ppc.Mvc4.Tests
-		SccProjectUniqueName10 = Asam.Ppc.Primitives\\Asam.Ppc.Primitives.csproj
-		SccProjectName10 = Asam.Ppc.Primitives
-		SccLocalPath10 = Asam.Ppc.Primitives
-		SccProjectUniqueName11 = Asam.Ppc.Service.Messages.Tests\\Asam.Ppc.Service.Messages.Tests.csproj
-		SccProjectName11 = Asam.Ppc.Service.Messages.Tests
-		SccLocalPath11 = Asam.Ppc.Service.Messages.Tests
-		SccProjectUniqueName12 = Asam.Ppc.Mvc.Infrastructure.Tests\\Asam.Ppc.Mvc.Infrastructure.Tests.csproj
-		SccProjectName12 = Asam.Ppc.Mvc.Infrastructure.Tests
-		SccLocalPath12 = Asam.Ppc.Mvc.Infrastructure.Tests
-		SccProjectUniqueName13 = Tools\\T4\\T4.csproj
-		SccProjectTopLevelParentUniqueName13 = Asam.Ppc.sln
-		SccProjectName13 = Tools/T4
-		SccLocalPath13 = Tools\\T4
-		SccProjectUniqueName14 = Tools\\Word\u0020Document\u0020Generator\\WordDocumentGenerator.Library\\WordDocumentGenerator.Library.csproj
-		SccProjectTopLevelParentUniqueName14 = Asam.Ppc.sln
-		SccProjectName14 = Tools/Word\u0020Document\u0020Generator/WordDocumentGenerator.Library
-		SccLocalPath14 = Tools\\Word\u0020Document\u0020Generator\\WordDocumentGenerator.Library
-		SccProjectUniqueName15 = Tools\\Word\u0020Document\u0020Generator\\AsamPpcDocumentGenerator\\AsamPpcDocumentGenerator.csproj
-		SccProjectTopLevelParentUniqueName15 = Asam.Ppc.sln
-		SccProjectName15 = Tools/Word\u0020Document\u0020Generator/AsamPpcDocumentGenerator
-		SccLocalPath15 = Tools\\Word\u0020Document\u0020Generator\\AsamPpcDocumentGenerator
-		SccProjectUniqueName16 = TestEHR\\TestEHR.csproj
-		SccProjectName16 = TestEHR
-		SccLocalPath16 = TestEHR
-		SccProjectUniqueName17 = Asam.Ppc.LocalSTS\\Asam.Ppc.LocalSTS.csproj
-		SccProjectName17 = Asam.Ppc.LocalSTS
-		SccLocalPath17 = Asam.Ppc.LocalSTS
-		SccProjectUniqueName18 = Tools\\AsamDatabaseGenerator\\AsamDatabaseGenerator.csproj
-		SccProjectTopLevelParentUniqueName18 = Asam.Ppc.sln
-		SccProjectName18 = Tools/AsamDatabaseGenerator
-		SccLocalPath18 = Tools\\AsamDatabaseGenerator
-		SccProjectUniqueName19 = Asam.Ppc.Database\\Asam.Ppc.Database.sqlproj
-		SccProjectName19 = Asam.Ppc.Database
-		SccLocalPath19 = Asam.Ppc.Database
-		SccProjectUniqueName20 = Asam.Ppc.Infrastructure.Tests\\Asam.Ppc.Infrastructure.Tests.csproj
-		SccProjectName20 = Asam.Ppc.Infrastructure.Tests
-		SccLocalPath20 = Asam.Ppc.Infrastructure.Tests
-		SccProjectUniqueName21 = Identity\u0020Server\\src\\OnPremise\\WebSite\\WebSite.csproj
-		SccProjectTopLevelParentUniqueName21 = Asam.Ppc.sln
-		SccProjectName21 = Identity\u0020Server/src/OnPremise/WebSite
-		SccLocalPath21 = Identity\u0020Server\\src\\OnPremise\\WebSite
-		SccProjectUniqueName22 = Identity\u0020Server\\src\\Libraries\\Thinktecture.IdentityServer.Core\\Thinktecture.IdentityServer.Core.csproj
-		SccProjectTopLevelParentUniqueName22 = Asam.Ppc.sln
-		SccProjectName22 = Identity\u0020Server/src/Libraries/Thinktecture.IdentityServer.Core
-		SccLocalPath22 = Identity\u0020Server\\src\\Libraries\\Thinktecture.IdentityServer.Core
-		SccProjectUniqueName23 = Identity\u0020Server\\src\\Libraries\\Thinktecture.IdentityServer.Core.Repositories\\Thinktecture.IdentityServer.Core.Repositories.csproj
-		SccProjectTopLevelParentUniqueName23 = Asam.Ppc.sln
-		SccProjectName23 = Identity\u0020Server/src/Libraries/Thinktecture.IdentityServer.Core.Repositories
-		SccLocalPath23 = Identity\u0020Server\\src\\Libraries\\Thinktecture.IdentityServer.Core.Repositories
-		SccProjectUniqueName24 = Identity\u0020Server\\src\\Libraries\\Thinktecture.IdentityServer.Protocols\\Thinktecture.IdentityServer.Protocols.csproj
-		SccProjectTopLevelParentUniqueName24 = Asam.Ppc.sln
-		SccProjectName24 = Identity\u0020Server/src/Libraries/Thinktecture.IdentityServer.Protocols
-		SccLocalPath24 = Identity\u0020Server\\src\\Libraries\\Thinktecture.IdentityServer.Protocols
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -280,15 +190,6 @@ Global
 		{C486CFE9-14AE-4888-A736-88F5AEC57F98}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C486CFE9-14AE-4888-A736-88F5AEC57F98}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C486CFE9-14AE-4888-A736-88F5AEC57F98}.Release|x86.ActiveCfg = Release|Any CPU
-		{5C4244D8-83FB-4EF2-9634-95541270463C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C4244D8-83FB-4EF2-9634-95541270463C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C4244D8-83FB-4EF2-9634-95541270463C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{5C4244D8-83FB-4EF2-9634-95541270463C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{5C4244D8-83FB-4EF2-9634-95541270463C}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5C4244D8-83FB-4EF2-9634-95541270463C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C4244D8-83FB-4EF2-9634-95541270463C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{5C4244D8-83FB-4EF2-9634-95541270463C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{5C4244D8-83FB-4EF2-9634-95541270463C}.Release|x86.ActiveCfg = Release|Any CPU
 		{C041C8C6-AC4E-4F74-A827-7F3D790E1ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C041C8C6-AC4E-4F74-A827-7F3D790E1ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C041C8C6-AC4E-4F74-A827-7F3D790E1ACE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -327,16 +228,6 @@ Global
 		{675B0F31-ECBF-45AE-81E1-EBE6CA3BCB14}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{675B0F31-ECBF-45AE-81E1-EBE6CA3BCB14}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{675B0F31-ECBF-45AE-81E1-EBE6CA3BCB14}.Release|x86.ActiveCfg = Release|Any CPU
-		{844D7398-7D2C-4F63-A3EB-A2FAB7598CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{844D7398-7D2C-4F63-A3EB-A2FAB7598CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{844D7398-7D2C-4F63-A3EB-A2FAB7598CAE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{844D7398-7D2C-4F63-A3EB-A2FAB7598CAE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{844D7398-7D2C-4F63-A3EB-A2FAB7598CAE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{844D7398-7D2C-4F63-A3EB-A2FAB7598CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{844D7398-7D2C-4F63-A3EB-A2FAB7598CAE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{844D7398-7D2C-4F63-A3EB-A2FAB7598CAE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{844D7398-7D2C-4F63-A3EB-A2FAB7598CAE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{844D7398-7D2C-4F63-A3EB-A2FAB7598CAE}.Release|x86.ActiveCfg = Release|Any CPU
 		{BD36072A-E83C-436D-BFB1-1DDBA33F63BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BD36072A-E83C-436D-BFB1-1DDBA33F63BB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{BD36072A-E83C-436D-BFB1-1DDBA33F63BB}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -397,10 +288,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5C4244D8-83FB-4EF2-9634-95541270463C} = {F1666F43-97C7-42CD-8395-9F1B1C5794C2}
 		{C041C8C6-AC4E-4F74-A827-7F3D790E1ACE} = {F1666F43-97C7-42CD-8395-9F1B1C5794C2}
 		{195E7CE4-4DB5-483A-80D6-8A5070A21F37} = {F1666F43-97C7-42CD-8395-9F1B1C5794C2}
-		{844D7398-7D2C-4F63-A3EB-A2FAB7598CAE} = {F1666F43-97C7-42CD-8395-9F1B1C5794C2}
 		{17B74DDC-0EE5-45B9-9D20-2055587AD759} = {5AFD0F2D-C87E-443C-A495-95459B13B0F6}
 		{C061DD2E-A5E9-40D3-A8C4-F8DCA74E5F64} = {5AFD0F2D-C87E-443C-A495-95459B13B0F6}
 		{C10C30EF-8E8F-4ACB-B220-DE22461FD167} = {C061DD2E-A5E9-40D3-A8C4-F8DCA74E5F64}

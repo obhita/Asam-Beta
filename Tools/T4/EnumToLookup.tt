@@ -1,0 +1,32 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core.dll" #>
+<#@ assembly name="$(SolutionDir)T4\bin\Debug\Asam.Ppc.Domain.dll" #>
+<#@import namespace="Asam.Ppc.Domain.Common" #>
+<#@import namespace="System" #>
+<#@import namespace="System.Linq" #>
+<#@ output extension=".cs" #>
+
+<# var types =  typeof(Lookup).Assembly.GetTypes().Where(t => t.IsEnum).OrderBy(t => t.Name);#>
+<# foreach ( var type  in types )
+{#>
+
+namespace <#= type.Namespace #>
+{
+	using Asam.Ppc.Domain.Common;
+	public class <#= type.Name #> : Lookup
+	{
+		<# var names = Enum.GetNames( type ); #>
+		<# for ( int i =0; i <names.Length; i ++ )
+		{  var name = names[i];#>
+		public static readonly <#= type.Name #> <#= name #> = new <#= type.Name #> 
+				{
+					Code = "<#= name #>",
+					SortOrder = <#= i + 1 #>,
+					Value = 0
+				};
+		<# } #>
+	}
+}
+
+<#}
+#>

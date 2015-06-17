@@ -506,11 +506,8 @@
     <Content Include="Views\Shared\EditorTemplates\OrganizationPhoneDto.cshtml" />
     <Content Include="Views\Account\ChangPassword.cshtml" />
     <Content Include="Views\Patient\EditorTemplates\LookupDto.cshtml" />
-    <None Include="WebSSO.config" />
-    <None Include="WebWIF.config" />
     <Content Include="Views\Error\HttpError.cshtml" />
     <Content Include="Views\Error\Http404.cshtml" />
-    <Content Include="Web.SSOPackage.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

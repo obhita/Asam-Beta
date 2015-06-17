@@ -1,0 +1,5 @@
+F:\ASAM_On_GitHub\Asam\Tools\Word Document Generator\WordDocumentGenerator.Library\bin\Debug\WordDocumentGenerator.Library.dll
+F:\ASAM_On_GitHub\Asam\Tools\Word Document Generator\WordDocumentGenerator.Library\bin\Debug\WordDocumentGenerator.Library.pdb
+F:\ASAM_On_GitHub\Asam\Tools\Word Document Generator\WordDocumentGenerator.Library\bin\Debug\DocumentFormat.OpenXml.dll
+F:\ASAM_On_GitHub\Asam\Tools\Word Document Generator\WordDocumentGenerator.Library\obj\Debug\WordDocumentGenerator.Library.dll
+F:\ASAM_On_GitHub\Asam\Tools\Word Document Generator\WordDocumentGenerator.Library\obj\Debug\WordDocumentGenerator.Library.pdb

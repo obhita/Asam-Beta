@@ -1,0 +1,5 @@
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.LocalSTS\bin\Asam.Ppc.LocalSTS.dll.config
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.LocalSTS\bin\Asam.Ppc.LocalSTS.dll
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.LocalSTS\bin\Asam.Ppc.LocalSTS.pdb
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.LocalSTS\obj\Debug\Asam.Ppc.LocalSTS.dll
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.LocalSTS\obj\Debug\Asam.Ppc.LocalSTS.pdb

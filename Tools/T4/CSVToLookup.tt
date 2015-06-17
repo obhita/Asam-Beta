@@ -1,0 +1,41 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core.dll" #>
+<#@ import namespace="Asam.Ppc.Domain.Common" #>
+<#@ assembly name="$(SolutionDir)T4\bin\Debug\Asam.Ppc.Domain.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections.Generic"#>  
+<#@ import namespace="System.IO"#> 
+<#@ import namespace="System.Reflection" #>
+<#@ output extension=".txt" #>
+
+<# var i = 0; #>
+<# string[] lines = File.ReadAllLines(Host.ResolvePath("LookupToCSV.txt")); string lookupType = string.Empty; #>
+<# foreach(var line in lines) {#>
+<# if ( string.IsNullOrEmpty(line) || line.StartsWith("//") || !line.StartsWith(@"""")) {continue;} #>
+<# string[] fields = line.Trim().Split(new string[]{@""","""}, StringSplitOptions.None); #>
+<# if(fields.Length != 5) { #> '<#= line  #>' has missing element or has extra element.
+<# continue;}
+var t = fields[0].TrimStart(new char[]{'"', ' '});
+if( lookupType != t) {
+if(lookupType != string.Empty) { #>
+}
+<# }
+lookupType = t;#>
+
+public class <#= lookupType #> : Lookup
+{
+<# }#>
+	/// <summary>
+	/// <#= fields[1] #> = <#= fields[4].TrimEnd(new Char[]{'"'}) #>.
+	/// </summary>
+	public static readonly <#= lookupType #> <#= fields[1] #> = new <#= lookupType #>
+				{
+					Code = "<#= fields[1] #>",
+					SortOrder = <#= fields[3] #>,
+					Value = <#= fields[4].TrimEnd(new Char[]{'"'}) #>
+				};
+
+<# } #>
+}
+

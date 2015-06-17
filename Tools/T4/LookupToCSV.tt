@@ -1,0 +1,24 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core.dll" #>
+<#@ assembly name="$(SolutionDir)Tools\T4\bin\Debug\Pillar.Common.dll" #>
+<#@ assembly name="$(SolutionDir)Tools\T4\bin\Debug\Pillar.Domain.dll" #>
+<#@ assembly name="$(SolutionDir)Tools\T4\bin\Debug\Asam.Ppc.Domain.dll" #>
+<#@ assembly name="$(SolutionDir)Tools\T4\bin\Debug\Asam.Ppc.Domain.Scoring.dll" #>
+<#@import namespace="Asam.Ppc.Domain.CommonModule" #>
+<#@import namespace="System" #>
+<#@import namespace="System.Linq" #>
+<#@import namespace="System.Reflection" #>
+<#@ output extension=".txt" #>
+<# var types =  typeof(Lookup).Assembly.GetTypes().Where(t => typeof(Lookup).IsAssignableFrom(t) && typeof(Lookup) != t);#>
+Lookup Type,Code,Name,Sort Order,Value*
+<# foreach ( var type  in types )
+{#>
+<#  var fields =
+	type.GetFields(BindingFlags.Public | BindingFlags.Static).Where( f => typeof ( Lookup ).IsAssignableFrom( f.FieldType ) );
+    foreach (var fieldInfo in fields)
+    {
+        var lookup = (Lookup)fieldInfo.GetValue(null);
+#>
+"<#= type.Name #>","<#= lookup.Code #>","<#= lookup.Name.Replace("\"","\"\"") #>","<#= lookup.SortOrder #>","<#= lookup.Value #>"
+<#
+}}#>

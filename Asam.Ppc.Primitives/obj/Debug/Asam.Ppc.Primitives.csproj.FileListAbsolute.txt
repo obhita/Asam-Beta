@@ -1,0 +1,12 @@
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.Primitives\bin\Debug\Asam.Ppc.Primitives.dll
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.Primitives\bin\Debug\Asam.Ppc.Primitives.pdb
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.Primitives\bin\Debug\Pillar.Common.dll
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.Primitives\bin\Debug\Pillar.Domain.dll
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.Primitives\bin\Debug\Pillar.Common.pdb
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.Primitives\bin\Debug\Pillar.Common.xml
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.Primitives\bin\Debug\Pillar.Domain.pdb
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.Primitives\bin\Debug\Pillar.Domain.xml
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.Primitives\obj\Debug\Asam.Ppc.Primitives.AsamPpcPrimitiveResources.resources
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.Primitives\obj\Debug\Asam.Ppc.Primitives.csproj.GenerateResource.Cache
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.Primitives\obj\Debug\Asam.Ppc.Primitives.dll
+F:\ASAM_On_GitHub\Asam\Asam.Ppc.Primitives\obj\Debug\Asam.Ppc.Primitives.pdb
