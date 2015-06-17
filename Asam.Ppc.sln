@@ -44,21 +44,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEHR", "TestEHR\TestEHR.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asam.Ppc.LocalSTS", "Asam.Ppc.LocalSTS\Asam.Ppc.LocalSTS.csproj", "{675B0F31-ECBF-45AE-81E1-EBE6CA3BCB14}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity Server", "Identity Server", "{5AFD0F2D-C87E-443C-A495-95459B13B0F6}"
-EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Asam.Ppc.Database", "Asam.Ppc.Database\Asam.Ppc.Database.sqlproj", "{BD36072A-E83C-436D-BFB1-1DDBA33F63BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asam.Ppc.Infrastructure.Tests", "Asam.Ppc.Infrastructure.Tests\Asam.Ppc.Infrastructure.Tests.csproj", "{2196AC76-B704-4036-A186-ADB546756CE8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite", "Identity Server\src\OnPremise\WebSite\WebSite.csproj", "{17B74DDC-0EE5-45B9-9D20-2055587AD759}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{C061DD2E-A5E9-40D3-A8C4-F8DCA74E5F64}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.IdentityServer.Core", "Identity Server\src\Libraries\Thinktecture.IdentityServer.Core\Thinktecture.IdentityServer.Core.csproj", "{C10C30EF-8E8F-4ACB-B220-DE22461FD167}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.IdentityServer.Core.Repositories", "Identity Server\src\Libraries\Thinktecture.IdentityServer.Core.Repositories\Thinktecture.IdentityServer.Core.Repositories.csproj", "{346A0C84-B70D-4EBD-9C26-D3858D3B24E6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.IdentityServer.Protocols", "Identity Server\src\Libraries\Thinktecture.IdentityServer.Protocols\Thinktecture.IdentityServer.Protocols.csproj", "{05A56D09-1773-403F-BDC4-36C595A157A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
