@@ -133,10 +133,10 @@
     <value>Program available but lacks opening or wait list too long</value>
   </data>
   <data name="MandatedDifferent" xml:space="preserve">
-    <value>Court or other mandated treatment is different or blocks ASAM Criteria recommendation</value>
+    <value>Court or other mandated treatment is different or blocks PPC-2R recommendation</value>
   </data>
   <data name="NoAnswer" xml:space="preserve">
-    <value>Not applicable (patient agrees)/or No Answer</value>
+    <value>No answer</value>
   </data>
   <data name="NotKnown" xml:space="preserve">
     <value>Not known</value>
@@ -154,12 +154,9 @@
     <value>Program available but rejects patient due to patient characteristic(s), e.g. attitude, behavior, clinical status</value>
   </data>
   <data name="SameAsRecommended" xml:space="preserve">
-    <value>Final disposition is, or is expected to be, same as recommended by ASAM Criteria</value>
+    <value>Final disposition is, or is expected to be, same as recommended by PPC-2R</value>
   </data>
   <data name="UnavailableInGeographicRegion" xml:space="preserve">
     <value>Recommended program is unavailable in geographic region</value>
-  </data>
-  <data name="ClinicianDisagrees" xml:space="preserve">
-    <value>Clinician disagrees with ASAM Criteria recommendation</value>
   </data>
 </root>

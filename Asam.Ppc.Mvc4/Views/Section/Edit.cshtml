@@ -4,14 +4,7 @@
 @using Asam.Ppc.Service.Messages.Core
 
 @{
-    if ( !ViewBag.PrintView )
-    {
-        Layout = "~/Views/Section/AssessmentLayout.cshtml";
-    }
-    else
-    {
-        Layout = "";
-    }
+    Layout = "~/Views/Section/AssessmentLayout.cshtml";
 
     var legend = Html.GetAsamPpcResource(ViewContext.RouteData.Values["section"] + (ViewContext.RouteData.Values["subsection"] == null ? string.Empty : "_" + ViewContext.RouteData.Values["subsection"]));
 

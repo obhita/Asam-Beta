@@ -253,46 +253,5 @@ namespace Asam.Ppc.Mvc4.Controllers
             }
             return RedirectToAction("EditOrganization", new { id = response.DataTransferObject.Key });
         }
-
-        [HttpPost]
-        public async Task<ActionResult> AddApiKey(long id)
-        {
-            var requestDispatcher = CreateAsyncRequestDispatcher();
-            requestDispatcher.Add(new AddDtoRequest<OrganizationApiKeyDto> { AggregateKey = id , DataTransferObject = new OrganizationApiKeyDto()});
-            var response = await requestDispatcher.GetAsync<AddDtoResponse<OrganizationApiKeyDto>>();
-            if (response.DataTransferObject == null)
-            {
-                return new JsonResult
-                {
-                    Data = new
-                    {
-                        error = true,
-                        errors = "DTO is null."
-                    }
-                };
-            }
-
-            if (response.DataTransferObject != null && response.DataTransferObject.DataErrorInfoCollection.Any())
-            {
-                return new JsonResult
-                {
-                    Data = new
-                    {
-                        error = true,
-                        errors = response.DataTransferObject.DataErrorInfoCollection
-                    }
-                };
-            }
-
-            return new JsonResult
-            {
-                Data = new
-                {
-                    error = false,
-                    ApiKeyCreated = true,
-                    response.DataTransferObject.Name
-                }
-            };
-        }
     }
 }

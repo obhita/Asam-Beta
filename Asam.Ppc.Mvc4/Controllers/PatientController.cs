@@ -62,10 +62,10 @@ namespace Asam.Ppc.Mvc4.Controllers
             var response = await requestDispatcher.GetAsync<SaveDtoResponse<PatientDto>>();
             AddLookupResponsesToViewData(requestDispatcher);
             return RedirectToAction ( "Edit", new {id = response.DataTransferObject.Key} );
-            //ViewData["AssessmentId"] = assessmentId;
-            //ViewData["Patient"] = patientDto;
+            ViewData["AssessmentId"] = assessmentId;
+            ViewData["Patient"] = patientDto;
 
-            //return View ( "Edit", patientDto );
+            return View ( "Edit", patientDto );
         }
 
         public async Task<ActionResult> Edit(long id, string assessmentId = null)

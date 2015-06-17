@@ -267,44 +267,7 @@ $(document).ready(function () {
             }
         },
         DrugAndAlcoholSection: {
-            UsedSubstances: {
-                SubstanceHasEverUsedRules: function () {
-                    if (!$.rules.init) {
-                        // if nohistory is checked, uncheck all the checkboxes
-                        $("#SubstanceHasEverUsed_NoHistory").change(function () {
-                            if ($(this).prop('checked')) {
-                                $('[name="SubstanceHasEverUsed"]:not(#SubstanceHasEverUsed_NoHistory)').each(function() {
-                                    $(this).prop('checked', false);
-                                });
-                            }
-                        });
-
-                        // if any checkbox but nohistory is checked, uncheck nohistory
-                        $('[name="SubstanceHasEverUsed"]:not(#SubstanceHasEverUsed_NoHistory)').change(function () {
-                            if ($(this).prop('checked')) {
-                                $("#SubstanceHasEverUsed_NoHistory").prop('checked', false);
-                            }
-                        });
-
-                        $.rules.Utilities.AddSelector('[name="SubstanceHasEverUsed"]');
-                    }
-                }
-            },
             AlcoholUse: {
-                LastUsedRules: function() {
-                    if (!$.rules.init) {
-                        $("#LastUsed_Value").change($.rules.DrugAndAlcoholSection.AlcoholUse.LastUsedRules);
-                        $("#LastUsed_UnitOfTime").change($.rules.DrugAndAlcoholSection.AlcoholUse.LastUsedRules);
-                        $.rules.Utilities.AddSelector('[name="LastUsed"]');
-                    }
-
-                    var lastUsedAlcohol = $.rules.Utilities.ConvertTimeMeasureToDays("LastUsed");
-                    if (lastUsedAlcohol > 30) {
-                        $("#NumberOfDaysUsedInPast30Days").closest('.question-root').hide();
-                    } else {
-                        $("#NumberOfDaysUsedInPast30Days").closest('.question-root').show();
-                    }
-                },
                 HasHealthCareProviderPrescribedUseRules: function () {
                     if (!$.rules.init) {
                         $.rules.Utilities.AddSelector('[name="HasHealthCareProviderPrescribedUse"]');

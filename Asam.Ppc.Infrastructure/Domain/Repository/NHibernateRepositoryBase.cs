@@ -1,6 +1,4 @@
 ﻿using NHibernate;
-using Pillar.Common.Configuration;
-using Pillar.Common.InversionOfControl;
 using Pillar.Domain;
 
 namespace Asam.Ppc.Infrastructure.Domain.Repository
@@ -38,7 +36,7 @@ namespace Asam.Ppc.Infrastructure.Domain.Repository
             {
                 if ( _helper == null )
                 {
-                    _helper = new NHibernateRepositoryHelper<T>(_sessionProvider, IoC.CurrentContainer.Resolve<IConfigurationPropertiesProvider>());
+                    _helper = new NHibernateRepositoryHelper<T> ( _sessionProvider );
                 }
                 return _helper;
             }

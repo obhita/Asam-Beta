@@ -11,13 +11,10 @@
     [OrganizationKey]      BIGINT             NULL,
     [StaffKey]             BIGINT             NULL,
     [EmailAddress]         NVARCHAR (255)     NULL,
-    [EulaAgreeDate] DATETIME NULL, 
     PRIMARY KEY CLUSTERED ([SystemAccountKey] ASC),
     CONSTRAINT [SystemAccount_Organization_FK] FOREIGN KEY ([OrganizationKey]) REFERENCES [OrganizationModule].[Organization] ([OrganizationKey]),
     CONSTRAINT [SystemAccount_Staff_FK] FOREIGN KEY ([StaffKey]) REFERENCES [OrganizationModule].[Staff] ([StaffKey])
 );
-
-
 
 
 

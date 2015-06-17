@@ -124,7 +124,7 @@
     <value>More intensive treatment</value>
   </data>
   <data name="NoAnswer" xml:space="preserve">
-    <value>Not applicable (patient agrees)/or No Answer</value>
+    <value>No Answer</value>
   </data>
   <data name="NotApplicablePatientAgreesWithRecommendation" xml:space="preserve">
     <value>Not applicable because patient agrees with PPC-2R LOC recommendation</value>

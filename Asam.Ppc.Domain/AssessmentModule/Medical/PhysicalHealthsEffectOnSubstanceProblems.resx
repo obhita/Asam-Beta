@@ -130,6 +130,6 @@
     <value>Somewhat distracting from recovery</value>
   </data>
   <data name="WillThreatenRecovery" xml:space="preserve">
-    <value>Will threaten recovery (e.g. expects to require opioids for pain, can't attend group)</value>
+    <value>Will threaten recovery (e.g. expects to require opiates for pain, can't attend group)</value>
   </data>
 </root>

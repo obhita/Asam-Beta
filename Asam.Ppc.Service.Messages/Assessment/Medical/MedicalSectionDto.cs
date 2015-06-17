@@ -40,7 +40,7 @@ namespace Asam.Ppc.Service.Messages.Assessment.Medical
         public string DescriptionOfReemergentSymptoms { get; set; }
 
         [Display ( Order = 14 )]
-        [Question ( QuestionType.ScriptedQuestion )]
+        [Question ( QuestionType.InterviewerQuestion )]
         [LookupCategory ( "YesNoNotSure" )]
         public LookupDto ExperiencedAcuteAlcoholDisulfiramReactionInPast24HoursStatus { get; set; }
 
@@ -62,8 +62,8 @@ namespace Asam.Ppc.Service.Messages.Assessment.Medical
         public LookupDto HighRiskPregnancyStatus { get; set; }
 
         [Display ( Order = 10 )]
-        [Question ( QuestionType.ScriptedQuestion )]
-        [LookupCategory ( "YesNoNotApplicableNotSure" )]
+        [Question ( QuestionType.InterviewerQuestion )]
+        [LookupCategory ( "YesNoNotSure" )]
         public LookupDto HivAidsMedicalTreatmentStatus { get; set; }
 
         [Display ( Order = 40 )]
@@ -132,7 +132,7 @@ namespace Asam.Ppc.Service.Messages.Assessment.Medical
         public string MedicalProblemDescription { get; set; }
 
         [Display ( Order = 15 )]
-        [Question ( QuestionType.ScriptedQuestion )]
+        [Question ( QuestionType.InterviewerQuestion )]
         [LookupCategory ( "YesNoNotSure" )]
         public LookupDto MedicalProblemThatWouldComplicateDetoxificationStatus { get; set; }
 

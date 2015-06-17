@@ -142,7 +142,7 @@
     <value>More Than One Drug At a Time</value>
   </data>
   <data name="Nicotine" xml:space="preserve">
-    <value>Tobacco or Other Nicotine-containing Products (include electronic cigarettes)</value>
+    <value>Tobacco or Other Nicotine-containing Products</value>
   </data>
   <data name="None" xml:space="preserve">
     <value>None</value>
@@ -154,15 +154,12 @@
     <value>Sleeping pills, anti-anxiety pills, sedatives or hypnotics, even if by prescription</value>
   </data>
   <data name="OtherSubstance" xml:space="preserve">
-    <value>Any Other Drug of Abuse (e.g. high-dose caffeine, steroids, etc.)</value>
+    <value>Any Other Drug of Abuse (e.g. caffeine, steroids, etc.)</value>
   </data>
   <data name="SolventInhalants" xml:space="preserve">
     <value>Solvents or Inhalants</value>
   </data>
   <data name="Stimulants" xml:space="preserve">
-    <value>Stimulants Other Than Cocaine (e.g., amphetamines, ecstasy, bath salts)</value>
-  </data>
-  <data name="NoHistory" xml:space="preserve">
-    <value>No history of alcohol or any other drugs used</value>
+    <value>Stimulants Other Than Cocaine</value>
   </data>
 </root>

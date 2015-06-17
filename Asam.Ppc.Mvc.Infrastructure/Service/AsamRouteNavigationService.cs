@@ -458,7 +458,7 @@ namespace Asam.Ppc.Mvc.Infrastructure.Service
                     _routeInfos.Remove ( routeItem );
                 }
             }
-            if (usedSubstances.Count(s => s != SubstanceCategory.Alcohol.Code && s != SubstanceCategory.NoHistory.Code) > 0 )
+            if (usedSubstances.Count(s => s != SubstanceCategory.Alcohol.Code) > 0)
             {
                 _routeInfos.Add ( new RouteInfo ( section: "DrugAndAlcoholSection",
                                                   subSection: "DrugConsequences",
@@ -472,7 +472,7 @@ namespace Asam.Ppc.Mvc.Infrastructure.Service
                     _routeInfos.Remove(routeItem);
                 }
             }
-            if (usedSubstances.Any( r => r != SubstanceCategory.NoHistory.Code ))
+            if (usedSubstances.Any())
             {
                 _routeInfos.Add(new RouteInfo(section: "DrugAndAlcoholSection",
                                                   subSection: "AddictionTreatmentHistory",

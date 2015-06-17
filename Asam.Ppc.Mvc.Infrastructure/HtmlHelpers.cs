@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
@@ -21,11 +20,6 @@ namespace Asam.Ppc.Mvc.Infrastructure
     public static class HtmlHelpers
     {
         public static readonly string ValidationSummaryWarningCssClassName = "validation-summary-warnings";
-
-        public static bool IsApiMode(this HtmlHelper htmlHelper)
-        {
-            return !(string.IsNullOrEmpty(WebConfigurationManager.AppSettings["IsApiMode"]) || WebConfigurationManager.AppSettings["IsApiMode"].Equals("false"));            
-        }
 
         public static string GetLookupCategory(this HtmlHelper htmlHelper, string propertyName)
         {
@@ -124,14 +118,14 @@ namespace Asam.Ppc.Mvc.Infrastructure
                                                "value=\"{1}\" {2} />{3}</label>";
 
             var innerHtmlBuilder = new StringBuilder ( );
-            foreach ( var item in items )
+            foreach (var item in items)
             {
                 innerHtmlBuilder.Append ( String.Format ( labelAndCheckboxDiv,
-                    propertyName,
-                    DataBinder.Eval ( item, value ),
-                    selectedValues.Contains ( item ) ? "checked=\"checked\"" : "",
-                    DataBinder.Eval ( item, text ),
-                    0 ) );
+                                                          propertyName,
+                                                          DataBinder.Eval ( item, value ),
+                                                          selectedValues.Contains ( item ) ? "checked=\"checked\"" : "",
+                                                          DataBinder.Eval ( item, text ),
+                                                          0));
             }
             divTag.InnerHtml = innerHtmlBuilder.ToString ( );
             return MvcHtmlString.Create ( divTag.ToString ( ) );

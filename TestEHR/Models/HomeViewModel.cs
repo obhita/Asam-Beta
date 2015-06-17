@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Asam.Ppc.Service.Messages.Core;
 
 namespace TestEHR.Models
 {
@@ -8,8 +9,6 @@ namespace TestEHR.Models
         public string ErrorMessage { get; set; }
 
         public string AssessmentData { get; set; }
-
-        public string ApiKey { get; set; }
 
         public string BaseUri { get; set; }
     }

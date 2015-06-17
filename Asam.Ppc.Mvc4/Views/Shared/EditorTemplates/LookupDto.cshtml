@@ -9,16 +9,7 @@
     {
         className += " required";
     }
-    var lookups = ViewData["LookupItems"] as IEnumerable<LookupDto>;
 }
-@if ( lookups == null )
-{
-    var lookupsList = new List<LookupDto> ();
-    if ( Model != null )
-    {
-        lookupsList.Add ( Model );
-    }
-    lookups = lookupsList;
-}
-@Html.DropDownListFor( m => m.Code, new SelectList ( lookups, "Code", "Name" ), string.Empty, new {@class = className, id = ViewData.ModelMetadata.PropertyName} )
+
+@Html.DropDownListFor(m => m.Code, new SelectList(ViewData["LookupItems"] as IEnumerable<LookupDto>,"Code","Name"), string.Empty, new {@class = className, id = ViewData.ModelMetadata.PropertyName})
 @Html.ExtendedValidationMessageFor( m => m.Code  )

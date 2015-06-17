@@ -22,7 +22,7 @@ namespace Asam.Ppc.Service.Handlers.AssessmentReport
         }
 
         protected override void Handle ( ViewReportRequest request, FileStreamResponse response )
-        { 
+        {
             var assessment = assessmentRepository.GetByKey(request.AssessmentKey);
             var assessmentScore = assessmentScoreRepository.GetAssessmentScoreByAssessment ( assessment );
             var assessmentReport = reportingEngine.GenerateAssessmentReportData ( assessment, assessmentScore );

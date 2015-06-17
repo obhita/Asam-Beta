@@ -28,8 +28,6 @@
 
 #region Using Statements
 
-using Asam.Ppc.Common.Crypto;
-using Pillar.Domain;
 using PillarIoC = Pillar.Common.InversionOfControl.IoC;
 
 #endregion
@@ -52,11 +50,13 @@ namespace Asam.Ppc.Mvc.Infrastructure.Bootstrapper
     using NHibernate;
     using NHibernate.Context;
     using NLog;
+    using NLog.Config;
     using Pillar.Common.Bootstrapper;
     using Pillar.Common.Configuration;
     using Pillar.Domain.Event;
     using Pillar.Nhibernate;
     using Pillar.Security.AccessControl;
+    using Ppc.Infrastructure;
     using Ppc.Infrastructure.Domain.Interceptor;
     using Ppc.Infrastructure.Services;
     using Ppc.Service.Handlers.Assessment.Mappers;
@@ -134,8 +134,6 @@ namespace Asam.Ppc.Mvc.Infrastructure.Bootstrapper
             var accessCtrlMgr = appContainer.GetInstance<IAccessControlManager>();
             var permissionDescriptors = appContainer.GetAllInstances<IPermissionDescriptor>();
             accessCtrlMgr.RegisterPermissionDescriptor(permissionDescriptors.ToArray());
-
-            appContainer.Configure(c => c.For<ICrypto>().Use<AesCrypto>());
         }
 
         /// <summary>

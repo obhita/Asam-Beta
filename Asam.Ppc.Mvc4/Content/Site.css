@@ -58,7 +58,7 @@ body {background-color: #fff; color: #333; font-size: .85em; font-family: "Segoe
 
 footer {clear: both; background-color: #e2e2e2; font-size: .8em;}
 
-#rootNavigation { float: left; height: 100%; background-color:#223D52;  overflow: hidden}
+#rootNavigation { float: left; height: 100%; background-color:#223D52;overflow: hidden;position: relative;}
 
 
 
@@ -204,13 +204,21 @@ textarea {min-width: 500px; margin-bottom: 8px;}
 }
 
 #assessmentLogo {
-    background: url(../Images/continuum-logo-white.svg) center no-repeat;
-    background-image: -webkit-linear-gradient(transparent, transparent), url(../Images/continuum-logo-white.svg);
-    background-image: -moz-linear-gradient(transparent, transparent), url(../Images/continuum-logo-white.svg);
-    background-image: linear-gradient(transparent, transparent), url(../Images/continuum-logo-white.svg);
-    color: white;
-    height: 80px;
-    padding-top: 30px;
+    color: White;
+    height: 37px;
+}
+
+#disclaimer {
+    background: white;
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    border: 1px solid black;
 }
 
 

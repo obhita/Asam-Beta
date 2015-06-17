@@ -223,10 +223,10 @@
     <value>Is the patient manifesting any current serious escalation of relapse behaviors?</value>
   </data>
   <data name="AlcoholUse_AlcoholRouteOfIntake" xml:space="preserve">
-    <value>How did you most often or most recently use alcohol? (Indicate most serious route of use)</value>
+    <value>How did you use alcohol?</value>
   </data>
   <data name="AlcoholUse_AlcoholToIntoxicationRouteOfIntake" xml:space="preserve">
-    <value>How did you most often or most recently use alcohol when using it to the point of intoxication? (Indicate most serious route of use)</value>
+    <value>How did you use alcohol when using it to the point of intoxication?</value>
   </data>
   <data name="AlcoholUse_AlcoholUsedToIntoxication" xml:space="preserve">
     <value>Have you ever used alcohol to the point of intoxication?</value>
@@ -328,13 +328,13 @@
     <value>Social activities</value>
   </data>
   <data name="AlcoholUse_ThinkAboutAlcoholHeader" xml:space="preserve">
-    <value>In the past year, think about your use of alcohol. (If the patient has not used in the past year, enter “No” for each of the following items.)</value>
+    <value>In the past year, think about your use of alcohol.</value>
   </data>
   <data name="AlcoholUse_TroubledInLast30DaysBySubstanceProblems" xml:space="preserve">
     <value>How troubled or bothered have you been in the past 30 days by the noted alcohol problems?</value>
   </data>
   <data name="AlcoholUse_UnableToStopUsingSubstance" xml:space="preserve">
-    <value>When you are using alcohol, do you ever feel that you don't stop when you want to or feel that you should? Indicates substance often taken in larger amounts or over longer period than was intended.</value>
+    <value>When you are using alcohol, do you ever feel that you don't stop when you want to or feel that you should?  Indicates substance often taken in larger amounts or over longer period than was intended.</value>
   </data>
   <data name="AlcoholUse_UseOfSubstanceTakesUpALotOfTime" xml:space="preserve">
     <value>Does alcohol take up a lot of your time?  Indicates much time is spent obtaining, using, or recovering from substance.</value>
@@ -346,7 +346,7 @@
     <value>Did you take alcohol at the prescribed dose(s)?</value>
   </data>
   <data name="BarbiturateUse_ExperiencesWithdrawalSickness" xml:space="preserve">
-    <value>Do you ever get physically sick when you stop using  barbiturates? Indicates characteristic physical or psychological withdrawal symptoms.</value>
+    <value>Do you ever get physically sick when you stop using  barbiturates?  Indicates characteristic physical or psychological withdrawal symptoms.</value>
   </data>
   <data name="BarbiturateUse_FrequentlyHighAtHome" xml:space="preserve">
     <value>Home</value>
@@ -385,7 +385,7 @@
     <value>For how long, in total,  have you used barbiturates in any amount,  i.e., What is your lifetime use?</value>
   </data>
   <data name="BarbiturateUse_RouteOfIntake" xml:space="preserve">
-    <value>How did you most often or most recently use barbiturates? (Indicate most serious route of use)</value>
+    <value>How did you use barbiturates?</value>
   </data>
   <data name="BarbiturateUse_SubstanceUseRecurrentProblemsHeader" xml:space="preserve">
     <value>Have you continued your use of barbiturate despite having problems again and again with...?</value>
@@ -421,7 +421,7 @@
     <value>Social activities</value>
   </data>
   <data name="BarbiturateUse_ThinkAboutHeader" xml:space="preserve">
-    <value>In the past year, think about your use of barbiturates (If the patient has not used in the past year, enter “No” for each of the following items.)</value>
+    <value>In the past year, think about your use of barbiturates</value>
   </data>
   <data name="BarbiturateUse_UnableToStopUsingSubstance" xml:space="preserve">
     <value>When you are using barbiturates, do you ever feel that you don't stop when you want to or feel that you should?  Indicates substance often taken in larger amounts or over a longer period than was intended. </value>
@@ -475,7 +475,7 @@
     <value>For how long, in total,  have you used cannabis in any amount,  i.e., What is your lifetime use?</value>
   </data>
   <data name="CannabisUse_RouteOfIntake" xml:space="preserve">
-    <value>How did you most often or most recently use cannabis? (Indicate most serious route of use)</value>
+    <value>How did you use cannabis?</value>
   </data>
   <data name="CannabisUse_SubstanceUseRecurrentProblemsHeader" xml:space="preserve">
     <value>Have you continued your use of cannabis despite having problems again and again with...?</value>
@@ -511,7 +511,7 @@
     <value>Social activities</value>
   </data>
   <data name="CannabisUse_ThinkAboutHeader" xml:space="preserve">
-    <value>In the past year, think about your use of cannabis (If the patient has not used in the past year, enter “No” for each of the following items.)</value>
+    <value>In the past year, think about your use of cannabis</value>
   </data>
   <data name="CannabisUse_UnableToStopUsingSubstance" xml:space="preserve">
     <value>When you are using cannabis, do you ever feel that you don't stop when you want to or feel that you should?  Indicates substance often taken in larger amounts or over a longer period than was intended.</value>
@@ -616,7 +616,7 @@
     <value>For how long, in total,  have you used cocaine in any amount,  i.e., What is your lifetime use?</value>
   </data>
   <data name="CocaineUse_RouteOfIntake" xml:space="preserve">
-    <value>How did you most often or most recently use cocaine? (Indicate most serious route of use)</value>
+    <value>How did you use cocaine?</value>
   </data>
   <data name="CocaineUse_SubstanceUseRecurrentProblemsHeader" xml:space="preserve">
     <value>Have you continued your use of cocaine despite having problems again and again with...?</value>
@@ -652,7 +652,7 @@
     <value>Social activities</value>
   </data>
   <data name="CocaineUse_ThinkAboutHeader" xml:space="preserve">
-    <value>In the past year, think about your use of cocaine. (If the patient has not used in the past year, enter “No” for each of the following items.)</value>
+    <value>In the past year, think about your use of cocaine.</value>
   </data>
   <data name="CocaineUse_UnableToStopUsingSubstance" xml:space="preserve">
     <value>When you are using cocaine, do you ever feel that you don't stop when you want to or feel that you should?  Indicates substance often taken in larger amounts or over a longer period than was intended.</value>
@@ -667,7 +667,7 @@
     <value>What are acceptable Levels of Care for which the patient's mental status is sufficiently stable and adequate to participate in therapeutic interventions and to benefit from treatment? (Check all that apply)</value>
   </data>
   <data name="CompletionSection_DetoxificationRequiredMoreThanHourlyMonitoring" xml:space="preserve">
-    <value>Does the patient's condition (intoxication, withdrawal, medical, psychiatric) or withdrawal management procedure (e.g., rapid opioid withdrawal management) require monitoring or intervention more frequently than hourly?</value>
+    <value>Does the patient's condition (intoxication, withdrawal, medical, psychiatric) or withdrawal management procedure (e.g., rapid opiate withdrawal management) require monitoring or intervention more frequently than hourly?</value>
   </data>
   <data name="CompletionSection_IsAbleToSelfAdministerMedication" xml:space="preserve">
     <value>If any medications are being or will be prescribed, is the patient willing and able to self-administer these with good compliance?</value>
@@ -814,7 +814,7 @@
     <value>How many days have you experienced employment problems in the past 30 days?</value>
   </data>
   <data name="EmploymentAndSupportSection_NumberOfDaysWorkingInPast30Days" xml:space="preserve">
-    <value>How many days were you paid for working in the past 30 (Include under-the-table work; If full-time, enter "30" days)?</value>
+    <value>How many days were you paid for working in the past 30 (Include under-the-table work)?</value>
   </data>
   <data name="EmploymentAndSupportSection_NumberOfDependents" xml:space="preserve">
     <value>How many people depend on you for the majority of their food, shelter, etc.?</value>
@@ -832,7 +832,7 @@
     <value>Have you completed any formal training or technical education?</value>
   </data>
   <data name="EmploymentAndSupportSection_UsualOrLastOccupationDescription" xml:space="preserve">
-    <value>What is your usual (or last) occupation?</value>
+    <value>Usual (or last) occupation</value>
   </data>
   <data name="EmploymentAndSupportSection_WorkOrSchoolAffectOnRecovery" xml:space="preserve">
     <value>Tell me about alcohol and drug use in your work (or school) How will your work (or school) affect your treatment and recovery?</value>
@@ -1027,7 +1027,7 @@
     <value>Class of Assessment</value>
   </data>
   <data name="GeneralInformationSection_ControlledEnvironmentInPast30Days" xml:space="preserve">
-    <value>Have you been living in a hospital, rehab, jail or other controlled environment within the past 6 months?  In the past month?  How many days ago did that end?</value>
+    <value>Has the patient been in a controlled environment in the past 30 days?</value>
   </data>
   <data name="GeneralInformationSection_DateOfBirth" xml:space="preserve">
     <value>Date of Birth</value>
@@ -1099,7 +1099,7 @@
     <value>For how long, in total,  have you used hallucinogens in any amount,  i.e., What is your lifetime use?</value>
   </data>
   <data name="HallucinogenUse_RouteOfIntake" xml:space="preserve">
-    <value>How did you most often or most recently use hallucinogens? (Indicate most serious route of use)</value>
+    <value>How did you use hallucinogens?</value>
   </data>
   <data name="HallucinogenUse_SubstanceUseRecurrentProblemsHeader" xml:space="preserve">
     <value>Have you continued your use of hallucinogen despite having problems again and again with...?</value>
@@ -1135,7 +1135,7 @@
     <value>Social activities</value>
   </data>
   <data name="HallucinogenUse_ThinkAboutHeader" xml:space="preserve">
-    <value>In the past year, think about your use of hallucinogens (If the patient has not used in the past year, enter “No” for each of the following items.)</value>
+    <value>In the past year, think about your use of hallucinogens</value>
   </data>
   <data name="HallucinogenUse_UnableToStopUsingSubstance" xml:space="preserve">
     <value>When you are using hallucinogens, do you ever feel that you don't stop when you want to or feel that you should?  Indicates substance often taken in larger amounts or over a longer period than was intended.</value>
@@ -1183,7 +1183,7 @@
     <value>For how long, in total,  have you used heroin in any amount, i.e., What is your lifetime use?</value>
   </data>
   <data name="HeroinUse_RouteOfIntake" xml:space="preserve">
-    <value>How did you most often or most recently use heroin? (Indicate most serious route of use)</value>
+    <value>How did you use heroin?</value>
   </data>
   <data name="HeroinUse_SubstanceUseRecurrentProblemsHeader" xml:space="preserve">
     <value>Have you continued your use of heroin despite having problems again and again with...?</value>
@@ -1219,7 +1219,7 @@
     <value>Social activities</value>
   </data>
   <data name="HeroinUse_ThinkAboutHeader" xml:space="preserve">
-    <value>In the past year, think about your use of heroin: (If the patient has not used in the past year, enter “No” for each of the following items.)</value>
+    <value>In the past year, think about your use of heroin:</value>
   </data>
   <data name="HeroinUse_UnableToStopUsingSubstance" xml:space="preserve">
     <value>When you are using heroin, do you ever feel that you don't stop when you want to or feel that you should?  Indicates substance often taken in larger amounts or over a longer period than was intended.</value>
@@ -1243,7 +1243,7 @@
     <value>Interviewer: Has the patient responded to appropriate recent efforts by the prescriber to maintain the other drug at therapeutic levels?</value>
   </data>
   <data name="InterviewerEvaluation_HasMaintainedOtherOpiatesDoseAtTherapeuticLevels" xml:space="preserve">
-    <value>Interviewer: Has the patient responded to appropriate recent efforts by the prescriber to maintain other opioids at therapeutic levels?</value>
+    <value>Interviewer: Has the patient responded to appropriate recent efforts by the prescriber to maintain other opiates at therapeutic levels?</value>
   </data>
   <data name="InterviewerEvaluation_HasMaintainedSedativeDoseAtTherapeuticLevels" xml:space="preserve">
     <value>Interviewer: Has the patient responded to appropriate recent efforts by the prescriber to maintain the sedative dose at therapeutic levels?</value>
@@ -1477,7 +1477,7 @@
     <value>Explain the nature of the acute symptoms that have reemerged and can only be safely addressed in a medically-monitored setting.</value>
   </data>
   <data name="MedicalSection_ExperiencedAcuteAlcoholDisulfiramReactionInPast24HoursStatus" xml:space="preserve">
-    <value>Have you been taking disulfiram/Antabuse? If yes, ask: "Are you having any reaction to your Antabuse because you may have been using alcohol, at this time?"</value>
+    <value>Has the patient experienced an acute alcohol-disulfiram (Antabuse) reaction during the past 24 hours?</value>
   </data>
   <data name="MedicalSection_FeverOf102DegreesOrMoreInPast24Hours" xml:space="preserve">
     <value>Have you had fever of 102 F (orally) or above within the past 24-hours?</value>
@@ -1492,7 +1492,7 @@
     <value>Does the pregnancy involve any high risk? Is there any unstable problem that might require monitoring, such as bleeding, leaking amniotic fluid ('water breaking'), contractions, or an unstable fetal heartbeat?</value>
   </data>
   <data name="MedicalSection_HivAidsMedicalTreatmentStatus" xml:space="preserve">
-    <value>If patient has HIV or AIDS, ask: "Do you need special nursing or medical care, or complicated medicines for this?" If yes, ask: "Does this require residential care or supportive housing?"</value>
+    <value>If the patient has or is thought to have HIV or AIDS, is residential medical or nursing care required for evaluation, follow-up or to stabilize a medication regimen?</value>
   </data>
   <data name="MedicalSection_ImportanceOfTreatmentForMedicalProblems" xml:space="preserve">
     <value>How important to you now is treatment for these medical problems?</value>
@@ -1540,7 +1540,7 @@
     <value>Using the listed categories, indicate whether or not the patient has had each of the following medical problems.</value>
   </data>
   <data name="MedicalSection_MedicalProblemThatWouldComplicateDetoxificationStatus" xml:space="preserve">
-    <value>Do you have any medical problem or do you require any medication that might create difficulties during withdrawal or detox treatment?</value>
+    <value>Does the patient have any medical problem or require any medication that would pose a potential danger during withdrawal management?</value>
   </data>
   <data name="MedicalSection_MobilityProblemsMayAffectTreatmentAttendance" xml:space="preserve">
     <value>Does the patient have any problems with ambulation or mobility that would make it difficult to attend treatment?</value>
@@ -1564,7 +1564,7 @@
     <value>How might your physical health and function affect your ability to address your substance problems?</value>
   </data>
   <data name="MedicalSection_PregnantStatus" xml:space="preserve">
-    <value>If female, ask: "Are you pregnant?" (If male, enter No).</value>
+    <value>Are you pregnant?</value>
   </data>
   <data name="MedicalSection_PrescriptionMedicineDescription" xml:space="preserve">
     <value>List the medications you are taking and indicate the medical condition for each medication</value>
@@ -1648,7 +1648,7 @@
     <value>For how long, in total,  have you used methadone in any amount,  i.e., What is your lifetime use?</value>
   </data>
   <data name="MethadoneUse_RouteOfIntake" xml:space="preserve">
-    <value>How did you most often or most recently use methadone? (Indicate most serious route of use)</value>
+    <value>How did you use methadone?</value>
   </data>
   <data name="MethadoneUse_SubstanceUseRecurrentProblemsHeader" xml:space="preserve">
     <value>Have you continued your use of methadone despite having problems again and again with...?</value>
@@ -1684,7 +1684,7 @@
     <value>Social activities</value>
   </data>
   <data name="MethadoneUse_ThinkAboutHeader" xml:space="preserve">
-    <value>In the past year, think about your use of methadone: (If the patient has not used in the past year, enter “No” for each of the following items.)</value>
+    <value>In the past year, think about your use of methadone:</value>
   </data>
   <data name="MethadoneUse_UnableToStopUsingSubstance" xml:space="preserve">
     <value>When you are using methadone, do you ever feel that you don't stop when you want to or feel that you should?  Indicates substance often taken in larger amounts or over a longer period than was intended.</value>
@@ -1729,7 +1729,7 @@
     <value>Work</value>
   </data>
   <data name="NicotineUse_FrequentlyHighHeader" xml:space="preserve">
-    <value>Do you find that nicotine craving or nicotine use interferes with your ability to get things done at work, school, home, or might interfere with your judgment in dangerous situations?  Indicates recurrent use or withdrawal at:</value>
+    <value>Do you find that nicotine craving or nicotine use interferes with your ability to get things done at work, school, home, or might interfere with your judgment in dangerous situations?  Indicates recurrent ion or withdrawal at:</value>
   </data>
   <data name="NicotineUse_FrequentlyHighInDangerousSituations" xml:space="preserve">
     <value>More than once in dangerous situations</value>
@@ -1750,7 +1750,7 @@
     <value>When was your last use of tobacco and other nicotine products?</value>
   </data>
   <data name="NicotineUse_NicotineRouteOfIntake" xml:space="preserve">
-    <value>How did you most often or most recently use tobacco and other nicotine products? (Indicate most serious route of use)</value>
+    <value>How did you use tobacco and other nicotine products?</value>
   </data>
   <data name="NicotineUse_NumberOfDaysUsedInPast30Days" xml:space="preserve">
     <value>How many days did you use tobacco and other nicotine products in the last 30 days?</value>
@@ -1792,7 +1792,7 @@
     <value>Social activities</value>
   </data>
   <data name="NicotineUse_ThinkAboutHeader" xml:space="preserve">
-    <value>In the past year, think about your use of tobacco and other nicotine products (If the patient has not used in the past year, enter “No” for each of the following items.)</value>
+    <value>In the past year, think about your use of tobacco and other nicotine products</value>
   </data>
   <data name="NicotineUse_UnableToStopUsingSubstance" xml:space="preserve">
     <value>When you are using nicotine, do you ever feel that you don't stop when you want to or feel that you should?  Indicates substance often taken in larger amounts or over longer period than was intended.</value>
@@ -1807,13 +1807,13 @@
     <value>Did you take tobacco and other nicotine products at the prescribed dose(s)?</value>
   </data>
   <data name="OpiatesInControlledEnvironment_ControlledEnvironmentHeader" xml:space="preserve">
-    <value>Prior to entering the controlled environment did you (if no prior controlled environment, enter "NO"):</value>
+    <value>Prior to entering the controlled environment did you:</value>
   </data>
   <data name="OpiatesInControlledEnvironment_ExperiencesWithdrawalSickness" xml:space="preserve">
-    <value>Ever get physically sick when you stop using opioids?  If yes: Did you sometimes use in order to prevent this?  Indicates characteristic physical or psychological withdrawal symptoms.</value>
+    <value>Ever get physically sick when you stop using opiates?  If yes: Did you sometimes use in order to prevent this?  Indicates characteristic physical or psychological withdrawal symptoms.</value>
   </data>
   <data name="OpiatesInControlledEnvironment_IncreasedDoseRequiredToGetSameEffect" xml:space="preserve">
-    <value>Use more opioids to get the same feelings you used to by using less?  Or did you get less of a high by using the same amount?  Tolerance: Indicates either need for increased dose for same effect or reduced effect with same dose.</value>
+    <value>Use more opiates to get the same feelings you used to by using less?  Or did you get less of a high by using the same amount?  Tolerance: Indicates either need for increased dose for same effect or reduced effect with same dose.</value>
   </data>
   <data name="OpiatesInControlledEnvironment_TakenNaltrexoneOrNaloxoneDuringWithdrawalInPast48Hours" xml:space="preserve">
     <value>Has the patient taken or received naltrexone (ReVia) or naloxone during withdrawal in the past 48 hours?</value>
@@ -1822,19 +1822,19 @@
     <value>Use substances to relieve or avoid withdrawal?</value>
   </data>
   <data name="OpioidMaintenanceTherapy_CompletedAtLeast6MonthOpioidMaintenanceTherapyVoluntarily" xml:space="preserve">
-    <value>Did the patient complete at least 6 months of documented Opioid Treatment Services (OTS) with voluntary withdrawal management?</value>
+    <value>Did the patient complete at least 6 months of documented Opioid Treatment Program (OTP) with voluntary withdrawal management?</value>
   </data>
   <data name="OpioidMaintenanceTherapy_DetoxificationEndedLessThanOrEqual2YearsAgo" xml:space="preserve">
     <value>Did above withdrawal management end less than or equal to 2 years ago?</value>
   </data>
   <data name="OpioidMaintenanceTherapy_GraduallyDetoxedFromOpioidMaintenanceTherapy" xml:space="preserve">
-    <value>Is the patient to be or being gradually detoxified from Opioid Treatment Services (OTS)?</value>
+    <value>Is the patient to be or being gradually detoxified from Opioid Treatment Program (OTP)?</value>
   </data>
   <data name="OpioidMaintenanceTherapy_OpioidMaintenanceTherapyReadmissionMedicallyIndicated" xml:space="preserve">
-    <value>If this is a readmission: Does the program physician judge Opioid Treatment Services (OTS) readmission to be medically indicated?</value>
+    <value>If this is a readmission: Does the program physician judge Opioid Treatment Program (OPT) readmission to be medically indicated?</value>
   </data>
   <data name="OpioidMaintenanceTherapy_PhysicianReasonsForOpioidMaintenanceTherapyReadmission" xml:space="preserve">
-    <value>What are the physician's reasons for readmission to Opioid Treatment Service (OTS)?</value>
+    <value>What are the physician's reasons for readmission to Opioid Treatment Program (OPT)?</value>
   </data>
   <data name="OpioidMaintenanceTherapy_ToBePrescribedOpioidDetoxificationProtocol" xml:space="preserve">
     <value>Will the patient be treated using an opioid withdrawal protocol?</value>
@@ -1843,10 +1843,10 @@
     <value>Is there evidence of current physiological opioid dependence, either continuously or episodically, for most of at least one year from documented reports from medical professionals, the patient or family, or from treatment history?</value>
   </data>
   <data name="OtherOpiateUse_EvidenceFromUrineScreenOfOpioidDependence" xml:space="preserve">
-    <value>Is there evidence of current physiological opioid dependence from a urine screen that is positive for opioids, the presence of old or fresh needle marks, by a positive reaction to a naloxone test?</value>
+    <value>Is there evidence of current physiological opioid dependence from a urine screen that is positive for opiates, the presence of old or fresh needle marks, by a positive reaction to a naloxone test?</value>
   </data>
   <data name="OtherOpiateUse_ExperiencesWithdrawalSickness" xml:space="preserve">
-    <value>Do you ever get physically sick when you stop using these other opioids?  Indicates characteristic physical or psychological withdrawal symptoms.</value>
+    <value>Do you ever get physically sick when you stop using these other opiates?  Indicates characteristic physical or psychological withdrawal symptoms.</value>
   </data>
   <data name="OtherOpiateUse_FrequentlyHighAtHome" xml:space="preserve">
     <value>Home</value>
@@ -1858,40 +1858,40 @@
     <value>Work</value>
   </data>
   <data name="OtherOpiateUse_FrequentlyHighHeader" xml:space="preserve">
-    <value>Have you been unable to do the things that you need to do at work, school or home because of your opioid use (other then heroin or methadone) again and again?</value>
+    <value>Have you been unable to do the things that you need to do at work, school or home because of your opiates use (other then heroin or methadone) again and again?</value>
   </data>
   <data name="OtherOpiateUse_FrequentlyHighInDangerousSituations" xml:space="preserve">
     <value>More than once in dangerous situations</value>
   </data>
   <data name="OtherOpiateUse_HasEverUsed" xml:space="preserve">
-    <value>Have you ever used opioids other than heroin and methadone?</value>
+    <value>Have you ever used opiates other than heroin and methadone?</value>
   </data>
   <data name="OtherOpiateUse_HasHealthCareProviderPrescribedUse" xml:space="preserve">
-    <value>Were these other opioids and analgesics prescribed for you?</value>
+    <value>Were these other opiates and analgesics prescribed for you?</value>
   </data>
   <data name="OtherOpiateUse_HasUsedSubstanceKnowingProblemsWorsened" xml:space="preserve">
-    <value>Have you used other opioids even when you knew it caused a psychological problem or a physical illness, or made those problems worse?</value>
+    <value>Have you used other opiates even when you knew it caused a psychological problem or a physical illness, or made those problems worse?</value>
   </data>
   <data name="OtherOpiateUse_IncreasedDoseRequiredToGetSameEffect" xml:space="preserve">
-    <value>Do you need to use more other opioids to get the same feelings you used to by using less?  Or do you get less of a high by using the same amount?  Tolerance: Indicates either need for increased dose for same effect or reduced effect with same dose.</value>
+    <value>Do you need to use more other opiates to get the same feelings you used to by using less?  Or do you get less of a high by using the same amount?  Tolerance: Indicates either need for increased dose for same effect or reduced effect with same dose.</value>
   </data>
   <data name="OtherOpiateUse_LastUsed" xml:space="preserve">
-    <value>When was your last use of these other opioids and analgesics?</value>
+    <value>When was your last use of these other opiates and analgesics?</value>
   </data>
   <data name="OtherOpiateUse_NumberOfDaysUsedInPast30Days" xml:space="preserve">
-    <value>How many days did you use these other opioids and analgesics in the last 30 days?</value>
+    <value>How many days did you use these other opiates and analgesics in the last 30 days?</value>
   </data>
   <data name="OtherOpiateUse_NumberOfMonthsUsedInLifetime" xml:space="preserve">
-    <value>For how long, in total, have you used these other opioids and analgesics in any amount, i.e., What is your lifetime use?</value>
+    <value>For how long, in total, have you used these other opiates and analgesics in any amount, i.e., What is your lifetime use?</value>
   </data>
   <data name="OtherOpiateUse_OpioidRelapseLikelyIndicator" xml:space="preserve">
-    <value>How likely is it that you might relapse because of craving or need for opioids?</value>
+    <value>How likely is it that you might relapse because of craving or need for opiates?</value>
   </data>
   <data name="OtherOpiateUse_RouteOfIntake" xml:space="preserve">
-    <value>How did you most often or most recently use these other opioids and analgesics? (Indicate most serious route of use)</value>
+    <value>How did you use these other opiates and analgesics?</value>
   </data>
   <data name="OtherOpiateUse_SubstanceUseRecurrentProblemsHeader" xml:space="preserve">
-    <value>Have you continued your use of other opioids despite having problems again and again with...?</value>
+    <value>Have you continued your use of other opiates despite having problems again and again with...?</value>
   </data>
   <data name="OtherOpiateUse_SubstanceUseRecurrentProblemsWithEmotions" xml:space="preserve">
     <value>Emotions</value>
@@ -1912,7 +1912,7 @@
     <value>Have you ever tried to cut down?  Indicates persistent desire or unsuccessful effort(s) to control substance use.</value>
   </data>
   <data name="OtherOpiateUse_SubstanceUseReductionHeader" xml:space="preserve">
-    <value>Have you given up or cut back in any important activities because of your use of other opioids?  Indicates reduction in:</value>
+    <value>Have you given up or cut back in any important activities because of your use of other opiates?  Indicates reduction in:</value>
   </data>
   <data name="OtherOpiateUse_SubstanceUseReductionInOccupationalActivities" xml:space="preserve">
     <value>Occupational activities</value>
@@ -1924,19 +1924,19 @@
     <value>Social activities</value>
   </data>
   <data name="OtherOpiateUse_ThinkAboutHeader" xml:space="preserve">
-    <value>In the past year, think about your use of other opioids: (If the patient has not used in the past year, enter “No” for each of the following items.)</value>
+    <value>In the past year, think about your use of the other opiates:</value>
   </data>
   <data name="OtherOpiateUse_UnableToStopUsingSubstance" xml:space="preserve">
-    <value>When you are using other opioids, do you ever feel that you don't stop when you want to or feel that you should?  Indicates substance often taken in larger amounts or over a longer period than was intended.</value>
+    <value>When you are using other opiates, do you ever feel that you don't stop when you want to or feel that you should?  Indicates substance often taken in larger amounts or over a longer period than was intended.</value>
   </data>
   <data name="OtherOpiateUse_UseOfSubstanceTakesUpALotOfTime" xml:space="preserve">
-    <value>Do other opioids take up a lot of your time? Indicates much time is spent obtaining, using, or recovering from substance.</value>
+    <value>Do other opiates take up a lot of your time? Indicates much time is spent obtaining, using, or recovering from substance.</value>
   </data>
   <data name="OtherOpiateUse_UseSubstanceToPreventWithdrawalSickness" xml:space="preserve">
-    <value>Do you sometimes use in order to prevent this?  Does the patient indicate that the other opioids were used to relieve or avoid withdrawal?</value>
+    <value>Do you sometimes use in order to prevent this?  Does the patient indicate that the other opiates were used to relieve or avoid withdrawal?</value>
   </data>
   <data name="OtherOpiateUse_WasSubstanceTakenAsPrescribed" xml:space="preserve">
-    <value>Did you take the other opioids and analgesics at the prescribed dose(s)?</value>
+    <value>Did you take the other opiates and analgesics at the prescribed dose(s)?</value>
   </data>
   <data name="OtherSedativeUse_ExperiencesWithdrawalSickness" xml:space="preserve">
     <value>Do you ever get physically sick when you stop using other sedatives/hypnotics? Indicates characteristic physical or psychological withdrawal symptoms.</value>
@@ -1978,7 +1978,7 @@
     <value>For how long, in total, have you used other sedative / hypnotics in any amount, i.e., What is your lifetime use?</value>
   </data>
   <data name="OtherSedativeUse_RouteOfIntake" xml:space="preserve">
-    <value>How did you most often or most recently use other sedatives/hypnotics? (Indicate most serious route of use)</value>
+    <value>How did you use other sedatives/hypnotics?</value>
   </data>
   <data name="OtherSedativeUse_SubstanceUseRecurrentProblemsHeader" xml:space="preserve">
     <value>Have you continued your use of other sedatives/hypnotics despite having problems again and again with...?</value>
@@ -2014,7 +2014,7 @@
     <value>Social activities</value>
   </data>
   <data name="OtherSedativeUse_ThinkAboutHeader" xml:space="preserve">
-    <value>In the past year, think about your use of other sedative / hypnotics (If the patient has not used in the past year, enter “No” for each of the following items.)</value>
+    <value>In the past year, think about your use of other sedative / hypnotics</value>
   </data>
   <data name="OtherSedativeUse_UnableToStopUsingSubstance" xml:space="preserve">
     <value>When you are using other sedatives/hypnotics, do you ever feel that you don't stop when you want to or feel that you should?  Indicates substance often taken in larger amounts or over longer period than was intended. </value>
@@ -2071,7 +2071,7 @@
     <value>What is the name of that drug?</value>
   </data>
   <data name="OtherSubstanceUse_RouteOfIntake" xml:space="preserve">
-    <value>How did you most often or most recently use this other drug? (Indicate most serious route of use)</value>
+    <value>How did you use this other drug?</value>
   </data>
   <data name="OtherSubstanceUse_SubstanceUseRecurrentProblemsHeader" xml:space="preserve">
     <value>Have you continued your use of the previously described drug despite having problems again and again with...?</value>
@@ -2107,7 +2107,7 @@
     <value>Social activities</value>
   </data>
   <data name="OtherSubstanceUse_ThinkAboutHeader" xml:space="preserve">
-    <value>In the past year, think about your use of the drug you previously described (If the patient has not used in the past year, enter “No” for each of the following items.)</value>
+    <value>In the past year, think about your use of the drug you previously described</value>
   </data>
   <data name="OtherSubstanceUse_UnableToStopUsingSubstance" xml:space="preserve">
     <value>When you are using the drug you previously described , do you ever feel that you don't stop when you want to or feel that you should?  Indicates substance often taken in larger amounts or over a longer period than was intended.</value>
@@ -2899,7 +2899,7 @@
     <value>For how long, in total,  have you used solvents or inhalants in any amount,  i.e., What is your lifetime use?</value>
   </data>
   <data name="SolventAndInhalantUse_RouteOfIntake" xml:space="preserve">
-    <value>How did you most often or most recently use solvents or inhalants? (Indicate most serious route of use)</value>
+    <value>How did you use solvents or inhalants?</value>
   </data>
   <data name="SolventAndInhalantUse_SubstanceUseRecurrentProblemsHeader" xml:space="preserve">
     <value>Have you continued your use of solvents or inhalants despite having problems again and again with...?</value>
@@ -2935,7 +2935,7 @@
     <value>Social activities</value>
   </data>
   <data name="SolventAndInhalantUse_ThinkAboutHeader" xml:space="preserve">
-    <value>In the past year, think about your use of solvents or inhalants (If the patient has not used in the past year, enter “No” for each of the following items.)</value>
+    <value>In the past year, think about your use of solvents or inhalants</value>
   </data>
   <data name="SolventAndInhalantUse_UnableToStopUsingSubstance" xml:space="preserve">
     <value>When you are using solvents or inhalants, do you ever feel that you don't stop when you want to or feel that you should?  Indicates substance often taken in larger amounts or over a longer period than was intended. </value>
@@ -2986,7 +2986,7 @@
     <value>For how long, in total,  have you used stimulants in any amount,  i.e., What is your lifetime use?</value>
   </data>
   <data name="StimulantUse_RouteOfIntake" xml:space="preserve">
-    <value>How did you most often or most recently use stimulants? (Indicate most serious route of use)</value>
+    <value>How did you use stimulants?</value>
   </data>
   <data name="StimulantUse_SubstanceUseRecurrentProblemsHeader" xml:space="preserve">
     <value>Have you continued your use of other stimulants despite having problems again and again with...?</value>
@@ -3022,7 +3022,7 @@
     <value>Social activities</value>
   </data>
   <data name="StimulantUse_ThinkAboutHeader" xml:space="preserve">
-    <value>In the past year, think about your use of other stimulants (If the patient has not used in the past year, enter “No” for each of the following items.)</value>
+    <value>In the past year, think about your use of other stimulants</value>
   </data>
   <data name="StimulantUse_UnableToStopUsingSubstance" xml:space="preserve">
     <value>When you are using other stimulants, do you ever feel that you don't stop when you want to or feel that you should? Indicates substance often taken in larger amounts or over a longer period than was intended. </value>
@@ -3037,7 +3037,7 @@
     <value>Did you take stimulants at the prescribed dose(s)?</value>
   </data>
   <data name="GeneralInformationSection_PatientInControlledEnvironmentLast30Days" xml:space="preserve">
-    <value>Have you been living in a hospital, rehab, jail or other controlled environment within the past 6 months?  In the past month?  How many days ago did that end?</value>
+    <value>Has the patient been in a controlled environment in the past 30 days?</value>
   </data>
   <data name="PsychologicalHistory_SignificantPeriodTroubleWithAttitudeTowardOthersInLastMonth" xml:space="preserve">
     <value>In the last month?</value>
@@ -3097,13 +3097,13 @@
     <value>Nicotine and Tobacco Use</value>
   </data>
   <data name="DrugAndAlcoholSection_OpiatesInControlledEnvironment" xml:space="preserve">
-    <value>Opioids and a Controlled Environment</value>
+    <value>Opiates and a Controlled Environment</value>
   </data>
   <data name="DrugAndAlcoholSection_OpioidMaintenanceTherapy" xml:space="preserve">
-    <value>Opioid Treatment Services</value>
+    <value>Opioid Treatment Program</value>
   </data>
   <data name="DrugAndAlcoholSection_OtherOpiateUse" xml:space="preserve">
-    <value>Other Opioid Use</value>
+    <value>Other Opiate Use</value>
   </data>
   <data name="DrugAndAlcoholSection_OtherSedativeUse" xml:space="preserve">
     <value>Other Sedative Use</value>
@@ -3244,7 +3244,7 @@
     <value>Has there ever been a time when you had such strong urges to take nicotine that you couldn't think of anything else?</value>
   </data>
   <data name="OtherOpiatesUse_HasStrongUrges" xml:space="preserve">
-    <value>Has there ever been a time when you had such strong urges to take other opioids that you couldn't think of anything else?</value>
+    <value>Has there ever been a time when you had such strong urges to take other opiates that you couldn't think of anything else?</value>
   </data>
   <data name="OtherOpiatesUse_ReceivingOngoingMaintenanceTherapy" xml:space="preserve">
     <value />
@@ -3265,9 +3265,6 @@
     <value>Have you been receiving maintenance therapy, that is, ongoing treatment with methadone, Suboxone, Subutex, or buprenorphine, or naltrexone or Vivitrol?</value>
   </data>
   <data name="Disclaimer" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="OtherOpiateUse_HasStrongUrges" xml:space="preserve">
-    <value>Has there ever been a time when you had such strong urges to take other opiods that you couldn't think of anything else?</value>
+    <value>As a Pilot system collecting only non-identified data , the entry of any and all Patient Identifiers within the system is prohibited in accordance with Health Insurance Portability and Accountability Act of 1996 (HIPAA).</value>
   </data>
 </root>

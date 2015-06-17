@@ -275,7 +275,7 @@
     };
 
     $.fixSizes = function () {
-        $('#assessmentContent').height($(window).height() - $('#assessmentHeader').height() - $('#assessmentFooter').height() - $('#errorSummary').not('.hidden').height() - $('#submitPanel').not('.hidden').height() - $('#asamFooter').height());
+        $('#assessmentContent').height($(window).height() - $('#assessmentHeader').height() - $('#assessmentFooter').height() - $('#errorSummary').not('.hidden').height() - $('#submitPanel').not('.hidden').height());
 
         var navigation = $("#assessmentNavigation");
         var activeContent = navigation.find(".ui-accordion-content-active").height("auto");
@@ -431,27 +431,25 @@
 
         var validator = form.validate("unobtrusiveValidation");
 
-        if (validator) {
-            validator.settings.ignore = "";
+        validator.settings.ignore = "";
 
-            validator.settings.showErrors = function( element, errors ) {
-                if (init) {
-                    init = false;
-                    var error = this.errorList[0];
-                    if (error && error.element) {
-                        if ($( error.element ).is( ':focusable' )) {
-                            error.element.focus();
-                        } else {
-                            $( error.element.parentElement ).find( ':focusable' ).first().focus();
-                        }
+        validator.settings.showErrors = function (element, errors) {
+            if (init) {
+                init = false;
+                var error = this.errorList[0];
+                if ( error && error.element) {
+                    if ($(error.element).is(':focusable')) {
+                        error.element.focus();
+                    } else {
+                        $(error.element.parentElement).find(':focusable').first().focus();
                     }
                 }
+            }
 
-                updateCount( this.numberOfInvalids() );
-                this.defaultShowErrors();
-            };
-        }
-
+            updateCount(this.numberOfInvalids());
+            this.defaultShowErrors();
+        };
+        
         form.validateDelegate('[type="checkbox"], [type="radio"]', "focusin focusout keyup",
             function (event) {
                 var validator = $.data(this[0].form, "validator"),

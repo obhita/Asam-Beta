@@ -123,8 +123,7 @@ namespace Asam.Ppc.Domain.Tests.AssessmentModule.Scoring.Dimension4ReadinessToCh
                 interviewScoreOfAttitude,
                 concernsAboutPursuingTreatment,
                 desireAndExternalFactorsDrivingTreatment,
-                interviewerScoreOfReadiness,
-                false);
+                interviewerScoreOfReadiness);
 
             Assert.AreEqual(
                 isMet,

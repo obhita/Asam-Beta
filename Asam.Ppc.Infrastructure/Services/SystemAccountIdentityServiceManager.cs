@@ -28,8 +28,6 @@
 
 #endregion
 
-using System.Net;
-
 namespace Asam.Ppc.Infrastructure.Services
 {
     #region Using Statements
@@ -53,7 +51,6 @@ namespace Asam.Ppc.Infrastructure.Services
 
         private const string IdentityServerPassword = "IdentityServerWebApiPassword";
         private const string IdentityServerUserName = "IdentityServerWebApiUsername";
-        private const string AppName = "AppName";
 
         #endregion
 
@@ -64,7 +61,6 @@ namespace Asam.Ppc.Infrastructure.Services
         private readonly string _userName;
         private DateTime _expiration;
         private string _token;
-        private readonly string _appName;
 
         #endregion
 
@@ -77,11 +73,10 @@ namespace Asam.Ppc.Infrastructure.Services
         public SystemAccountIdentityServiceManager ( IConfigurationPropertiesProvider appSettingsConfiguration )
         {
             _baseAddress =
-                new Uri ( ( ( FederatedAuthentication.WSFederationAuthenticationModule ?? new WSFederationAuthenticationModule () ).Issuer.Replace ( "/issue/wsfed", "" ) ) );
+                new Uri ( ( ( FederatedAuthentication.WSFederationAuthenticationModule ?? new WSFederationAuthenticationModule () ).Issuer.Replace ( "issue/wsfed", "" ) ) );
             _userName = appSettingsConfiguration.GetProperty<string> ( IdentityServerUserName );
             _password = appSettingsConfiguration.GetProperty<string> ( IdentityServerPassword );
             _expiration = DateTime.MinValue;
-            _appName = appSettingsConfiguration.GetProperty<string>(AppName);
         }
 
         #endregion
@@ -98,7 +93,7 @@ namespace Asam.Ppc.Infrastructure.Services
         public IdentityServiceResponse ChangePassword ( string username, string oldPassword, string newPassword )
         {
             var identityServiecResponse = new IdentityServiceResponse ();
-            var response = MakeRequestAsync ( HttpMethod.Post, "api/membership/ChangePassword/?username=" + username, new {oldPassword, newPassword} ).Result;
+            var response = MakeRequestAsync ( HttpMethod.Post, "api/membership/ChangePassword/" + username, new {oldPassword, newPassword} ).Result;
             if ( response.IsSuccessStatusCode )
             {
                 identityServiecResponse.Sucess = true;
@@ -119,8 +114,7 @@ namespace Asam.Ppc.Infrastructure.Services
         public IdentityServiceResponse Create(string username, string email)
         {
             var identityServiecResponse = new IdentityServiceResponse ();
-            var response = MakeRequestAsync(HttpMethod.Post, "api/membership/Create/?username=" + username + "&email=" + email + "&appName=" + _appName).Result;
-            //var response = MakeRequestAsync ( HttpMethod.Put, "api/membership/Create/" + username + "?email=" + email, new {email} ).Result;
+            var response = MakeRequestAsync ( HttpMethod.Put, "api/membership/Create/" + username + "?email=" + email, new {email} ).Result;
             if ( response.IsSuccessStatusCode )
             {
                 identityServiecResponse.Sucess = true;
@@ -140,7 +134,7 @@ namespace Asam.Ppc.Infrastructure.Services
         public IdentityServiceResponse Lock ( string username )
         {
             var identityServiecResponse = new IdentityServiceResponse ();
-            var response = MakeRequestAsync ( HttpMethod.Post, "api/membership/Lock/?username=" + username ).Result;
+            var response = MakeRequestAsync ( HttpMethod.Post, "api/membership/Lock/" + username ).Result;
             if ( response.IsSuccessStatusCode )
             {
                 identityServiecResponse.Sucess = true;
@@ -160,8 +154,7 @@ namespace Asam.Ppc.Infrastructure.Services
         public IdentityServiceResponse ResetPassword ( string username )
         {
             var identityServiecResponse = new IdentityServiceResponse ();
-            var response = MakeRequestAsync(HttpMethod.Post, "api/membership/ResetPassword/?username=" + username + "&appName=" + _appName).Result;
-            //var response = MakeRequestAsync ( HttpMethod.Post, "api/membership/ResetPassword/" + username ).Result;
+            var response = MakeRequestAsync ( HttpMethod.Post, "api/membership/ResetPassword/" + username ).Result;
             if ( response.IsSuccessStatusCode )
             {
                 identityServiecResponse.Sucess = true;
@@ -181,7 +174,7 @@ namespace Asam.Ppc.Infrastructure.Services
         public IdentityServiceResponse UnLock ( string username )
         {
             var identityServiecResponse = new IdentityServiceResponse ();
-            var response = MakeRequestAsync ( HttpMethod.Post, "api/membership/UnLock/username=" + username ).Result;
+            var response = MakeRequestAsync ( HttpMethod.Post, "api/membership/UnLock/" + username ).Result;
             if ( response.IsSuccessStatusCode )
             {
                 identityServiecResponse.Sucess = true;
@@ -230,10 +223,7 @@ namespace Asam.Ppc.Infrastructure.Services
 
         private async Task<HttpResponseMessage> RequestSessionToken ()
         {
-#if DEBUG
-            ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
-#endif
-            using (var httpClient = new HttpClient { BaseAddress = _baseAddress })
+            using ( var httpClient = new HttpClient {BaseAddress = _baseAddress} )
             {
                 httpClient.SetBasicAuthentication ( _userName, _password );
 

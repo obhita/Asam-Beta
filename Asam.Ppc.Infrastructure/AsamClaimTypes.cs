@@ -12,6 +12,5 @@ namespace Asam.Ppc.Infrastructure
         public static readonly string StaffEmailClaimType = "http://schemas.obhita.org/ws/2008/06/identity/claims/staffemail";
         public static readonly string PermissionClaimType = "http://schemas.obhita.org/ws/2008/06/identity/claims/permission";
         public static readonly string SystemAdminType = "http://schemas.obhita.org/ws/2008/06/identity/claims/systemadmin";
-        public static readonly string EhrIdClaimType = "http://schemas.obhita.org/ws/2008/06/identity/claims/ehrid";
     }
 }

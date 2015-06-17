@@ -1,8 +1,8 @@
-﻿INSERT [OrganizationModule].[Organization] VALUES ( 1, 1, 'Safe Harbor', 1, '7LL3KCGXVSJNFUZET35OZKNEU5FE6UHP7IADIQFS', GETDATE(), null, GETDATE(), null )
+﻿INSERT [OrganizationModule].[Organization] VALUES ( 1, 1, 'Safe Harbor', GETDATE(), null, GETDATE(), null)
 
 INSERT [OrganizationModule].[Staff] VALUES ( 1, 1, null, '123456', GetDate(), null, GetDate(), null, 1, 'leo.smith@safeharbor1x1.com', null, 'Leo', null, 'Smith', null, null)
 
-INSERT [SecurityModule].[SystemAccount] VALUES ( 1, 1, 'leo.smith@safeharbor1x1.com', 0, null, GETDATE(), null, GETDATE(), null, 1, 1, 'leo.smith@safeharbor1x1.com', null)
+INSERT [SecurityModule].[SystemAccount] VALUES ( 1, 1, 'leo.smith@safeharbor1x1.com', 0, null, GETDATE(), null, GETDATE(), null, 1, 1, 'leo.smith@safeharbor1x1.com')
 
 INSERT [SecurityModule].[Role] VALUES ( 1, 1, 'OrganizationAdmin', 'UserDefined', GETDATE(), null, GETDATE(), null, 1)
 
@@ -25,4 +25,3 @@ INSERT [SecurityModule].[RoleSystemPermission] VALUES ( 14, 1, 1, 14)
 INSERT [SecurityModule].[RoleSystemPermission] VALUES ( 16, 1, 1, 16)
 INSERT [SecurityModule].[RoleSystemPermission] VALUES ( 17, 1, 1, 17)
 INSERT [SecurityModule].[RoleSystemPermission] VALUES ( 19, 1, 1, 19)
-

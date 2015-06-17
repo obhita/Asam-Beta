@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using Asam.Ppc.Domain.AssessmentModule;
 using NHibernate.Criterion;
 
 namespace Asam.Ppc.Infrastructure.Domain.Repository
 {
     using System.Linq;
+    using Ppc.Domain.OrganizationModule;
     using Ppc.Domain.PatientModule;
 
     /// <summary>

@@ -22,8 +22,6 @@
 );
 
 
-
-
 GO
 CREATE NONCLUSTERED INDEX [OrganizationAddress_Organization_FK_IDX]
     ON [OrganizationModule].[OrganizationAddress]([OrganizationKey] ASC);

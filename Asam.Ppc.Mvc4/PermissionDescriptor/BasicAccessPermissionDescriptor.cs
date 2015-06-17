@@ -1,6 +1,4 @@
-﻿using System.Web.Mvc;
-
-namespace Asam.Ppc.Mvc4.PermissionDescriptor
+﻿namespace Asam.Ppc.Mvc4.PermissionDescriptor
 {
     using Controllers;
     using Infrastructure.Permission;
@@ -10,10 +8,11 @@ namespace Asam.Ppc.Mvc4.PermissionDescriptor
     {
         #region Fields
 
-        private readonly ResourceList _resourceList = new ResourceListBuilder()
-            .AddResource<HomeController>(BasicAccessPermission.AccessUserInterfacePermission)
+        private readonly ResourceList _resourceList = new ResourceListBuilder ()
+            .AddResource<HomeController> ( BasicAccessPermission.AccessUserInterfacePermission )
             .AddResource<AccountController>(BasicAccessPermission.AccessUserInterfacePermission)
             .AddResource<ErrorController>(BasicAccessPermission.AccessUserInterfacePermission);
+
         #endregion
 
         #region Public Properties

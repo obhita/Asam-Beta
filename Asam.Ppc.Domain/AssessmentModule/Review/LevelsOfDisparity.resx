@@ -121,15 +121,15 @@
     <value>No disparity</value>
   </data>
   <data name="YesDimension3" xml:space="preserve">
-    <value>Yes, disparity generated primarily on Dim3 - Emotional, Behavioral or Cognitive Conditions and Complications</value>
+    <value>Yes, disparity generated primarily on Dim3</value>
   </data>
   <data name="YesDimension4" xml:space="preserve">
-    <value>Yes, disparity generated primarily on Dim4 - Readiness to Change</value>
+    <value>Yes, disparity generated primarily on Dim4</value>
   </data>
   <data name="YesDimension5" xml:space="preserve">
-    <value>Yes, disparity generated primarily on Dim5 - Relapse, Continued Use or Continued Problem Potential</value>
+    <value>Yes, disparity generated primarily on Dim5</value>
   </data>
   <data name="YesDimension6" xml:space="preserve">
-    <value>Yes, disparity generated primarily on Dim6 - Recovery Environment</value>
+    <value>Yes, disparity generated primarily on Dim6</value>
   </data>
 </root>

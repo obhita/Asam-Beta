@@ -7,7 +7,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     @Styles.Render("~/Content/themes/base/css", "~/Content/css")
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <!--[if gte IE 9]>
@@ -24,6 +23,7 @@
 <body class="container">
     <div id="rootNavigation" class="one-third column">
         <div id="assessmentLogo">
+            ASAM BETA
         </div>
         <div id="userContextwrapper">
             @Html.Partial("UserContext")
@@ -31,60 +31,54 @@
         <div id="rootTabs">
             <div id="tabListWrapper">
                 <ul id="tabsList">
-                        @if (UserContext.IsSystemAdmin)
+                    @if ( UserContext.IsSystemAdmin )
                     {
-                        <li id="home-tab" class="active">@Html.ActionLink("Admin", "Index", "SystemAdmin") </li>
+                        <li id="home-tab" class="active">@Html.ActionLink( "Admin", "Index", "SystemAdmin" ) </li>
                     }
-                    else if (ViewContext.RouteData.Values["controller"].ToString() == "Section")
+                    else if ( ViewContext.RouteData.Values["controller"].ToString () == "Section" )
                     {
-                        if (ViewBag.CanAccessAllPatients)
+                        if ( ViewBag.CanAccessAllPatients )
                         {
-                            <li id="home-tab">@Html.ActionLink("Home", "Index", "Home", new { assessmentId = ViewData["AssessmentId"] }, null)</li>
+                            <li id="home-tab">@Html.ActionLink( "Home", "Index", "Home", new {assessmentId = ViewData["AssessmentId"]}, null )</li>
                         }
                         <li id="assessment-tab"><a href="#" class="active">Assessment</a></li>
-                            <li id="patient-tab">
-                                @Html.ActionLink("Patient", "Index", "Patient", new
-                                                 {
-                                                     id = (ViewData["Patient"] as PatientDto) == null ? string.Empty : (ViewData["Patient"] as PatientDto).Key.ToString(),
-                                                     assessmentId = ViewData["AssessmentId"]
-                                         }, null)
-                            </li>
+                        <li id="patient-tab">@Html.ActionLink( "Patient", "Index", "Patient", new
+                                             {
+                                                 id = ( ViewData["Patient"] as PatientDto ) == null ? string.Empty : ( ViewData["Patient"] as PatientDto ).Key.ToString (),
+                                                 assessmentId = ViewData["AssessmentId"]
+                                             }, null )</li>
                     }
-                    else if (ViewContext.RouteData.Values["controller"].ToString() == "Patient")
+                    else if ( ViewContext.RouteData.Values["controller"].ToString () == "Patient" )
                     {
-                        if (ViewBag.CanAccessAllPatients)
+                        if ( ViewBag.CanAccessAllPatients )
                         {
-                            <li id="home-tab">@Html.ActionLink("Home", "Index", "Home", new { assessmentId = ViewData["AssessmentId"] }, null)</li>
+                            <li id="home-tab">@Html.ActionLink( "Home", "Index", "Home", new {assessmentId = ViewData["AssessmentId"]}, null )</li>
                         }
-                        if (ViewData["AssessmentId"] != null)
+                        if ( ViewData["AssessmentId"] != null )
                         {
-                            <li id="assessment-tab">@Html.ActionLink("Assessment", "Edit", "Assessment", new { id = ViewData["AssessmentId"] }, null)</li>
+                            <li id="assessment-tab">@Html.ActionLink( "Assessment", "Edit", "Assessment", new {id = ViewData["AssessmentId"]}, null )</li>
                         }
-                            <li id="patient-tab">
-                                @Html.ActionLink("Patient", "Index", "Patient", new
-                                                 {
-                                                     id = (ViewData["Patient"] as PatientDto) == null ? string.Empty : (ViewData["Patient"] as PatientDto).Key.ToString(),
-                                                     assessmentId = ViewData["AssessmentId"]
-                                         }, new { @class = "active" })
-                            </li>
+                        <li id="patient-tab">@Html.ActionLink( "Patient", "Index", "Patient", new
+                                             {
+                                                 id = ( ViewData["Patient"] as PatientDto ) == null ? string.Empty : ( ViewData["Patient"] as PatientDto ).Key.ToString (),
+                                                 assessmentId = ViewData["AssessmentId"]
+                                             }, new {@class = "active"} )</li>
                     }
-                    else 
+                    else
                     {
-                        if (ViewBag.CanAccessAllPatients)
+                        if ( ViewBag.CanAccessAllPatients )
                         {
                             <li id="home-tab"><a href="#" class="active">Home</a></li>
                         }
-                        if (ViewData["AssessmentId"] != null)
+                        if ( ViewData["AssessmentId"] != null )
                         {
-                            <li id="assessment-tab">@Html.ActionLink("Assessment", "Edit", "Assessment", new { id = ViewData["AssessmentId"] }, null)</li>
+                            <li id="assessment-tab">@Html.ActionLink( "Assessment", "Edit", "Assessment", new {id = ViewData["AssessmentId"]}, null )</li>
                         }
-                            <li id="patient-tab">
-                                @Html.ActionLink("Patient", "Index", "Patient", new
-                                                 {
-                                                     id = (ViewData["Patient"] as PatientDto) == null ? string.Empty : (ViewData["Patient"] as PatientDto).Key.ToString(),
-                                                     assessmentId = ViewData["AssessmentId"]
-                                         }, null)
-                            </li>
+                        <li id="patient-tab">@Html.ActionLink( "Patient", "Index", "Patient", new
+                                             {
+                                                 id = ( ViewData["Patient"] as PatientDto ) == null ? string.Empty : ( ViewData["Patient"] as PatientDto ).Key.ToString (),
+                                                 assessmentId = ViewData["AssessmentId"]
+                                             }, null )</li>
                     }
                 </ul>
                 <div class="clear"></div>
@@ -93,13 +87,14 @@
                 @RenderSection( "NavigationBody", required: false )
             </div>
         </div>
+        <div id="disclaimer">
+            This open source package is a prototype of the ASAM placement criteria, beta testing, version 0.5.  It has not been tested for accuracy or completeness, and may contain bugs and clinical decision errors. The development of this software ended on September 14, 2014 and no additional updates will be provided.  This software should not be used for patient assessment, clinical evaluation, outcomes tracking, or making treatment recommendations.  Furthermore, protected health information should not be placed within this tool, as it has not been tested for security vulnerabilities. This software is not endorsed by the American Society of Addiction Medicine.  SAMHSA and ASAM assume no liability in the use of this software.
+        </div>
     </div>
     <div id="mainContent" class="two-thirds column shadow-left">
         @RenderBody()
         <div id="ajax-loader" style="display: none"></div>
     </div>
-
-    @Html.Partial("_AsamFooter")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
@@ -108,23 +103,23 @@
     @Scripts.Render("~/bundles/jquerydatatable")
     @Scripts.Render("~/bundles/jqueryformatcurrency")
     <script>
-    $(document).ready(function() {
+        $(document).ready(function () {
             var layoutSizeFix = {
                 fixSizes: function() {
-                    $('#rootTabs').height($(window).height() - $('#assessmentLogo').height() - $('#UserContext').height() - $('#asamFooter').height());
-                    $('#rootTabs #tabContent').height($('#rootTabs').height() - $('#rootTabs #tabsList').height() - 63 - $('#asamFooter').height());
+                    $('#rootTabs').height($(window).height() - $('#assessmentLogo').height() - $('#UserContext').height() - $('#disclaimer').height() - 20);
+                    $('#rootTabs #tabContent').height($('#rootTabs').height() - $('#rootTabs #tabsList').height() - 67);
                 }
             };
             
             layoutSizeFix.fixSizes();            
-        $(window).resize(function() {
+            $(window).resize(function () {
                 layoutSizeFix.fixSizes();
             });
 
             $('textarea').after('<div><span class="disclaimer">@AsamPpcResources.Disclaimer</span></div>');
         });
 
-    $(document).ajaxError(function(e, jqxhr, settings, exceptions) {
+        $(document).ajaxError(function (e, jqxhr, settings, exceptions) {
             e.stopPropagation();
             if (jqxhr !== null) {
                 alert(jqxhr.responseText);

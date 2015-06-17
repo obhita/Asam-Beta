@@ -1,8 +1,0 @@
-C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Handlers\bin\Test\Asam.Ppc.Service.Handlers.dll.config
-C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Handlers\bin\Test\Asam.Ppc.Service.Handlers.dll
-C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Handlers\bin\Test\Asam.Ppc.Service.Handlers.pdb
-C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Handlers\bin\Test\Asam.Ppc.Service.Messages.dll
-C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Handlers\bin\Test\Asam.Ppc.Service.Messages.pdb
-C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Handlers\obj\Test\Asam.Ppc.Service.Handlers.csprojResolveAssemblyReference.cache
-C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Handlers\obj\Test\Asam.Ppc.Service.Handlers.dll
-C:\Projects\Asam.Ppc\Development\Asam.Ppc.Service.Handlers\obj\Test\Asam.Ppc.Service.Handlers.pdb

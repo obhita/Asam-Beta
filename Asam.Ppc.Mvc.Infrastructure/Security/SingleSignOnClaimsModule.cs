@@ -1,37 +1,28 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Web;
-using Asam.Ppc.Domain.EhrModule;
-using Asam.Ppc.Domain.SecurityModule;
-using NLog;
-using Pillar.Common.InversionOfControl;
+using System.Web.Configuration;
 
 namespace Asam.Ppc.Mvc.Infrastructure.Security
 {
-    using System.Web.Configuration;
-
     using Ppc.Infrastructure;
 
     public class SingleSignOnClaimsModule : IHttpModule
     {
-        protected readonly Logger Logger = LogManager.GetCurrentClassLogger();
         public const string CertificatePublicKeyName = "CertPublicKey";
 
-        private static readonly Dictionary<string, string> FormKeyClaimsMap = new Dictionary<string, string>
+        private static Dictionary<string, string> _formKeyClaimsMap = new Dictionary<string, string>
             {
                 {"UserId", ClaimTypes.NameIdentifier},
                 {"UserName", ClaimTypes.Name},
                 {"UserEmail", ClaimTypes.Email},
-                {"PatientId", AsamClaimTypes.PatientIdClaimType},
-                {"OrganizationId", AsamClaimTypes.OrganizationIdClaimType},
-                {"EhrId", AsamClaimTypes.EhrIdClaimType}
+                {"PatientId", AsamClaimTypes.PatientIdClaimType}
             };
 
         public void Init(HttpApplication context)
@@ -39,93 +30,67 @@ namespace Asam.Ppc.Mvc.Infrastructure.Security
             context.BeginRequest += CheckSingleSignOnHandler;
         }
 
-        private void AddApiSystemAccount(long ehrId, long organizationKey, string userId, string userName, string userEmail)
-        {
-            var apiSystemRepository = IoC.CurrentContainer.Resolve<IApiSystemAccountRepository>();
-            var apiSystemAccount = new ApiSystemAccount(ehrId, organizationKey, userId, userName, userEmail);
-            apiSystemAccount = apiSystemRepository.GetByApiCombinationKey(apiSystemAccount);
-            if (apiSystemAccount != null) return;
-            // insert a new row
-            apiSystemAccount = new ApiSystemAccount(ehrId, organizationKey, userId, userName, userEmail);
-            apiSystemRepository.Save(apiSystemAccount);
-        }
-
         private void CheckSingleSignOnHandler(object sender, EventArgs e)
         {
-            var singleSignOn = SingleSignOnHelper.GetSingleSignOnParameters(sender);
             var app = sender as HttpApplication;
-            if (app == null)
+            NameValueCollection form = null;
+            var authHeader = app.Request.Headers["SSOAuth"];
+            if ( !string.IsNullOrEmpty ( authHeader ) )
             {
-                return;
+                form = FormDecode ( authHeader );
             }
-            var noTokenForm = new NameValueCollection(singleSignOn.Form);
-            noTokenForm.Remove("Token");
-            var contentString = FormEncode(noTokenForm);
-            Logger.Info("EHRId {0}", singleSignOn.EhrId);
-            Logger.Info("organizationId {0}", singleSignOn.OrganizationId);
-            Logger.Info("ApiKey {0}", singleSignOn.ApiKey);
-            var hash = SHA1Managed.Create().ComputeHash(Encoding.Unicode.GetBytes(contentString + "&ApiKey=" + singleSignOn.ApiKey));
-            var key = GetPublicKey(singleSignOn.EhrId);
-
-            var deformatter = new RSAPKCS1SignatureDeformatter(key);
-            deformatter.SetHashAlgorithm("SHA1");
-            if (singleSignOn.Form.Count <= 0)
+            else if (app.Request.Cookies.Keys.OfType<string>().Contains("SSOAuth"))
             {
-                app.Response.StatusCode = 401;
-                app.CompleteRequest();
-                return;
+                var ssoAuthCookie = app.Request.Cookies["SSOAuth"];
+                form = HttpUtility.ParseQueryString(Encoding.UTF8.GetString(Convert.FromBase64String(ssoAuthCookie.Value)));
             }
-
-            var signature = Convert.FromBase64String(singleSignOn.Form["Token"]);
-            var verify = deformatter.VerifySignature(hash, signature);
-            Logger.Info("verify is {0}", verify);
-
-            if (verify)
+            else switch ( app.Request.RequestType )
             {
-                AddApiSystemAccount(
-                    long.Parse(singleSignOn.EhrId), 
-                    long.Parse(singleSignOn.OrganizationId),
-                    GetKeyFromCollection(noTokenForm, "userId"),
-                    GetKeyFromCollection(noTokenForm, "userName"),
-                    GetKeyFromCollection(noTokenForm, "userEmail"));
-                CreatePrinciple(singleSignOn.Form);
-                return;
+                case "GET":
+                    {
+                        var content = app.Request.Url.Query;
+                        form = HttpUtility.ParseQueryString(content);
+                    }
+                    break;
+                case "PUT":
+                case "POST":
+                    form = app.Request.Form;
+                    break;
             }
 
-            app.Response.StatusCode = 401;
+            if (form != null && form.Keys.OfType<string>().Contains("Token"))
+            {
+                var signature = Convert.FromBase64String(form["Token"]);
+                var noTokenForm = new NameValueCollection(form);
+                noTokenForm.Remove("Token");
+                var contentString = FormEncode(noTokenForm);
+                var hash = SHA1Managed.Create().ComputeHash(Encoding.Unicode.GetBytes(contentString));
+
+                var key = GetPublicKey ();
+
+                var deformatter = new RSAPKCS1SignatureDeformatter(key);
+                deformatter.SetHashAlgorithm("SHA1");
+                var verify = deformatter.VerifySignature(hash, signature);
+                if (verify)
+                {
+                    CreatePrinciple(form);
+                    return;
+                }
+
+            }
+
+            app.Response.StatusCode = 404;
             app.CompleteRequest();
         }
 
-        private static string GetKeyFromCollection(NameValueCollection nameValueCollection, string key)
-        {
-            foreach (var item in nameValueCollection.AllKeys.Where(item => String.Equals(item, key, StringComparison.CurrentCultureIgnoreCase)))
-            {
-                return nameValueCollection.Get(item);
-            }
-            return string.Empty;
-        }
-
-        private static string GetSigningCertNameForEhr(string ehrId)
-        {
-            if (string.IsNullOrEmpty(ehrId))
-            {
-                return string.Empty;
-            }
-
-            var ehrRepository = IoC.CurrentContainer.Resolve<IEhrRepository>();
-            var ehr = ehrRepository.GetByKey(long.Parse(ehrId));
-            if (ehr == null || string.IsNullOrWhiteSpace(ehr.SigningCertName)) return string.Empty;
-            return ehr.SigningCertName;
-        }
-
-        private static AsymmetricAlgorithm GetPublicKey(string ehrId)
+        private static AsymmetricAlgorithm GetPublicKey ()
         {
             var my = new X509Store(StoreName.My, StoreLocation.LocalMachine);
             my.Open(OpenFlags.ReadOnly);
-            var signingCertName = GetSigningCertNameForEhr(ehrId);
+
             // Look for the certificate with specific subject 
             var publicKey = my.Certificates.Cast<X509Certificate2>()
-                .Where(cert => cert.Subject.Contains("CN=" + signingCertName))
+                .Where(cert => cert.Subject.Contains("CN=" + WebConfigurationManager.AppSettings["SigningCertName"]))
                 .Select(cert => cert.PublicKey)
                 .FirstOrDefault();
             if (publicKey == null)
@@ -138,26 +103,83 @@ namespace Asam.Ppc.Mvc.Infrastructure.Security
 
         private void CreatePrinciple(NameValueCollection form)
         {
-            var claims = (from string key in form.Keys
-                          where FormKeyClaimsMap.ContainsKey(key)
-                          select new Claim(FormKeyClaimsMap[key], form[key])).ToList();
-
-            var permissionClaimsManager = IoC.CurrentContainer.Resolve<IPermissionClaimsManager>();
-            var systemAccountRepository = IoC.CurrentContainer.Resolve<ISystemAccountRepository>();
-            // all the api users use the same emailid, and thus principle will be created for the same user
-            // this is mainly to avoid creating accounts for every api user
-            var nameIdentifier = WebConfigurationManager.AppSettings["ApiUserEmailId"];
-            var systemAccount = systemAccountRepository.GetByIdentifier(nameIdentifier);
-            var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(claims, "CustomSSO"));
-            permissionClaimsManager.IssueSystemPermissionClaims(claimsPrincipal, systemAccount);
-
-            HttpContext.Current.User = claimsPrincipal;
+            var claims = ( from string key in form.Keys
+                           where _formKeyClaimsMap.ContainsKey ( key )
+                           select new Claim ( _formKeyClaimsMap[key], form[key] ) ).ToList ();
+            HttpContext.Current.User = new ClaimsPrincipal(new ClaimsIdentity(claims, "CustomSSO"));
         }
 
         private static string FormEncode(NameValueCollection nameValueCollection)
         {
             return string.Join("&", nameValueCollection.Keys.OfType<string>().Select(key => string.Format("{0}={1}", key, nameValueCollection[key])));
         }
+
+        private static NameValueCollection FormDecode ( string formString )
+        {
+            if ( !string.IsNullOrWhiteSpace ( formString ) )
+            {
+                var nameValueCollection = new NameValueCollection ();
+                var parrseString = formString;
+                if (parrseString.StartsWith("?"))
+                {
+                    parrseString = parrseString.Substring ( 1, parrseString.Length - 1 );
+                }
+                FillFromString ( parrseString, nameValueCollection );
+                return nameValueCollection;
+            }
+            return null;
+        }
+
+        private static void FillFromString(string queryString, NameValueCollection collection)
+        {
+            var length = (queryString != null) ? queryString.Length : 0;
+            var i = 0;
+            while (i < length)
+            {
+                // find next & while noting first = on the way (and if there are more)
+
+                var startIndex = i;
+                var tailIndex = -1;
+
+                while (i < length)
+                {
+                    var ch = queryString[i];
+
+                    if (ch == '=')
+                    {
+                        if (tailIndex < 0)
+                            tailIndex = i;
+                    }
+                    else if (ch == '&')
+                    {
+                        break;
+                    }
+
+                    i++;
+                }
+
+                // extract the name / value pair 
+
+                String name = null;
+                String value = null;
+
+                if (tailIndex >= 0)
+                {
+                    name = queryString.Substring(startIndex, tailIndex - startIndex);
+                    value = queryString.Substring(tailIndex + 1, i - tailIndex - 1);
+                }
+                else
+                {
+                    value = queryString.Substring(startIndex, i - startIndex);
+                }
+
+                // add name / value pair to the collection
+
+                collection.Add(name, value);
+
+                i++;
+            }
+        } 
 
         public void Dispose()
         {

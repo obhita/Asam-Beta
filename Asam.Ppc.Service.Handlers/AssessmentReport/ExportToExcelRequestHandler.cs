@@ -313,7 +313,7 @@
                     column++;// = GetNextColumn ( column );
                 }
             }
-            catch ( Exception)
+            catch ( Exception e )
             {
                 
             }

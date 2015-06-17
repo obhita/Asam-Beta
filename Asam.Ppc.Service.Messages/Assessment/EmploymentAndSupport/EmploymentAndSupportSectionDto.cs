@@ -123,7 +123,7 @@ namespace Asam.Ppc.Service.Messages.Assessment.EmploymentAndSupport
         public TimeSpanPicker TrainingOrTechnicalEducationInMonths { get; set; }
 
         [Display ( Order = 8 )]
-        [Question ( QuestionType.ScriptedQuestion )]
+        [Question ( QuestionType.GeneralQuestion )]
         public string UsualOrLastOccupationDescription { get; set; }
 
         [Display ( Order = 9 )]

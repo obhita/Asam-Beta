@@ -12,8 +12,6 @@ using Asam.Ppc.Service.Messages.Core;
 
 namespace Asam.Ppc.Service.Messages.Assessment
 {
-    using Review;
-
     public class AssessmentDto : KeyedDataTransferObject
     {
         public PatientDto Patient { get; private set; }
@@ -47,8 +45,6 @@ namespace Asam.Ppc.Service.Messages.Assessment
         public PsychologicalSectionDto PsychologicalSection { get; set; }
 
         public CompletionSectionDto CompletionSection { get; set; }
-
-        public ReviewSectionDto ReviewSection { get; set; }
 
     }
 }

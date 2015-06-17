@@ -10,8 +10,5 @@
         public string AssessmentId { get; set; }
         public string Timestamp { get; set; }
         public string Token { get; set; }
-        public string ApiKey { get; set; }
-        public long EhrId { get; set; }
-        public long OrganizationId { get; set; }
     }
 }

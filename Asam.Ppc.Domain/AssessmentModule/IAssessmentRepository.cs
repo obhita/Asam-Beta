@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Pillar.Domain;
+using Pillar.Domain.Attributes;
 
 namespace Asam.Ppc.Domain.AssessmentModule
 {

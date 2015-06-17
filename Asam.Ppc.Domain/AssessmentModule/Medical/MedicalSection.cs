@@ -123,7 +123,7 @@ namespace Asam.Ppc.Domain.AssessmentModule.Medical
         /// <value>
         /// The hiv aids medical treatment status.
         /// </value>
-        public virtual YesNoNotApplicableNotSure HivAidsMedicalTreatmentStatus { get; protected set; }
+        public virtual YesNoNotSure HivAidsMedicalTreatmentStatus { get; protected set; }
 
         /// <summary>
         /// Gets the importance of treatment for medical problems.

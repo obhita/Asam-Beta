@@ -118,49 +118,49 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Level_05" xml:space="preserve">
-    <value>Level 0.5 - Early Intervention</value>
+    <value>Level 0.5</value>
   </data>
   <data name="Level_1" xml:space="preserve">
-    <value>Level 1 - Outpatient Treatment</value>
+    <value>Level 1</value>
   </data>
   <data name="Level_1WM" xml:space="preserve">
-    <value>Level 1-WM - Ambulatory Withdrawal Management Without Extended On-site Monitoring Withdrawal Management</value>
+    <value>Level 1-WM</value>
   </data>
   <data name="Level_2_1" xml:space="preserve">
-    <value>Level 2.1 - Intensive Outpatient Treatment</value>
+    <value>Level 2.1</value>
   </data>
   <data name="Level_2_5" xml:space="preserve">
-    <value>Level 2.5 - Partial Hospitalization Treatment</value>
+    <value>Level 2.5</value>
   </data>
   <data name="Level_2_WM" xml:space="preserve">
-    <value>Level 2-WM - Ambulatory Withdrawal Wanagement With Extended On-site Monitoring Withdrawal Management</value>
+    <value>Level 2-WM</value>
   </data>
   <data name="Level_3_1" xml:space="preserve">
-    <value>Level 3.1 - Clinically Managed Low-Intensity Residential Treatment</value>
+    <value>Level 3.1</value>
   </data>
   <data name="Level_3_2_WM" xml:space="preserve">
-    <value>Level 3.2-WM - Clinically Managed Residential Withdrawal Management</value>
+    <value>Level 3.2-WM</value>
   </data>
   <data name="Level_3_3" xml:space="preserve">
-    <value>Level 3.3 - Clinically Managed Population-specific, High-Intensity Residential Treatment</value>
+    <value>Level 3.3</value>
   </data>
   <data name="Level_3_5" xml:space="preserve">
-    <value>Level 3.5 - Clinically Managed High-Intensity Residential Treatment</value>
+    <value>Level 3.5</value>
   </data>
   <data name="Level_3_7" xml:space="preserve">
-    <value>Level 3.7 - Medically Monitored Intensive Inpatient Treatment</value>
+    <value>Level 3.7</value>
   </data>
   <data name="Level_3_7_WM" xml:space="preserve">
-    <value>Level 3.7-WM - Medically Monitored Inpatient Withdrawal Management</value>
+    <value>Level 3.7-WM</value>
   </data>
   <data name="Level_4" xml:space="preserve">
-    <value>Level 4 - Medically Managed Intensive Inpatient Treatment</value>
+    <value>Level 4</value>
   </data>
   <data name="Level_4_WM" xml:space="preserve">
-    <value>Level 4-WM -  Medically Managed Intensive Inpatient Withdrawal Management</value>
+    <value>Level 4-WM</value>
   </data>
   <data name="Level_OTP" xml:space="preserve">
-    <value>Level OTS - Opioid Treatment Service </value>
+    <value>Level OTP</value>
   </data>
   <data name="None" xml:space="preserve">
     <value>None</value>

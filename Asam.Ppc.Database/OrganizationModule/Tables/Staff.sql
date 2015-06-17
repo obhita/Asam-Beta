@@ -21,8 +21,6 @@
 );
 
 
-
-
 GO
 CREATE NONCLUSTERED INDEX [Staff_Team_FK_IDX]
     ON [OrganizationModule].[Staff]([TeamKey] ASC);

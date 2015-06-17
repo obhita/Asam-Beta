@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Web;
-using System.Web.Configuration;
 using System.Web.Http;
 using System.Web.Http.Validation.Providers;
 using System.Web.Mvc;
@@ -14,7 +13,6 @@ using Asam.Ppc.Mvc.Infrastructure.Service;
 using Asam.Ppc.Mvc4.App_Start;
 using Asam.Ppc.Mvc4.Controllers;
 using Asam.Ppc.Service.Messages.Common.Lookups;
-using Newtonsoft.Json;
 using NLog;
 
 namespace Asam.Ppc.Mvc4
@@ -61,16 +59,9 @@ namespace Asam.Ppc.Mvc4
                 typeof ( System.Web.Http.Validation.ModelValidatorProvider ), v => v is InvalidModelValidatorProvider );
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
                 new AllowPrivateSetterContractResolver ( );
-                     
-            // IsApiMode appsettings will be set to true or the key will be added only for the api mode. 
-            // FederatedAuthentication should be disabled for the api mode
-            bool isNotApiMode = string.IsNullOrEmpty(WebConfigurationManager.AppSettings["IsApiMode"]) ||
-                             WebConfigurationManager.AppSettings["IsApiMode"].Equals("false");
-            if (isNotApiMode)
-            {
-                FederatedAuthentication.SessionAuthenticationModule.SessionSecurityTokenReceived +=
-                    SessionAuthenticationModule_SessionSecurityTokenReceived;
-            }
+
+            //FederatedAuthentication.SessionAuthenticationModule.SessionSecurityTokenReceived +=
+            //    SessionAuthenticationModule_SessionSecurityTokenReceived;
 
             //ServicePointManager.ServerCertificateValidationCallback += (o, c, ch, er) => true;
         }

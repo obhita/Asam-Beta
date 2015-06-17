@@ -1,11 +1,12 @@
-﻿using System.Net;
+﻿using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Web.Mvc;
 using Agatha.Common;
 using Asam.Ppc.Mvc.Infrastructure.Security;
-using Asam.Ppc.Mvc.Infrastructure.Service;
 using Asam.Ppc.Mvc4.Models;
 using Asam.Ppc.Service.Messages.Common;
 using Asam.Ppc.Service.Messages.Core;
@@ -22,7 +23,6 @@ namespace Asam.Ppc.Mvc4.Controllers.Api
             _patientAccessControlManager = patientAccessControlManager;
         }
 
-        [BusinessTransactionLogFilter]
         public async Task<PatientDto> Get(long key)
         {
             if (_patientAccessControlManager.CanAccessPatient(key))
@@ -42,8 +42,7 @@ namespace Asam.Ppc.Mvc4.Controllers.Api
             return null;
         }
 
-        [BusinessTransactionLogFilter]
-        public async Task<KeyResult> Post(PatientDto patientDto)
+        public async Task<KeyResult> Post (PatientDto patientDto)
         {
             if ( ModelState.IsValid )
             {
@@ -56,7 +55,6 @@ namespace Asam.Ppc.Mvc4.Controllers.Api
             return null;
         }
 
-        [BusinessTransactionLogFilter]
         public async Task<KeyResult> Put(PatientDto patientDto)
         {
             if ( _patientAccessControlManager.CanAccessPatient ( patientDto.Key ) )

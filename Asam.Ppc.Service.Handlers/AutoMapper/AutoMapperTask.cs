@@ -1,10 +1,4 @@
-﻿//using Asam.Ppc.Domain.EhrModule;
-
-using Asam.Ppc.Domain.EhrModule;
-using Asam.Ppc.Domain.Scoring.ScoringModule;
-using Asam.Ppc.Service.Messages.Ehr;
-
-namespace Asam.Ppc.Service.Handlers.AutoMapper
+﻿namespace Asam.Ppc.Service.Handlers.AutoMapper
 {
     #region Using Statements
 
@@ -61,10 +55,8 @@ namespace Asam.Ppc.Service.Handlers.AutoMapper
         public void Execute ()
         {
             CreateAsamPpcAssessmentMapping ();
-            CreateAsamPpcAssessmentScoreMappings();
             CreatePatientMappings ();
             CreateOrganizationMappings ();
-            CreateEhrMappings();
             CreateSecurityMappings ();
         }
 
@@ -76,7 +68,6 @@ namespace Asam.Ppc.Service.Handlers.AutoMapper
         {
             Mapper.CreateMap<DateTimeOffset, DateTime> ().ConvertUsing<DateTimeTypeConverter> ();
             Mapper.CreateMap<uint?, TimeSpanPicker>().ConstructUsing(src => src == null ? null : new TimeSpanPicker(src / 12,src % 12));
-            Mapper.CreateMap<AssessmentMetaData, AssessmentMetaDataDto>();
 
             Mapper.CreateMap<Lookup, LookupDto> ();
             Mapper.CreateMap<Money, MoneyDto> ()
@@ -131,19 +122,9 @@ namespace Asam.Ppc.Service.Handlers.AutoMapper
                   .ForMember ( dest => dest.PatientLastName, opt => opt.MapFrom ( src => src.Patient.Name.LastName ) );
         }
 
-        private void CreateAsamPpcAssessmentScoreMappings()
-        {
-            Mapper.CreateMap<AssessmentScore, AssessmentScoreDto>();
-        }
-
         private void CreatePatientMappings ()
         {
             Mapper.CreateMap<Patient, PatientDto> ();
-        }
-
-        private void CreateEhrMappings()
-        {
-            Mapper.CreateMap<Ehr, EhrDto>();
         }
 
         private void CreateOrganizationMappings ()
@@ -156,9 +137,6 @@ namespace Asam.Ppc.Service.Handlers.AutoMapper
                 .ForMember(dest => dest.OriginalHash, opt => opt.MapFrom(src => src.Key));
             Mapper.CreateMap<OrganizationPhone, OrganizationPhoneDto>()
                 .ForMember(dest => dest.OriginalHash, opt => opt.MapFrom(src => src.Key));
-
-            Mapper.CreateMap<OrganizationApiKey, OrganizationApiKeyDto>()
-                .ForMember(dest => dest.ApiKey, opt => opt.MapFrom(src => src.Key));
 
             Mapper.CreateMap<Organization, OrganizationDto>();
             Mapper.CreateMap<Organization, OrganizationSummaryDto>()

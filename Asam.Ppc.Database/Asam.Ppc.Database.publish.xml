@@ -8,7 +8,7 @@
     <ProfileVersionNumber>1</ProfileVersionNumber>
     <ScriptDatabaseOptions>True</ScriptDatabaseOptions>
     <BlockOnPossibleDataLoss>True</BlockOnPossibleDataLoss>
-    <CreateNewDatabase>False</CreateNewDatabase>
+    <CreateNewDatabase>True</CreateNewDatabase>
   </PropertyGroup>
   <ItemGroup>
     <SqlCmdVariable Include="UserLogin">

@@ -14,22 +14,10 @@
 @if (genericType == typeof (LookupDto))
 {
     var items = ViewData["LookupItems"] as IList<LookupDto>;
-    if ( items != null )
+    var codeNoneItem = items.FirstOrDefault(i => i.Code == "None");
+    if (codeNoneItem != null)
     {
-        var codeNoneItem = items.FirstOrDefault ( i => i.Code == "None" );
-        if ( codeNoneItem != null )
-        {
-            items.Remove ( codeNoneItem );
-        }
-    }
-    else
-    {
-        var itemsList = new List<LookupDto> ();
-        if ( Model != null && Model.OfType<LookupDto> ().Any () )
-        {
-            itemsList.AddRange(Model.OfType<LookupDto>());
-        }
-        items = itemsList;
+        items.Remove(codeNoneItem);
     }
     var wrapperClass = "multiselect-wrapper";
     if (Html.HasCheckAllAttribute())

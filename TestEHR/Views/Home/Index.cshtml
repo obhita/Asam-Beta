@@ -10,13 +10,11 @@
         <div>
             @using ( Html.BeginForm ( "ChangeBaseUri", "Home" ) )
             {
-                <input style="width: 500px" type="text" id="apiKey" name="apiKey" value="@Model.ApiKey"/>
                 <input style="width: 500px" type="text" id="baseUri" name="baseUri" value="@Model.BaseUri"/>
                 <input type="submit" value="Change"/>
                 <div>
                     <a href="#" onclick="DevClick()">Dev</a>
                     <a style="margin-left: 15px" href="#" onclick="QAClick()">QA</a>
-                    <a style="margin-left: 15px" href="#" onclick="DemoClick()">Demo</a>
                 </div>
             }
         </div>
@@ -35,7 +33,7 @@
                     <div style="float: right">
                         @Html.ActionLink( "Create Assessment", "CreateAssessment", "Home", new { id = patient.PatientKey } , null )
                     </div>
-                    <div></div>
+                    <div class="clear"></div>
                     <hr/>
                 </div>
             }
@@ -69,36 +67,27 @@
             @Html.TextAreaFor( m => m.AssessmentData )
             @using ( Html.BeginForm ( "GetAssessmentData", "Home" ) )
             {
-                <label>Patient Id</label>
-                <input id="patientId" name="patientId" />
-                <label>Assessment Id</label>
                 <input id="assessmentId" name="assessmentId"/>
                 <input type="submit" value="Get Data" />
             }
         </div>
         <div>
             <h2>Get Assessment Report:</h2>
-            @using (Html.BeginForm("GetAssessmentReport", "Home"))
+            @using ( Html.BeginForm ( "GetAssessmentReport", "Home" ) )
             {
-                <label>Patient Id</label>
-                <input id="patientId" name="patientId" />
-                <label>Assessment Id</label>
-                <input id="assessmentId" name="assessmentId" />
+                <input id="assessmentId" name="assessmentId"/>
                 <input type="submit" value="Get Report" />
             }
         </div>
+        
         <script>
             function DevClick() {
                 var text = document.getElementById("baseUri");
-                text.value = "https://localhost:44303/";
+                text.value = "https://localhost:44300/";
             }
             function QAClick() {
                 var text = document.getElementById("baseUri");
-                text.value = "https://asam-api-qa.feisystems.com/";
-            }
-            function DemoClick() {
-                var text = document.getElementById("baseUri");
-                text.value = "https://asam-api-demo.feisystems.com/";
+                text.value = "https://asam-ppc-qa.feisystems.com/";
             }
         </script>
     </body>

@@ -63,8 +63,8 @@ namespace Asam.Ppc.Infrastructure.Services
 
             if ( Logger.IsTraceEnabled )
             {
-                //Logger.Trace ( "Responses: {0}",
-                //    JsonConvert.SerializeObject ( responses, new JsonSerializerSettings {ContractResolver = new SerializableContractResolver {IgnoreSerializableAttribute = true}} ) );
+                Logger.Trace ( "Responses: {0}",
+                    JsonConvert.SerializeObject ( responses, new JsonSerializerSettings {ContractResolver = new SerializableContractResolver {IgnoreSerializableAttribute = true}} ) );
             }
 
             if ( !_validationFailureOccurred && session.Transaction.IsActive )
@@ -93,9 +93,8 @@ namespace Asam.Ppc.Infrastructure.Services
             session.BeginTransaction ();
             if ( Logger.IsTraceEnabled )
             {
-                // commented as it was throwing serializing error when MoneyDto type questions aren't answered
-                //Logger.Trace ( "Requests: {0}",
-                    //JsonConvert.SerializeObject ( requests, new JsonSerializerSettings { ContractResolver = new SerializableContractResolver {IgnoreSerializableAttribute = true}, NullValueHandling = NullValueHandling.Ignore} ) );
+                Logger.Trace ( "Requests: {0}",
+                    JsonConvert.SerializeObject ( requests, new JsonSerializerSettings { ContractResolver = new SerializableContractResolver {IgnoreSerializableAttribute = true}, NullValueHandling = NullValueHandling.Ignore} ) );
             }
             base.BeforeProcessing ( requests );
         }

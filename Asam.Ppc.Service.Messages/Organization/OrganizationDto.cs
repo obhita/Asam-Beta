@@ -14,7 +14,6 @@
         public string Name { get; set; }
         public IEnumerable<OrganizationAddressDto> OrganizationAddresses { get; set; }
         public IEnumerable<OrganizationPhoneDto> OrganizationPhones { get; set; }
-        public bool HasApiKey { get; set; }
 
         #endregion
     }

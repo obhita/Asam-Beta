@@ -17,7 +17,7 @@
             <div class="clear"></div>
         </div>
     </div>
-        @*<div class="question-root Ethnicity">
+        <div class="question-root Ethnicity">
             <div class="root-label">
                 @Html.LabelFor( m => m.Ethnicity )
             </div>
@@ -40,8 +40,8 @@
                     @Html.ExtendedValidationMessage("Religion")
                 <div class="clear"></div>
             </div>
-        </div>*@
-    @foreach (var property in @Html.GetPropertiesToRender())
+        </div>
+   @* @foreach (var property in @Html.GetPropertiesToRender())
     {
         <div class="question-root @property.PropertyName">
             <div class="root-label">
@@ -63,7 +63,7 @@
                 <div class="clear"></div>
             </div>
         </div>
-    }
+    }*@
     <input class="hidden" id="assessmentId" name="assessmentId" value="@ViewData["AssessmentId"]" />
 </div>
 

@@ -88,7 +88,7 @@ namespace Asam.Ppc.Domain.Tests.AssessmentModule.Scoring.Dimension2Biomedical
             var interviewerRatingOfPatientNeedForMedicalTreatment = new ScaleOf0To8(TestContext.GetUInt32("InterviewerRatingOfPatientNeedForMedicalTreatment"));
             var pregnantStatus = TestContext.GetLookup<YesNoNotSure>("PregnantStatus");
             var highRiskPregnancyStatus = TestContext.GetLookup<HighRiskPregnancyStatus>("HighRiskPregnancyStatus");
-            var hivAidsMedicalTreatmentStatus = TestContext.GetLookup<YesNoNotApplicableNotSure>("HivAidsMedicalTreatmentStatus");
+            var hivAidsMedicalTreatmentStatus = TestContext.GetLookup<YesNoNotSure>("HivAidsMedicalTreatmentStatus");
             var sexuallyTransmittedDiseaseStatus = TestContext.GetLookup<YesNoNotSure>("SexuallyTransmittedDiseaseStatus");
             var multipleSeizuresInPast24Hours = TestContext.GetLookup<YesNoNotSure>("MultipleSeizuresInPast24Hours");
             var hadDeliriumTremorsInPast24Hours = TestContext.GetLookup<YesNoNotSure>("HadDeliriumTremorsInPast24Hours");

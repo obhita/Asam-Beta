@@ -36,12 +36,6 @@
             return query.SingleOrDefault();
         }
 
-        public void Save(SystemAccount systemAccount)
-        {
-            MakePersistent(systemAccount);
-            Session.Flush();
-        }
-
         #endregion
     }
 }

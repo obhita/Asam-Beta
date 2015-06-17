@@ -39,7 +39,7 @@ namespace Asam.Ppc.Mvc4
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/browser-reset.css",
-                "~/Content/Site.css",
+                "~/Content/site.css",
                 "~/Content/960Grid.css",
                 "~/Content/asam-controls.css"));
 

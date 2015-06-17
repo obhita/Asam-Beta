@@ -91,7 +91,6 @@
                     response.Completeness = completenessResult;
                 }
 
-
                 response.IsSubmitted = assessment.IsSubmitted;
                 sectionDto.Key = assessment.Key;
                 Logger.Info ( "User {0}-{1} accessed Section {2} - {3}", UserContext.SystemAccountKey, UserContext.UserName, request.Section, request.SubSection );

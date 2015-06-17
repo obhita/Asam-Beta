@@ -60,14 +60,6 @@
         public virtual string Name { get; protected set; }
 
         /// <summary>
-        ///     Gets the EhrKey.
-        /// </summary>
-        /// <value>
-        ///     The EhrKey.
-        /// </value>
-        public virtual long EhrKey { get; protected set; }
-
-        /// <summary>
         ///     Gets the organization addresses.
         /// </summary>
         /// <value>
@@ -90,14 +82,6 @@
         }
 
         #endregion
-
-        /// <summary>
-        ///     Gets the organization ApiKey.
-        /// </summary>
-        /// <value>
-        ///     The organization ApiKey.
-        /// </value>
-        public virtual string ApiKey { get; protected set; }
 
         #region Public Methods and Operators
 
@@ -173,23 +157,12 @@
             }
         }
 
+
         public virtual void ReviseName(string name)
         {
             Check.IsNotNullOrWhitespace ( name, () => Name );
 
             Name = name;
-        }
-
-        public virtual void AddApiKey(string apiKey)
-        {
-            
-            Check.IsNotNullOrWhitespace(apiKey, () => ApiKey);
-            ApiKey = apiKey;
-        }
-
-        public virtual void AddEhrKey(int ehrKey)
-        { 
-            EhrKey = ehrKey;
         }
 
         #endregion

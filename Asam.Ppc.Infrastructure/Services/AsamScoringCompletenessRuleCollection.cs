@@ -3,9 +3,6 @@ namespace Asam.Ppc.Infrastructure.Services
     #region Using Statements
 
     using System.Linq;
-
-    using Asam.Ppc.Primitives;
-
     using Pillar.FluentRuleEngine;
     using Ppc.Domain.AssessmentModule;
     using Ppc.Domain.AssessmentModule.DrugAndAlcohol;
@@ -63,7 +60,7 @@ namespace Asam.Ppc.Infrastructure.Services
                                         .NotNull ();
                                 } );
             ShouldRunWhen ( a => a.DrugAndAlcoholSection.AdditionalAddictionAndTreatmentItems.NumberOfTimesOverdosedOnDrugs > 0, () => NewPropertyRule(() => AdditionalAddictionAndTreatmentItemsSubstanceOverdoseInPast24HoursRule).WithProperty(a => a.DrugAndAlcoholSection.AdditionalAddictionAndTreatmentItems.SubstanceOverdoseInPast24Hours).NotNull());
-            ShouldRunWhen ( a => a.DrugAndAlcoholSection.UsedSubstances.SubstanceHasEverUsed.Any ( s => s != SubstanceCategory.NoHistory ),
+            ShouldRunWhen ( a => a.DrugAndAlcoholSection.UsedSubstances.SubstanceHasEverUsed.Any (),
                             () =>
                                 {
                                     NewPropertyRule ( () => AddictionTreatmentHistoryPreviousSubstanceUseTreatmentRule )
@@ -126,25 +123,15 @@ namespace Asam.Ppc.Infrastructure.Services
                     NewPropertyRule(() => AlcoholUseLastUsedToIntoxificationRule).WithProperty(a => a.DrugAndAlcoholSection.AlcoholUse.LastUsedToIntoxification).NotNull();
                     NewPropertyRule(() => AlcoholUseNumberOfDaysIntoxicatedInPast30DaysRule).WithProperty(a => a.DrugAndAlcoholSection.AlcoholUse.NumberOfDaysIntoxicatedInPast30Days).NotNull();
                 });
-
-            ShouldRunWhen ( a => a.DrugAndAlcoholSection.UsedSubstances.SubstanceHasEverUsed.Any ( s => s == SubstanceCategory.Alcohol )
-                                    && a.DrugAndAlcoholSection.AlcoholUse.LastUsed != null
-                                    && ( ( a.DrugAndAlcoholSection.AlcoholUse.LastUsed.UnitOfTime == UnitOfTime.Hours && a.DrugAndAlcoholSection.AlcoholUse.LastUsed.Value < 720 ) ||
-                                    ( a.DrugAndAlcoholSection.AlcoholUse.LastUsed.UnitOfTime == UnitOfTime.Days && a.DrugAndAlcoholSection.AlcoholUse.LastUsed.Value <= 30 ) ||
-                                    ( a.DrugAndAlcoholSection.AlcoholUse.LastUsed.UnitOfTime == UnitOfTime.Weeks && a.DrugAndAlcoholSection.AlcoholUse.LastUsed.Value <= 4 ) ||
-                                    ( a.DrugAndAlcoholSection.AlcoholUse.LastUsed.UnitOfTime == UnitOfTime.Months && a.DrugAndAlcoholSection.AlcoholUse.LastUsed.Value <= 1 ) ),
-                           ( ) =>
-                           {
-                               NewPropertyRule ( ( ) => AlcoholUseNumberOfDaysUsedInPast30DaysRule )
-                                   .WithProperty ( a => a.DrugAndAlcoholSection.AlcoholUse.NumberOfDaysUsedInPast30Days )
-                                   .NotNull ();
-                           } );
             ShouldRunWhen ( a => a.DrugAndAlcoholSection.UsedSubstances.SubstanceHasEverUsed.Any ( s => s == SubstanceCategory.Alcohol ),
                             () =>
                                 {
                                     NewPropertyRule(() => AlcoholHasStrongUrgesRule)
                                         .WithProperty(a => a.DrugAndAlcoholSection.AlcoholUse.HasStrongUrges)
                                         .NotNull();
+                                    NewPropertyRule ( () => AlcoholUseNumberOfDaysUsedInPast30DaysRule )
+                                        .WithProperty ( a => a.DrugAndAlcoholSection.AlcoholUse.NumberOfDaysUsedInPast30Days )
+                                        .NotNull ();
                                     NewPropertyRule ( () => AlcoholUseNumberOfDaysWithSubstanceProblemsInLast30DaysRule )
                                         .WithProperty ( a => a.DrugAndAlcoholSection.AlcoholUse.NumberOfDaysWithSubstanceProblemsInLast30Days )
                                         .NotNull ();
@@ -535,7 +522,7 @@ namespace Asam.Ppc.Infrastructure.Services
                 NewPropertyRule(() => StimulantUseNumberOfDaysUsedInPast30DaysRule).WithProperty(a => a.DrugAndAlcoholSection.StimulantUse.NumberOfDaysUsedInPast30Days).NotNull();
             });
             ShouldRunWhen(a => a.DrugAndAlcoholSection.StimulantUse.ExperiencesWithdrawalSickness == true, () => NewPropertyRule(() => StimulantUseUseSubstanceToPreventWithdrawalSicknessRule).WithProperty(a => a.DrugAndAlcoholSection.StimulantUse.UseSubstanceToPreventWithdrawalSickness).NotNull());
-            NewPropertyRule(() => UsedSubstancesSubstanceHasEverUsedRule).WithProperty(a => a.DrugAndAlcoholSection.UsedSubstances.SubstanceHasEverUsedCount).GreaterThan(0);
+            NewPropertyRule(() => UsedSubstancesSubstanceHasEverUsedRule).WithProperty(a => a.DrugAndAlcoholSection.UsedSubstances.SubstanceHasEverUsed).NotNull();
             NewPropertyRule(() => EmploymentAndSupportSectionAmountOfMoneyInPast30DaysFromEmploymentRule).WithProperty(a => a.EmploymentAndSupportSection.AmountOfMoneyInPast30DaysFromEmployment).NotNull();
             NewPropertyRule(() => EmploymentAndSupportSectionAmountOfMoneyInPast30DaysFromIllegalMeansRule).WithProperty(a => a.EmploymentAndSupportSection.AmountOfMoneyInPast30DaysFromIllegalMeans).NotNull();
             NewPropertyRule(() => EmploymentAndSupportSectionConcernAboutEmploymentProblemsInPast30DaysRule).WithProperty(a => a.EmploymentAndSupportSection.ConcernAboutEmploymentProblemsInPast30Days).NotNull();

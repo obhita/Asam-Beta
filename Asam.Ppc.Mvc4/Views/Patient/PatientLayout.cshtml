@@ -11,9 +11,9 @@
             <table id="patientSearchDataTable">
                 <thead>
                     <tr>
-                        <th width="25%">First Name</th>
+                        @*<th width="25%">First Name</th>
                         <th width="40%">Last Name</th>
-                        <th width="20%">Gender</th>
+                        <th width="20%">Gender</th>*@
                         <th width="100%">Identifier</th>
                         <th width="0%"></th>
                     </tr>
@@ -23,31 +23,24 @@
             </table>
         </div>
         <div class="clear"></div>
-        @if (!Html.IsApiMode())
-        {
-            <div class="Jerry">
-                @Html.ActionLink("Create Patient", "Create", "Patient", new { assessmentId = ViewData["assessmentId"] }, new { @class = "ui-button" })
-            </div>
-        }
+        <div class="Jerry">
+            @Html.ActionLink( "Create Patient", "Create", "Patient", new {assessmentId = ViewData["assessmentId"]}, new {@class = "ui-button"} )
+        </div>
         </div>
     }
 }
-
-@if (!Html.IsApiMode())
+@using (Html.BeginForm("Edit", "Patient", null, FormMethod.Post, new { id = "patientForm" }))
 {
-    using (Html.BeginForm("Edit", "Patient", null, FormMethod.Post, new { id = "patientForm" }))
-    {
-        <div id="patientHeader" class="page-header">
-            @Html.DisplayFor(m => ViewData["Patient"])
-        </div>
-        <br class="clear" />
-        <div id="patientContent">
-            @RenderBody()
-        </div>
-        <div id="patientFooter" class="page-footer">
-            @RenderSection("footerBody", required: false)
-        </div>
-    }
+    <div id="patientHeader" class="page-header">
+        @Html.DisplayFor( m => ViewData["Patient"] )
+    </div>
+    <br class="clear" />
+    <div id="patientContent">
+        @RenderBody()
+    </div>
+    <div id="patientFooter" class="page-footer">
+        @RenderSection( "footerBody", required: false )
+    </div>
 }
 
 @section scripts
@@ -94,7 +87,7 @@
             });
             
             function fixPatientSizes() {
-                $('#patientContent').height($(window).height() - $('#patientHeader').height() - $('#patientFooter').height() - $('#asamFooter').height());
+                $('#patientContent').height($(window).height() - $('#patientHeader').height() - $('#patientFooter').height());
             }
             
             fixPatientSizes();

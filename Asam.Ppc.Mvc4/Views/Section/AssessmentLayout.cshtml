@@ -6,11 +6,6 @@
 @{
     Layout = Request.IsAjaxRequest () ? "" : "~/Views/Shared/_Layout.cshtml";
 
-    if (Layout != string.Empty && Html.IsApiMode())
-    {
-        Layout = "~/Views/Shared/_LayoutApi.cshtml";
-    }
-    
     var assessmentViewModel = ViewData["AssessmentViewModel"] as AssessmentViewModel;
 
     var assessmentKey = Model is long ? Model : Model.Key;
@@ -90,10 +85,9 @@
     <div id="assessmentHeader" class="page-header">
         @Html.DisplayFor( m => patient )
         <div class="tools">
-            @*<a target="_blank" class="export-btn" href="@Url.Content( "~/Assessment/GetPrintView/" + assessmentKey )">Print</a>
-            <a target="_blank" class="export-btn dev" href="@Url.Content( "~/api/Assessment/CsvFile/" + assessmentKey )">Export to CSV</a>
-            <a target="_blank" class="export-btn dev" href="@Url.Content( "~/api/Assessment/GetAssessmentExcelFile/" + assessmentKey )">Export to Excel</a>
-            <a target="_blank" class="export-btn dev" href="@Url.Content( "~/api/Assessment/GetAssessmentScoreExcelFile/" + assessmentKey )">Export Score to Excel</a>*@
+            <a target="_blank" class="export-btn" href="@Url.Content( "~/api/Assessment/CsvFile/" + assessmentKey )">Export to CSV</a>
+            <a target="_blank" class="export-btn" href="@Url.Content( "~/api/Assessment/GetAssessmentExcelFile/" + assessmentKey )">Export to Excel</a>
+            <a target="_blank" class="export-btn" href="@Url.Content( "~/api/Assessment/GetAssessmentScoreExcelFile/" + assessmentKey )">Export Score to Excel</a>
         </div>
     </div>
     <br class="clear" />

@@ -37,43 +37,10 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
-    <OutputPath>bin\Test\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Demo|AnyCPU'">
-    <OutputPath>bin\Demo\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod|AnyCPU'">
-    <OutputPath>bin\Prod\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Iesi.Collections">
-      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate">
-      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Pillar.Common">
       <HintPath>..\lib\Pillar\Pillar.Common.dll</HintPath>
@@ -108,10 +75,6 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="AssessmentModule\AssessmentMetaData.cs" />
-    <Compile Include="AssessmentModule\AssessmentMetaDataFactory.cs" />
-    <Compile Include="AssessmentModule\IAssessmentMetaDataFactory.cs" />
-    <Compile Include="AssessmentModule\IAssessmentMetaDataRepository.cs" />
     <Compile Include="AssessmentModule\Assessment.cs" />
     <Compile Include="AssessmentModule\AssessmentFactory.cs" />
     <Compile Include="AssessmentModule\AssessmentUsedSubstancesChangedAndVisitedEventHandler.cs" />
@@ -243,15 +206,9 @@
     <Compile Include="AssessmentModule\Review\ReviewSection.cs" />
     <Compile Include="AssessmentModule\Review\TreatmentRating.cs" />
     <Compile Include="AssessmentModule\RevisionBase.cs" />
-    <Compile Include="BillingModule\BillingTransaction.cs" />
-    <Compile Include="BillingModule\BillingTransactionFactory.cs" />
-    <Compile Include="BillingModule\IBillingTransactionFactory.cs" />
-    <Compile Include="BillingModule\IBillingTransactionRepository.cs" />
     <Compile Include="CommonModule\AggregateRootBase.cs" />
     <Compile Include="CommonModule\CodedConceptLookupBase.cs" />
     <Compile Include="CommonModule\IAuditable.cs" />
-    <Compile Include="CommonModule\IAssessmentMetaDataMember.cs" />
-    <Compile Include="CommonModule\IEhrMember.cs" />
     <Compile Include="CommonModule\IOrganizationMember.cs" />
     <Compile Include="CommonModule\IValueObject.cs" />
     <Compile Include="CommonModule\Lookup.cs" />
@@ -269,18 +226,6 @@
     <Compile Include="CommonModule\ValueObjects\Currency.cs" />
     <Compile Include="CommonModule\ValueObjects\Money.cs" />
     <Compile Include="CommonModule\ValueObjects\Phone.cs" />
-    <Compile Include="EhrModule\Ehr.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="EhrModule\EhrFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="EhrModule\IEhrFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="EhrModule\IEhrRepository.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Friends.cs" />
     <Compile Include="ListExtensions.cs" />
     <Compile Include="OrganizationModule\IOrganizationFactory.cs" />
@@ -290,7 +235,6 @@
     <Compile Include="OrganizationModule\ITeamFactory.cs" />
     <Compile Include="OrganizationModule\ITeamRepository.cs" />
     <Compile Include="OrganizationModule\Organization.cs" />
-    <Compile Include="OrganizationModule\OrganizationApiKeyy.cs" />
     <Compile Include="OrganizationModule\OrganizationAddress.cs" />
     <Compile Include="OrganizationModule\OrganizationAddressType.cs" />
     <Compile Include="OrganizationModule\OrganizationFactory.cs" />
@@ -312,13 +256,11 @@
     <Compile Include="SecurityModule\IRoleFactory.cs" />
     <Compile Include="SecurityModule\IRoleRepository.cs" />
     <Compile Include="SecurityModule\ISystemAccountFactory.cs" />
-    <Compile Include="SecurityModule\IApiSystemAccountRepository.cs" />
     <Compile Include="SecurityModule\ISystemAccountRepository.cs" />
     <Compile Include="SecurityModule\Role.cs" />
     <Compile Include="SecurityModule\RoleFactory.cs" />
     <Compile Include="SecurityModule\RoleSystemPermission.cs" />
     <Compile Include="SecurityModule\RoleType.cs" />
-    <Compile Include="SecurityModule\ApiSystemAccount.cs" />
     <Compile Include="SecurityModule\SystemAccount.cs" />
     <Compile Include="SecurityModule\SystemAccountFactory.cs" />
     <Compile Include="SecurityModule\SystemAccountRole.cs" />

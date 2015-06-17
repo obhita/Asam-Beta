@@ -121,7 +121,7 @@
     <value>No</value>
   </data>
   <data name="NonopioidSubstitution" xml:space="preserve">
-    <value>Non-opioid substitution (i.e. detox with drugs other than opioids)</value>
+    <value>Non-opioid substitution (i.e. detox with drugs other than opiates)</value>
   </data>
   <data name="OpioidAntagonist" xml:space="preserve">
     <value>Opioid antagonist (multi-day naltrexone induction)</value>

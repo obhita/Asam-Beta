@@ -16,9 +16,6 @@ Post-Deployment Script Template
 /* Load system admin*/
 :r .\SystemAdmin.sql
 
-/* Create ehr */
-:r .\Ehr.sql
-
 /* Load organization data*/
 :r .\Organization.sql
 
@@ -30,6 +27,3 @@ Post-Deployment Script Template
 
 /* Create Users */
 :r .\Users.sql
-
-/* Create API users */
-:r .\Api.sql

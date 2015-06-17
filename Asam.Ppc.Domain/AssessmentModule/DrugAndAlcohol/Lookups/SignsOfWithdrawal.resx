@@ -121,13 +121,13 @@
     <value>Severe withdrawal OR imminent severe withdrawal</value>
   </data>
   <data name="CurrentOrImminentSevereWithdrawalCanBeManagedAtLevel_III_7" xml:space="preserve">
-    <value>Severe withdrawal OR evidence of imminent severe withdrawal which is manageable at Level 3.7</value>
+    <value>Severe withdrawal OR evidence of imminent severe withdrawal which is manageable at Level III.7</value>
   </data>
   <data name="CurrentOrImminentWithdrawalCanBeManagedAtLevel_III_2" xml:space="preserve">
-    <value>Withdrawal OR evidence of imminent withdrawal AND no risk of severe withdrawal syndrome AND moderate withdrawal is safely manageable at Level 3</value>
+    <value>Withdrawal OR evidence of imminent withdrawal AND no risk of severe withdrawal syndrome AND moderate withdrawal is safely manageable at Level III</value>
   </data>
   <data name="MildRiskOfWithdrawalCanBeManagedAtCareLevel_I" xml:space="preserve">
-    <value>At least mild withdrawal OR evidence of imminent withdrawal AND minimal risk of a severe withdrawal syndrome AND can be safely managed at Level 1</value>
+    <value>At least mild withdrawal OR evidence of imminent withdrawal AND minimal risk of a severe withdrawal syndrome AND can be safely managed at Level I</value>
   </data>
   <data name="NoRiskOfSevereWithdrawal" xml:space="preserve">
     <value>No withdrawal, no risk of severe withdrawal</value>

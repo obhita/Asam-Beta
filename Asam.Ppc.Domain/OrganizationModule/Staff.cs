@@ -18,7 +18,7 @@
     public class Staff : AggregateRootBase, IOrganizationMember
     {
 
-        //private static Dictionary<string, PropertyInfo> _propertyCache;
+        private static Dictionary<string, PropertyInfo> _propertyCache;
 
         #region Constructors and Destructors
 

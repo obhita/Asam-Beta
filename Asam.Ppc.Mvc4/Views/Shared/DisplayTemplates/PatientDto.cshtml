@@ -9,19 +9,16 @@
     <div>
         <img id="personiconlarge" src="@Href( "~/Images/defaultperson.png" )"/>
         <h2 id="bigname">@Model.Key</h2>
-        <h2 id="bigname">@Model.Name.FirstName @Model.Name.LastName</h2>
+        @*<h2 id="bigname">@Model.Name.FirstName @Model.Name.LastName</h2>*@
         <div id="birthdate">
-            <span>Birth Date: @dateOfBirth</span>
-            <span>Gender: @Model.Gender</span>
+            @*<span>Birth Date: @dateOfBirth</span>
+            <span>Gender: @Model.Gender</span>*@
             <span>Religion: @Model.Religion</span>
             <span>Ethnicity: @Model.Ethnicity</span>
         </div>
-        @if (!Html.IsApiMode())
+        @if(!(ViewContext.RouteData.Values["action"] == "Edit" && ViewContext.RouteData.Values["controller"] == "Patient"))
         {
-            if (!(ViewContext.RouteData.Values["action"] == "Edit" && ViewContext.RouteData.Values["controller"] == "Patient"))
-            {
-                @Html.ActionLink("Edit", "Edit", "Patient", new { id = Model.Key, assessmentId = ViewData["AssessmentId"] }, null);
-            }
+            @Html.ActionLink("Edit", "Edit", "Patient", new { id = Model.Key, assessmentId = ViewData["AssessmentId"] }, null);
         }
     </div>
 </div>

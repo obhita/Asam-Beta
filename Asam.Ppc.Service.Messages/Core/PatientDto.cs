@@ -14,6 +14,7 @@ namespace Asam.Ppc.Service.Messages.Core
         [Display(Name = "Birth Date")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         [Required]
+        [RegularExpression(@"(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d", ErrorMessage = "Date must be in the format MM/DD/YYYY.")]
         public DateTime? DateOfBirth { get; set; }
 
         [Required]
@@ -22,7 +23,5 @@ namespace Asam.Ppc.Service.Messages.Core
         public LookupDto Ethnicity { get; set; }
 
         public LookupDto Religion { get; set; }
-
-        public long OrganizationKey { get; set; }
     }
 }

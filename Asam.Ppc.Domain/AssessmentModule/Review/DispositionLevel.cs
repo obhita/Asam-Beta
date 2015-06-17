@@ -89,7 +89,7 @@
         public static readonly DispositionLevel NotKnown = new DispositionLevel
             {
                 Code = "NotKnown",
-                SortOrder = 14,
+                SortOrder = 13,
                 Value = 99
             };
 
@@ -152,17 +152,6 @@
                 SortOrder = 3,
                 Value = 3
             };
-
-        /// <summary>
-        /// Clinician disagrees with ASAM Criteria recommendation
-        /// </summary>
-        public static readonly DispositionLevel ClinicianDisagrees = new DispositionLevel
-        {
-            Code = "ClinicianDisagrees",
-            SortOrder = 13,
-            Value = 13
-        };
-
 
         #endregion
     }

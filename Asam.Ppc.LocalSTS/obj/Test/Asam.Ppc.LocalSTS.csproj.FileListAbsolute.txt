@@ -1,6 +1,0 @@
-C:\Projects\Asam.Ppc\Development\Asam.Ppc.LocalSTS\bin\Asam.Ppc.LocalSTS.dll.config
-C:\Projects\Asam.Ppc\Development\Asam.Ppc.LocalSTS\bin\Asam.Ppc.LocalSTS.dll
-C:\Projects\Asam.Ppc\Development\Asam.Ppc.LocalSTS\bin\Asam.Ppc.LocalSTS.pdb
-C:\Projects\Asam.Ppc\Development\Asam.Ppc.LocalSTS\obj\Test\Asam.Ppc.LocalSTS.csprojResolveAssemblyReference.cache
-C:\Projects\Asam.Ppc\Development\Asam.Ppc.LocalSTS\obj\Test\Asam.Ppc.LocalSTS.dll
-C:\Projects\Asam.Ppc\Development\Asam.Ppc.LocalSTS\obj\Test\Asam.Ppc.LocalSTS.pdb

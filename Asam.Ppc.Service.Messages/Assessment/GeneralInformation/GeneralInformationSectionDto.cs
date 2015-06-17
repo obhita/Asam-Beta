@@ -102,7 +102,7 @@ namespace Asam.Ppc.Service.Messages.Assessment.GeneralInformation
         /// The patient in controlled environment last30 days.
         /// </value>
         [Display ( Order = 9 )]
-        [Question ( QuestionType.ScriptedQuestion )]
+        [Question ( QuestionType.InterviewerQuestion )]
         [LookupCategory ( "ControlledEnvironment" )]
         public LookupDto PatientInControlledEnvironmentLast30Days { get; set; }
 

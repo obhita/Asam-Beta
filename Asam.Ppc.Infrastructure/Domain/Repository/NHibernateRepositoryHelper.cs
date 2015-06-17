@@ -1,7 +1,4 @@
-﻿using System.Configuration;
-using Pillar.Common.Configuration;
-
-namespace Asam.Ppc.Infrastructure.Domain.Repository
+﻿namespace Asam.Ppc.Infrastructure.Domain.Repository
 {
     #region Using Statements
 
@@ -20,16 +17,14 @@ namespace Asam.Ppc.Infrastructure.Domain.Repository
         #region Fields
 
         private readonly ISessionProvider _sessionProvider;
-        private readonly IConfigurationPropertiesProvider _appSettingsConfiguration;
 
         #endregion
 
         #region Constructors and Destructors
 
-        public NHibernateRepositoryHelper(ISessionProvider sessionProvider, IConfigurationPropertiesProvider appSettingsConfiguration)
+        public NHibernateRepositoryHelper ( ISessionProvider sessionProvider )
         {
             _sessionProvider = sessionProvider;
-            _appSettingsConfiguration = appSettingsConfiguration;
         }
 
         #endregion
@@ -51,11 +46,10 @@ namespace Asam.Ppc.Infrastructure.Domain.Repository
 
         public T GetEntityByKey ( long key, bool eager = false )
         {
-            var apiMode = _appSettingsConfiguration.GetProperty<bool> ( "IsApiMode" );
             var entity = Session.Get<T> ( key );
             if ( entity is IOrganizationMember )
             {
-                if (!UserContext.IsSystemAdmin && (entity as IOrganizationMember).OrganizationKey != UserContext.OrganizationKey && !apiMode)
+                if ( !UserContext.IsSystemAdmin && ( entity as IOrganizationMember ).OrganizationKey != UserContext.OrganizationKey )
                 {
                     return default(T);
                 }

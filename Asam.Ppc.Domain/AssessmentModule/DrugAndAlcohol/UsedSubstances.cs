@@ -9,8 +9,6 @@ namespace Asam.Ppc.Domain.AssessmentModule.DrugAndAlcohol
 
     using System.Collections.Generic;
 
-    using Pillar.Domain.Attributes;
-
     #endregion
 
     /// <summary>
@@ -51,21 +49,6 @@ namespace Asam.Ppc.Domain.AssessmentModule.DrugAndAlcohol
                 {
                     _substanceHasEverUsed.AddRange(value);
                 }
-            }
-        }
-
-        /// <summary>
-        /// Gets the substance has ever used count.
-        /// </summary>
-        /// <value>
-        /// The substance has ever used count.
-        /// </value>
-        [IgnoreMapping]
-        public virtual int SubstanceHasEverUsedCount 
-        {
-            get
-            {
-                return _substanceHasEverUsed.Count;
             }
         }
 

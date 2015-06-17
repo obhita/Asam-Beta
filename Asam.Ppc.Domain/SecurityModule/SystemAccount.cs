@@ -124,14 +124,6 @@
         /// </value>
         public virtual DateTime? LastLogin { get; protected set; }
 
-        /// <summary>
-        /// Gets or sets the EULA date signed.
-        /// </summary>
-        /// <value>
-        /// The EULA date signed.
-        /// </value>
-        public virtual DateTime? EulaAgreeDate { get; protected set; }
-
         #endregion
 
         public virtual void LoggedIn ()
@@ -164,11 +156,6 @@
         public virtual void AssignToStaff(Staff staff)
         {
             Staff = staff;
-        }
-
-        public virtual void ReviseEulaSignDate(DateTime? signedDate)
-        {
-            EulaAgreeDate = signedDate;
         }
     }
 }

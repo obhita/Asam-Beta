@@ -37,33 +37,6 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Test\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Demo|AnyCPU'">
-    <OutputPath>bin\Demo\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod|AnyCPU'">
-    <OutputPath>bin\Prod\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Agatha.Common, Version=1.3.1.0, Culture=neutral, PublicKeyToken=6f21cf452a4ffa13, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -75,6 +48,10 @@
     <Reference Include="Agatha.StructureMap, Version=1.3.1.0, Culture=neutral, PublicKeyToken=6f21cf452a4ffa13, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Agatha-Common-StructureMap.1.3.1\lib\net40\Agatha.StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Asam.Ppc.Domain.Scoring, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Scoring\Asam.Ppc.Domain.Scoring.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -128,6 +105,9 @@
     <Reference Include="Pillar.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Pillar\Pillar.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Pillar.Domain.NHibernate">
+      <HintPath>..\lib\Pillar\Pillar.Domain.NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Pillar.FluentRuleEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -216,14 +196,11 @@
     <Compile Include="Security\LogoutService.cs" />
     <Compile Include="Security\PatientAccessControlManager.cs" />
     <Compile Include="Security\PermissionClaimsManager.cs" />
-    <Compile Include="Security\SingleSignOn.cs" />
     <Compile Include="Security\SingleSignOnClaimsModule.cs" />
-    <Compile Include="Security\SingleSignOnHelper.cs" />
     <Compile Include="Service\AsamModelMetadataProvider.cs" />
     <Compile Include="Service\AsamRouteNavigationService.cs" />
     <Compile Include="Service\AsyncRequestDispatcher.cs" />
     <Compile Include="Service\CompletenessModelValidator.cs" />
-    <Compile Include="Service\BusinessTransactionLogFilter.cs" />
     <Compile Include="Service\IAsyncRequestDispatcher.cs" />
     <Compile Include="Service\IRouteNavigationService.cs" />
     <Compile Include="Service\LogAccessFilter.cs" />
@@ -232,14 +209,6 @@
     <Compile Include="ValidationExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Asam.Ppc.Common\Asam.Ppc.Common.csproj">
-      <Project>{ac53fad1-f5dd-4902-ab48-012f201fb649}</Project>
-      <Name>Asam.Ppc.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Asam.Ppc.Domain.Scoring\Asam.Ppc.Domain.Scoring.csproj">
-      <Project>{8f7afe5c-eaf8-41b3-bacc-ae6b950caffa}</Project>
-      <Name>Asam.Ppc.Domain.Scoring</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Asam.Ppc.Domain\Asam.Ppc.Domain.csproj">
       <Project>{d350fca3-0cd6-4de8-9887-fac1b1146176}</Project>
       <Name>Asam.Ppc.Domain</Name>

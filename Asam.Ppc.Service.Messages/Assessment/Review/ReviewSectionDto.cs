@@ -20,7 +20,7 @@
         ///     The agrees with treatment referred to.
         /// </value>
         [Display ( Order = 4 )]
-        [Question ( QuestionType.ScriptedQuestion )]
+        [Question ( QuestionType.InterviewerQuestion )]
         [LookupCategory ( "AgreementRating" )]
         public LookupDto AgreesWithTreatmentReferredTo { get; set; }
 
@@ -42,7 +42,7 @@
         ///     The disagrees with PPC thinks needs different treatment rating.
         /// </value>
         [Display ( Order = 6 )]
-        [Question ( QuestionType.ScriptedQuestion )]
+        [Question ( QuestionType.InterviewerQuestion )]
         [LookupCategory ( "TreatmentRating" )]
         public LookupDto DisagreesWithPpcThinksNeedsDifferentTreatmentRating { get; set; }
 
@@ -64,7 +64,7 @@
         ///     The intention to follow through with referral within30 days.
         /// </value>
         [Display ( Order = 5 )]
-        [Question ( QuestionType.ScriptedQuestion )]
+        [Question ( QuestionType.InterviewerQuestion )]
         [LookupCategory ( "AgreementRating" )]
         public LookupDto IntentionToFollowThroughWithReferralWithin30Days { get; set; }
 
@@ -108,7 +108,7 @@
         ///     The probability of being treated in next90 days.
         /// </value>
         [Display ( Order = 7 )]
-        [Question ( QuestionType.ScriptedQuestion )]
+        [Question ( QuestionType.InterviewerQuestion )]
         [LookupCategory ( "AgreementRating" )]
         public LookupDto ProbabilityOfBeingTreatedInNext90Days { get; set; }
 
@@ -130,7 +130,7 @@
         ///     The quality of service received.
         /// </value>
         [Display ( Order = 2 )]
-        [Question ( QuestionType.ScriptedQuestion )]
+        [Question ( QuestionType.InterviewerQuestion )]
         [LookupCategory ( "QualityRating" )]
         public LookupDto QualityOfServiceReceived { get; set; }
 
@@ -173,7 +173,7 @@
         ///     The satification with time to complete interview.
         /// </value>
         [Display ( Order = 8 )]
-        [Question ( QuestionType.ScriptedQuestion )]
+        [Question ( QuestionType.InterviewerQuestion )]
         [LookupCategory ( "InterviewTimeRating" )]
         public LookupDto SatificationWithTimeToCompleteInterview { get; set; }
 
@@ -195,7 +195,7 @@
         ///     The willingness to recommend friend to program.
         /// </value>
         [Display ( Order = 3 )]
-        [Question ( QuestionType.ScriptedQuestion )]
+        [Question ( QuestionType.InterviewerQuestion )]
         [LookupCategory ( "AgreementRating" )]
         public LookupDto WillingnessToRecommendFriendToProgram { get; set; }
 

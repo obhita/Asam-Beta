@@ -1,13 +1,9 @@
-﻿using System.Net;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 using Agatha.Common;
-using Asam.Ppc.Domain.AssessmentModule;
-using Asam.Ppc.Domain.SecurityModule;
 using Asam.Ppc.Mvc.Infrastructure.Security;
 using Asam.Ppc.Mvc.Infrastructure.Service;
 using Asam.Ppc.Service.Messages.Assessment;
-using Pillar.Common.InversionOfControl;
 
 namespace Asam.Ppc.Mvc4.Controllers
 {
@@ -31,26 +27,14 @@ namespace Asam.Ppc.Mvc4.Controllers
             return RedirectToAction("Edit", new { id = response.AssessmentId });
         }
 
-        [BusinessTransactionLogFilter]
         public virtual ActionResult Edit(long id)
         {
-            var assessmentRepository = IoC.CurrentContainer.Resolve<IAssessmentRepository>();
-            var assessment = assessmentRepository.GetByKey(id);
-            var singleSignOn = SingleSignOnHelper.GetSingleSignOnParameters(HttpContext.ApplicationInstance);
-            if (assessment.OrganizationKey.ToString() != singleSignOn.OrganizationId && singleSignOn.OrganizationId != null)
-            {
-                // return a 401
-                // TODO: Create a custom 401 view
-                return null;
-            }
-
             var initialRoute = _routeNavigationService.GetInitialRoute ( id );
-            return initialRoute.HasSubsection ? RedirectToRoute("SubSectionRoute", new { id, section = initialRoute.Section, subSection = initialRoute.SubSection }) : RedirectToRoute("SectionRoute", new { id, section = initialRoute.Section });
-        }
-
-        public ActionResult GetPrintView(long id)
-        {
-            return RedirectToAction ( "GetPrintView", "Section", new { id } );
+            if (initialRoute.HasSubsection)
+            {
+                return RedirectToRoute("SubSectionRoute", new { id = id, section = initialRoute.Section, subSection = initialRoute.SubSection });
+            }
+            return RedirectToRoute("SectionRoute", new { id = id, section = initialRoute.Section });
         }
     }
 }

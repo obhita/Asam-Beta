@@ -3,17 +3,13 @@
 @model OrganizationDto
 
 @{
-    const string apiKeyCreated = "API Key created and emailed";
     Layout = "~/Views/SystemAdmin/Layout.cshtml";
     ViewBag.Title = "Edit Organization";
 }
 
 <div class="organization-editor">
-    <div class="validation-summary-errors" id="form_errors"></div>
-
     @using (Html.BeginForm("EditOrganization", "SystemAdmin", new { id = Model.Key }))
     {
-        @Html.Hidden("Id", Model.Key)
         <div>
             @Html.LabelFor(m => m.Name)
         </div>
@@ -127,23 +123,6 @@
             }
         </div>
     </div>
-    <div>
-        <div class="header">
-            <h5>API Key</h5>
-        </div>
-        <div class="clear"></div>
-        <hr />
-        @if (Model.HasApiKey)
-        {
-            <div id="add-api">@apiKeyCreated</div>
-        }
-        else
-        {
-            <input id="add-api-key-btn" type="button" value="Add API Key" />
-            <div id="add-api-label">@apiKeyCreated</div>
-        }
-    </div>
-
 </div>
 
 
@@ -152,7 +131,6 @@
     <script>
         $(document).ready(function() {
             var formDirty = false;
-            $("#add-api-label").hide();
             $('.organization-editor input[type=submit]').hide();
             $('.organization-editor .add-address-wrapper').hide();
             $('.organization-editor .add-phone-wrapper').hide();
@@ -186,33 +164,6 @@
 
             $('#add-orgAdmin-btn').click(function () {
                 $('.organization-editor .add-orgAdmin-wrapper').toggle();
-            });
-
-            $("#add-api-key-btn").ajaxLink({
-                // create an API key and update the UI using an AJAX call
-                url: '@Url.Content("~/SystemAdmin/AddApiKey/")',
-                success: function (data) {
-                    if (data == null) return;
-                    if (data.errors != null) {
-                        var br = "";
-                        var msg = "";
-                        for (var err = 0; err < data.errors.length; err++) {
-                            msg = br + data.errors[err].Message;
-                            br = "</br>";
-                        }
-                        $("#form_errors").text(msg);
-                        return;
-                    } else {
-                        $("#add-api-key-btn").hide();
-                        $("#add-api-label").show();
-                    }
-                },
-                getData: function () {
-                    var data = {};
-                    data["Id"] = $("#Id").attr("value");
-                    data["Name"] = $("#Name").attr("value");
-                    return data;
-                }
             });
         });
     </script>

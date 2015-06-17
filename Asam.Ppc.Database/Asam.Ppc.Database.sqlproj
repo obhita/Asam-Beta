@@ -33,6 +33,7 @@
     <SccLocalPath>SAK</SccLocalPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
     <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
     <DebugType>pdbonly</DebugType>
@@ -43,6 +44,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
     <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <DebugSymbols>true</DebugSymbols>
@@ -56,37 +58,6 @@
   </PropertyGroup>
   <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
   <PropertyGroup />
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|AnyCPU' ">
-    <OutputPath>bin\Release\</OutputPath>
-    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Demo|AnyCPU' ">
-    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Prod|AnyCPU' ">
-    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
@@ -105,10 +76,6 @@
     <Folder Include="SecurityModule\Tables\" />
     <Folder Include="OrganizationModule\" />
     <Folder Include="OrganizationModule\Tables\" />
-    <Folder Include="EhrModule" />
-    <Folder Include="EhrModule\Tables" />
-    <Folder Include="BillingModule\" />
-    <Folder Include="BillingModule\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Schema Comparisons\CompareToAsamPpcGenDatabase.scmp" />
@@ -118,18 +85,10 @@
     <None Include="Scripts\LoadAssessments.sql" />
     <None Include="Scripts\HiValue.sql" />
     <None Include="Scripts\Users.sql" />
-    <None Include="AsamDemo.publish.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="AsamDemo.publish.xml" />
     <None Include="Scripts\Organization.sql" />
     <None Include="Scripts\Patient.sql" />
     <None Include="Scripts\SystemAdmin.sql" />
-    <None Include="AsamTest.publish.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="AsamProd.publish.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\HiValue.sql" />
@@ -218,16 +177,6 @@
     <Build Include="SecurityModule\Tables\RoleSystemPermission.sql" />
     <Build Include="SecurityModule\Tables\SystemAccountRole.sql" />
     <Build Include="ScoringModule\Tables\DiagnosticStatisticalManualOfMentalDisorders_V_Scores.sql" />
-    <Build Include="EhrModule\Tables\Ehr.sql" />
-    <Build Include="EhrModule\Tables\EhrAddress.sql" />
-    <Build Include="EhrModule.sql" />
-    <None Include="Scripts\Ehr.sql" />
-    <Build Include="OrganizationModule\Tables\OrganizationApiKey.sql" />
-    <Build Include="AssessmentModule\Tables\AssessmentMetaData.sql" />
-    <None Include="Scripts\Api.sql" />
-    <Build Include="BillingModule\Tables\BillingTransaction.sql" />
-    <Build Include="Security\BillingModule.sql" />
-    <Build Include="SecurityModule\Tables\ApiSystemAccount.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
@@ -237,8 +186,5 @@
       <DefaultValue>IIS APPPOOL\DefaultAppPool</DefaultValue>
       <Value>$(SqlCmdVar__1)</Value>
     </SqlCmdVariable>
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="Asam.Ppc.Database.refactorlog" />
   </ItemGroup>
 </Project>

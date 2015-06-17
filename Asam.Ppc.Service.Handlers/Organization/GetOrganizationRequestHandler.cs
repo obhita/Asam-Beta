@@ -42,7 +42,6 @@
             }
             var organization = _organizationRepository.GetByKey ( organizationKey );
             response.DataTransferObject = Mapper.Map<Organization, OrganizationDto> ( organization );
-            response.DataTransferObject.HasApiKey = !string.IsNullOrWhiteSpace(organization.ApiKey);
         }
 
         #endregion

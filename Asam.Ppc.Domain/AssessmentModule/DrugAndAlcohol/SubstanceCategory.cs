@@ -108,13 +108,5 @@ namespace Asam.Ppc.Domain.AssessmentModule.DrugAndAlcohol
                 SortOrder = 13,
                 Value = 14
             };
-
-        public static SubstanceCategory NoHistory = new SubstanceCategory
-        {
-            Code = "NoHistory",
-            SortOrder = 14,
-            Value = 0
-        };
-
     }
 }

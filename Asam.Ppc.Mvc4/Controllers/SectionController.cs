@@ -15,10 +15,6 @@
     using Mvc.Infrastructure.Security;
     using Mvc.Infrastructure.Service;
     using Service.Messages.Assessment;
-    using Service.Messages.Assessment.DrugAndAlcohol;
-    using Service.Messages.Assessment.EmploymentAndSupport;
-    using Service.Messages.Assessment.GeneralInformation;
-    using Service.Messages.Assessment.Medical;
     using Service.Messages.Common;
     using Service.Messages.Common.Lookups;
     using Service.Messages.Core;
@@ -57,35 +53,6 @@
 
         #region Public Methods and Operators
 
-        public async Task<ActionResult> GetPrintView(long id)
-        {
-            var requestDispatcher = CreateAsyncRequestDispatcher();
-            requestDispatcher.Add(new GetAssessmentByKeyRequest { AssessmentKey = id });
-            requestDispatcher.Add(new GetPatientDtoByAssessmentKeyRequest { AssessmentKey = id });
-            //RecurseHelper ( typeof(AssessmentDto), requestDispatcher );
-            var response = await requestDispatcher.GetAsync<GetAssessmentResponse>();
-            var patientResponse = requestDispatcher.Get<GetPatientDtoResponse>();
-            //AddLookupResponsesToViewData ( requestDispatcher );
-            ViewData["Patient"] = patientResponse.DataTransferObject;
-            ViewData["AssessmentId"] = id;
-            ViewBag.PrintView = true;
-            return View(response.DataTransferObject);
-        }
-
-        private void RecurseHelper(Type entityType, Mvc.Infrastructure.Service.IAsyncRequestDispatcher asyncRequestDispatcher )
-        {
-            var entityProperties = entityType.GetProperties();
-            foreach (var entityProperty in entityProperties)
-            {
-                if (typeof(SectionDtoBase).IsAssignableFrom(entityProperty.PropertyType))
-                {
-                    var revisionBaseType = entityProperty.PropertyType;
-                    AddLookupRequests ( asyncRequestDispatcher, revisionBaseType );
-                    RecurseHelper(revisionBaseType, asyncRequestDispatcher);
-                }
-            }
-        }
-
         /// <summary>
         /// Gets the Edit view of the specified section.
         /// </summary>
@@ -119,7 +86,6 @@
 
             if ( _patientAccessControlManager.CanAccessPatient ( patientResponse.DataTransferObject.Key ) )
             {
-                ViewBag.PrintView = false;
                 return View ( response.Dto );
             }
             return HttpNotFound ();
@@ -225,29 +191,30 @@
         /// <exception cref="System.Web.HttpException">500;Submit assessment failed.</exception>
         public async Task<ActionResult> Submit ( long id, long patientId )
         {
-            var requestDispatcher = CreateAsyncRequestDispatcher ();
-            requestDispatcher.Add(new SubmitAssessmentRequest { AssessmentKey = id, Username = PatientAccessControlManager.GetCurrentUserName() });
-            requestDispatcher.Add ( new GetPatientDtoByKeyRequest { PatientKey = patientId } );
-            var submitResponse = await requestDispatcher.GetAsync<SubmitAssessmentResponse> ();
-            var patientResponse = requestDispatcher.Get<GetPatientDtoResponse>();
-
-            if ( submitResponse.AssessmentKey == 0 )
+            if ( _patientAccessControlManager.CanAccessPatient ( patientId ) )
             {
-                throw new HttpException ( 500, "Submit assessment failed." );
-            }
-            if (!_patientAccessControlManager.CanAccessPatient(patientId))
-            {
-                return HttpNotFound();
-            }
-            ViewData["Patient"] = patientResponse.DataTransferObject;
-            ViewData["AssessmentId"] = id;
-            ViewData["AssessmentViewModel"] =
-                new AssessmentViewModel(id,
-                    _routeNavigationService,
-                    "ReviewSection",
-                    null, new CompletenessResults ( "", 1,0 ) { CompletenessResultsPerRuleSet = new Dictionary<string, CompletenessResults> ()});
+                var requestDispatcher = CreateAsyncRequestDispatcher ();
+                requestDispatcher.Add(new SubmitAssessmentRequest { AssessmentKey = id, Username = PatientAccessControlManager.GetCurrentUserName() });
+                requestDispatcher.Add ( new GetPatientDtoByKeyRequest { PatientKey = patientId } );
+                var submitResponse = await requestDispatcher.GetAsync<SubmitAssessmentResponse> ();
+                var patientResponse = requestDispatcher.Get<GetPatientDtoResponse>();
 
-            return View (id);
+                if ( submitResponse.AssessmentKey == 0 )
+                {
+                    throw new HttpException ( 500, "Submit assessment failed." );
+                }
+
+                ViewData["Patient"] = patientResponse.DataTransferObject;
+                ViewData["AssessmentId"] = id;
+                ViewData["AssessmentViewModel"] =
+                    new AssessmentViewModel(id,
+                                              _routeNavigationService,
+                                              "ReviewSection",
+                                              null, new CompletenessResults ( "", 1,0 ) { CompletenessResultsPerRuleSet = new Dictionary<string, CompletenessResults> ()});
+
+                return View (id);
+            }
+            return HttpNotFound ();
         }
 
         #endregion

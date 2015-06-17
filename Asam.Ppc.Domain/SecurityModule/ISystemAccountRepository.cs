@@ -16,13 +16,6 @@
         #region Public Methods and Operators
 
         /// <summary>
-        /// Save systemAccount.
-        /// </summary>
-        /// <param name="systemAccount">The systemAccount.</param>
-        /// <returns></returns>
-        void Save(SystemAccount systemAccount);
-
-        /// <summary>
         /// Gets the by identifier.
         /// </summary>
         /// <param name="identifier">The identifier.</param>

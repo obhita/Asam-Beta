@@ -4,8 +4,6 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Agatha.Common;
-using Asam.Ppc.Common.Crypto;
-using Asam.Ppc.Domain.SecurityModule;
 using Asam.Ppc.Mvc.Infrastructure.Security;
 using Asam.Ppc.Mvc.Infrastructure.Service;
 using Asam.Ppc.Mvc4.Controllers;
@@ -89,16 +87,9 @@ namespace Asam.Ppc.Mvc4.Tests
         {
             var requestDispatcherFactoryMock = new Mock<IRequestDispatcherFactory>();
             var patientAccessControlManagerMock = new Mock<IPatientAccessControlManager>();
-            var apiSystemAccountRepositoryMock = new Mock<IApiSystemAccountRepository>();
-            var systemAccountRepositoryMock = new Mock<ISystemAccountRepository>();
-            var cryptoMock = new Mock<ICrypto>();
-
             patientAccessControlManagerMock.Setup(i => i.CanAccessAllPatients).Returns(false);
             var homeController = new HomeController(requestDispatcherFactoryMock.Object,
-                                                    patientAccessControlManagerMock.Object,
-                                                    apiSystemAccountRepositoryMock.Object,
-                                                    systemAccountRepositoryMock.Object,
-                                                    cryptoMock.Object);
+                                                    patientAccessControlManagerMock.Object);
 
             var controllerContextMock = new Mock<ControllerContext>();
 
@@ -114,17 +105,9 @@ namespace Asam.Ppc.Mvc4.Tests
         {
             var requestDispatcherFactoryMock = new Mock<IRequestDispatcherFactory>();
             var patientAccessControlManagerMock = new Mock<IPatientAccessControlManager>();
-            var apiSystemAccountRepositoryMock = new Mock<IApiSystemAccountRepository>();
-            var systemAccountRepositoryMock = new Mock<ISystemAccountRepository>();
-            var cryptoMock = new Mock<ICrypto>();
-
             patientAccessControlManagerMock.Setup(i => i.CanAccessAllPatients).Returns(true);
-
             var homeController = new HomeController(requestDispatcherFactoryMock.Object,
-                                                    patientAccessControlManagerMock.Object,
-                                                    apiSystemAccountRepositoryMock.Object,
-                                                    systemAccountRepositoryMock.Object,
-                                                    cryptoMock.Object);
+                                                    patientAccessControlManagerMock.Object);
 
             var controllerContextMock = new Mock<ControllerContext>();
 

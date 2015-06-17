@@ -1,6 +1,4 @@
-﻿using NHibernate.Util;
-
-namespace Asam.Ppc.Mvc4.Controllers
+﻿namespace Asam.Ppc.Mvc4.Controllers
 {
     #region Using Statements
 
@@ -44,6 +42,7 @@ namespace Asam.Ppc.Mvc4.Controllers
             AddLookupRequests(requestDispatcher, typeof(AddressDto));
             var response = await requestDispatcher.GetAsync<DtoResponse<OrganizationDto>>();
             AddLookupResponsesToViewData(requestDispatcher);
+
             return View(response.DataTransferObject);
         }
 
@@ -123,41 +122,6 @@ namespace Asam.Ppc.Mvc4.Controllers
             var response = await requestDispatcher.GetAsync<AddDtoResponse<OrganizationPhoneDto>>();
 
             return RedirectToAction("Edit");
-        }
-
-        [HttpPost]
-        public async Task<ActionResult> AddApiKey(OrganizationApiKeyDto organizationApiKeyDto)
-        {
-            var requestDispatcher = CreateAsyncRequestDispatcher();
-            // TODO: Get this from the linked table for this organization ID
-            organizationApiKeyDto.EhrId = 1;
-            requestDispatcher.Add(new AddDtoRequest<OrganizationApiKeyDto> { DataTransferObject = organizationApiKeyDto });
-            var response = await requestDispatcher.GetAsync<AddDtoResponse<OrganizationApiKeyDto>>();
-            if (response.DataTransferObject == null) {
-                return new JsonResult {
-                    Data = new {
-                        error = true,
-                        errors = "DTO is null."
-                    }
-                };
-            }
-
-            if (response.DataTransferObject != null && response.DataTransferObject.DataErrorInfoCollection.Any())
-            {
-                return new JsonResult {
-                    Data = new {
-                        error = true,
-                        errors = response.DataTransferObject.DataErrorInfoCollection
-                    }
-                };
-            }
-
-            return new JsonResult {
-                Data = new {
-                    ApiKeyCreated = true,
-                    response.DataTransferObject.Name
-                }
-            };
         }
 
         #endregion

@@ -121,7 +121,7 @@
     <value>Insufflation</value>
   </data>
   <data name="Oral" xml:space="preserve">
-    <value>PO (orally)</value>
+    <value>PO</value>
   </data>
   <data name="Smoke" xml:space="preserve">
     <value>Smoke</value>

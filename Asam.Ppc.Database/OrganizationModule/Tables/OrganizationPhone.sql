@@ -15,8 +15,6 @@
 );
 
 
-
-
 GO
 CREATE NONCLUSTERED INDEX [OrganizationPhone_Organization_FK_IDX]
     ON [OrganizationModule].[OrganizationPhone]([OrganizationKey] ASC);

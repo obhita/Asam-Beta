@@ -1382,7 +1382,7 @@ input, select, textarea, .multiselect-wrapper
     display: none;
 }
 
-#assessmentHeader .tools .dev {
+#assessmentHeader .tools {
     display: none;
 }
 
@@ -1393,88 +1393,4 @@ input, select, textarea, .multiselect-wrapper
 
 .system-account-reset-password {
     float: right;
-}
-
-.print-view{
-    height: auto;
-    background: white;
-    overflow-y: auto;
-    line-height: .9;
-}
-
-.print-view h1 {
-    float: left;
-    margin-left: 15px;
-}
-.print-view h3 {
-    float: right;
-    margin-right: 15px;
-}
-
-.print-view .multiselect-wrapper.checkall label:first-child {
-    display: none;
-}
-
-.print-view .SingleVerticalScaleLegend,
-.print-view .VerticalScaleLegend,
-.print-view .VerticalQuestion {
-    page-break-inside: avoid;
-}
-
-.print-view .yesno-radiobuttons input:not(:checked) + span {
-    display: none;
-}
-
-.print-view input,
-.print-view textarea,
-.print-view select{
-    word-wrap: break-word;
-    background: transparent;
-    border: none;
-}
-
-.print-view p,
-.print-view legend,
-.print-view .base-question-wrapper {
-    margin: 0;
-    padding: 0;
-}
-
-.print-view .base-question-wrapper .five.columns {
-    padding: 0;
-    margin: 5px 0 0 0;
-    max-width: 60%;
-    width: auto;
-}
-
-.print-view .base-question-wrapper .seven.columns {
-    padding: 0;
-    margin: 0;
-    width: 40%;
-}
-
-.print-view .base-question-wrapper .control-wrapper {
-    margin: 0 0 0 15px;
-}
-
-.print-view .scriptedicon,
-.print-view .interviewericon {
-    display: none;
-}
-
-.print-view .multiselect-wrapper{
-    margin: 0;
-    border: none;
-}
-
-.print-view .question-root {
-    border-bottom: 1px solid lightgray;
-}
-
-.print-view .ui-scale-option-label {
-    overflow: visible;
-}
-
-.print-view .three.columns .five.columns {
-    width: 43%;
 }

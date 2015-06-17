@@ -48,8 +48,6 @@
 
 
 
-
-
 GO
 CREATE NONCLUSTERED INDEX [Patient_Team_FK_IDX]
     ON [PatientModule].[Patient]([TeamKey] ASC);

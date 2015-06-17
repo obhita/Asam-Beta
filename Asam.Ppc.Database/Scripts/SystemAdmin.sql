@@ -1,4 +1,4 @@
-﻿INSERT [SecurityModule].[SystemAccount] VALUES ( 1001, 1, 'system.admin@feisystems.com', 1, null, GETDATE(), null, GETDATE(), null, null, null, 'system.admin@feisystems.com', null)
+﻿INSERT [SecurityModule].[SystemAccount] VALUES ( 1001, 1, 'system.admin@feisystems.com', 1, null, GETDATE(), null, GETDATE(), null, null, null, 'system.admin@feisystems.com')
 
 INSERT [SecurityModule].[Role] VALUES ( 1001, 1, 'System Admin', 'Internal', GETDATE(), null, GETDATE(), null, null)
 
@@ -22,7 +22,6 @@ INSERT [SecurityModule].[SystemPermission] VALUES ( 16, 1, 'organizationmodule/s
 INSERT [SecurityModule].[SystemPermission] VALUES ( 17, 1, 'organizationmodule/staffremoverole')
 INSERT [SecurityModule].[SystemPermission] VALUES ( 18, 1, 'securitymodule/systemadminpermission')
 INSERT [SecurityModule].[SystemPermission] VALUES ( 19, 1, 'organizationmodule/resetpassword')
-INSERT [SecurityModule].[SystemPermission] VALUES ( 20, 1, 'singlesignonmodule/singlesignonview')
 
 INSERT [SecurityModule].[RoleSystemPermission] VALUES ( 1001 , 1, 1001, 1 )
 INSERT [SecurityModule].[RoleSystemPermission] VALUES ( 1002 , 1, 1001, 18 )
